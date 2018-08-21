@@ -25,6 +25,7 @@ if (!String.prototype.format) {
 /*
 *   START VIS KT
 */
+var userDirectory;
 // Get user ID
 function getUserID() {
 
@@ -66,55 +67,10 @@ function checkUserExists() {
         }
     });
 }
-/*
-*   END VIS KT
-*/
 
-/**
- * Load the system and clusters
- */
-function pageLoad() {
-
-  $( "#slider1" ).slider( "disable" );
-  $( "#slider2" ).slider( "disable" );
-  $( "#slider3" ).slider( "disable" );
-  $("#slider1_Textbox").attr("disabled","disabled");
-  $("#slider2_Textbox").attr("disabled","disabled");
-  $("#slider3_Textbox").attr("disabled","disabled");
-
-  //promt for the user guide
-  // var userGuide = confirm("Would you like to see the userguide page first?");
-  // if (userGuide)
-  // {
-  //   window.open("./userguide.html", '_self');
-  // }
-
-  // //get the user id
-  // else
-  {
-    var input = prompt("Please enter your userId","");
-    var loadSessionConfirmed = false;
-
-    if ((input != null) && (input.trim() != ""))
-    {
-      userID = input;
-
-      fileName = "../"+input+"/out"+input+".Matrix";
-      termsFileName = "../"+input+"/out"+input+".Terms";
-      specFileName = "../"+input+"/out"+input+".Spec";
-      fileListName = "../"+input+"/fileList";
-      userDirectory= "../"+input+"/";
-
-      $("#userName").html("Welcome " + userID + "!");
-
-
-    }
-    else if ((input != null) && (input.trim() == ""))
-    {
-      alert("Your userID is not valid!")
-    }
-  }
-}
+//
+//   END VIS KT
+//
 
 // ZOOM AND DRAGGING
 function zoomed() {
@@ -127,8 +83,12 @@ var d_sessions, a_sessions,
     d_clusters,
     a_transitions;
 
-$( document ).ready(function() {
-    var json_data = $.getJSON( "sessions", function(data) {
+$.ajax({
+    type: "POST",
+    url: "./cgi-bin/sankey.py",
+    data: { userDirectory:JSON.stringify(userDirectory)},
+    async: true,
+    success: function(data) {
         console.log( "success" );
         // SESSIONS
         d_sessions = data.sessions;
@@ -151,17 +111,9 @@ $( document ).ready(function() {
 
         // TRANSITIONS
         a_transitions = data.transitions;
-    })
-    .done(function() {
-        console.log( "second success" );
-    })
-    .fail(function() {
-        console.log( "error" );
-    })
-    .always(function() {
+
         draw();
-        console.log( "complete" );
-    });
+    }
 });
 
 var LEFT_MARGIN = 50,
