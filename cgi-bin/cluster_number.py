@@ -1,4 +1,4 @@
-#!/users/grad/sherkat/anaconda2/bin/python
+#!/usr/bin/python
 # Author: Ehsan Sherkat - 2016
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_samples, silhouette_score
@@ -14,9 +14,9 @@ def number_of_clusters(array):
     n_clr_above_avg = 0
     n_clr_above_avg_index = 2
     alpha = 1.1
-    betta = 1.0  
+    betta = 1.0
     gamma = 0.6
-    tetta = 1.0 
+    tetta = 1.0
 
     silhouette_avg_array = []
     cv_array = []
@@ -52,7 +52,7 @@ def number_of_clusters(array):
 
         if silhouette_avg > max_sil:
             max_sil = silhouette_avg
-            max_sil_index = n_clusters   
+            max_sil_index = n_clusters
 
         if n_c_a_avg > n_clr_above_avg:
             n_clr_above_avg = n_c_a_avg

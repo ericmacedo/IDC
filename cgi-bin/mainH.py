@@ -1,6 +1,6 @@
-#!/users/grad/sherkat/anaconda2/bin/python
+#!/usr/bin/python
 #author: Hamid
-import cgi, cgitb 
+import cgi, cgitb
 import numpy
 import scipy
 from scipy.cluster.vq import vq
@@ -203,11 +203,11 @@ while (realK < k):#in case the number of clusters are less than user specified, 
 	minY = numpy.min(Y)
 	maxY = numpy.max(Y)
 	tempY = 1 - numpy.multiply((Y - minY),numpy.power(maxY-minY,-1.0))
-	
+
 	outputDocMembs = userDirectory+"documentMembers"
 	fo = open(outputDocMembs, "wb")
 	fo.write("name")
-	for p in range(k):		
+	for p in range(k):
 		if len(clusterNames) > 0:
 			fo.write(","+clusterNames[p])
 		else:
@@ -233,7 +233,7 @@ while (realK < k):#in case the number of clusters are less than user specified, 
 
 silhouette_avg = silhouette_score(data, IDX, 'cosine')
 
-attrVals = numpy.empty([M,k], dtype=float)	
+attrVals = numpy.empty([M,k], dtype=float)
 computeX2(attrVals, clusters, data, N)
 attIDTemp = numpy.argmax(attrVals, axis = 1)
 id = []
@@ -242,11 +242,11 @@ for p in range(k):
 	temp = numpy.argsort(attrVals[:,p])
 	temp = temp[::-1]
 	keyterms.append(temp[range(f)])
-	
+
 minV = numpy.min(attrVals)
 maxV = numpy.max(attrVals)
 attrVals = numpy.multiply((attrVals - minV),numpy.power(maxV-minV,-1.0))
-	
+
 outputTermMembs = userDirectory+"termMembers"
 fo = open(outputTermMembs, "wb")
 fo.write("name")
@@ -300,7 +300,7 @@ for p in range(k):
     fo2.write("<html>\n<head></head>\n<body>\n<p>")
     fo2.write("Cluster size: "+ str(len(clusters[p])))
     fo2.write("</p>\n</body>\n</html>\n</richcontent>\n")
-    
+
     for j in range(len(clusters[p])):
 	textFile = docs[0, clusters[p][j]]
 	fo2.write("<node LINK=\""+"http://ares.research.cs.dal.ca/~sherkat/IC2/"+userDirectory[2:len(userDirectory)]+textFile[0:textFile.rindex('.')]+'.pdf'+"\" TEXT=\""+textFile+"\">\n")
@@ -308,7 +308,7 @@ for p in range(k):
 	fo.write(comma+docs[0, clusters[p][j]])
 	comma = ','
 	try:
-		
+
 		with open(userDirectory+docs[0, clusters[p][j]]) as textFile:
 			first_line = textFile.readline()
 			fo2.write("<richcontent TYPE=\"NOTE\">\n")
@@ -320,8 +320,8 @@ for p in range(k):
 		fo2.write("<richcontent TYPE=\"NOTE\">\n")
 		fo2.write("<html>\n<head></head>\n<body>\n<p>")
 		fo2.write("</p>\n</body>\n</html>\n</richcontent>\n")
-	
-	fo2.write("</node>\n")	
+
+	fo2.write("</node>\n")
     fo.write("\n")
     tempStr += ']'
     clusterDocs.append(tempStr)

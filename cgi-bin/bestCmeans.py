@@ -1,3 +1,4 @@
+#!/usr/bin/python
 """
 cmeans.py : Fuzzy C-means clustering algorithm.
 """

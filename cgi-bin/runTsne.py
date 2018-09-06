@@ -1,7 +1,7 @@
-#!/users/grad/sherkat/anaconda2/bin/python
+#!/usr/bin/python
 # Author: Ehsan Sherkat
 import sys
-import cgi, cgitb 
+import cgi, cgitb
 import json
 import os
 from sklearn.manifold import TSNE
@@ -16,7 +16,7 @@ try:
 	perplexityNew = eval(form.getvalue('perplexityNew'))
 
 	# run tsne
-	tsneFile = userDirectory + "tsne"	
+	tsneFile = userDirectory + "tsne"
 	os.system("cat "+ userDirectory + "out" + userID + ".Matrix"+" | tr ',' '\t' | ./bhtsne.py -d 2 -p "+perplexityNew+" > "+tsneFile)
 
 	#sklearn tsne
@@ -41,7 +41,7 @@ try:
 	perplexity_File.write(perplexityNew)
 	perplexity_File.close()
 
-	print "Content-type:application/json\r\n\r\n"	
+	print "Content-type:application/json\r\n\r\n"
 	print json.dumps({'status':'success'})
 except Exception, e:
 	print "Content-type:application/json\r\n\r\n"

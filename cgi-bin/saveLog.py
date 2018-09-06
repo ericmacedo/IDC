@@ -1,4 +1,4 @@
-#!/users/grad/sherkat/anaconda2/bin/python
+#!/usr/bin/python
 import cgi, cgitb 
 import sys
 import json

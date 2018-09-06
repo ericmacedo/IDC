@@ -1,4 +1,4 @@
-#!/users/grad/sherkat/anaconda2/bin/python
+#!/usr/bin/python
 # Author: Ehsan Sherkat - 2016
 import sys, os
 import re
@@ -77,7 +77,7 @@ try:
         """
         text = text.translate(string.maketrans(string.punctuation, ' ' * len(string.punctuation)))  # Remove Punctuations
         text = text.lower()  # Lower case
- 
+
         if onlyEnglish == "yes":#remove none english chars
             text = unicodedata.normalize('NFKD', unicode(text, 'utf-8')).encode('ascii', 'ignore')
         if numbers == "yes": # remove numbers
@@ -238,8 +238,8 @@ try:
 
     # run tsne
     tsneFile = userDirectory + "tsne"
-    # # os.system("cat "+ userDirectory + "out" + userID + ".Matrix | tr ',' '\t' | ./bhtsne.py -d 2 -p "+perplexityNew+" -o "+ tsneFile) 
-    # for file permision error use next line instead, 
+    # # os.system("cat "+ userDirectory + "out" + userID + ".Matrix | tr ',' '\t' | ./bhtsne.py -d 2 -p "+perplexityNew+" -o "+ tsneFile)
+    # for file permision error use next line instead,
     # add replace(',','\t') in bgtsne.py and remove print
     bhtsne.main(['./bhtsne.py', '-i', userDirectory + 'out' + userID + '.Matrix', '-v', '-d', '2', '-p', perplexityNew, '-o', tsneFile])
 

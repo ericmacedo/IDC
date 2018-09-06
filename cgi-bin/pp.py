@@ -1,7 +1,7 @@
-#!/users/grad/sherkat/anaconda2/bin/python
+#!/usr/bin/python
 
 import sys
-import cgi, cgitb 
+import cgi, cgitb
 import json
 
 cgitb.enable()

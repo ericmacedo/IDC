@@ -1,4 +1,4 @@
-#!/users/grad/sherkat/anaconda2/bin/python
+#!/usr/bin/python
 #Author: Ehsan Sherkat - Aug. 2016
 import bestCmeans
 import utility
@@ -31,8 +31,8 @@ try:
     # numberOfClusters = 5  # number of clusters
 
     #algorithm config. parameters
-    termPercentileInit = 10.0 * math.pow(2, 2 * (1 - confidenceUser / 50.0)) # upper bound for the number of terms of each cluster after expansion (default 10, by confidencUser 50)- the lower the more slave to user comands 
-    documentPercentileInit = 20.0 * math.pow(2, 2 * (1 - confidenceUser / 50.0))  # upper bound for the number of documents of each cluster after expansion (default 20, by confidencUser 50)- the lower the more slave to user comands 
+    termPercentileInit = 10.0 * math.pow(2, 2 * (1 - confidenceUser / 50.0)) # upper bound for the number of terms of each cluster after expansion (default 10, by confidencUser 50)- the lower the more slave to user comands
+    documentPercentileInit = 20.0 * math.pow(2, 2 * (1 - confidenceUser / 50.0))  # upper bound for the number of documents of each cluster after expansion (default 20, by confidencUser 50)- the lower the more slave to user comands
     cmeansWords = 5 #get top 5 term of cmeans
     numberOfTermsOfCluster = 100# at most top 100 words for each cluster will be sent to the user (terms less than avg are filterd).
 
@@ -59,7 +59,7 @@ try:
             for i in range(0, cmeansWords):
                 temp.append(termNames[cluster.argmax()])
                 cluster[cluster.argmax()] = -1
-            clusterTerms.append(temp)    
+            clusterTerms.append(temp)
 
     #calculate centroid of selected terms
     termCentroids = np.zeros((len(clusterTerms), len(document_term_matrix)))

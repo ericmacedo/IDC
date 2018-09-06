@@ -26,8 +26,8 @@ if (!String.prototype.format) {
 *   START VIS KT
 */
 var userDirectory;
-// Get user ID
-function getUserID() {
+
+function getUserId () {
 
 	var input = prompt("Please enter your userId","");
 
@@ -39,12 +39,17 @@ function getUserID() {
 	}
 }
 
+getUserId();
+
 // Check if the user exists
 function checkUserExists() {
+    console.log(userDirectory);
 	$.ajax({
 		type: "POST",
 		url: "./cgi-bin/checkUser.py",
-		data: { userDirectory:JSON.stringify(userDirectory)},
+		data: {
+            userDirectory:JSON.stringify(userDirectory)
+        },
 		async: true,
 		success: function( msg ) {
 

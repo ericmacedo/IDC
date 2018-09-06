@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Author: Ehsan Sherkat - 2016
 
 # def read_term_document_matrix(path):
