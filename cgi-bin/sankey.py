@@ -118,8 +118,6 @@ try:
                 transition = "{0} {1}".format(fractions_copy.pop(0), fractions_copy[0])
                 fractions = transition.split(" ")
 
-                logging.debug(transition)
-
                 if(transition in transition_dict):
                     transition_dict[transition]["number"] += 1
                 else:
