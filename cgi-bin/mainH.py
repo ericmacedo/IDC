@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 #author: Hamid
 import cgi, cgitb 
 import numpy

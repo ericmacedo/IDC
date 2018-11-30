@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 #Author: Ehsan Sherkat - Aug. 2016
 import bestCmeans
 import utility

@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 
 import sys
 import cgi, cgitb 

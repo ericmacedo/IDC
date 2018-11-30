@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 
 '''
 A simple Python wrapper for the bh_tsne binary that makes it easier to use it

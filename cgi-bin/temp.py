@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 # Author: Ehsan Sherkat - 2016
 import sys, os
 import stat

@@ -1,4 +1,4 @@
-'ll
+/bin/python
 've
 a
 aa

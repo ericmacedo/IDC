@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 # Author: Ehsan Sherkat - 2017
 import sys
 import json

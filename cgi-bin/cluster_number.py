@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 # Author: Ehsan Sherkat - 2016
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_samples, silhouette_score

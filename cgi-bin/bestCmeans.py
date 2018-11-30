@@ -1,4 +1,4 @@
-#!/home/ericmacedo/python/bin/python
+#!/home/eric/python/bin/python
 """
 cmeans.py : Fuzzy C-means clustering algorithm.
 """
