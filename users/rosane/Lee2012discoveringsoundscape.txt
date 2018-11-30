@@ -1,0 +1,247 @@
+NEWSFOCUS
+
+The Sound in the Silence:
+Discovering a Fish’s Soundscape
+Bioacoustics pioneer Arthur Popper is getting ready to retire, but his work on how
+ﬁsh perceive sound isn’t fading away
+As an undergraduate more than 40 years ago,
+Arthur Popper took a detour on his way to
+a class on New York University’s campus in
+the Bronx that set him on a course to become
+the godfather of ﬁsh hearing. Popper decided
+to visit a new pet shop, where he spied a
+ﬁsh without eyes. He began thinking about
+how it lived guided by its other senses. The
+encounter eventually led Popper, now a bioacoustician at the University of Maryland,
+College Park, to become one of the world’s
+pioneers in understanding how ﬁsh perceive
+and respond to sound. “If I hadn’t walked
+by that shop that day,” he says, “I’d have a
+different life.”
+Today, Popper’s professional life is
+defined by sound. Among bioacoustics
+researchers, he’s widely known for the classic drawings of fish ear anatomy he produced as a young scientist and for co-editing
+a series of inﬂuential books that colleagues
+say has helped shape the growing field.
+Popper has also conducted innovative studies
+that have documented the effects of humangenerated sound on ﬁsh and raised questions
+about the science underpinning government
+regulations designed to protect sea life from
+industrial noise. “I knew he was going to be
+successful as a scientist,” says sensory biologist William Tavolga of the Mote Marine
+Laboratory in Sarasota, Florida, who over-
+
+1290
+
+saw Popper’s doctoral work. “But there was
+no predicting the huge amount of work he’s
+done and the quality of work.”
+And now that the irrepressible 69-yearold researcher is preparing for retirement,
+colleagues are wondering if anyone can take
+Popper’s place—and whether he’ll actually
+slow down. “I’m amazed at the energy of the
+guy,” says marine biologist Robert Gisiner of
+the U.S. Navy’s Energy and Environmental
+Readiness Division in Washington, D.C. “He
+could just run me into the ground and I’m 10
+years younger.”
+An unanswered question
+When Popper was growing up in New York
+City in the 1950s, many people still shared
+the notion of a silent ocean, popularized by
+the explorer Jacques Cousteau. That view has
+profoundly changed. We now know that many
+marine animals use sound to ﬁnd food, avoid
+predators, and communicate. And humans
+have added their own cacophony: the thrum
+of ship screws, the blast of seismic air guns
+for oil exploration, and the concussive force
+of pile drivers used to build docks and bridges.
+Popper was one of the ﬁrst to make the scientiﬁc community aware that humanmade noise
+could affect the behavior and health of animals other than marine mammals, says neuroethologist Darlene Ketten, who holds a joint
+
+14 SEPTEMBER 2012
+
+VOL 337 SCIENCE www.sciencemag.org
+Published by AAAS
+
+CREDIT: JANE J. LEE
+
+B I OA C O U S T I C S
+
+appointment with the Woods Hole Oceanographic Institution and Harvard Medical
+School, both in Massachusetts.
+As a graduate student at the City University of New York in the late 1960s, Popper
+initially wanted to focus on how blind ﬁsh
+determined where sound came from. “[It’s]
+called sound-source localization,” and the
+ability is considered to be one of the most
+powerful forces driving the evolution of hearing, Popper says. “Because if you just hear
+a sound and don’t know where it’s coming
+from, it’s not worth hearing.”
+But sound bounced around in the fish
+tanks available to Popper at the time, making
+experiments impossible and forcing him to
+abandon his localization project. Even today,
+the question is hard to study, he says. “We
+know [ﬁsh] can localize sound, but how well
+and how they do it is still a mystery.” Instead,
+Popper moved on to studying the hearing
+capabilities of Mexican blind caveﬁsh (Astyanax jordani) and its eyed ancestor (Astyanax
+mexicanus). He discovered that these species
+had the widest hearing range yet measured in
+ﬁsh, and that blind caveﬁsh didn’t necessarily
+sense pressure stimuli better than their eyed
+relatives. After earning his doctorate, Popper
+ultimately landed jobs at the University of
+Hawaii, Manoa, and then at the Georgetown
+University School of Medicine in Washington, D.C., where he taught neuroanatomy.
+In 1975, Popper learned scanning electron microscopy during a sabbatical, opening
+a new window into ﬁsh hearing. He used the
+skill to delve into the form and function of
+a ﬁsh’s inner ear, mapping the orientation of
+hair cells and showing that ﬁsh can actually
+regenerate damaged ones.
+“One of Art’s biggest contributions was
+the anatomy he did on ﬁsh hearing,” says
+longtime collaborator Anthony Hawkins, a
+bioacoustician and former head of ﬁsheries research for Scotland. Researchers still
+use some of Popper’s elegant, detailed drawings, he says: “We still don’t know how it all
+works. But we have a lot of information on
+their anatomy.”
+Then, in the early 1990s, Popper began
+co-editing a series of books—called the
+Springer Handbook of Auditory Research
+(SHAR)—with his longtime friend and collaborator, fish-hearing specialist Richard
+Fay. There are now 45 volumes, and each
+is meant to aid investigators in understanding an area of hearing research they aren’t
+necessarily experts in. Popper and Fay enlist
+
+Downloaded from www.sciencemag.org on August 3, 2015
+
+The godfather. Bioacoustician Arthur Popper (with
+the HICI-FT) used to test the effects of sounds produced by pile drivers on ﬁsh.
+
+NEWSFOCUS
+
+CREDIT: DAVID MANN
+
+specialists to cover topics as diverse as hearing in bats and music perception. “Hearing
+research has been changed by [the SHAR]
+series,” Ketten says.
+
+work out the kinks, but the machine now
+presides over a small room at the University
+of Maryland. A red metal frame supports
+a steel cylinder with 8.9-centimeter-thick
+walls, centered between two large shakers
+that vibrate, generating pressure waves akin
+to those produced by a pile driver. Tubes
+surrounding the HICI-FT draw away the
+enormous amount of heat generated by the
+shakers, and it perches on vibration isolation
+mounts to prevent it from shaking the entire
+building. Fish placed inside the chamber are
+exposed to sound levels they would experience if they were swimming up to 18 meters
+away from a pile-driving operation.
+Several years ago, Popper and colleagues
+at the University of Maryland and the Paciﬁc
+Northwest National Laboratory in Richland,
+Washington, started by giving juvenile Chi-
+
+ruptured swim bladders. In some species,
+swim bladders both help ﬁsh regulate their
+buoyancy and conduct sound into the ear.
+Damaging the swim bladder could essentially
+renders species such as catﬁsh hard of hearing. Popper and his colleagues also found that
+the sound thresholds needed to induce such
+trauma were higher than what people had previously thought. The take-home message, he
+says, is that the sound levels that regulatory
+agencies have been using as safety limits for
+ﬁsh are lower than necessary.
+
+A hissy ﬁt
+In the last few decades, Popper has become
+known for ﬁguring out how to conduct difficult experiments that examine how fish
+respond to sound both in the ﬁeld and in the
+laboratory. One focus is understanding how
+the noise produced by pile drivers—widely
+used machines that pound supports for bridges
+and docks into bottom sediments—affect ﬁsh
+A working retirement
+and other aquatic creatures that are protected
+Although Popper would love to test other
+by environmental regulations.
+anthropogenic sounds ﬁsh encounter using
+“When people do experiments with very
+the HICI-FT, it is headed back to the Transloud sounds, [they] usually have to do it in
+portation Research Board of the U.S. National
+the field because you can’t simulate loud
+Academies, which funded the device. It’s just
+sounds in the laboratory,” Popper
+one loose end he’s tying up as he
+says. That’s because the volume
+prepares to retire in June 2013.
+is just too intense: For pile drivBut even after taking his
+ers, the sound can be louder than
+leave, Popper will have projects
+turning on a jet engine in a room.
+bubbling. This past June, for
+But field experiments aren’t
+instance, he ﬂew out to Califoreasy. Piggybacking on construcnia to check on work he’s started
+tion projects while the crew tries
+with tuna researcher Barbara
+to stay on schedule, for examBlock of Stanford University in
+ple, is less than ideal. And workPalo Alto. Popper is helping train
+ers are not going to stop and wait
+blueﬁn tuna (Thunnus thynnus)
+while you get your ﬁsh into place,
+to respond to different sound levPopper says. As a result, past ﬁeld
+els in a bid to elucidate what the
+trials had been “very weakly done,
+marine predators can hear. “It’s
+poorly controlled, by people who
+the old operant-conditioning parreally don’t understand how to
+adigm where the animal works
+evaluate the results of these experfor a food reward,” he explains.
+iments,” he laments.
+The sleek animals have taken to
+In 2004, he decided to see if he
+the task, Popper hints, although
+could bring the studies into a conhe is cagey about the details since
+trolled lab setting after a frustratit’s a work in progress. He’s also
+ing consulting experience trying Hearing capabilities. Fish hearing specialist Arthur Popper is not afraid to get helping plan a third international
+to determine safe noise thresholds dirty while trying to elucidate hearing sensitivity in walleye pollock.
+conference on the effects of noise
+for ﬁsh during pile-driving operon aquatic life, set for Budapest
+ations on the San Francisco–Oakland Bay nook salmon (Oncorhynchus tshawytscha) in August 2013. (He helped kick off the
+Bridge in California. The trick was ﬁnding a a hissy ﬁt; regulators were interested in the meetings in 2007.)
+device that produced the needed racket with- experiments because the fish is an endanFirst, however, many of Popper’s students
+out deafening researchers.
+gered species. They’ve since repeated the and colleagues will gather in Florida next
+The solution came from a colleague, process with other species, including striped year to honor the researcher some call the
+mechanical engineer Peter Rogers of the bass (Morone saxatilis) and lake sturgeon “godfather” of their ﬁeld. “Art is an amazing
+Georgia Institute of Technology in Atlanta. (Acipenser fulvescens).
+person all around and an excellent role model
+As part of a Navy study of the possible health
+The HICI-FT results, parts of which were for anyone in science,” Ketten says. Former
+effects of loud underwater noise on divers, published online June 2012 in PLoS ONE, students say that although Popper expected
+Rogers had built a machine that allowed sci- show that the physiological effects experi- members of his lab to work hard, he also
+entists to study how high-intensity sounds enced by the ﬁsh depend on the sound inten- knew how to have fun, teasing lab members
+affected the lungs of submerged rats outﬁtted sity and accumulated exposure. At lower and colleagues. A few turn the tables: “Every
+with a kind of rodent scuba gear. Rogers mod- sound levels, the pressure shifts caused by now and then I threaten to take his Ph.D. away
+iﬁed the machine for use with ﬁsh, produc- pile driving might cause minor blood ves- from him,” says Tavolga, who was Popper’s
+ing what Popper affectionately refers to as the sels in ﬁns to break and leak. Fish exposed dissertation adviser. “But he says I can’t do
+“hissy ﬁt,” short for high intensity controlled to higher intensity sounds, however, could that because there’s a statute of limitations.”
+impedance ﬂuid-ﬁlled wave tube (HICI-FT).
+experience lethal and deafening injuries such
+–JANE J. LEE
+It took about 2 years for Popper’s lab to as hemorrhaging of the heart and deﬂated or Jane J. Lee is a writer in Washington, D.C.
+www.sciencemag.org SCIENCE VOL 337
+Published by AAAS
+
+14 SEPTEMBER 2012
+
+1291
+
+

@@ -1,0 +1,776 @@
+Journal for Nature Conservation 25 (2015) 51–57
+
+Contents lists available at ScienceDirect
+
+Journal for Nature Conservation
+journal homepage: www.elsevier.de/jnc
+
+Review
+
+Towards a global terrestrial species monitoring program
+Dirk S. Schmeller a,b,c,∗ , Romain Julliard d , Peter J. Bellingham e , Monika Böhm f ,
+Neil Brummitt g , Alessandro Chiarucci h , Denis Couvet d , Sarah Elmendorf i ,
+David M. Forsyth j,k , Jaime García Moreno l , Richard D. Gregory m , William E. Magnusson n ,
+Laura J. Martin o , Melodie A. McGeoch p , Jean-Baptiste Mihoub a , Henrique M. Pereira q,r ,
+Vânia Proença s , Chris A.M. van Swaay t , Tetsukazu Yahara u , Jayne Belnap v
+a
+
+Department of Conservation Biology, Helmholtz Centre for Environmental Research – UFZ, Permoserstrasse 15, 04318 Leipzig, Germany
+Université de Toulouse, UPS, INPT, EcoLab (Laboratoire Ecologie Fonctionnelle et Environnement), 118 route de Narbonne, 31062 Toulouse, France
+c
+CNRS, EcoLab, 31062 Toulouse, France
+d
+Museum National Histoire Naturelle, CNRS, Université Pierre-et-Marie Curie, CESCO CP 51, 55 Rue Buffon, 75005 Paris, France
+e
+Landcare Research, PO Box 69040, Lincoln 7640, New Zealand
+f
+Institute of Zoology, Zoological Society of London, Regent’s Park, London NW1 4RY, UK
+g
+Department of Life Sciences, The Natural History Museum, Cromwell Road, South Kensington, London SW7 5BD, UK
+h
+Department of Biological, Geological and Environmental Sciences, Alma Mater Studiorum University of Bologna, Via Irnerio 42, 40126, Bologna, Italy
+i
+National Ecological Observatory Network (NEON), 1685 38th Street, Boulder, CO 80301, USA
+j
+Arthur Rylah Institute for Environmental Research, Department of Environment and Primary Industries, 123 Brown Street, Heidelberg, Victoria 2084,
+Australia
+k
+Department of Zoology, University of Melbourne, Victoria 3000, Australia
+l
+Het Haam 16, 6846 KW Arnhem, Netherlands
+m
+RSPB Centre for Conservation Science, The Lodge, Sandy, Bedfordshire SG19 2DL, UK
+n
+Instituto Nacional de Pesquisas da Amazônia, Caixa Postal 2223, 69080-971 Manaus, AM, Brazil
+o
+Department of Natural Resources, Cornell University, Ithaca, NY 14853, USA
+p
+School of Biological Sciences, Monash University, Clayton, Victoria 3800, Australia
+q
+German Centre for Integrative Biodiversity Research (iDiv) Halle-Jena-Leipzig, Deutscher Platz 5e, 04103 Leipzig, Germany
+r
+Institute of Biology, Martin Luther University Halle Wittenberg, Am Kirchtor 1, 06108 Halle (Saale), Germany
+s
+IN+, Center for Innovation, Technology and Policy Research, ACAE-DEM, Instituto Superior Técnico, University of Lisbon, Avenida Rovisco Pais,
+1, 1049-001 Lisboa, Portugal
+t
+Dutch Butterﬂy Conservation and Butterﬂy Conservation Europe, PO Box 506, NL-6700 AM Wageningen, Netherlands
+u
+Department of Biology, Kyushu University, 6-10-1 Hakizaki, Fukuoka 812-8581, Japan
+v
+US Geological Survey, Southwest Biological Science Center, Moab, UT 84532, USA
+b
+
+a r t i c l e
+
+i n f o
+
+Article history:
+Received 25 August 2014
+Received in revised form 24 February 2015
+Accepted 6 March 2015
+Keywords:
+Convention on Biological Diversity
+Essential Biodiversity Variable
+Group of Earth Observation Biodiversity
+Observation Network
+GEO System of Systems
+
+a b s t r a c t
+The Convention on Biological Diversity’s strategic plan lays out ﬁve goals: “(A) address the underlying
+causes of biodiversity loss by mainstreaming biodiversity across government and society; (B) reduce the
+direct pressures on biodiversity and promote sustainable use; (C) improve the status of biodiversity by
+safeguarding ecosystems, species and genetic diversity; (D) enhance the beneﬁts to all from biodiversity and ecosystem services; (E) enhance implementation through participatory planning, knowledge
+management and capacity building.” To meet and inform on the progress towards these goals, a globally coordinated approach is needed for biodiversity monitoring that is linked to environmental data
+and covers all biogeographic regions. During a series of workshops and expert discussions, we identiﬁed nine requirements that we believe are necessary for developing and implementing such a global
+terrestrial species monitoring program. The program needs to design and implement an integrated
+
+Abbreviations: BON, Biodiversity Observation Network; LTER, Long-term Ecological Research; GBIF, Global Biodiversity Information Facility; CBMP, Circumpolar Biodiversity Monitoring Program; BISE, Biodiversity Information System for Europe); PPBIO, Programa de Pesquisa em Biodiversidade; TEAM, Tropical Ecology & Assessment
+Monitoring network; NEON, National Ecological Observatory Network; IPBES, the Intergovernmental Panel for Biodiversity and Ecosystem Services; EPBRS, the European
+Platform for Biodiversity Research Strategy; IUCN, International Union for Conservation of Nature; GEOSS, Group of Earth Observation System of Systems; GEO BON, Group
+of Earth Observation Biodiversity Observation Network; EBV, Essential Biodiversity Variables; GEO, Group of Earth Observation; IPBES, Intergovernmental Panel for Biodiversity and Ecosystem Services; CBD, Convention on Biological Diversity; CMS, Convention on the Conservation of Migratory Species of wild animals; UNEP, United Nations
+Environment Programme.
+∗ Corresponding author at: Department of Conservation Biology, Helmholtz Centre for Environmental Research – UFZ, Permoserstrasse 15, 04318 Leipzig, Germany.
+Tel.: +49 341 235 1654; fax: +49 341 235 1470.
+E-mail address: ds@die-schmellers.de (D.S. Schmeller).
+http://dx.doi.org/10.1016/j.jnc.2015.03.003
+1617-1381/© 2015 Elsevier GmbH. All rights reserved.
+
+52
+Modelling framework
+Policy support
+
+D.S. Schmeller et al. / Journal for Nature Conservation 25 (2015) 51–57
+
+information chain from monitoring to policy reporting, to create and implement minimal data standards and common monitoring protocols to be able to inform Essential Biodiversity Variables (EBVs), and
+to develop and optimize semantics and ontologies for data interoperability and modelling. In order to
+achieve this, the program needs to coordinate diverse but complementary local nodes and partnerships.
+In addition, capacities need to be built for technical tasks, and new monitoring technologies need to be
+integrated. Finally, a global monitoring program needs to facilitate and secure funding for the collection
+of long-term data and to detect and ﬁll gaps in under-observed regions and taxa. The accomplishment of
+these nine requirements is essential in order to ensure data is comprehensive, to develop robust models,
+and to monitor biodiversity trends over large scales. A global terrestrial species monitoring program will
+enable researchers and policymakers to better understand the status and trends of biodiversity.
+© 2015 Elsevier GmbH. All rights reserved.
+
+Introduction
+The Convention on Biological Diversity’s (CBD’s) Strategic Plan
+for Biodiversity 2011–2020 envisages that “by 2050, biodiversity is valued, conserved, restored and wisely used, maintaining
+ecosystem services, sustaining a healthy planet and delivering
+beneﬁts essential for all people”. Although 193 parties have
+adopted these goals, there is little infrastructure in place to collect the biodiversity information necessary to monitor progress
+towards the objectives of the Strategic Plan for Biodiversity
+(http://www.cbd.int/sp/targets/). Current international conservation policy requires biodiversity data to be current, reliable,
+comparable among sites, relevant, and understandable, as is
+becoming obvious from the work plan adopted by the Intergovernmental Panel for Biodiversity and Ecosystem Services
+(IPBES: http://www.ipbes.net/; http://tinyurl.com/ohdnknq) and
+from recent assessments of the international biodiversity targets
+(Butchart et al. 2010; Tittensor et al. 2014). Coordinated large-scale
+biodiversity monitoring linked to environmental data is needed for
+a comprehensive Global Observation Network that can meet the
+ﬁve strategic goals of the Strategic Plan for Biodiversity and its 20
+accompanying Aichi Targets for 2020. This is the main motivation of
+the biodiversity axes of the Global Earth Observation System of Systems (GEOSS) (Christian 2005), which includes the Group of Earth
+Observation’s Biodiversity Observation Network of the (GEO BON;
+Scholes et al. 2012).
+The ultimate goal of a global biodiversity monitoring network is
+the timely delivery of adequate and defensible biodiversity data to
+inform conservation policy, using robust indicators to demonstrate
+the state of biodiversity, pressures on it, and responses to those
+pressures (Chiarucci et al. 2011). Biodiversity can be quantiﬁed at
+different levels of biological organization (i.e. from the molecular
+to the ecosystem level), but species diversity and abundance still
+represent the most intuitive and widely used measures of biodiversity (Butchart et al. 2010; Colwell & Coddington 1994; Tittensor
+et al. 2014). That is because these two measures are both ecological
+and evolutionary measures and strongly positively correlated with
+other levels of biodiversity organization, such as genetic diversity
+and ecosystem functioning (Pereira & Cooper 2006).
+Any local monitoring program should acknowledge that monitoring data need to be collated at different scales, including the
+global scale, to be able to inform about trends, status and changes of
+biodiversity and to have a representative overview of environmental gradients in different areas of the world and for all taxonomic
+groups (Collen et al. 2011). For these purposes, monitoring standards would need to be followed and data harmonization is needed
+to allow easy data collation from different data sources. Aggregation is important because changes in individual species or sites are
+often only symptoms of regional or global changes, whilst a global
+monitoring scheme needs to consider the larger context (Collen
+et al. 2011). GEO BON has adopted these goals (Scholes et al. 2012)
+and has established an international group of experts to develop a
+
+global monitoring network. Within this initiative, one of the working groups of GEO BON aims to develop a global terrestrial species
+monitoring program (Pereira et al. 2010a).
+Monitoring programs should be aware that data need to be condensed into summaries and indicators that are understandable by
+multiple user groups and useful for policy development (e.g. the
+Intergovernmental Panel for Biodiversity and Ecosystem Services
+(IPBES), the European Platform for Biodiversity Research Strategy
+(EPBRS), the Convention on Biological Diversity (CBD), the United
+Nations Environment Programme (UNEP), etc.), but also made
+available to research to address conservation questions across geographic and temporal scales (Henle et al. 2014; Magnusson et al.
+2013).
+GEO BON is closely cooperating with regional biodiversity
+observation networks (i.e. Arctic BON, EU BON, Asia-Paciﬁc BON) to
+develop a framework to form a basis for global biodiversity monitoring focused on a set of ecologically relevant variables known as
+Essential Biodiversity Variables (EBVs) (Pereira et al. 2013). These
+EBVs act as an intermediate, integrative layer between indicators
+and raw biodiversity data. They allow for the averaging of trends
+of multiple species across multiple locations, and their measurement captures ongoing changes in the status of biodiversity. The
+EBVs can serve as a framework for biodiversity data integration
+by identifying how variables should be sampled and measured, by
+helping observation communities harmonize monitoring efforts,
+and by providing useful summary statistics of changes in biodiversity (Pereira et al. 2013).
+One motivation for pursuing the EBV framework is to align disparate monitoring efforts with a community-derived set of priority
+measures. By identifying which variables should be monitored and
+providing the necessary guidelines for sampling and data recording,
+the EBVs are the ﬁrst step in setting a framework for biodiversity
+data integration and modelling. This is of particular importance,
+as we currently lack a comprehensive understanding of biodiversity responses to change, especially at global scales (Lenoir et al.
+2010; Pereira et al. 2012). Although it is possible to detect the
+response of some taxa to drivers of change at regional scales (e.g.
+birds and butterﬂies in Europe: Devictor et al. 2012; Thomas et al.
+2004), most of the knowledge of response mechanisms or processes that is used to construct and parameterize more mechanistic
+process-based predictive models is from studies conducted at very
+local scales. Local measures of biodiversity responses are usually
+extrapolated to larger scales with the assumption that species will
+respond equally across their range (Henle et al. 2014). However,
+species response mechanisms can differ locally due to complex
+biotic and abiotic interactions (Gilman et al. 2010; Tylianakis et al.
+2011) and therefore produce spatially heterogeneous patterns of
+a response to changes (e.g. along an elevation or latitudinal gradient: Chen et al. 2011; Devictor et al. 2012) as well as in community
+composition and turn-over (e.g. decline of ‘cold’ specialist species
+versus increase in ‘warm’ generalist species: Devictor et al. 2012;
+Julliard et al. 2006).
+
+D.S. Schmeller et al. / Journal for Nature Conservation 25 (2015) 51–57
+
+53
+
+Fig. 1. The steps from ‘local and national’ to ‘regional’ to ‘global’ scale biodiversity monitoring. Data from the different scales need to be integrated and curated across scales.
+These global datasets will be processed by GEO BON Terrestrial Species, modelled, and used to inform EBVs and key indicators. The resulting reports will then be disseminated
+to important stakeholders on a global scale.
+
+One goal of a global terrestrial species monitoring scheme
+under GEO BON is to foster effective coordination among
+existing monitoring programs. This is because biodiversity
+monitoring has historically lacked coordination and integration (Marsh & Trenham 2008; Schmeller 2008). There
+are many different initiatives that collectively could make a
+greater contribution to global biodiversity monitoring than
+can the sum of their individual parts, but currently do not.
+Each of the following types of programs could potentially
+contribute to this goal: (i) short-term monitoring programs
+targeted at impact assessment and mitigation (e.g. GLOBE:
+http://ecotope.org/projects/globe/), (ii) long-term study sites
+and networks that monitor a suite of organisms (e.g. Long-term
+Ecological Research (LTER), the National Ecological Observatory
+Network (NEON), the Tropical Ecology Assessment & Monitoring
+network (TEAM)), (iii) programs organized by taxa (e.g. North
+American and European breeding bird surveys, butterﬂy monitoring programs, species-speciﬁc monitoring programs), (iv)
+regional, state and national systematic inventory and monitoring programs (e.g. inventories of trees and vascular plants
+by national forest and park services, and the New Zealand
+Department of Conservation’s Biodiversity Monitoring and
+Reporting System, http://tinyurl.com/k5en8ws), and (v) citizen
+science monitoring initiatives (e.g. Global Amphibian Bio-Blitz:
+http://www.inaturalist.org/projects/global-amphibian-bioblitz;
+a Ver Aves: http://averaves.org/; Great Backyard Bird Count:
+http://gbbc.birdcount.org/; see also Donnelly et al. 2013; Schmeller
+et al. 2009; Fig. 1).
+Since 2009, the GEO BON working group on terrestrial species
+monitoring has conducted a range of workshops, teleconferences,
+and expert discussions to elaborate on the best ways to develop a
+global terrestrial species monitoring scheme. Here we present the
+outcome of these efforts and identify nine requirements that are
+important for the successful implementation of a global terrestrial
+species monitoring program.
+
+Designing and implementing an integrated information chain
+from monitoring to policy reporting
+A global terrestrial species monitoring program should coordinate and integrate global data and metadata collection, survey
+design (both sampling strategies and ﬁeld protocols), data storage
+and access, computation and modelling of biodiversity indicators,
+and dissemination of policy-relevant reports in a comprehensive
+framework (Fig. 1). This integrated approach is required precisely
+because many previous attempts to coordinate biodiversity monitoring schemes have failed (for the European monitoring landscape,
+see Schmeller 2008). Moreover, many previous biodiversity monitoring schemes have been limited by poor survey design, lack of
+data interoperability, inadequate plans for data storage and quality
+assessment, and lack of alignment between data and policy information needs (e.g. Yoccoz et al. 2001).
+Capacity-building to create a comprehensive spatial monitoring
+program
+GEO BON Terrestrial Species will need to involve citizens,
+supported by professionals, to collect data, compute indicators,
+interpret trends, and implement policy. However, current monitoring efforts are very unevenly distributed geographically (Amano
+& Sutherland 2013; Martin et al. 2012) and are biased towards
+particular taxa (Schmeller et al. 2009). Capacity building and
+standardized infrastructure are most critical in regions that have
+difﬁcult access (Magnusson et al. 2013:20). These information
+gaps in regard to geographic, temporal and especially taxonomic
+coverage, are well illustrated by the data used to report on the
+Wild Bird Index (e.g. Butchart et al. 2010), the Living Planet Index
+(Collen et al. 2008), the distribution of range-expanding species
+such as invasives (McGeoch et al. 2010), and the distribution
+of ecological ﬁeld studies, including the network of LTER sites
+Martin et al. 2012; Metzger et al. 2010). The mismatch between
+
+54
+
+D.S. Schmeller et al. / Journal for Nature Conservation 25 (2015) 51–57
+
+where biodiversity is most abundant and diverse (the tropical
+regions) and where expertise and capacity is concentrated (the
+temperate zones) leaves research and policy largely uninformed
+about the status and trends of a large proportion of biodiversity. This includes targeting particular priority attributes or taxa,
+such as sites or species experiencing rapid species range contractions and expansions. There are tools that can aggregate and
+add value to local-scale monitoring programs by demonstrating
+broader-scale patterns (Arnquist & Wooster 1995; Karl et al. 2013).
+Monitoring efforts should encompass both range-expanding and
+range-contracting species (Gaston 2011). Capacity building in tropical regions is a major challenge, and GEO BON will facilitate this
+process by transferring expertise via training with lessons taken
+from existing research projects (e.g. BIOTA: Jürgens et al. 2012;
+PPBio (http://ppbio.inpa.gov.br/en/home): Magnusson et al. 2013)
+and fellowship programs (e.g. the Zoological Society of London’s
+EDGE, or the Conservation Leadership program).
+A further challenge for capacity building in large-scale and
+long-term biodiversity monitoring is the management of Big Data
+(Hampton et al. 2013; Lacher et al. 2012). Although the collection,
+storage, and curation of monitoring data might remain decentralized, data processing, indicator development and policy-relevant
+reports are scale-dependent with regard to administrative, geographic, taxonomic and temporal scales (Henle et al. 2010, 2014).
+A global terrestrial monitoring program has to provide part of the
+infrastructure, guidelines and technical standards needed for successful implementation of biodiversity observation networks and
+monitoring programs.
+
+geographical occupation (but see Syfert et al. 2013; Van Strien et al.
+2013).
+Implementing common monitoring protocols
+The adoption of common observation and monitoring protocols
+for new programs, together with assimilating existing ones (Allen
+et al. 2003; Henry et al. 2008; Lengyel et al. 2008; Schmeller et al.
+2009, 2012b), would foster data integration, data interoperability
+and indicator extraction. A shortlist of protocols needs to be developed by examining the feasibility and complementarity of what is
+currently implemented (Magnusson et al. 2013). From the outset,
+plans should be made for systems that will enable the estimation
+of frequencies of false absences and the probability of detection
+so that data can be integrated across observers and technologies
+(e.g. Buckland et al. 2010; MacKenzie et al. 2002). A minimum
+requirement would be the delivery of certain data types, such as
+the relative numbers of a species in a certain site at a particular
+date that can inform different EBVs and is compliant with data standards. Further, at least part of the sampling should cover the area of
+interest in a way that is as close to random sampling, including also
+stratiﬁed random sampling, to account for regional differences, and
+targeted sampling to consider rare species (Ortega et al. 2013). The
+sampling strategy employed must be feasible and not concentrated
+only where the species is expected to be (Gitzen & Millspaugh 2012;
+Gregory et al. 2004; Magnusson et al. 2013).
+Developing and optimizing semantics and ontologies for data
+interoperability
+
+Implementing minimal data standards to capture EBVs
+Primary (raw) occurrence records, such as those stored in the
+Global Biodiversity Information Facility (GBIF), are currently insufﬁcient for the development of EBVs, as only two EBVs (species
+distributions and community composition) can be informed by
+GBIF data. Observation or locality data on its own is not informative enough, as it does not give a timeframe over which a
+species has been sighted (e.g. ﬁve individuals of a species during
+one monitoring event). By adding an observation time (e.g. the
+maximum number seen simultaneously at one location), the information becomes much more valuable, as it can now be compared
+across sites and years (if the monitoring protocol is consistent and
+spatially explicit). Additional information is needed to link biodiversity data to habitat management practices, such as a measure
+of species assemblage, a standardized habitat description, a georeferenced location, and other data on processes associated with
+biodiversity decline. In addition, occurrence or abundance records
+need to be used in the context of the relevant sampling framework
+and sampling design or else there is a risk that they are misused.
+A biodiversity observation network (BON) needs to develop data
+collection and metadata standards for the different EBVs in order
+to promote the collection of data beyond the triplet species, location and date (Lindenmayer et al. 2012; Pereira et al. 2013). Such
+data and databases must then be maintained as both functional and
+accessible, which is currently not always the case (Magnusson et al.
+2013). Critical to creating value-added indicators from speciespresence data is the addition of complementary information on
+species absences and places where a species was searched for, but
+not found. Checklist data aggregators, such as eBird are beginning
+to ﬁll this gap for selected taxa. This is less of a problem for remotesensing surrogates, but validation of the relationship between these
+surrogates and species and habitats they are meant to represent
+has only recently been started (Bunce et al. 2013; Nagendra et al.
+2013, see also Caro 2010). Without information on the amount of
+search effort that is required for registering a species’ presence, it
+is usually impossible to robustly evaluate trends in abundance or
+
+Whilst adoption of common protocols would greatly increase
+the usability of biodiversity data, it is not practical for existing long-term monitoring programs to change methodologies, as
+long time-series using common methodologies are invaluable for
+detecting accurate trends in biodiversity status. Techniques for harmonizing data collected with disparate methodologies exist (e.g.
+Henry et al. 2008), but sufﬁciently structured, machine-readable
+metadata are critical to this integration (Lin et al. 2015). For example, bird densities over much of boreal Canada have been estimated
+from multiple disparate data sources by explicitly modelling detection probabilities as functions of distance, duration, vegetation, and
+singing-rates (Sólymos et al. 2013). Critical to this type of integration is the capacity to discover and ﬁlter data and metadata from
+primary sources (Walls et al. 2014). Whilst there are methodological advances (e.g. Aizpurua et al. 2015; Bird et al. 2014; Pagel et al.
+2014), biodiversity scientists capture and assemble data as well as
+the semantics of the data in so many ways that it is still necessary
+to either improve existing approaches or develop new ones (Walls
+et al. 2014). Newer techniques, such as Natural Language Processing
+to extract names of species and places from text messages in a citizen science project, might make opportunistically collected data
+accessible to scientiﬁc analyses in the future (Lin et al. 2015).
+Integrating emerging technologies (monitoring, data management
+and analysis)
+Technologies, such as remote sensing, camera trap networks
+(Rowcliffe et al. 2008, 2011), soundscaping (Pijanowski & Farina
+2011), drones (Anderson & Gaston 2013; Koh & Wich 2012),
+copter-based transects, phenocams, and radio tracking can help
+automate standard observations, decrease long-term monitoring
+costs, increase the frequency of assessments, and extend coverage
+to remote places, although each comes at a cost and has its own
+strengths and weaknesses. Especially remote sensing is developing rapidly (Nagendra et al. 2013) and has the potential to rapidly
+increase the coverage of biodiversity monitoring in all realms and
+
+D.S. Schmeller et al. / Journal for Nature Conservation 25 (2015) 51–57
+
+difﬁcult to access ecosystems, e.g. using the L-band in mangrove
+monitoring (Lucas et al. 2007, 2014; Ortega et al. 2013). Metagenomics offers the possibility of non-invasive monitoring of whole
+assemblages, and data repositories are available for data collected
+that may be of use in the future. Adoption of new technologies is
+imperative to ﬁll the huge monitoring gaps and to overcome current
+biases in monitoring coverage (Balmford et al. 2005; Collen et al.
+2008). However, if not properly integrated into a comprehensive
+biodiversity observation network, the increasing amount of biodiversity data collected with high-tech tools may not beneﬁt local and
+regional BONs. Developments in this sector are rapid (Ortega et al.
+2013), and it is important to consider data comparability as many of
+the new techniques may soon be outdated, whilst the data collected
+with them is of high value. Employed effectively, high-tech biodiversity monitoring tools could boost biodiversity monitoring, both
+by complementing ﬁeld-based surveys with desk-based analyses
+and by targeting different users and audiences. However, hightech tools also generate large datasets that present challenges for
+storage and analysis (see above, capacity building needs).
+Coordinating diverse but complementary local nodes
+A global species monitoring network needs to offer a platform for dialogue between existing monitoring programs through
+fostering the coordination of efforts by regional and national biodiversity observation networks (e.g. Arctic BON, Asia-Paciﬁc BON,
+BIOTA; national BONs: ECOSCOPE (France), Countryside survey
+(Great Britain), NEM (Netherlands), NILS (Sweden), PPBio (Brazil)).
+It is important that these networks explore interoperability and
+identify opportunities for integration that will allow a global analysis of the state and trends of biodiversity and to detect globally
+relevant patterns. Such integration is challenging because monitoring programs and networks differ in spatial coverage (number
+of sites monitored), intensity of information (quantity of data collected per site), and frequency of coverage (number of times a site is
+visited in a survey period or per year, or between years). The various
+programs contribute differently to the description of patterns and
+processes of biodiversity, and are thus highly complementary, but
+harmonization might be achieved by global stratiﬁcation to account
+for regional differences (Metzger et al. 2013). To track biodiversity trends at the global scale, it will be important to identify all
+under-studied regions and taxa. It would be further important to
+prioritize future capacity building efforts in those places using e.g.
+an approach of national responsibilities and global stratiﬁcation
+(Metzger et al. 2013; Schmeller et al. 2008a, 2008b, 2012a, 2014)
+or topical priorities (Henle et al. 2013). Protocols used for intensive
+studies usually differ from those used in wide-scale surveys. If a
+minimum set of common methods were used in both situations,
+it would greatly increase the possibilities for integrated analyses
+(Costa & Magnusson 2010; Magnusson et al. 2013). A global monitoring program will need to facilitate this process via workshops
+and coordination on a global scale.
+Providing a common predictive modelling framework
+To develop global-scale models with greater predictive power,
+GEO BON Terrestrial Species advocates a common modelling
+framework. Traditional modelling approaches are insufﬁcient for
+modelling changes in ecological systems reliably (Sutherland
+2006). Non-linear, ‘tipping point’, or complex feedback loops are
+currently the biggest limitations for most modelling approaches
+for extrapolating conditions in time and space beyond the boundaries of current knowledge (Evans 2012; Evans et al. 2013; Pereira
+et al. 2010b; Polasky et al. 2011). A variety of methods have
+been developed for optimizing biodiversity monitoring practices
+in terms of survey design (e.g. of sampling methods and frequency)
+
+55
+
+by identifying the most strategic alternatives that allow for accurately detecting and tracking changes whilst minimizing efforts and
+resources (e.g. Lindenmayer & Possingham 1996). Also, the more
+recently developed predictive mechanistic process-based models,
+relating different variables and/or different spatial and temporal
+scales (e.g. Harfoot et al. 2014), rely on comprehensive biodiversity information. Extending the use of such predictive modelling
+approaches to larger spatial, temporal and taxonomic scales would
+be an essential element in deﬁning the best practices for integrative
+biodiversity monitoring at the regional or global scale. However,
+we currently lack regional-to-global-scale datasets to calibrate and
+validate predictive models of change for each of the EBVs. An
+improved modelling framework, adoption of a suitable monitoring design, and optimized spatial coverage based on the parameter
+and data needs, would lead to reliable predictions and would help
+to prioritize conservation planning strategies (Gillson et al. 2013;
+Henle et al. 2013; Wilson et al. 2006).
+Facilitating and securing funding
+A solid and long-term ﬁnancial base is critical for maintaining
+the structures and institutions that generate, curate and interpret
+biodiversity data so that they are functional and effective over
+time. Policymakers and stakeholders must recognize that biodiversity data collection, storage and processing require funding. With
+strategic organization and coordination, global biodiversity monitoring can be cost-effective (Targetti et al. 2014). Establishment of
+national, regional and global ofﬁces to coordinate biodiversity on
+the respective scales often necessitates startup funds for building
+informatics infrastructures and capacity where needed. Therefore,
+one of the goals of GEO BON Terrestrial Species is to engage policymakers in ﬁnding ways to fund biodiversity monitoring that can
+serve decision-making in the long-term.
+Discussion
+Here, we have outlined nine requirements for the successful
+development of a global terrestrial species monitoring program.
+A global program is urgently needed, as currently most biodiversity data allow the measurement of a few aspects of biodiversity
+change only and we only partially understand the relation of biodiversity change to environmental change, especially at global scales.
+Whilst there are a number of programs monitoring biodiversity, for
+very disparate purposes and using a large variety of methods and
+approaches, integrating data from monitoring programs operating on local, regional, national and continental scales has generally
+not been achieved. A notable exception is the work on birds and
+butterﬂies in North America and in Europe (Butchart et al. 2010;
+Gregory & van Strien 2010; Tittensor et al. 2014; van Swaay et al.
+2008). More integrative biodiversity monitoring targets at global
+scales addressing multiple variables across e.g. the EBV framework, by prioritizing efforts using e.g. stratiﬁcations and matching
+complementary monitoring schemes are urgently needed. Critical
+thought needs to be given to design future biodiversity monitoring
+strategies in order to make sure that data collection can ﬁll existing gaps in the comprehensiveness of biodiversity measurements
+(e.g. individual traits and functional interactions). For that, we also
+need systematic monitoring of biophysical parameters at biodiversity monitoring sites, which rarely occurs (but see e.g. NEON,
+PPBio). This disconnection undermines our ability to determine
+the causes and consequences of biodiversity loss, as models cannot be correctly parameterized (Magnusson et al. 2013). Hence,
+the nine requirements outlined here aim to lead to the integration
+of monitoring programs and would help to ﬁll existing data gaps,
+to develop robust predictive models of future change scenarios,
+
+56
+
+D.S. Schmeller et al. / Journal for Nature Conservation 25 (2015) 51–57
+
+and to monitor biodiversity trends on large spatial scales. Such a
+comprehensive network might enable scientists and policymakers
+to better understand the status and trends of biodiversity and act
+accordingly with the interests of both nature and people in mind.
+Such a global effort is also important for assessing international
+progress in biodiversity conservation and progress towards agreed
+conservation targets, such as the Aichi targets of the CBD. Whilst
+national, regional, and thematic BONs might serve their respective
+geographic scales best, GEO BON Terrestrial Species will need to
+focus on global and supraregional patterns and policies. The nine
+requirements identiﬁed here represent a pathway for achieving
+effective species monitoring on the global scale: our past experience has contributed to identify the main pitfalls targeted by each
+of these requirements. We believe that international organization
+and political willingness will be necessary to make the best of the
+already large but un-coordinated monitoring effort. Rather than
+simply a call for more funding, GEO BON Terrestrial Species calls
+for the improved coordination and policy support at all scales necessary to improve efﬁciency of current spending on biodiversity
+monitoring.
+
+References
+Aizpurua, O., Paquet, J.-Y., Brotons, L., & Titeux, N. (2015). Optimising long-term
+monitoring projects for species distribution modelling: How atlas data may help.
+Ecography, http://dx.doi.org/10.1111/ecog.00749
+Allen, R. B., Bellingham, P. J., & Wiser, S. K. (2003). Developing a forest biodiversity monitoring approach for New Zealand. New Zealand Journal of Ecology, 27,
+207–220.
+Amano, T., & Sutherland, W. J. (2013). Four barriers to the global understanding of biodiversity conservation: Wealth, language, geographical location and
+security. Proceedings of the Royal Society of London B: Biological Sciences, 280,
+20122649.
+Anderson, K., & Gaston, K. J. (2013). Lightweight unmanned aerial vehicles will revolutionize spatial ecology. Frontiers in Ecology and the Environment, 11, 138–146.
+Arnquist, G., & Wooster, D. (1995). Meta-analysis: Synthesizing research ﬁndings in
+ecology and evolution. Trends in Ecology and Evolution, 10, 236–240.
+Balmford, A., Crane, P., Dobson, A., Green, R. E., & Mace, G. M. (2005). The 2010
+challenge: Data availability, information needs and extraterrestrial insights.
+Philosophical Transactions of the Royal Society of London B: Biological Sciences,
+360, 221–228.
+Bird, T. J., Bates, A. E., Lefcheck, J. S., Hill, N. A., Thomson, R. J., Edgar, G. J., et al.
+(2014). Statistical solutions for error and bias in global citizen science datasets.
+Biological Conservation, 173, 144–154.
+Buckland, S., Studeny, A., Magurran, A., & Newson, S. (2010). Biodiversity monitoring:
+The relevance of detectability. In A. E. Magurran, & B. J. McGill (Eds.), Biological
+diversity: Frontiers in measurement and assessment (pp. 25–36). Oxford: Oxford
+University Press.
+Bunce, R. G. H., Bogers, M. M. B., Evans, D., Halada, L., Jongman, R. H. G., Mucher, C. A.,
+et al. (2013). The signiﬁcance of habitats as indicators of biodiversity and their
+links to species. Ecological Indicators, 33, 19–25.
+Butchart, S., Walpole, M., Collen, B., Van Strien, A., Scharlemann, J., Almond, R., et al.
+(2010). Global biodiversity: Indicators of recent declines. Science, 328, 1164.
+Caro, T. (2010). Conservation by proxy: Indicator, umbrella, keystone, ﬂagship, and other
+surrogate species. Washington, DC: Island Press.
+Chen, I.-C., Hill, J. K., Ohlemuller, R., Roy, D. B., & Thomas, C. D. (2011). Rapid range
+shifts of species associated with high levels of climate warming. Science, 333,
+1024–1026.
+Chiarucci, A., Bacaro, G., & Scheiner, S. M. (2011). Old and new challenges in using
+species diversity for assessing biodiversity. Philosophical Transactions of the Royal
+Society of London B: Biological Sciences, 366, 2426–2437.
+Christian, E. (2005). Planning for the global earth observation system of systems
+(GEOSS). Space Policy, 21, 105–109.
+Collen, B., McRae, L., Deinet, S., De Palma, A., Carranza, T., Cooper, N., et al. (2011).
+Predicting how populations decline to extinction. Philosophical Transactions of
+the Royal Society B: Biological Sciences, 366, 2577–2586.
+Collen, B., Ram, M., Zamin, T., & McRae, L. (2008). The tropical biodiversity data
+gap: Addressing disparity in global monitoring. Tropical Conservation Science, 1,
+75–88.
+Colwell, R., & Coddington, J. (1994). Estimating terrestrial biodiversity through
+extrapolation. Philosophical Transactions of the Royal Society of London B: Biological Sciences, 345, 101–118.
+Costa, F. R., & Magnusson, W. E. (2010). The need for large-scale, integrated studies
+of biodiversity – The experience of the Program for Biodiversity Research in
+Brazilian Amazonia. Natureza & Conservação, 8, 3–12.
+Devictor, V., van Swaay, C., Brereton, T., Chamberlain, D., Heliola, J., Herrando, S., et al.
+(2012). Differences in the climatic debts of birds and butterﬂies at a continental
+scale. Nature Climate Change, 2, 121–124.
+
+Donnelly, A., Crowe, O., Regan, E., Begley, S., & Caffarra, A. (2013). The role of citizen
+science in monitoring biodiversity in Ireland. International Journal of Biometeorology, 1–13.
+Evans, M. R. (2012). Modelling ecological systems in a changing world. Philosophical
+Transactions of the Royal Society of London B: Biological Sciences, 367, 181–190.
+Evans, M. R., Bithell, M., Cornell, S. J., Dall, S. R. X., Díaz, S., Emmott, S., et al. (2013).
+Predictive systems ecology. Proceedings of the Royal Society of London B: Biological
+Sciences, 280, 20131452.
+Gaston, K. J. (2011). Common Ecology. Bioscience, 61, 354–362.
+Gillson, L., Dawson, T. P., Jack, S., & McGeoch, M. A. (2013). Accommodating climate
+change contingencies in conservation strategy. Trends in Ecology & Evolution, 28,
+135–142.
+Gilman, S. E., Urban, M. C., Tewksbury, J., Gilchrist, G. W., & Holt, R. D. (2010). A
+framework for community interactions under climate change. Trends in Ecology
+& Evolution, 25, 325–331.
+Gitzen, R. A., & Millspaugh, J. J. (2012). Design and analysis of long-term ecological
+monitoring studies. Cambridge: Cambridge University Press.
+Gregory, R. D., Gibbons, D. W., & Donald, P. F. (2004). Bird census and survey techniques. In W. J. Sutherland, I. Newton, & R. E. Green (Eds.), Bird ecology and
+conservation: A handbook of techniques (pp. 17–55). Cambridge: Cambridge University Press.
+Gregory, R. D., & van Strien, A. (2010). Wild bird indicators: Using composite population trends of birds as measures of environmental health. Ornithological Science,
+9, 3–22.
+Hampton, S. E., Strasser, C. A., Tewksbury, J. J., Gram, W. K., Budden, A. E., Batcheller,
+A. L., et al. (2013). Big data and the future of ecology. Frontiers in Ecology and the
+Environment, 11, 156–162.
+Harfoot, M. B. J., Newbold, T., Tittensor, D. P., Emmott, S., Hutton, J., Lyutsarev, V.,
+et al. (2014). Emergent global patterns of ecosystem structure and function from
+a mechanistic general ecosystem model. PLoS Biology, 12, e1001841.
+Henle, K., Bauch, B., Auliya, M., Külvik, M., Pe’er, G., Schmeller, D. S., et al. (2013). Priorities for biodiversity monitoring in Europe: A review of supranational policies
+and a novel scheme for integrative prioritization. Ecological Indicators, 33, 5–18.
+Henle, K., Kunin, W., Schweiger, O., Schmeller, D. S., Grobelnik, V., Matsinos, Y., et al.
+(2010). Securing the conservation of biodiversity across administrative levels
+and spatial, temporal, and ecological scales – Research needs and approaches of
+the SCALES Project. GAIA, 19, 186–193.
+Henle, K., Potts, S., Kunin, W., Matsinos, Y., Similä, J., Pantis, J., et al. (2014). Scaling in
+ecology and biodiversity conservation. Advanced books. Soﬁa: Pensoft Publishers.
+Henry, P. Y., Lengyel, S., Nowicki, P., Julliard, R., Clobert, J., Celik, T., et al. (2008).
+Integrating ongoing biodiversity monitoring: Potential beneﬁts and methods.
+Biodiversity and Conservation, 17, 3357–3382.
+Julliard, R., Clavel, J., Devictor, V., Jiguet, F., & Couvet, D. (2006). Spatial segregation of specialists and generalists in bird communities. Ecology Letters, 9,
+1237–1244.
+Jürgens, N., Schmiedel, U., Haarmeyer, D. H., Dengler, J., Finckh, M., Goetze, D., et al.
+(2012). The BIOTA Biodiversity Observatories in Africa – A standardized framework for large-scale environmental monitoring. Environmental Monitoring and
+Assessment, 184, 655–678.
+Karl, J. W., Herrick, J. E., Unnasch, R. S., Gillan, J. K., Ellis, E. C., Lutters, W. G., et al.
+(2013). Discovering ecologically relevant knowledge from published studies
+through geosemantic searching. BioScience, 63, 674–682.
+Koh, L. P., & Wich, S. A. (2012). Dawn of drone ecology: Low-cost autonomous aerial
+vehicles for conservation. Tropical Conservation Science, 5, 121–132.
+Lacher, T. E., Boitani, L., & da Fonseca, G. A. (2012). The IUCN global assessments:
+Partnerships, collaboration and data sharing for biodiversity science and policy.
+Conservation Letters, 5, 327–333.
+Lengyel, S., Kobler, A., Kutnar, L., Framstad, E., Henry, P. Y., Babij, V., et al. (2008).
+A review and a framework for the integration of biodiversity monitoring at the
+habitat level. Biodiversity and Conservation, 17, 3341–3356.
+Lenoir, J., Gégout, J. C., Guisan, A., Vittoz, P., Wohlgemuth, T., Zimmermann, N. E.,
+et al. (2010). Going against the ﬂow: Potential mechanisms for unexpected
+downslope range shifts in a warming climate. Ecography, 33, 295–303.
+Lindenmayer, D. B., Gibbons, P., Bourke, M., Burgman, M., Dickman, C. R., Ferrier, S.,
+et al. (2012). Improving biodiversity monitoring. Australian Ecology, 37, 285–294.
+Lindenmayer, D. W., & Possingham, H. P. (1996). Ranking conservation and timber
+management options for Leadbeater’s Possum in south eastern Australia using
+population viability analysis. Conservation Biology, 10, 235–251.
+Lin, Y.-P., Deng, D.-P., Lin, W.-C., Lemmens, R., Crossman, N. D., Henle, K., et al. (2015).
+Uncertainty analysis of crowd-sourced and professionally collected ﬁeld data
+used in species distribution models of Taiwanese Moths. Biological Conservation,
+181, 102–110.
+Lucas, R., Rebelo, L.-M., Fatoyinbo, L., Rosenqvist, A., Itoh, T., Shimada, M., et al. (2014).
+Contribution of L-band SAR to systematic global mangrove monitoring. Marine
+and Freshwater Research, 65, 589–603.
+Lucas, R. M., Mitchell, A. L., Rosenqvist, A., Proisy, C., Melius, A., & Ticehurst, C.
+(2007). The potential of L-band SAR for quantifying mangrove characteristics
+and change: Case studies from the tropics. Aquatic Conservation: Marine and
+Freshwater Ecosystems, 17, 245–264.
+MacKenzie, D. I., Nichols, J. D., Lachman, G. B., Droege, S., Royle, J. A., & Langtimm, C.
+A. (2002). Estimating site occupancy rates when detection probabilities are less
+than one. Ecology, 83, 2248–2255.
+Magnusson, W., Braga-Neto, R., Pezzini, F., Baccaro, F., Bergallo, H., Penha, J., et al.
+(2013). Biodiversity and integrated environmental monitoring. Manaus, AM:
+Áttema Editorial. http://ppbio.inpa.gov.br/sites/default/ﬁles/Biodiversidade
+%20e%20monitoramento%20ambiental%20integrado.pdf
+
+D.S. Schmeller et al. / Journal for Nature Conservation 25 (2015) 51–57
+Marsh, D. M., & Trenham, P. C. (2008). Current trends in plant and animal population
+monitoring. Conservation Biology, 22, 647–655.
+Martin, L. J., Blossey, B., & Ellis, E. (2012). Mapping where ecologists work: Biases in
+the global distribution of terrestrial ecological observations. Frontiers in Ecology
+and the Environment, 10, 195–201.
+McGeoch, M. A., Butchart, S. H. M., Spear, D., Marais, E., Kleynhans, E. J., Symes, A., et al.
+(2010). Global indicators of biological invasion: Species numbers, biodiversity
+impact and policy responses. Diversity and Distributions, 16, 95–108.
+Metzger, M. J., Bunce, R. G. H., van Eupen, M., & Mirtl, M. (2010). An assessment of long
+term ecosystem research activities across European socio-ecological gradients.
+Journal of Environmental Management, 91, 1357–1365.
+Metzger, M. J., Bunce, R. G. H., Jongman, R. H. G., Sayre, R., Trabucco, A., & Zomer, R.
+(2013). A high-resolution bioclimate map of the world: A unifying framework
+for global biodiversity research and monitoring. Global Ecology and Biogeography,
+22, 630–638.
+Nagendra, H., Lucas, R., Honrado, J. P., Jongman, R. H. G., Tarantino, C., Adamo, M.,
+et al. (2013). Remote sensing for conservation monitoring: Assessing protected
+areas, habitat extent, habitat condition, species diversity, and threats. Ecological
+Indicators, 33, 45–59.
+Ortega, M., Guerra, C., Honrado, J. P., Metzger, M. J., Bunce, R. G. H., & Jongman, R. H. G.
+(2013). Surveillance of habitats and plant diversity indicators across a regional
+gradient in the Iberian Peninsula. Ecological Indicators, 33, 36–44.
+Pagel, J., Anderson, B. J., O’Hara, R. B., Cramer, W., Fox, R., Jeltsch, F., et al. (2014).
+Quantifying range-wide variation in population trends from local abundance
+surveys and widespread opportunistic occurrence records. Methods in Ecology
+and Evolution, 5, 751–760.
+Pereira, H. M., Belnap, J., Brummitt, N., Collen, B., Ding, H., Gonzalez-Espinosa, M.,
+et al. (2010a). Global biodiversity monitoring. Frontiers in Ecology and the Environment, 8, 459–460.
+Pereira, H. M., & Cooper, H. D. (2006). Towards the global monitoring of biodiversity
+change. Trends in Ecology & Evolution, 21, 123–129.
+Pereira, H. M., Ferrier, S., Walters, M., Geller, G., Jongman, R., Scholes, R., et al. (2013).
+Essential biodiversity variables. Science, 339, 277–278.
+Pereira, H. M., Leadley, P. W., Proença, V., Alkemade, R., Scharlemann, J. P. W.,
+Fernandez-Manjarres, J. F., et al. (2010b). Scenarios for global biodiversity in
+the 21st century. Science, 330, 1496–1501.
+Pereira, H. M., Navarro, L. M., & Martins, I. S. (2012). Global biodiversity change: The
+bad, the good, and the unknown. Annual Review of Environment and Resources,
+37, 25–50.
+Pijanowski, B., & Farina, A. (2011). Introduction to the special issue on soundscape
+ecology. Landscape Ecology, 26, 1209–1211.
+Polasky, S., Carpenter, S. R., Folke, C., & Keeler, B. (2011). Decision-making under great
+uncertainty: Environmental management in an era of global change. Trends in
+Ecology & Evolution, 26, 398–404.
+Rowcliffe, J. M., Carbone, C., Jansen, P. A., Kays, R., & Kranstauber, B. (2011). Quantifying the sensitivity of camera traps: An adapted distance sampling approach.
+Methods in Ecology and Evolution, 2, 464–476.
+Rowcliffe, J. M., Field, J., Turvey, S. T., & Carbone, C. (2008). Estimating animal density
+using camera traps without the need for individual recognition. Journal of Applied
+Ecology, 45, 1228–1236.
+Schmeller, D. S. (2008). European species and habitat monitoring: Where are we
+now? Biodiversity and Conservation, 17, 3321–3326.
+Schmeller, D. S., Bauch, B., Gruber, B., Juskaitis, R., Budrys, E., Babij, V., et al. (2008).
+Determination of conservation priorities in regions with multiple political jurisdictions. Biodiversity and Conservation, 17, 3623–3630.
+Schmeller, D. S., Gruber, B., Bauch, B., Lanno, K., Budrys, E., Babij, V., et al. (2008).
+Determination of national conservation responsibilities for species conservation
+in regions with multiple political jurisdictions. Biodiversity and Conservation, 17,
+3607–3622.
+Schmeller, D. S., Evans, D., Lin, Y. P., & Henle, K. (2014). The national responsibility approach to setting conservation priorities – Recommendations for its use.
+Journal for Nature Conservation, 22, 349–357.
+Schmeller, D. S., Maier, A., Bauch, B., Evans, D., & Henle, K. (2012). National responsibilities for conserving habitats – A freely scalable method. Nature Conservation,
+3, 21–44.
+Schmeller, D. S., Henle, K., Loyau, A., Besnard, A., & Henry, P.-Y. (2012). Birdmonitoring in Europe – A ﬁrst overview of practices, motivations and aims.
+Nature Conservation, 2, 41–57.
+Schmeller, D. S., Henry, P. Y., Julliard, R., Gruber, B., Clobert, J., Dziock, F., et al. (2009).
+Advantages of volunteer-based biodiversity monitoring in Europe. Conservation
+Biology, 23, 307–316.
+Scholes, R. J., Walters, M., Turak, E., Saarenmaa, H., Heip, C. H., Tuama, E., et al.
+(2012). Building a global observing system for biodiversity. Current Opinion in
+Environmental Sustainability, 4, 139–146.
+Sólymos, P., Matsuoka, S. M., Bayne, E. M., Lele, S. R., Fontaine, P., Cumming, S. G.,
+et al. (2013). Calibrating indices of avian density from non-standardized survey
+
+57
+
+data: Making the most of a messy situation. Methods in Ecology and Evolution, 4,
+1047–1058.
+Sutherland, W. J. (2006). Predicting the ecological consequences of environmental
+change: A review of the methods. Journal of Applied Ecology, 43, 599–616.
+Syfert, M. M., Smith, M. J., & Coomes, D. A. (2013). The effects of sampling bias and
+model complexity on the predictive performance of MaxEnt species distribution
+models. PLOS ONE, 8, e55158.
+Targetti, S., Herzog, F., Geijzendorffer, I., Wolfrum, S., Arndorfer, M., Balàzs, K.,
+et al. (2014). Estimating the cost of different strategies for measuring farmland
+biodiversity: Evidence from a Europe-wide ﬁeld evaluation. Ecological Indicators,
+45, 434–443.
+Thomas, J. A., Telfer, M. G., Roy, D. B., Preston, C. D., Greenwood, J. J. D., Asher, J., et al.
+(2004). Comparative losses of British butterﬂies, birds, and plants and the global
+extinction crisis. Science, 303, 1879–1881.
+Tittensor, D. P., Walpole, M., Hill, S. L., Boyce, D. G., Britten, G. L., Burgess, N. D.,
+et al. (2014). A mid-term analysis of progress towards international biodiversity
+targets. Science, 14, 241–244. http://dx.doi.org/10.1126/science.1257484
+Tylianakis, J. M., Didham, R. K., Bascompte, J., & Wardle, D. A. (2011). Global
+change and species interactions in terrestrial ecosystems. Ecology Letters, 11,
+1351–1363.
+Van Strien, A. J., Van Swaay, C. A., & Termaat, T. (2013). Opportunistic citizen science data of animal species produce reliable estimates of distribution
+trends if analysed with occupancy models. Journal of Applied Ecology, 50,
+1450–1458.
+van Swaay, C. A. M., Nowicki, P., Settele, J., & van Strien, A. J. (2008). Butterﬂy Monitoring in Europe – A blueprint for international monitoring schemes? Biodiversity
+and Conservation, 17, 3455–3469.
+Walls, R. L., Deck, J., Guralnick, R., Baskauf, S., Beaman, R., Blum, S., et al. (2014).
+Semantics in support of biodiversity knowledge discovery: An introduction
+to the biological collections ontology and related ontologies. PLOS ONE, 9,
+e89606.
+Wilson, K. A., McBride, M., Bode, M., & Possingham, H. P. (2006). Prioritising global
+conservation efforts. Nature, 440, 337–340.
+Yoccoz, N. G., Nichols, J. D., & Boulinier, T. (2001). Monitoring of biological diversity
+in space and time. Trends in Ecology & Evolution, 16, 446–453.
+
+Web references
+a Ver Aves. http://averaves.org/ (Accessed August, 2014)
+Biodiversity Indicators Partnership. http://www.bipindicators.
+net/WBI/ (Accessed August, 2014)
+Biodiversity Information System for Europe. http://biodiversity.
+europa.eu// (Accessed August, 2014)
+Dutch NEM. www.netwerkecologischemonitoring.nl
+ebird. http://ebird.org/content/ebird/ (Accessed February,
+2015)
+Global Amphibian Bio-Blitz. http://www.inaturalist.org/
+projects/global-amphibian-bioblitz/ (Accessed August, 2014)
+GLOBE. http://ecotope.org/projects/globe// (Accessed August,
+2014)
+Great Backyard Bird Count. http://gbbc.birdcount.org//
+(Accessed August, 2014)
+IPBES. www.ipbes.net/; http://tinyurl.com/ohdnknq/ (Accessed
+August, 2014)
+Long-term Ecological Research. http://www.lternet.edu/
+(Accessed August, 2014)
+National Ecological Observatory Network. http://www.neoninc.
+org/ (Accessed August, 2014)
+NEON. http://www.neoninc.org/
+New Zealand Department of Conservation’s Biodiversity
+Monitoring and Reporting System. http://tinyurl.com/k5en8ws/
+(Accessed August, 2014)
+Strategic Plan for Biodiversity. http://www.cbd.int/sp/targets/
+(Accessed August, 2014)
+Tropical Ecology & Assessment Monitoring Network.
+http://www.teamnetwork.org/ (Accessed August, 2014)
+
+

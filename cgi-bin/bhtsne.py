@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 
 '''
 A simple Python wrapper for the bh_tsne binary that makes it easier to use it
@@ -73,7 +73,7 @@ def _argparse():
     # 0.0 for theta is equivalent to vanilla t-SNE
     argparse.add_argument('-t', '--theta', type=float, default=DEFAULT_THETA)
     argparse.add_argument('-r', '--randseed', type=int, default=EMPTY_SEED)
-
+    
     argparse.add_argument('-v', '--verbose', action='store_true')
     argparse.add_argument('-i', '--input', type=FileType('r'), default=stdin)
     argparse.add_argument('-o', '--output', type=FileType('w'),

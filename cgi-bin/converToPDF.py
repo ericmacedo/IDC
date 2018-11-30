@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 # Author: Ehsan Sherkat
 import sys
-import cgi, cgitb
+import cgi, cgitb 
 import json
 import os
 import io
@@ -17,15 +17,15 @@ TXT_Documents = json.loads(form.getvalue('TXT_Documents'))
 
 def removeNonAscii(s): return "".join(filter(lambda x: ord(x)<128, s))
 
-try:
+try:		
 	#create temp folder
 	if not os.path.exists(userDirectory + "temp"):
 		os.makedirs(userDirectory + "temp")
-
+		
 	#remove previous files
 	for file in os.listdir(userDirectory + "temp"):
 		os.remove(userDirectory + "temp/" + file);
-
+	
 	#convert text to pdf
 	for index in range(len(TXT_Documents)):
 		pdf=FPDF()
@@ -41,13 +41,13 @@ try:
 	pp_File = open(userDirectory + "pp.status", 'w')
 	pp_File.write("yes")
 	pp_File.close()
-
-	#create zip file
+	
+	#create zip file	
 	shutil.make_archive(userDirectory + 'result', 'zip', userDirectory + "temp")
-
-	print "Content-type:application/json\r\n\r\n"
+	
+	print "Content-type:application/json\r\n\r\n"	
 	print json.dumps({'status':'yes'})
-
+	
 except:
 	print "Content-type:application/json\r\n\r\n"
 	print json.dumps({'status':'no'})

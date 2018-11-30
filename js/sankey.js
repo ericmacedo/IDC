@@ -43,7 +43,6 @@ getUserId();
 
 // Check if the user exists
 function checkUserExists() {
-    console.log(userDirectory);
 	$.ajax({
 		type: "POST",
 		url: "./cgi-bin/checkUser.py",
@@ -58,7 +57,7 @@ function checkUserExists() {
             if (status == "yes") {
                 $("#userWelcome").html("You are logged in as: "+userID);
                 userExists = true
-                processUserComands();
+                // processUserComands();
             }
             if(status == "no") {
                 alert("No such user exists!");
@@ -94,7 +93,6 @@ $.ajax({
     data: { userDirectory:JSON.stringify(userDirectory)},
     async: true,
     success: function(data) {
-        console.log( "success" );
         // SESSIONS
         d_sessions = data.sessions;
         a_sessions = Object.keys(d_sessions).map(function(a) {
@@ -625,3 +623,4 @@ function draw() {
         setTitle();
     });
 }
+

@@ -1,0 +1,1604 @@
+IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS,
+
+VOL. 20,
+
+NO. 12 , DECEMBER 2014
+
+1763
+
+OpinionFlow: Visual Analysis of Opinion Diffusion on Social Media
+Yingcai Wu, Member, IEEE, Shixia Liu, Senior Member, IEEE, Kai Yan, Mengchen Liu, Fangzhao Wu
+Abstract— It is important for many different applications such as government and business intelligence to analyze and explore the
+diffusion of public opinions on social media. However, the rapid propagation and great diversity of public opinions on social media pose
+great challenges to effective analysis of opinion diffusion. In this paper, we introduce a visual analysis system called OpinionFlow
+to empower analysts to detect opinion propagation patterns and glean insights. Inspired by the information diffusion model and
+the theory of selective exposure, we develop an opinion diffusion model to approximate opinion propagation among Twitter users.
+Accordingly, we design an opinion flow visualization that combines a Sankey graph with a tailored density map in one view to visually
+convey diffusion of opinions among many users. A stacked tree is used to allow analysts to select topics of interest at different levels.
+The stacked tree is synchronized with the opinion flow visualization to help users examine and compare diffusion patterns across
+topics. Experiments and case studies on Twitter data demonstrate the effectiveness and usability of OpinionFlow.
+Index Terms—Opinion visualization, opinion diffusion, opinion flow, influence estimation, kernel density estimation, level-of-detail
+
+1
+
+I NTRODUCTION
+
+The effective tracing and analysis of opinion diffusion on social media
+is valuable in many different scenarios [6,32]. For instance, a negative
+opinion about a company can go viral almost instantly via online social networks if the situation is not detected and handled properly by
+crisis communication professionals, leading to a public relations disaster [5]. In contrast, if the diffusion of negative opinions is detected
+immediately, the company can come up with a good crisis management strategy to handle negative publicity and build customer trust
+and loyalty. Therefore, detecting and analyzing opinion diffusion and
+understanding the mechanism behind the diffusion are becoming increasingly necessary. In recent years, tremendous progress has been
+made in analyzing user opinions on social media [32]. However, previous studies have aimed to detect opinions in messages posted on
+social media. Effective detection and analysis of opinion diffusion
+on social media remains difficult, as opinions on social media exhibit
+great diversity and can spread quickly to many users [37].
+Two major obstacles to identifying and analyzing opinion diffusion on social media are quantitative modeling of the diffusion and
+interactive visualization of the detected diffusion. Most existing diffusion models assume propagation of general information such as tweets
+and links [14, 20], but do not consider opinions that could also spread
+among users. Even if the diffusion of opinions could be successfully
+captured, intuitive visual representation of the discovered opinions is
+the next major obstacle that must be overcome. Although existing
+methods [7, 42] can effectively trace a diffusion path of information
+among a small number of users, they may not easily scale up to many
+users. In addition, these visualizations are not time-based visualizations. Thus, time-oriented analysis tasks face a great challenge in visual analysis and comparison of opinion diffusion. Moreover, existing
+work [7] simply overlays opinion information onto a spreading contagion (for example, a tweet on Twitter). Simultaneously tracing the
+diffusion of opinions attached to multiple contagions is not easy.
+To overcome the abovementioned obstacles, we introduce a visual
+analytics system called OpinionFlow to visually trace and analyze the
+diffusion of opinions on social media in large-scale events. Opinion
+• Yingcai Wu is with Microsoft Research. E-mail: ycwu@microsoft.com.
+• Shixia Liu is with Microsoft Research and is the corresponding author.
+E-mail: shliu@microsoft.com.
+• Mengchen Liu and Fangzhao Wu are with Tsinghua University.
+E-mail: simon900314@139.com and wufangzhao@gmail.com.
+• Kai Yan is with Harbin Institute of Technology. E-mail: yan.kai@live.com.
+
+Manuscript received 31 Mar. 2014; accepted 1 Aug. 2014. D ate of
+publication 11 Aug. 2014; date of current version 9 Nov. 2014.
+For information on obtaining reprints of this article, please send
+e-mail to: tvcg@computer.org.
+Digital Object Identifier 10.1109/TVCG.2014.2346920
+
+diffusion is highly related to information diffusion, as an opinion is
+usually attached to a piece of information to spread through social
+networks. However, the diffusion of information does not necessarily mean the diffusion of opinions. A user may not adopt the opinion
+even if that user comes across the information. Thus, we borrow an
+advanced diffusion model from information diffusion and expand the
+model to capture the diffusion of opinions among many social media
+users. The model is derived based on two observations. First, influential users on social media are more likely to change the opinions of
+other users. Second, Selective Exposure [38], a fundamental theory
+from media and communication studies, suggests that a user tends to
+accept an opinion that is similar to his opinion. Thus, we incorporate
+authority and opinion similarity factors into our model.
+Opinion Flow is our core visualization for summarizing the propagation of opinions. It is a composite visualization that combines a
+Sankey graph with an improved density map to visually convey the
+flow of opinions among users. The Sankey graph is used to visualize
+the flow of users among different topics in an event over time, which
+provides necessary context for opinion diffusion analysis. The density
+map is created by using Kernel Density Estimation (KDE) with scaled
+and oriented Gaussian kernels (called opinion kernels) to convey the
+density and orientation information of opinion diffusion among users.
+We also use a Bayesian Rose Tree (BRT) model [27] to detect a multibranch hierarchy of topics from a large number of tweets and display
+the topic hierarchy by using a stacked topic tree. The tree is linked
+to opinion flow to help users facilitate analysis of opinion diffusion in
+different topics. Our system can deal with opinion diffusion among
+a large number of users with the assistance of the hierarchical topic
+structure and the scalable density map.
+Our contributions can be summarized as follows:
+• We propose expanding an information diffusion model to characterize the propagation of opinions among many users regarding
+different topics on social media.
+• We design a new interactive visualization method called Opinion Flow to visually summarize the opinion diffusion by using a
+novel combination of a Sankey graph and a tailored density map.
+• We develop an interactive visual analysis system to empower an
+analyst to see the overall opinion pattern at different topic levels
+and drill down into the details to examine specific patterns.
+2 R ELATED W ORK
+This section reviews and discusses a few research areas that are closely
+related to our work of visual analysis of opinion diffusion.
+2.1 Topic-based Text Visualization
+Topic-based text visualization has received considerable attention in
+recent years [11, 25, 26, 28, 39, 40]. ThemeRiver [22] is a classic topicbased visualization method that utilizes a river metaphor to visually
+
+1077-2626 © 2014 IEEE. Personal use is permitted, but republication/redistribution requires IEEE permission.
+See http://www.ieee.org/publications_standards/publications/rights/index.html for more information.
+
+1764
+
+IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS,
+
+illustrate evolving topics over time. Visual Backchannel [12] allows
+users to visualize the topics extracted from streaming tweets by using
+an improved stacked graph to better understand large-scale events on
+Twitter. TextFlow [10] is a new visualization method that leverages
+Sankey diagrams and stacked graphs to enable analysts to visually explore and analyze topic merging and splitting relationships over time.
+HierarchicalTopics [13] uses an algorithm called topic rose tree to construct a topic hierarchy in large text corpora and utilizes a hierarchical
+ThemeRiver view to explore temporal changes of topics. Xu et al. [47]
+introduced a visual analysis system that models and visualizes the dynamics of the competition among topics on social media.
+The aforementioned approaches focus on visual exploration of
+evolving topics, including content change and strength change. Unlike these approaches, our work aims to illustrate opinion diffusion
+patterns on social media. Technically, we developed an opinion diffusion model to learn temporal patterns of positive and negative opinions. An opinion flow visualization that combines a Sankey diagram
+with a density map is presented to help users better understand the
+complex opinion diffusion process.
+2.2
+
+Visual Opinion Analysis
+
+Bar charts [8, 24] have been used to visualize feature-based opinion
+information. OpinionSeer [46] employs a radial layout to visually
+analyze feature-based opinions extracted from online hotel customer
+reviews. Oelke et al. [31] introduced a feature-based visual opinion
+analysis system that uses visual summary reports, cluster analysis, and
+circular correlation map to analyze customer feedback. Rohrdantz et
+al. [36] used time density plots and a pixel map calendar to allow for
+feature-based opinion exploration of text document streams. OpinionBlocks [23] creates a feature-based visual summary of opinions
+from user reviews with a combination of advanced opinion mining
+techniques and crowdsourcing. Feature-based opinion visualization is
+particularly useful for exploring regular customer reviews, but it may
+not work for analyzing opinions from short microblog messages that
+usually do not have features.
+Scatterplots [15, 30], bar charts [17, 44], and rose plots [19] have
+also been used to visualize document-level opinions from review comments. Chen et al. [9] used multiple coordinated views, such as an arc
+diagram and node-link diagrams, to visualize the dynamics of conflicting opinions. The Pulse system [16] uses a tree map to display
+the topic clusters and their opinions. Our work can be regarded as a
+sentence-level opinion visualization because we extract and visualize
+the opinion information from short microblog messages.
+In recent years, visual opinion analysis of microblog messages
+has attracted much attention from the field [26, 48]. TwitInfo [29]
+recall-normalizes aggregate opinion information to produce trustworthy opinion overviews through pie charts. Hao et al. [21] present a visual analysis system with a pixel opinion geo map, key term geo map,
+and self-organizing term association map to facilitate exploration and
+analysis of customer feedback streams. SentiView [43] uses opinion
+helix to display the trend of opinion change of each user. In contrast,
+our work aims to visually analyze the diffusion of opinions among
+users on social media. Unlike existing studies, we focus more on visualizing diffusion of opinions and we design a new visual metaphor
+with a combination of an improved density map and a Sankey graph.
+2.3
+
+Visual Analysis of Information Diffusion
+
+Visual analysis of information diffusion on social media has been the
+subject of increasing attention from the industry [1, 2] or academia [7,
+42]. Cascade [1] is an interactive visualization developed by The New
+York Times by using a three-dimensional node-link diagram in a radial layout. Nan et al. [7] introduced Whisper, which uses a visual
+metaphor similar to sunflowers to facilitate analysis of information
+propagation through spatio-temporal space. Ripples [42], a native visualization embedded directly into Google+, uses a balloon treemap
+to display the propagation of all posts that contain a given link in a
+complex cascade. However, these works [1, 2, 7, 42] ignore complex
+interactions among topics or contagions on social networks.
+
+VOL. 20,
+
+NO. 12,
+
+DECEMBER 2014
+
+Our work mainly concentrates on diffusion of opinions rather than
+diffusion of general information. It can be distinguished from other
+approaches in two aspects. First, we use a new model to approximate
+opinion propagation among users. Most other diffusion models can
+help characterize the diffusion of concrete pieces of information such
+as posts [42]. However, they cannot predict the diffusion of more abstract opinions among users. Second, we design a new visualization
+method called Opinion Flow that combines a Sankey graph and a tailored density map to display the dynamics of opinion flow. The nodelink diagrams used in Cascade [1] and Whisper [7] are difficult to scale
+up to show diffusion among many users. On the contrary, the opinion
+flow map can easily scale up. Although Ripples [42] can also support
+large numbers of nodes, smaller trees in the balloon treemap are barely
+legible. Attaching opinion information to the nodes is straightforward
+in existing works such as Whisper [7] to illustrate how a contagion
+(such as a microblog message) diffuses with opinions. However, it
+would introduce serious visual clutter when multiple contagions exist.
+3
+
+S YSTEM OVERVIEW
+(a)
+
+(b)
+
+Data Preprocessing
+Sen ment Analysis
+
+Twi er Data
+maintained by
+Apache Lucene
+
+Diﬀusion Modeling
+
+A
+
+BRT Clustering
+
+A
+
+B
+
+B
+
+B
+
+C
+
+C
+
+C
+
+D
+
+D
+
+-1
+
+(c)
+
+Interac
+
+Partner
+
+CRM
+
+Teched
+
+Teched
+
+A
+
+D
+
++1
+
+e Visualiza on
+
+Dynamics Dynamics
+
+CRM
+
+Partner
+
+Expand this node
+
+Live
+
+Xbox
+
+Games
+
+Xbox
+
+Console
+360
+
+Live
+
+Store
+Azure
+
+Games
+
+E3
+
+Sony
+Sony
+
+E3
+
+PlaySta on
+
+Console
+360
+
+81
+Azure
+
+Windows
+Windows
+
+81
+
+Phone
+
+Store
+Phone
+
+Fig. 1. Three major parts of the system: (a) data preprocessing, (b)
+diffusion modeling, and (c) interactive visualization.
+
+Figure 1 illustrates our visual analysis system. It consists of three
+major components: a data preprocessing component, a diffusion modeling component, and an interactive visualization component.
+The data preprocessing component (see Figure 1(a)) is used to collect, maintain, and process tweets from Twitter. It incrementally updates an index of the tweets and users collected from Twitter by using
+Apache Lucene1 , a high-performance, full-featured text search engine
+library. The index allows other system components to efficiently retrieve desired information by issuing various queries. The component
+also uses an advanced opinion mining technique based on SentimentSpecific Word Embedding (SSWE) [41] to extract opinion information
+for each tweet. SSWE extracts an opinion of a tweet and assigns it a
+real value that ranges from -1 to 1, which represents “most negative”
+to “most positive”. Values close to 0 mean “neutral”. In addition,
+we employ a high-performance algorithm called BRT [27] to cluster
+tweets into a hierarchy of topics.
+The diffusion modeling component employs a diffusion model to
+approximate the diffusion among users between the successive time
+stamps in every topic. Figure 1(b) shows an estimated diffusion network between the successive time stamps ti−1 , ti , and ti+1 . The interactive visualization component (see Figure 1(c)) enables analysts to
+see and interact with the diffusion patterns directly. It has three major
+1 http://lucene.apache.org/
+
+1765
+
+WU ET AL.: OPINIONFLOW: VISUAL ANALYSIS OF OPINION DIFFUSION ON SOCIAL MEDIA
+
+linked views from left to right: a stacked tree for showing and interacting with the hierarchical structure of the topics, an opinion flow map
+for visualizing opinion diffusion, and a user/tweet list view for detailed
+examination. The visualization component is closely coupled with the
+preprocessing and modeling components.
+4 TOWARD B ETTER A NALYSIS OF O PINION D IFFUSION
+This section discusses the user requirements and goals of our system.
+In this project, we worked closely with three domain experts: two
+professors of media and communication studies and one researcher in
+opinion mining. They are not the co-authors of this paper but they are
+all particularly interested in exploring and understanding opinion diffusion on Twitter. We designed the system through multiple sessions
+of participatory design with the domain experts. The major goal of the
+technique is to help analysts understand how different users influence
+each other emotionally on social media. In particular, we want to help
+our target users quickly answer common questions about opinion diffusion in an event. Based on the feedback of our users and previous
+research on information diffusion and opinion analysis, we derived a
+set of design goals for designing a visual opinion analysis system.
+G1. Summarize dynamic opinion diffusion. All the experts suggested that an overview of opinion propagation is essential for them to
+begin their investigation and analysis. As a large-scale event usually
+include many topics, the domain experts want to see and compare the
+opinion diffusion among users in different topics over time. The domain experts also wanted to visualize the attention transition behavior
+of users between different topics. Thus, the main topics, opinion diffusion within each topic, and user transition behavior should be visually
+conveyed in the overview.
+G2. Organize tweets into a topic hierarchy. If the event contains
+a large number of topics, the domain experts prefer to use a tree to
+hierarchically organize these topics to facilitate analysis tasks. Accordingly, tree visualization is needed to coordinate with the topic visualization to allow users to smoothly explore opinion diffusion from
+the high level to the low level.
+G3. Examine user influence. For the analysis tasks, identifying influential users in each topic is essential after obtaining an overview of
+opinion diffusion. Our target users also aim to determine what influential users are discussing in a very positive or negative moment, as
+well as if and how they affect other users. Moreover, they intend to
+examine whether the strength of the correlation with respect to opinions shared by a pair of users is determined by the level of interaction
+between the users.
+G4. Navigate under flexible time granularity. The experts want
+to navigate opinion diffusion smoothly under flexible time granularity because the time span of an event can last from several minutes to
+several months [12]. They hope that the visualization interface will
+enable them to change the time window freely according to their information needs. With this function, they can explore a single event
+and its related opinion diffusion under different time granularities.
+G5. Verify the “what if” hypothesis. In events such as product promotion, it is preferred to propagate positive opinions over the long
+term. A possible method is to enhance positive promotion by several
+opinion leaders. Knowing the strength and extent of the influence of
+opinion leaders can facilitate the enhancement.
+5 O PINION D IFFUSION M ODEL
+This section introduces our model for opinion diffusion and prediction.
+5.1 Problem Statement
+In this study, we observe the many tweets published by users regarding
+a certain topic. Given each user u, we obtain a positive or negative
+opinion value s(u,tu ) at time tu , based on user tweets. To track the
+propagation of an opinion on a specific topic over time, we examine
+the spread of the opinion by different users at various times. Thus,
+we infer the process of opinion diffusion across a group of users given
+a certain topic. Specifically, we hypothesize how a single opinion is
+diffused from one user to another. Time tu is infection time, during
+which user u expresses a specific opinion. Given infection times (u,tu )
+
+and (v,tv )(tu < tv ), we estimate the probability of propagation P(u, v)
+that this opinion spreads to user v.
+5.2 Model Formulation
+The probability of opinion propagation, P(u, v), is a conditional probability that an opinion (on a specific topic) from u will reach v. It
+generally decreases with the difference in infection time between u
+and v. According to the influence model in [18], we formulate P(u, v)
+as a model of exponential waiting time that relies on the time variation
+between infection times tu and tv .
+P(u, v) = P(∆t) ∝ exp(−∆t/α),
+
+(1)
+
+where ∆t = |tu − tv | is the difference between two infection times and
+α is a parameter that controls the speed of opinion propagation.
+We improve this model in two ways to apply it to the opinion diffusion process. First, we assume the influence of a user will impact
+the speed of opinion propagation. As a result, we set different αu values for different users because the influence of users may vary across
+other users. In our system, the Klout score [3], a widely used metric to measure the level of user influence, is adopted to approximate
+the influence of each user (αu ). The Klout score is a combination of
+three metrics: reach, amplification, and network. Reach is the average
+number of people influenced by the message published on the Web by
+the user. Amplification measures how likely it is that a user’s audience will respond to any given message of this user. And finally, the
+Network score is a measurement of the influence of a user’s audience.
+Second, people with similar opinions can be infected more easily by
+one another, according to selective exposure theory [38]. Therefore,
+we consider the difference in user opinions during propagation, and
+expand Eq. (1) into
+P(u, v) ∝ exp(−β ∆t/αu − wuv |∆s|),
+
+(2)
+
+where αu is the Klout score of user u; ∆s = |s(u,tu ) − s(v,tv )| is the
+variation in opinion value between users u and v, β is a parameter that
+balances the importance of both terms in our model (in our implementation, β = 100), and wuv measures the strength of the relationship
+between users u and v. We use retweet and co-mention counts to compute wuv . Specifically, we compute P(u, v) by
+1
+exp(−β ∆t/αu − wuv |∆s|),
+Z
+Z = ∑ exp(−β ∆t/αu − wuv |∆s|)
+
+P(u, v) =
+
+(3)
+
+u
+
+In product or brand promotion, the effect of negative opinions
+should be limited, whereas positive ones should be widely promoted.
+Thus, analysts seek to alter the opinion values and/or propagation
+probability of a set of selected users. In the process, they hope to
+change patterns of opinion diffusion. To support this task, the opinion of users at time t should be estimated according to the modified
+opinion of the selected users from previous periods. Previous studies
+and experiments [5, 33, 34] have shown that the emotions of a user
+are influenced by previous emotional states and the people with whom
+the user interacts. Therefore, we linearly combine these two terms
+in our model of opinion diffusion. We assume that opinion diffusion
+by a user involves the Markov property, which states that the current
+opinion state of a user depends only on those of the related users at
+time t − 1. This assumption is based on the customer influence model
+proposed by Richardson et al. [34]. Accordingly, we formulate the
+opinion estimation model as
+s(u,t) = (1 − γ)s(u,t − 1) + γ
+
+∑ P(v, u)t s(v,t − 1),
+
+(4)
+
+v=u
+
+where s(u,t) is the opinion of user u at time t; γ is a parameter that
+indicates the extent to which a user intends to be influenced by the
+opinion of others; and P(u, v)t denotes the influence of user u on user
+v at time t. From a probabilistic perspective, influence can be viewed
+
+1766
+
+IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS,
+|hashtag|
+30
+30
+15
+
+Shutdown
+PRISM
+Microsoft
+
+min(|users|)
+131
+114
+23
+
+|max(|users|)|
+500
+500
+500
+
+|S|/(|P| + |N|)
+0.68
+0.58
+0.68
+
+as the probability that u adopts the opinion of v at time t. Given a set
+of opinion values formed by different users in a certain time range,
+we derive the parameter γ for each user using the least-square method.
+After the γ of each user is determined, we can use Eq. (4) to predict
+the new opinion diffusion patterns based on user-initiated changes.
+Evaluation
+
+0.83
+
+13 days
+15 days
+
+0.80
+
+9 days
+11 days
+
+0.77
+0.74
+1
+
+0.82
+
+13 days
+15 days
+
+0.75
+
+9 days
+11 days
+
+3
+
+(a)
+
+4
+
+5 0.611
+
+13 days
+15 days
+
+0.87
+
+9 days
+11 days
+
+0.80
+
+0.68
+2
+
+0.94
+
+2
+
+3
+
+(b)
+
+4
+
+5
+
+0.68
+0.73
+1
+
+2
+
+3
+
+(c)
+
+4
+
+5
+
+Fig. 2. Accuracy rates of the prediction model on three datasets: (a)
+shutdown, (b) PRISM, and (c) Microsoft.
+
+We evaluated our prediction model with three datasets, namely,
+shutdown, PRISM, and Microsoft datasets. The detailed description
+of each dataset is provided in Section 7. Since the first two datasets are
+larger, we randomly selected 30 hashtags with a time span of 20 days.
+For the Microsoft dataset that is smaller in size, we randomly selected
+15 hashtags with the same time span. For each hashtag, we selected
+the most active users who published at least one tweet each day. Table 1 summarizes the statistics of the datasets. |hashtag| is the number
+of hashtags in each dataset, min(|users|) is the minimum number of
+users who published tweets in any time slot, and |max(|users|) is the
+maximum number of users who published tweets in any time slot. |P|
+and |N| are the positive and negative tweet numbers. |S|/(|P| + |N|) is
+the dominant sentiment ratio in the dataset, which is the baseline for
+measuring the performance of our prediction model.
+The selected users’ opinions (extracted by SSWE) from the selected
+time span were utilized as a sample data to evaluate the accuracy of our
+prediction model. For each sample data we used the users’ opinions
+for the first N1 days as the training data to predict their opinions on
+each of the next N2 days. In our experiments, N1 was selected from
+{15, 13, 11, 9} and N2 was set as 5. We tested each pair of (N1 , N2 ) to
+comprehensively evaluate our prediction model. As part of the evaluation, we calculated the prediction accuracy, which is the ratio between
+the number of correct sentiment label (e.g., positive, negative, neutral)
+predictions and the number of users at the predicted time point. In
+our experiments, a correct prediction means that the predicted opinion
+equals the ground-truth opinion.
+Figure 2 shows the experimental results for the three datasets. In
+this figure, each line represents a different N1 . The X-axis is the day to
+be predicted (prediction length) and the Y-axis encodes the accuracy.
+The results indicate the following: first, our prediction model proved
+to be pretty highly accurate. The minimum accuracy value was 0.61
+and the maximum accuracy value was 0.91, which are all higher than
+the baseline positive/negative tweet distribution. Second, the accuracy
+decreased with an increase in prediction length. Third, less training
+data will lead to lower prediction accuracy.
+6
+
+NO. 12,
+
+DECEMBER 2014
+
+selected topics, and the tweet/user list view facilitates the in-depth
+analysis of opinion diffusion by providing additional information. The
+following section details our visualization design.
+
+Table 1. Summary of the three datasets, |S| = max(|P|, |N|).
+
+5.3
+
+VOL. 20,
+
+V ISUALIZATION D ESIGN
+
+In designing our visualization techniques, we follow the design goals
+discussed in Section 4 strictly. Figure 1(c) shows a visual stacked topic
+tree (i.e., stacked tree), an opinion flow visualization, and a user/tweet
+list view (from left to right). The stacked tree enables an analyst to easily navigate numerous tweets by organizing them according to a topic
+hierarchy. The opinion flow visualizes opinion diffusion in different
+
+6.1 Visual Stacked Tree
+At a large-scale social media event, multiple topics are typically discussed. Our domain experts speculate that different topics may generate various opinion diffusion patterns. Hence, they observe and compare opinion diffusion with respect to different topics (G1 to G2 in
+Section 4). In many cases, topic hierarchies are naturally formed. Consequently, we employ a state-of-the-art method of hierarchical clustering called BRT [27] to extract topics from a large collection of trees.
+BRT is a multi-branch tree that can generate interpretable topic results in many real-world applications [4]. The BRT tree can also organize numerous tweets into a compact and interpretable tree, thus
+enabling the smooth and effective navigation of large collections of
+tweets. Tweets are usually short (140 characters only). If a tweet is
+represented as a vector over the tweet collection vocabulary, the resulting vectors will be very sparse and BRT may not obtain a meaningful
+topic hierarchy. Moreover, clustering millions of individual tweets using BRT is extremely time-consuming. In our implementation, we
+first aggregate all tweets of every user for each hashtag at each time
+point. After that, we use BRT to construct a topic hierarchy from the
+aggregated tweets. This method can usually help produce good topic
+hierarchies in a reasonable time. After we determine a topic hierarchy
+based on the tweets, we draw a stacked tree (as indicated in Figure 1(c)
+left). This tree is a combination of stacked tree nodes and tree nodes
+composed of node-link diagrams. We stack the context tree nodes and
+release only the focus nodes (as presented in Figure 3) to reserve precious screen space. The focus nodes are aligned with the related topic
+strips of opinion flow (as exhibited in Figure 1(c) middle).
+Released
+nodes
+
+Stacked
+nodes
+
+Released
+nodes
+
+Stacked
+nodes
+
+A
+B
+C
+
+(a)
+
+A
+
+E
+
+B
+C
+
+F
+
+(b)
+
+Fig. 3. (a) Tree whose node “B” is selected; (b) New tree created by
+stacking nodes “A”, “B”, and “C” and releasing the child nodes of “B”.
+
+6.2 Opinion Flow
+The opinion flow visualization is the core component of our system.
+To illustrate opinion diffusion and the transition between different topics, this visualization combines a Sankey diagram with KDE. The following sections describe the visual design, opinion kernels used in
+KDE, kernel placement strategy, and supported user interactions.
+6.2.1 Visual Design
+According to G1, the domain experts aim to visualize two types of
+information flow: the flow of opinions across users and the flow of
+users across topics. To coherently visualize both types of information
+in one view, we employ a composite design strategy.
+User Flow To display the flow of users across multiple topics,
+we choose a Sankey graph as the basic user flow layout. Sankey diagrams are widely-accepted flow diagrams that illustrate the magnitude
+of information flow [35]. Based on the diagrams, various visualization techniques have been built, such as TextFlow [10]. Moreover, the
+domain experts are all familiar with Sankey diagrams and confirm its
+simplicity and usefulness with respect to information flow display. The
+Sankey graph typically shows the information flow between a small
+number of categories effectively. However, the graph may be cluttered
+when it is used to show the flow across many categories. This problem can be addressed by our multi-branch topic tree, which can create
+a relatively balanced topic hierarchy that contains a small number of
+topics at every level. The user flow layout is detailed in Section 6.2.2.
+
+1767
+
+WU ET AL.: OPINIONFLOW: VISUAL ANALYSIS OF OPINION DIFFUSION ON SOCIAL MEDIA
+
+Design based on Density Maps We apply a different flow
+metaphor to depict opinion diffusion on the Sankey graph. The visualization based on the metaphor is the focus and should be differentiated easily from the user flow (G1). We initially developed two
+alternative designs: node-link diagrams and flow visualization. Our
+expert users are very familiar with node-link diagrams. However, the
+diagrams could be seriously cluttered when opinion diffusion is visualized across numerous users. A second candidate design is to create
+a vector field from our opinion diffusion model. This field can then
+be exhibited through flow visualization techniques, such as line integral convolution. This design adopts the metaphor from the flow phenomenon in the real world and is intuitive. Flow visualization assumes
+that each flow path is equally important; however, this assumption is
+relaxed in opinion diffusion because users may influence the opinions
+of others at varying levels. Furthermore, flow paths are not allowed to
+intersect in these techniques, unlike in opinion diffusion. Hence, these
+two methods are not employed.
+We employ density maps to visually represent the diffusion of opinions among users based on the following considerations. First, density maps are very similar to the basic scatterplots utilized by expert
+users in daily tasks of data analysis. Second, density maps are usually generated through KDE. This technique can plot many data items
+without introducing serious visual clutter. Third, density maps can be
+extended to produce a diffusion effect similar to that in the real world
+(see Section 6.2.3). Therefore, density maps can show not only opinion distribution, but also diffusion orientation. Moreover, visualization
+based on KDE density maps enable diffusion intersections and diffusion strengths to vary. In density maps, red and green visually encode
+negative and positive opinions, respectively.
+6.2.2 User Flow Layout
+Figure 1(c) shows a user flow layout in which each horizontally arranged strip is associated with a topic (represented by a released node
+in the stacked topic tree). Each strip visually conveys the temporal
+variation in the amount of attention of users who post tweets about the
+associated topic (the timeline starts from left to right). To enable a user
+to better relate a strip to a topic, we also place the keywords of the topic
+obtained by the BRT model onto the corresponding topic strip (see the
+blue labels in Figure 1(c)). The size of a keyword visually encodes the
+keyword frequency in the topic. We can also observe some transition
+lines between different topic strips. Each line that connects two topic
+strips represents the amount of user attention that flows between the
+two corresponding topics.
+Topic Strip. A user can belong to multiple topics because his
+tweets can be classified into different topics. The attention level of
+user i to topic k at time t (denoted by ati,k ) is the number of the tweets
+(posted by the user at time t) of the topic divided by the total number
+of all the tweets (posted by the user at time t). The height of the corresponding topic strip at time t is then determined by the aggregated
+attention of all the users (who post tweets about topic k at time t).
+Transition Line. We use a greedy algorithm inspired by residual
+network in network flow to compute attention transition of each user
+between any two topics at time t and t + 1, respectively. The method
+first constructs a directed bipartite graph G = (U,V, E), with U and
+V indicating the topics at time t and t + 1, respectively. E denotes
+the edges representing topic similarity between topics in U and V .
+The topic similarity computed by BRT is used as the priority of the
+attention transition. An edge with a higher priority will be more likely
+to have attention transition. Topic u ∈ U has a residual of attention
+ru = ati,u and topic v ∈ V has a capacity of attention cv = at+1
+i,v . The
+algorithm is listed below.
+(1). Select an edge (u, v) from E with the highest priority.
+(2). Compute the maximum attention transition (ma) from u to v that
+is allowed by ru and cv . That is ma = min(ru , cv ). Thus, we obtain
+the attention transition from topic u to v.
+(3). Update ru and cv by ru = ru − ma and cv = cv − ma.
+(4). Mark the edge as solved and then select a new unmarked edge
+from E with the highest priority among all the unmarked edges.
+(5). Repeat the Step (2)-(4) again until all the edges in E are marked.
+
+The attention transition of each user is independent from each other.
+Thus, we compute the attention transition of each user between topics
+from time t to t + 1, and then aggregate the attention transition of all
+users to obtain the transition lines between topics from time t to t + 1.
+t=0
+
+t=1
+B
+PAB=0.1
+
+y
+scaling
+x rotating
+
+(a)
+
+A
+
+PAC=0.8
+(b)
+
+PAD=0.6
+D
+
+C
+
+Fig. 4. (a) Adapted Gaussian kernel; (b) Scaled and rotated kernel.
+
+Flow Layout. We construct a user flow layout according to two
+important principles: aesthetics and legibility. Aesthetics can be enhanced by symmetrical objects, which can also improve object perception [45]. Therefore, we illustrate each strip symmetrically. According
+to the legibility principle, a legible and unambiguous layout is generated. Specifically, we aim to reduce the number of crossings between
+the topic strips and the transition lines. We optimize the order of the
+strips such that topics connected by many transition lines are placed
+next to each other. This optimization is achieved using a simple greedy
+algorithm as follows. We sort the topic strips according to size. We
+then position the strip with the largest number of users. Another strip
+from among the remaining ones is then positioned such that it crosses
+minimally with the topic strips in place. This process is repeated until
+all of the strips are positioned. This process is efficient because each
+level of the stacked topic tree contains only a dozen topics.
+6.2.3 Opinion Kernels
+We apply a Gaussian kernel in our KDE algorithm to visually display
+an opinion of a user and its possible diffusion direction with regard to
+a topic at a certain time stamp. The Gaussian kernel suits our particular scenario of opinion diffusion because the influence of an opinion is
+expected to decay exponentially over time [37]. This process is similar to how the influence of a kernel on its surrounding region decays.
+Furthermore, the Gaussian kernel is flexible and can be modified to
+convey orientation information. We alter the shape of the basic Gaussian kernel into a bullet because opinions move in a given direction.
+The modified Gaussian kernel is described below.
+
+1
+1 x2
+
+
+
+exp(− ( 2 + y2 )) x > 0
+2
+2 σ
+h(x, y) = 2πσ
+(5)
+
+
+ 1 exp(− 1 (x2 + y2 ))
+x≤0
+2
+2πσ 2
+
+where σ represents the standard deviation that determines the width
+of the Gaussian kernel. We set σ = 3 to produce good results in our
+experiments. Figure 4 displays the adapted kernel.
+Kernel Placement. The kernel is placed in a topic strip at time t
+(i.e., the horizontal position) if the associated user tweets about the
+topic at t. The vertical position of the kernel is mainly determined
+by user influence; the level of influence of the user is represented by
+proximity to the center vertical position. The influence is in turn denoted by Klout score. The kernel placement strategy of important-first
+allows us to distinguish influential Twitter users in opinion diffusion
+analysis. However, given a user having a certain influence level, the
+user can could be placed either above the center vertical position (upper part of the strip), or below the center vertical position (lower part
+of the strip). Thus, placing kernels solely based on the level of influence is not sufficient. In our implementation, we impose an additional
+constraint to the kernel placement algorithm. If user A is influenced
+by a group of other users at t-1, we will calculate the average vertical
+position of the user group. If the average vertical position of the user
+group is above the vertical center position in the topic strip, user A
+
+1768
+
+IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS,
+
+will be placed in the upper part of the strip. Otherwise, user A will be
+placed in the lower part of the strip. This strategy can help eliminate
+the randomness and convey clearer patterns.
+Kernel Scaling and Rotation. Once a kernel position is determined, we rotate and scale the kernel further to account for the orientation and density of user opinion diffusion. Figure 4 depicts the
+modified kernel. After a kernel of A is placed in a topic strip (Figure 4(a)), we use the diffusion model to obtain the persons (B, C, D)
+who are most likely influenced by A. The kernel is then scaled by the
+total number of the users who are influenced by A. Finally, we compute kernel orientation according to the average of the directions to influenced users, which is weighted by propagation probability (P(u, v)
+in Equation 4). Figure 4(b) shows the scaled and rotated kernel.
+
+6.2.4
+
+User Interactions
+
+Opinion flow supports a rich set of user interactions for the in-depth
+analysis of opinion propagation to meet design goal G3.
+• Select Users for Detailed Examination. Users are allowed to
+select a group of users for detailed examination (G3) from a rectangle region in a topic strip. Detailed information, including user
+profiles and tweets, are provided in the tweet/user list view (as
+indicated in the right panel of the user interface in Figure 1(c)).
+• Interact with The Visual Topic Tree. When a node is selected,
+its child topic nodes become the focus nodes and are released
+to the right. All other nodes are stacked as context nodes. To
+track changes for users, a sequence of staging animations are
+displayed. The visualization of opinion flow is modified accordingly to depict opinion diffusion regarding the new topics. Users
+can also search for their topics of interest in a search box on top
+of the tree (top left in Figure 1) using keywords. The tree nodes
+containing the keywords are highlighted in blue.
+• Trace Influence of Users on Opinion Diffusion. When a user
+is selected from the user list view, the history of the user with respect to the associated topic is highlighted in opinion flow using
+a dark gray node-link diagram (see line in the middle of the Xbox
+topic in Figure 1(c)). Choosing any node in the path displays the
+diffusion paths that pass through the corresponding user at that
+position (e.g., the blue node-link diagrams in Figure 9(a) and
+(b)). In other words, an analyst can then examine who influences
+the user prior to its current position and those who are influenced
+by the user following this position.
+• Navigate A Multi-scale Timeline. A user can visualize opinion
+diffusion under flexible time granularity (e.g., minutes, hours,
+days, or weeks) by interacting with the multi-scale timeline on
+top of the opinion flow visualization (G4).
+• Examine The Diffusion Behavior of Users. In the user list
+view, we provide a set of small controls that enable an analyst
+to select a group of users based on certain criteria, such as the
+average opinion of users and user importance based on centrality
+in the retweet network. An analyst can then analyze the behavior
+of this particular group of users.
+• Validate The “What If” Hypothesis. What-if analysis allows
+users to convert the opinions in the selected tweets at a time
+point t, and recalculates and predicts the sentiments of the influenced tweets. Through this sentiment conversion, users can
+test many different hypothetical scenarios and their outcomes.
+Once a group of users are selected, analysts can observe the distribution of user opinions in a small pop-up window (as depicted
+in Figure 8(d)). Analysts can modify the opinions of the selected
+users using a sliding bar provided in the window. The opinion
+flow visualization is immediately updated to reflect changes, thus
+enabling an analyst to validate the what if hypothesis (G5).
+• Remove Smaller Topics and Transitions. Showing too many
+topics and transitions in one display could easily leads to serious
+visual clutter. Our system has a sliding bar for an analyst to manually adjust the size-threshold of visible topics and transitions.
+
+6.3
+
+VOL. 20,
+
+NO. 12,
+
+DECEMBER 2014
+
+User/Tweet List View
+
+User/Tweet list view is used to provide detailed information regarding
+the group of users selected from the opinion flow visualization (as displayed in Figure 1(c) right). The tweet list shows user tweets, which
+can be sorted based on retweet count or creation time. A small colored
+block is placed before the user name to indicate the opinion expressed
+in the tweet. This user list also displays the profiles of the selected
+users; thus, an analyst can locate a typical user in the search bar at
+the top of the user list. These two lists coordinate effectively with the
+opinion flow visualization.
+7
+
+E VALUATION
+
+We evaluated our system by using three case studies to demonstrate
+the usefulness of OpinionFlow. We also invited three domain experts
+to use OpinionFlow and interviewed them to gather and summarize
+their feedback. We tested OpinionFlow on a Dell workstation Z620
+equipped with an Intel Xeon CPU (E5-2690, 2.9GHz), 32GB memory,
+and an NVidia GPU graphics card (GTX 760 with 2GB RAM). The
+data preprocessing including opinion mining and BRT clustering can
+be completed in less than an hour. After the data were processed,
+interactive visualization performance is achieved on the workstation.
+7.1
+
+Case Studies
+
+We used three case studies with data sets collected from Twitter to
+demonstrate the effectiveness and usefulness of OpinionFlow. The
+data sets contained information on the 2013 US government shutdown (7,734,728 tweets from June 1, 2013 to November 16, 2013),
+the NSA’s PRISM program (5,335,830 tweets from June 1, 2013 to
+November 16, 2013), and an IT company (1,564,487 tweets about Microsoft from April 1, 2013 to July 10, 2013) using related keywords
+and hashtags such as “#shutdown”, “#prism”, and ”Microsoft”.
+7.1.1
+
+PRISM Data
+
+In the first case study, we tested our system by using Twitter data on
+PRISM (a mass electronic surveillance and data mining program by
+NSA of the U.S.). OpinionFlow can provide a concise and meaningful visual summary of temporal variations in the popularity of topics
+as well as user transitions among topics. Figure 5 shows an opinion
+flow visualization with five major topics from top to bottom, namely,
+legality (legal issue of PRISM), spying (NSAs surveillance and mass
+spying), asylum (asylum of Snowden), Snowden (Edward Snowden),
+and privacy (privacy concern of the public). We can see that the asylum and Snowden topics became larger and more prominent in June,
+2013 when NSA contractor Edward Snowden fled to Hong Kong and
+disclosed the existence of PRISM to the public. We can observe a
+thick transition line between the two topics in June. After reading
+the related tweets, we discovered that this transition line was due to
+Snowden leaving Hong Kong for Moscow on June 23 and numerous
+interesting conversations during this period.
+OpinionFlow allows us to view the overall opinion distribution in
+different topics over time instantly. The overall red visualization indicates that most Twitter users who talked about the topic held very
+negative opinions about NSA’s surveillance program. Figure 6 (E)
+also looks interesting because two different opinions competed each
+other for a while and then an opinion became dominant. As a result
+of the competition, it looks the negative opinion won, and it continued
+throughout. OpinionFlow can also display the direction of opinion
+propagation over time. Figure 5 shows many ellipse-like regions that
+appear stretched from the middle to the top and bottom, which visually conveys a clear opinion diffusion pattern: opinions (regardless of
+whether they are positive or negative) tended to flow from influential
+users (middle) to common users (top or bottom). We speculate that influential users had more followers than common users and their tweets
+and opinions could reach more users. These users were more authoritative and were therefore more likely to influence other common users.
+OpinionFlow is useful for exploring how opinion diffusion is related to the strength of opinions and authority of users. An analyst can
+select different users based on their Klout scores and profiles from the
+
+1769
+
+WU ET AL.: OPINIONFLOW: VISUAL ANALYSIS OF OPINION DIFFUSION ON SOCIAL MEDIA
+
+Phone
+
+Court
+
+Orders
+
+Surveillance
+
+Secret
+A
+
+Asylum Moscow
+
+Supereme
+
+Mass
+
+Join
+
+Protest
+
+B
+
+Airport
+
+Bolivian
+
+B
+
+Russia
+
+C
+
+E
+
+Hong Kong
+Facebook
+
+A
+
+Spying
+
+C
+
+Snowden
+
+Leaker
+
+Whistleblower
+D
+
+Privacy
+
+Protec on
+
+Google
+
+D
+
+EU
+
+Fig. 5. Opinion Flow of PRISM data showing five major topics. A and D show the opinion diffusion paths for FoxNews with strong and weak
+opinions, respectively. B and C show the opinion diffusion paths for a common user with strong and weak opinions, respectively.
+
+user list view and examine and compare their diffusion paths interactively. Two Twitter accounts with high Klout scores, i.e., FoxNews
+and a common user (denoted as A), were selected from the user list
+view. FoxNews is an important Twitter account that frequently releases breaking news, while A is a grassroots user account with a
+strong preference for political topics. We compared the spread of their
+strong and weak opinions by displaying their diffusion paths. Figures 5 (A) and (D) indicate the paths for strong and weak opinions,
+respectively, of FoxNews, whereas 5 (B) and (C) show the paths for
+the strong and weak opinions, respectively, of the common user.
+
+Asylum
+
+Hong Kong
+
+Moscow
+
+Snowden
+
+Asylum
+
+Hong Kong
+
+(a)
+Flight
+
+Airport
+
+Bolivian
+
+Leaker
+
+Whistleblower
+
+(b)
+Flight
+
+Snowden
+
+Russia
+
+Moscow
+
+Airport
+
+Leaker
+
+Bolivian
+
+A
+
+Russia
+
+Whistleblower
+
+Fig. 6. Opinion diffusion between two topics selected from Figure 5: (a)
+Opinion diffusion of all the users; (b) Opinion diffusion for a group of
+users who switched from the Snowden topic to the asylum topic.
+
+These figures show very different opinion diffusion patterns. First,
+authoritative accounts such as FoxNews tend to have a stronger influence on people’s opinions, and the effect of this influence lasts longer
+than that of common user accounts. Second, accounts with stronger
+opinions have a greater chance than accounts with weaker opinions
+to influence the opinions of more people. We validated our observations by reading the tweets posted by FoxNews and A as well as
+those posted by users influenced by them. We found that although
+the links in Figures 5 (A)-(D) do not necessarily indicate direct connections among users, their conversations contain not only content but
+also opinions similar to that of FoxNews and A. Thus, we speculate
+the linked users were influenced by FoxNews and A. Similar patterns
+have been observed for other authoritative accounts and common user
+accounts. Note that the opinion of user u at time t only depends on
+the opinion of the related users. The related users denote the users at
+time t − 1 who are most likely to influence user u. The links between
+users are established based on the diffusion model. This case study
+demonstrates that the model successfully infers the diffusion paths.
+OpinionFlow allowed us to analyze opinion diffusion in the context
+of user flow across topics. Figure 6 shows two topic strips selected
+
+from Figure 5. The figure reveals that more users shifted their attention
+from the Snowden topic to the asylum topic. We selected those users
+by clicking on the transition line. The opinion flow visualization is
+updated instantly to show opinion diffusion for those users. We found
+that the selected users tended to have more positive opinions, whereas
+other users posted more tweets that are critical of the U.S. government
+(as shown by a comparison between Figures 6(a) and 6(b)). After these
+users switched to the asylum topic, positive opinions on this topic increased. For instance, the green region (positive opinions) highlighted
+in a dashed rectangle in the asylum topic (Region A of Figure 6(b)) is
+related to the event in which Snowden was nominated for the Sakharov
+Prize by the EU Parliament. The users showed strong support by posting tweets such as “article19law: we supports #Snowden nomination
+for EU’s #Sakharov Prize for Freedom of Thought.”
+7.1.2 IT Company Data
+Figure 1(c) shows an opinion flow visualization that uses the tweets
+that pertain to Microsoft. Three major topics can be observed, namely,
+business software such as dynamics and office, Xbox and games, and
+Windows related topics. The Xbox topic was prominent with diverse
+opinions. Thus, we expanded the corresponding node (highlighted in
+Figure 1(c)) in the visual tree to provide a new view (Figure 7). We
+focus our subsequent studies on the larger topic strip at the top.
+May 1
+
+May 15
+
+Xbox
+Live
+
+May 29
+
+Games
+
+Jun 12
+
+E3
+
+Sony
+
+Console
+A
+Delivers
+
+Kinect
+
+Voice
+
+Fig. 7. Opinion diffusion on the Xbox topic from the period between May
+15 to 29 when Xbox One was announced.
+
+The figure clearly shows that the Xbox topic was hot in late May.
+We selected a region in the topic strip (see Region A in Figure 7) and
+examined related tweets in the tweet list view. We found that Microsoft
+held a press conference to officially introduce Xbox One. During the
+press conference, most users posted tweets to express positive opinions
+about the upcoming game console. Some negative opinions (in red
+regions) could also be observed, which could be attributed to a variety
+of factors such as compatibility issues.
+The Xbox topic became popular again in early June due to another
+Microsoft’s press conference in E3, in which Microsoft announced
+
+1770
+
+IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS,
+
+the official launch date of the Xbox One and its retail price. We
+can observe several interesting patterns. We changed the time range
+of Figure 7 by using the timeline above OpinionFlow. Figure 8 left
+shows the visual stacked tree of Figure 8(a) and (b). Figure 8 (a)
+presents an interesting pattern where opinions changed quickly between positive and negative. After examining several tweets during
+this time range, we discovered that before the E3, negative opinions
+were mainly caused by privacy concerns about the new Kinect. When
+the conference started, the users were attracted by the fancy games,
+which caused them to express positive opinions about the new XBOX
+console. However, when the conference ended, the users began to express their concerns about the digital right management (DRM) policy
+of the console. The negative opinions on the DRM policy became
+mainstream afterward. This opinion pattern reveals that overall user
+opinions on Twitter could change rapidly with the development of a
+large event and demonstrates OpinionFlow’s capability to trace evolving user opinions on Twitter.
+Jun 7
+
+Jun 11
+
+Xbox
+Console
+
+E3
+
+Jun 15
+
+Jun 19
+
+A
+
+Jun 23
+B
+
+Games
+
+DRM
+
+(a)
+PS4
+
+(d)
+
+14:00 Oct 3
+grassroots
+
+govt
+
+17:00 Oct 3
+
+debt
+abc, thehill
+
+NO. 12,
+
+DECEMBER 2014
+
+14:00 Oct 8
+17:00 Oct 8
+senjackreed gregorymeeks
+
+political, rawstory
+
+clean
+
+whitehouse
+
+VOL. 20,
+
+slate
+
+shutdown
+
+latimes
+
+(a)
+
+(b)
+
+Fig. 9. Opinion diffusion that originated from the White House (a) and
+U.S. Senator Jack Reed (b).
+
+Most of the grassroots users were influenced, but they did not spread
+the opinion. We also discovered that media accounts played a significant role in spreading the opinion. Figure 9(b) presents another diffusion path that originated from Senjackreed, which is the account of
+U.S. Senator Jack Reed, who tweeted, “#shutdown is wasteful, counterproductive; weakens job growth. time for house of representatives
+to #justvote; reopen gov’t.” His opinion also propagated to a number
+of users such as repgaramendi, which is the account of a U.S. congressman. However, media accounts such as slate were still the ones
+that were able to spread the opinion further. Our finding suggests that
+media might have a greater effect on opinion diffusion on Twitter.
+12:00 Oct 1
+
+Xbox
+
+17:00 Oct 1
+
+22:00 Oct 1
+
+nypost (media)
+
+Xbox
+
+18:00-23:00 Jun 19
+Console
+
+E3
+
+Games
+
+(c)
+
+vet
+
+memorial
+
+DRM
+
+(b)
+PS4
+
+wwii
+Fig. 8. (a) Original opinion diffusion; (b) New predicted diffusion when
+the negative opinions in A in (a) are changed to positive; (c) Opinion diffusion obtained by zooming in on Region B in (a) to June 19 using finer
+time granularity; (d) a pop-up window for opinion diffusion prediction.
+
+We can also see that users’ interest in the Xbox topic declined
+quickly and negative opinions became the majority (Figure 8(a)). The
+users complained about the retail price and DRM policy. Microsoft
+finally announced that it would abandon its DRM policy on June 19,
+2013. Figure 8(c) shows that some users were influenced by this announcement, as their opinions become positive after the statement.
+However, overwhelming negative opinions still abound. We wondered what would happen if Microsoft took action and changed their
+DRM policy quickly when the very first negative opinion about DRM
+emerged. Region A in Figure 8(a) shows a group of selected users who
+held very negative opinions about the DRM policy shortly after the
+said policy was announced. We supposed that Microsoft changed the
+policy quickly, which changed user opinions to highly positive. Our
+diffusion model could help predict the subsequent opinion diffusion by
+using the newly changed opinions as starting points. Figure 8(b) shows
+the predicted result. We can observe that positive opinions could diffuse broadly and public opinions became more positive. This result
+implies that quick action is important in preventing the spread of negative opinions.
+7.1.3 Shutdown Data
+In this case study, we demonstrate the use of OpinionFlow to analyze
+the roles of different users in spreading opinions during the event of the
+U.S. government shutdown in 2013. Figure 9(a) shows an interesting
+opinion diffusion path. The diffusion was started by a tweet from the
+White House, which stated, “@speakerboehnercould pass a clean resolution to end the #governmentshutdowntoday. #justvote.” The diffusion appeared to be mostly propagated through the center of the topic
+strip for a couple of days, which suggests that the opinion diffused
+through influential users (i.e., users in the center of the topic strip).
+
+danbalz (reporter)
+
+barricade
+
+time
+
+wusa9
+
+nypost
+
+Fig. 10. Opinion diffusion triggered by World War II veterans who
+crossed memorial barricades despite the shutdown.
+
+Figure 10 shows another topic on the shutdown event; this topic is
+denoted by a large green region surrounded by red regions. We were
+curious about the presence of positive opinions about the shutdown
+event. After reading a few tweets, we found that the topic focused on
+World War II veterans who crossed memorial barricades despite the
+shutdown. The green regions mainly showed positive opinions about
+the veterans, while the red ones were mainly negative criticisms of the
+government shutdown. We also discovered an interesting propagation
+path that originated from danbalz, a journalist with The Washington
+Post, who tweeted, “honor flight of ww2 vets just arrived from ms,
+hoping to visit ww2 memorial. they say they hope it be open.” with a
+positive opinion to show his respect for World War II veterans. This
+opinion was further diffused to “nypost”, the official Twitter account of
+The New York Post, who tweeted, “breaking: wwii vets knock down
+barriers and take over their memorial in dc.” The tweet triggered more
+criticisms of the shutdown event. The negative opinions went viral and
+the negative opinions became dominant again. From this case study,
+we demonstrate the usefulness of OpinionFlow for exploring and understanding the influence of different users in propagating opinions.
+7.2
+
+User Feedback
+
+We conducted semi-structured interviews with three domain experts
+from three universities who are not co-authors of this paper. These
+experts are two professors (P1 and P2) of communication and media
+studies and one professor (P3) of business intelligence and analytics.
+These experts are highly proficient in analyzing Twitter data and using basic charts such as scatterplots and line charts in teaching and
+research. Each interview took about 60 minutes (10 minutes of system
+
+WU ET AL.: OPINIONFLOW: VISUAL ANALYSIS OF OPINION DIFFUSION ON SOCIAL MEDIA
+
+demonstration, 30 minutes of case study and free exploration, and 20
+minutes of post-interview discussion).
+User P1 and P2 were impressed with the unique way of visualizing
+opinion diffusion. They confirmed the usefulness and effectiveness of
+combining opinion diffusion with user flow, which provides rich and
+necessary context for the analysis. User P1 appreciated the capability of OpinionFlow to support interactive exploration and analysis of
+opinion diffusion on Twitter. He further added that by interactively selecting a user and showing his detailed opinion propagation path, one
+can help unfold the patterns and gain insights into them. The “what
+if” feature was received well by the two other users, but User P1 had
+some concerns over its usefulness in practice. He commented that it
+would be more useful if the system can support word-level/ sentencelevel analysis and prediction of opinion diffusion analysis rather than
+simply modifying the opinion of a user. User P2 commented, “OpinionFlow borrows the metaphor similar to ripples in water to visually
+encode the opinion diffusion. It is very intuitive to use and easy to
+understand.” He pointed out that the analysis and comparison of opinion diffusion in multiple topics could enable him to better understand
+the framing effect in communication research. However, he also commented that although the system is valuable for expert users, it may be
+complex for general users who may not have computer science background. He further stated that the visual analysis system can be used
+by most people after they undergo a brief training.
+User P3 highly appreciated the system and confirmed the usefulness
+of OpinionFlow in business intelligence. After the system demonstration, he immediately pointed out several potential applications for
+OpinionFlow including social media advertising and marketing, customer relationship management, crisis communication, and government intelligence. He commented, “The visualization is engaging and
+compelling. It is a great way to display dynamic opinion diffusion.”
+He also appreciated the hierarchical organization and visualization of
+the topics, which, in his opinion, could help meet the needs of different
+users. He particularly liked the “what if” feature supported by OpinionFlow, which he said could be extremely helpful for education in
+business intelligence. User P3 suggested extending the system to support opinion analysis by using streaming tweets. While he agreed with
+the effectiveness of the user influence measurement based on Klout
+score, he suggested that it might also be useful to measure user influence locally based on retweet and follower counts in each topic.
+7.3
+
+Discussion
+
+The case studies and user feedback confirm the effectiveness and usefulness of OpinionFlow. However, there are still some limitations.
+Although the evaluation (in Section 5.3) proved the effectiveness
+of the opinion diffusion model, the model mainly captures the implicit flow of opinions. It does not consider relationships among
+users because extracting relationships from Twitter is time consuming. Moreover, even if we could obtain the relationship between any
+two users, the extracted relationship might be different from the relationship when the event first occurred. We will study the possibility of
+incorporating retweet relationships among users to improve our model.
+We alter the shape of the basic Gaussian kernel into a bullet that
+visually represents the opinion diffusion direction of a user. As the
+kernel can influence all of its surrounding areas, it may appear that
+there is a backward influence (which is impossible). That is, the areas
+to the left of the kernel are also influenced by the kernel. To resolve the
+ambiguity, we choose a proper parameter (sigma in Equation (5)) to
+ensure that the generated kernel decays very quickly to the areas on the
+left. Thus, the impact of the kernel on those areas can be ignored. In
+our case studies, we did not find misleading patterns that were caused
+by this problem. We plan to study how to create an ambiguity-free
+kernel for drawing opinion diffusion.
+Our system only visualizes the user migration between subtopics
+of the same higher level topic. It would be straightforward to extend
+our system to visualize user migration between subtopics of different
+higher level topics. However, the benefits and use scenarios of this
+feature are still unclear. Furthermore, this feature could lead to visual
+clutter because there would be too many topic strips and transition
+
+1771
+
+lines as well as the crossings between the strips and transitions. We
+will continue to work with domain experts and seek their suggestion
+with respect to this feature, and develop an effective layout algorithm
+to reduce visual clutter if domain experts prefer the feature.
+The system can also be used by non-expert users after they undergo
+a brief training session. Nevertheless, finding insightful patterns beyond opinions (i.e., the reason why an opinion is changing) is nontrivial. This is similar to creating/editing pictures using Adobe PhotoShop. It would be easy and intuitive for general users to use the basic features of PhotoShop such as rotation or scaling to edit pictures.
+However, creating fantastic image effects requires a lot of effort even
+for expert users. Similarly, our system is easy to use for finding some
+basic patterns (such as opinion distribution in a topic strip). Gaining
+insights into the patterns would require more effort. According to the
+feedback from domain experts, the system is valuable and useful for
+discovering meaningful patterns. In the future, we plan to conduct a
+formal user study and systematically evaluate the level of difficulty of
+using this system to find insightful patterns.
+The visual representation displays the overall opinion diffusion by
+aggregating kernels using KDE. It does not introduce explicit uncertainties. However, the kernel aggregation also means that smaller (or
+less significant) flows may be overwhelmed by larger (or more significant) flows. This may therefore introduce implicit uncertainties. The
+uncertainties can be resolved to some extent by our rich set of user
+interactions, which enable users to examine the smaller flows of individual users by tracing the influence of users on opinion diffusion
+(Section 6.2.4). In the future, we will further study this issue and improve the current design to visually encode the uncertainties as well.
+The overview visualization (density map) can intuitively convey
+the following information: (a) overall picture of positive and negative
+opinion distribution in each topic; (b) overall picture of opinion diffusion among topics in each topic; (c) overall picture of user transition
+between topics. The opinion flow visualization shows when and where
+an opinion is changing and thus it serves as a starting point for investigative analysis. When a user finds an interesting pattern, the user can
+directly interact with the opinion visualization (See Section 6.2.4 for a
+rich set of user interactions) for in-depth analysis and understand how
+and why the opinion is changing. From this view point, the overview
+visualization does not only convey the overall picture of opinion distribution and diffusion patterns, but is also used as a critically important
+component for analysts to start an investigative analysis.
+8 C ONCLUSION AND F UTURE W ORK
+This paper presents a visual analysis system called OpinionFlow,
+which enables analysts to visually explore and trace opinion diffusion
+on Twitter. We enhance a model borrowed from information diffusion
+to estimate the diffusion of opinions among users. The model is integrated with a new visualization technique to display opinion diffusion.
+The proposed system allows a user to explore opinion diffusion across
+a relatively large number of users using a hierarchical topic structure
+built by BRT. By integrating data analysis models and interactive visualizations, the system allows users to unfold discovered patterns, to
+form various hypotheses regarding opinion diffusion patterns, and to
+validate hypotheses through interactions with the visualizations. In
+the future, we plan to improve system performance by implementing
+parallel algorithms of data analysis such as parallel BRT, so that we
+can deploy the system on the Web. Although it is designed for expert
+users, we believe the system can benefit users who are interested in
+opinions diffusion on social media. We intend to invite more users to
+use our system and conduct a formal user study in the future.
+ACKNOWLEDGMENTS
+The authors would like to thank Furu Wei with Microsoft Research for
+providing an opinion mining toolkit (SSWE). The authors also thank
+Prof. Jonathan J.H. Zhu with City University of Hong Kong, and Prof.
+Tai-Quan Peng with Nanyang Technological University for participating this project as domain experts and providing valuable and constructive suggestion. The paper was done when the third, fourth and
+fifth authors were an intern in Microsoft Research.
+
+1772
+
+IEEE TRANSACTIONS ON VISUALIZATION AND COMPUTER GRAPHICS,   VOL. 20,   NO. 12,   DECEMBER 2014
+
+R EFERENCES
+[1] Project cascade. http://nytlabs.com/projects/cascade.
+html, Mar. 2013.
+[2] Revisit.
+http://moritz.stefaner.eu/projects/
+revisit/, Mar. 2013.
+[3] Klout. http://klout.com/home, Mar. 2014.
+[4] C. Blundell, Y. W. Teh, and K. A. Heller. Bayesian rose trees. In Proceedings of UAI, pages 65–72, 2010.
+[5] J. Bollen, B. Gonçalves, G. Ruan, and H. Mao. Happiness is assortative
+in online social networks. Artificial life, 17(3):237–251, 2011.
+[6] J. Bollen, H. Mao, and X. Zeng. Twitter mood predicts the stock market.
+Journal of Computational Science, 2(1):1–8, 2011.
+[7] N. Cao, Y.-R. Lin, X. Sun, D. Lazer, S. Liu, and H. Qu. Whisper: Tracing
+the spatiotemporal process of information diffusion in real time. IEEE
+Transactions on Visualization and Computer Graphics, 18(12):2649–
+2658, 2012.
+[8] G. Carenini and L. Rizoli. A multimedia interface for facilitating comparisons of opinions. In Proceedings of the International Conference on
+Intelligent User Interfaces, pages 325–334, 2009.
+[9] C. Chen, F. Ibekwe-SanJuan, E. SanJuan, and C. Weaver. Visual analysis
+of conflicting opinions. In IEEE Symposium On Visual Analytics Science
+And Technology, pages 35 – 42, 2006.
+[10] W. Cui, S. Liu, L. Tan, C. Shi, Y. Song, Z. Gao, H. Qu, and X. Tong.
+Textflow: Towards better understanding of evolving topics in text. IEEE
+Transactions on Visualization and Computer Graphics, 17(12):2412–
+2421, 2011.
+[11] W. Cui, S. Liu, Z. Wu, and H. Wei. How hierarchical topics evolve in
+large text corpora. IEEE Transactions on Visualization and Computer
+Graphics, To appear, 2014.
+[12] M. Dörk, D. M. Gruen, C. Williamson, and M. S. T. Carpendale. A visual
+backchannel for large-scale events. IEEE Transactions on Visualization
+and Computer Graphics, 16(6):1129–1138, 2010.
+[13] W. Dou, L. Yu, X. Wang, Z. Ma, and W. Ribarsky. Hierarchicaltopics:
+Visually exploring large text collections using topic hierarchies. IEEE
+Transactions on Visualization and Computer Graphics, 19(12):2002–
+2011, 2013.
+[14] D. Easley and J. Kleinberg. Networks, Crowds, and Markets: Reasoning
+About a Highly Connected World, volume 1. Cambridge University Press,
+2010.
+[15] S. Faridani, E. Bitton, K. Ryokai, and K. Goldberg. Opinion space: a
+scalable tool for browsing online comments. In Proceedings of SIGCHI,
+pages 1175–1184, 2010.
+[16] M. Gamon, A. Aue, S. Corston-Oliver, and E. Ringger. Pulse: Mining
+customer opinions from free text. In International Symposium on Intelligent Data Analysis, pages 121–132, 2005.
+[17] M. Gamon, S. Basu, D. Belenko, D. Fisher, M. Hurst, and A. C. König.
+BLEWS: Using blogs to provide context for news articles. In AAAI Conference on Weblogs and Social Media, pages 60–67, 2008.
+[18] M. Gomez Rodriguez, J. Leskovec, and A. Krause. Inferring networks of
+diffusion and influence. In Proceedings of SIGKDD, pages 1019–1028.
+ACM, 2010.
+[19] M. L. Gregory, N. Chinchor, P. Whitney, R. Carter, E. Hetzler, and
+A. Turner. User-directed sentiment analysis: Visualizing the affective
+content of documents. In Workshop on Sentiment and Subjectivity in Text,
+pages 23–30, 2006.
+[20] A. Guille, H. Hacid, C. Favre, and D. A. Zighed. Information diffusion in
+online social networks: a survey. ACM SIGMOD Record, 42(2):17–28,
+2013.
+[21] M. C. Hao, C. Rohrdantz, H. Janetzko, D. A. Keim, U. Dayal, L.-E. Haug,
+M. Hsu, and F. Stoffel. Visual sentiment analysis of customer feedback
+streams using geo-temporal term associations. Information Visualization,
+12(3–4):273–290, 2013.
+[22] S. Havre, E. G. Hetzler, P. Whitney, and L. T. Nowell. ThemeRiver:
+visualizing thematic changes in large document collections. IEEE Transactions on Visualization and Computer Graphics, 8(1):9–20, 2002.
+[23] M. Hu, H. Yang, M. X. Zhou, L. Gou, Y. Li, and E. Haber. OpinionBlocks: A crowd-powered, self-improving interactive visual analytic system for understanding opinion text. In Human-Computer Interaction C
+INTERACT 2013, pages 116–134, 2013.
+[24] B. Liu, M. Hu, and J. Cheng. Opinion observer: analyzing and comparing
+opinions on the web. In Proceedings of the International Conference on
+World Wide Web, pages 342–351, 2005.
+
+[25] S. Liu, W. Cui, Y. Wu, and M. Liu. A survey on information visualization:
+Recent advances and challenges. The Visual Computer, To appear, 2014.
+[26] S. Liu, Y. Wu, E. Wei, M. Liu, and Y. Liu. StoryFlow: Tracking the
+evolution of stories. IEEE Transactions on Visualization and Computer
+Graphics, 19(12):2436–2445, 2013.
+[27] X. Liu, Y. Song, S. Liu, and H. Wang. Automatic taxonomy construction
+from keywords. In Proceedings of SIGKDD, pages 1433–1441, 2012.
+[28] D. Luo, J. Yang, M. Krstajic, W. Ribarsky, and D. Keim. EventRiver: Visually exploring text collections with temporal references. IEEE Transactions on Visualization and Computer Graphics, 18(1):93–105, 2012.
+[29] A. Marcus, M. Bernstein, O. Badar, D. Karger, S. Madden, and R. Miller.
+Twitinfo: aggregating and visualizing microblogs for event exploration.
+In Proceedings of SIGCHI, pages 227–236, 2011.
+[30] S. Morinaga, K. Yamanishi, K. Tateishi, and T. Fukushima. Mining product reputations on the web. In Proceedings of SIGKDD, pages 341–349,
+2002.
+[31] D. Oelke, M. Hao, C. Rohrdantz, D. A. Keim, U. Dayal, L.-E. Haug, and
+H. Janetzko. Visual opinion analysis of customer feedback data. In IEEE
+Symposium On Visual Analytics Science And Technology, pages 187–194,
+2009.
+[32] B. Pang and L. Lee. Opinion mining and sentiment analysis. Foundations
+and Trends in Information Retrieval, 2(1-2):1–135, 2008.
+[33] B. Parkinson and G. Simons. Affecting others: Social appraisal and emotion contagion in everyday decision making. Personality and social psychology bulletin, 35(8):1071–1084, 2009.
+[34] M. Richardson and P. Domingos. Mining knowledge-sharing sites for
+viral marketing. In Proceedings of SIGKDD, pages 61–70. ACM, 2002.
+[35] P. Riehmann, M. Hanfler, and B. Froehlich. Interactive sankey diagrams.
+In Proceedings of the IEEE Symposium on Information Visualization,
+pages 233–240, 2005.
+[36] C. Rohrdantz, M. C. Hao, U. Dayal, L.-E. Haug, and D. A. Keim. Featurebased visual sentiment analysis of text document streams. ACM TIST,
+3(2):26:1–26:25, 2012.
+[37] S. Stieglitz and L. Dang-Xuan. Emotions and information diffusion in
+social mediałsentiment of microblogs and sharing behavior. Journal of
+Management Information Systems, 29(4):217–247, 2013.
+[38] N. J. Stroud. Polarization and partisan selective exposure. Journal of
+Communication, 60(3):556–576, 2010.
+[39] G. Sun, Y. Wu, R. Liang, and S. Liu. A survey of visual analytics techniques and applications: State-of-the-art research and future challenges.
+Journal of Computer Science and Technology, 28(5):852–867, 2013.
+[40] G. Sun, Y. Wu, S. Liu, T.-Q. Peng, J. J. H. Zhu, and R. Liang. EvoRiver:
+Visual analysis of topic coopetition on social media. IEEE Transactions
+on Visualization and Computer Graphics, To appear, 2014.
+[41] D. Tang, F. Wei, N. Yang, M. Zhou, B. Qin, and T. Liu. Learning
+sentiment-specific word embedding for twitter sentiment classification.
+In The Annual Meeting of the Association for Computational Linguistics
+(ACL), 2014.
+[42] F. Viégas, M. Wattenberg, J. Hebert, G. Borggaard, A. Cichowlas, J. Feinberg, J. Orwant, and C. Wren. Google+ ripples: A native visualization
+of information flow. In Proceedings of the International Conference on
+World Wide Web, pages 1389–1398, 2013.
+[43] C. Wang, Z. Xiao, Y. Liu, Y. Xu, A. Zhou, and K. Zhang. SentiView:
+Sentiment analysis and visualization for internet popular topics. IEEE
+THMS, 43(6):620–630, 2013.
+[44] F. Wanner, C. Rohrdantz, F. Mansmann, and D. A. Keim. Visual sentiment analysis of RSS news feeds featuring the us presidential election in
+2008. In Workshop on Visual Interfaces to the Social and the Semantic
+Web, 2009.
+[45] C. Ware. Information Visualization, Third Edition: Perception for Design
+(Interactive Technologies). Morgan Kaufmann, 3rd edition, 2012.
+[46] Y. Wu, F. Wei, S. Liu, N. Au, W. Cui, H. Zhou, and H. Qu. OpinionSeer:
+Interactive Visualization of Hotel Customer Feedback. IEEE Transactions on Visualization and Computer Graphics, 16(6):1109–1118, 2010.
+[47] P. Xu, Y. Wu, E. Wei, T.-Q. Peng, S. Liu, J. J. H. Zhu, and H. Qu. Visual
+analysis of topic competition on social media. IEEE Transactions on
+Visualization and Computer Graphics, 19(12):2012–2021, 2013.
+[48] C. Zhang, Y. Liu, and C. Wang. Time-space varying visual analysis of
+micro-blog sentiment. In Proceedings of the International Symposium on
+Visual Information Communication and Interaction, pages 64–71, 2013.
+
+

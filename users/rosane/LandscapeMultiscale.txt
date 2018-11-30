@@ -1,0 +1,2459 @@
+This article was downloaded by: [USP University of Sao Paulo]
+On: 24 February 2014, At: 11:45
+Publisher: Taylor & Francis
+Informa Ltd Registered in England and Wales Registered Number: 1072954 Registered office: Mortimer House,
+37-41 Mortimer Street, London W1T 3JH, UK
+
+Geographic Information Sciences: A Journal of the
+Association of Chinese Professionals in Geographic
+Information Systems
+Publication details, including instructions for authors and subscription information:
+http://www.tandfonline.com/loi/tagi19
+
+Multiscale Analysis of Landscape Heterogeneity: Scale
+Variance and Pattern Metrics
+a
+
+b
+
+a
+
+Jianguo Wu , Dennis E. Jelinski , Matt Luck & Paul T. Tueller
+
+c
+
+a
+
+Department of Life Sciences , Arizona State University-West , P. O. Box 37100, Phoenix ,
+Arizona , 85069 , USA
+b
+
+School of Environmental Studies and Department of Geography , Queen's University ,
+Kingston , Ontario , K7L 3N6 , Canada
+c
+
+Department of Environmental and Resource Sciences , University of Nevada , Reno , NV ,
+89557 , USA
+Published online: 12 Aug 2009.
+
+To cite this article: Jianguo Wu , Dennis E. Jelinski , Matt Luck & Paul T. Tueller (2000) Multiscale Analysis of Landscape
+Heterogeneity: Scale Variance and Pattern Metrics, Geographic Information Sciences: A Journal of the Association of
+Chinese Professionals in Geographic Information Systems, 6:1, 6-19, DOI: 10.1080/10824000009480529
+To link to this article: http://dx.doi.org/10.1080/10824000009480529
+
+PLEASE SCROLL DOWN FOR ARTICLE
+Taylor & Francis makes every effort to ensure the accuracy of all the information (the “Content”) contained
+in the publications on our platform. However, Taylor & Francis, our agents, and our licensors make no
+representations or warranties whatsoever as to the accuracy, completeness, or suitability for any purpose of
+the Content. Any opinions and views expressed in this publication are the opinions and views of the authors,
+and are not the views of or endorsed by Taylor & Francis. The accuracy of the Content should not be relied
+upon and should be independently verified with primary sources of information. Taylor and Francis shall not be
+liable for any losses, actions, claims, proceedings, demands, costs, expenses, damages, and other liabilities
+whatsoever or howsoever caused arising directly or indirectly in connection with, in relation to or arising out of
+the use of the Content.
+This article may be used for research, teaching, and private study purposes. Any substantial or systematic
+reproduction, redistribution, reselling, loan, sub-licensing, systematic supply, or distribution in any
+form to anyone is expressly forbidden. Terms & Conditions of access and use can be found at http://
+www.tandfonline.com/page/terms-and-conditions
+
+6
+
+Wu et al.: Multiscale Analysis of Landscaoe Heterogeneity
+
+Multiscale Analysis of Landscape Heterogeneity:
+Scale Variance and Pattern Metrics
+Jianguo Wu", Dennis E. Jelinskis, Matt Luck*, and Paul T. Tuellert
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+*Department of Life Sciences, Arizona State University-West
+P. 0. Box 37100, Phoenix, Arizona 85069, USA
+sSchool of Environmental Studies and Department of Geography
+Queen's University, Kingston, Ontario, K7L 3N6, Canada
+'Department of Environmental and Resource Sciences
+University of Nevada, Reno, NV 89557, USA
+
+Abstract
+A major goal of landscape ecology is to understand the formation, dynamics, and maintenance of spatial heterogeneity. Spatial heterogeneity is the most fundamental characteristic of all landscapes, and scale multiplicity is
+inherent in spatial heterogeneity. Thus, multiscale analysis is imperative for understanding the structure, function and dynamics of landscapes. Although a number of methods have been used for multiscale analysis in landscape ecology since the 1980s, the effectiveness of many of them, including some commonly used ones, is not clear
+or questionable. In this paper, we discuss two approaches to multiscale analysis of landscape heterogeneity: the
+direct and indirect approaches. We will focus on scale variance and semivariance methods in the first approach
+and 17 landscape metrics in the second. The results show that scale variance is potentially a powerful method to
+detect and describe multiple-scale structures of landscapes, while semivariance analysis may often fail to do so
+especially if landscape variability is dominant a t broad scales over fine scales. Landscape metrics respond to
+changing grain size rather differently, and these changes are reflective of the modifiable areal unit problem as well
+as multiple-scale structures in landscape pattern. Interestingly, some metrics (e.g., the number of patches, patch
+density, total edge, edge density, mean patch size, patch size coefficient of variation) exhibit consistent, predictable
+patterns over a wide range of grain sizes, whereas others (e.g.,patch diversity, contagion, landscape fractal dimension) have nonlinear response curves. The two approaches to multiple-scale analysis are complementary, and their
+pros and cons still need to be further investigated systematically.
+
+I. INTRODUCTION
+Spatial heterogeneity is ubiquitous in nature across
+all scales, and its formation and interactions with ecological processes are the central issue in landscape
+ecology. It is intriguing, however, to note that the spatial dimension has long been ignored or purposefully
+avoided in ecology given that all ecological phenomena take place in spatially heterogeneous environments and that the relationship between organisms
+and their environment is the very subject of ecology.
+This ignorance has had much to do with the background assumption of balance of nature and the traditional equilibrium paradigm in ecology (Wu and
+Loucks 1995). Besides, several reasons are attributable to the slow progress in spatial ecology, i.e., the
+spatially explicit study of the interactions between
+pattern and process in ecological systems.
+The first is the lack of recognition of the importance
+of the interactions between space and other factors
+that together give rise to ecological patterns or processes. Although plant ecologists have long been interested in the geographical distribution of commu-
+
+nities since the 1800s,the interactions between space
+and ecological processes have not been well studied.
+It was not until the 1980s that the interaction among
+pattern, process and scale began to occupy a central
+place in ecological studies, especially, with developments in patch dynamics a n d hierarchy theory
+(O'Neill et al. 1986, Levin 1992, Wu and Levin 1994,
+Wu and Loucks 1995). The second reason concerns
+the lack of effective statistical and modeling methods
+for studying spatial phenomena. Many, if not most,
+statistical methods traditionally used in ecological
+research assume the independence of the observations.
+Spatial autocorrelation and spatial dependence, however, are extremely common for ecological variables
+(Legendre 1993), which violate this fundamental assumption, thus impairing methods that are based on
+it. Although there are ways of removing spatiaI structure in data, doing so may not be ecologically sensible
+if space is considered an integral part of ecological
+phenomena. Only in recent years, new methods in
+spatial statistics (particularly geostatistics) began to
+be introduced in ecology to alleviate this problem (e.g.,
+1082-4006/99/0601-6$5.00
+02000 The Association of Chinese Professionals in
+Geographic Information Systems (Abroad)
+
+Geographic Information Sciences
+
+Legendre and Fortin 1989, Robertson 1987, Rossi et
+al. 1992, Legendre 1993).
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+7
+which mag be caused by different processes, and thus
+the scale of observation significantly influences what
+is to be observed; (3) understanding landscape functioning requires a multiple-scale characterization of
+spatial pattern and processes, and single-scale descriptions are doomed to be partial and misleading; and
+(4) models developed a t one particular scale are not
+likely to apply at other scales, thus we need to either
+link models developed a t different scales, or develop
+multiple-scaled or hierarchically structured models.
+
+Vol. 6. No. 1,June 2000
+
+The third reason has to do with the insufficient capacity of computers. Spatial analysis usually requires
+enormous memory space, high computing speed, and
+complex software development. All of these have been
+limiting factors in much of the history of ecology as
+well as statistics. Fortunately, these problems are now
+greatly eased with rapid advances in computer technologies, including the availability of GIS. The fourth
+reason involves problems arising from data aggregation, which often lead to error propagation and controversial results. Ecological studies frequently use
+area-based information, derived from field surveys,
+aerial photography, or remote sensing sources. The
+boundaries of the areal units, however, are usually
+arbitrary. As Greig-Smith (1983) pointed out, there is
+a n “element of subjectivity in sampling procedure because the boundaries within which a set of samples is
+taken are fixed by the ecologist on the basis of his
+judgment of what can suitably be described a s one
+unit for the purpose a t hand.” The arbitrariness in
+the definition of areal units can affect the results of a
+number of statistical analyses. This problem has been
+known as the modifiable areal unit problem (MAUP)
+in the geographical literature (Openshaw 1984), and
+has recently been studied in the context of landscape
+ecology (Wu and Jelinski 1995, Jelinski and Wu 1996).
+MAUP consists of two closely related aspects: the scale
+problem and the zoning problem. The scale problem
+concerns changes in the results of spatial analysis with
+changing scale (usually grain size), whereas the zoning problem results from the variations of the results
+of spatial analysis due t o different zoning systems or
+spatial configurations of areal units at the same scale.
+The studies of MAUP have shown that a wide variety
+of spatial analyses and simulation models are susceptible to both scale and zoning problems (Jelinski and
+Wu 1996, Marceau 1999). As a result, the composition of a landscape (e.g., patches, gaps, edges, and corridors) may also vary with changing grain size and
+extent.
+To understand the dynamics of patterns and processes
+and their interactions in a heterogeneous landscape,
+one must be able to accurately quantify the spatial
+pattern and its temporal changes of the landscape.
+Recent studies have shown that one of the most important and universal characteristics of spatial heterogeneity is its scale multiplicity in space (e.g., Miller
+1978, Kolasa and Pickett 1991, Wu and Loucks 1995,
+Cullinan et al. 1997, Werner 1999). This scale multiplicity of landscapes has several important ecological
+implications: (1) landscapes may be, though not necessarily, hierarchically structured; (2) landscapes exhibit distinctive spatial patterns at different scales
+
+The process of extrapolating or translating information from one scale to another, scaling, undoubtedly is
+a fundamental challenge in both theory and practice
+across all earth sciences. In particular, scaling is essential for addressing a wide range of ecological and
+environmental problems concerning biodiversity loss
+and global change in part because most ecological studies to date have been carried out at very local scales
+in both time and space (van Gardingen et al. 1997,
+Wu 1999). Scaling often is a difficult task due primarily to landscape heterogeneity and nonlinearity, and
+understanding the scale multiplicity in pattern and
+process is a key to the success of scaling (Wu 1999).
+This paper, therefore, discusses two approaches to
+multiscale analysis of landscape pattern: the direct
+and indirect approaches. Specifically, we demonstrate
+how to use scale variance analysis a n d landscape
+metrics as methods for detecting and describing multiple-scale or hierarchical structures in landscapes.
+Through a series of analyses, we address several specific questions, including: Is scale variance effective
+in detecting multiple-scale patterns? How does it compare with semivariance? How do landscape metrics
+change over a broad range of grain sizes? Are these
+changes predictable? Which landscape indices are
+sensitive to multiple-scale structures?
+
+11. TWO APPROACHES TO MULTISCALE
+ANALYSES
+To quantify multiple-scale characteristics of landscapes, multiscale or hierarchical approaches must be
+employed. While a hierarchical approach is by definition multiple-scale, a multiple-scale approach is not
+necessarily hierarchical in the sense of the nested hierarchy (Wu 1999). I t is worth noting that the term,
+“scale”, here is used to denote the grain size and extent of a data set, not necessarily corresponding to
+the “characteristic scale” of landscape pattern or processes. We may distinguish between two general approaches to multiscale analyses: (1) t h e direct
+multiscale approach that uses inherently multiplescale methods, and (2) the indirect multiscale approach
+that uses single-scale methods repeatedly at differ-
+
+8
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+ent scales. Frequently used multi-scale methods in
+landscape ecology include semivariance analysis
+(Robertson and Gross 1994, Burrough 1995), wavelet
+analysis (Bradshaw and Spies 1992, Saunders et al.
+1998), spectral analysis (Platt and Denman 1975,
+Ripley 1978), fractal analysis (Krummel 1987, Milne
+1991,Nikora et al. 1999),lacunarity analysis (Plotnick
+et al.1993,Henebry and Kux 1995),and blocking quadrat variance analysis (Greig-Smith 1983, Dale 1999).
+All these methods contain multiple-scale components
+in their mathematical formulation or procedures, and
+thus are either hierarchical or multiscaled.
+On the other hand, the indirect approach to multiscale
+analyses can use methods that are designed for singlescale analysis, such as the wide variety of landscape
+metrics (e.g., diversity, contagion, perimeter-area ratios, spatial autocorrelation indices) as well as statistical measures (e.g., mean, variance, correlation or
+regression coefficients). The scale multiplicity in the
+indirect approach is realized by resampling the data
+at different scales, albeit grain or extent, and then
+repeatedly computing the metrics or statistical measures using the resampled data a t different scales.
+One particular way of resampling data is to systematically aggregate the original fine-resolution data set
+and produce a hierarchically nested data set, which
+leads to a hierarchical analysis using single-scale
+methods. Note that hierarchical analysis does not
+have to assume, apriori, the existence of a hierarchical structure in the landscape under study, but can be
+used to detect it.
+In general, there are two related but distinctive goals
+for conducting a multiscale analysis in a landscape
+ecological study. The first is to characterize the multiple-scale structure of a landscape. The second is to
+detect or identify “scale breaks” or hierarchical levels
+in the landscape which often can be studied as a spatially nested hierarchy (O’Neill et al. 1991, Wu and
+Loucks 1995,Wu 1999). In both cases, a better understanding is achieved of how spatial heterogeneity
+changes with scale. However, a description of landscape pattern a t different scales may be necessary or
+desirable even if scale breaks do not exist or the landscape is not hierarchical. On the other hand, scale
+breaks often lead to the identification of characteristic scales of patterns which may frequently facilitate
+understanding underlying processes. A series of methods for analyzing landscape heterogeneity have been
+reviewed recently (e.g., Turner et al. 1991, Burrough
+1995, Gustafson 1998,Dale 1999, Fortin 1999). In the
+following, we demonstrate two multiscale approaches
+with specific examples. In particular, we focus on the
+use of scale variance analysis and several landscape
+metrics as they are used in multiscale analysis.
+
+Wu et al.: Multiscale Analysis of Landscape Heterogeneity
+
+111. MULTISCALE ANALYSES WITH SCALE
+VARIANCE
+Scale variance analysis is a hierarchical analysis that
+was first developed by Moellering and Tobler (1972).
+The initial goal of the method was to determine the
+relative variability a t each level in a known nested
+hierarchy, and to evaluate each level’s relative, independent contribution to the total variability of the
+whole system. However, the use of scale variance
+analysis does not necessarily require or even assume
+the existence of a nested hierarchy in the landscape
+under study. To conduct scale variance analysis, one
+only needs to systematically aggregate spatial data
+by increasing grain size progressively so that a nested
+data hierarchy is formed (see Figure 1). Each grain
+size is termed a “scale level” (Moellering and Tobler
+1972). Most spatial data can be reconstructed hierarchically by resampling, then scale variance analysis
+can be applied (Moellering a n d Tobler 1972,
+Townshend and Justice 1990,Wu et al. 1994, Barnsley
+et al. 1997).
+The statistical model of scale variance can be expressed as:
+
+.X$...; = p + a ; + p , + yijk+“‘+oiik...~
+where Xjk...zisthe value of a spatial unit (e.g., a pixel)
+at the hierarchical level that corresponds to the finest grain size (scale level 6 in Figure l), p the grand
+mean over the entire data set, a, the effect of the a
+level (scale level 1in Figure l), pijthe effect of the p
+level (scale level 2 in Figure l),yijk the effect of the y
+level (scale level 3 in Figure l),and aijk...z the effect of
+o level (scale level 6 in Figure 1).
+From the above model, the total variance of the landscape can be partitioned hierarchically a t different
+grain sizes. Moellering and Tobler (1972) derived the
+scale variance components for a 3-level (a,p, y) hierarchy as follows. First, the total variation of the system is expressed as the total sum of squares:
+
+where I is the number of a level units, Jiis the number of b level units in each itha level unit, and K is
+the number of y level units in each ijth p level unig!
+The total sum of squares is partitioned into different
+parts that are attributable to the various scale levels
+(here a, p, y), so that
+
+SSTom,= ss,
+
++ ssp+ ssy.
+
+(3)
+
+SS,, SS,, and SS., are calculated based on the follow-
+
+9
+
+Vol. 6. No. 1. June 2000
+
+GeoeraDhic Information Sciences
+
+Scale Level
+1Xt
+
+1x1
+
+1x1
+
+(7)
+Level 6
+
+1x2
+
+1x2
+
+Level 5
+
+2x2
+
+4x1
+
+ssp
+MS,t =J 7
+‘
+T ( J . - 1)’
+&‘
+I
+
+i=l
+
+(9)
+
+1x4
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+Level 4
+
+2x4
+
+811
+
+1x8
+
+4x4
+
+8x2
+
+2x8
+
+Level 3
+
+Level 2
+
+When dealing with regular lattice data sets as shown
+in Figure 1(Moellering and Tobler’s “even case”),the
+scale variance components are simply:
+SV, = MSa I JK
+
+SVp = MS,, I K
+SV, = MS,
+4118
+
+8x8
+
+8x4
+
+4x8
+
+8x8
+
+~
+
+Zoning Alternatives
+
+8x8
+
+Level i
+
+Level 0
+
+-
+
+Figure 1. Illustration of spatial aggregation that
+leads to a spatially nested hierarchy of data. Columns show that the data set becomes coarser and
+coarser as grain size increases, whereas rows demonstrate that at each grain size there are multiple
+ways to aggregate the same number of basic spatial
+units (BSUs) - the pixels in the original fine-resolution data set. The numbers in the figure denote grain
+sizes (the number of rows x the number of columns
+of BSUs).
+ing formulas:
+(4)
+I
+
+J
+
+K.,
+
+;=I j = [ k = l
+
+Dividing the partitioned sums of squares by their respective degrees of freedom results in the corresponding mean square estimates, i.e.:
+
+Scale variance analysis starts with the construction
+of nested data hierarchies (Figure l),and then the
+above equations are used to compute the total sum of
+squares, partitioned sums of squares, and scale variance at each scale level. Finally, scale variance or the
+percent total sum of squares is plotted against scale
+levels, resulting in the scale variance graph, from
+which one can readily visualize the presence of peaks
+or the lack of them. A peak implies that high variability occurs at the corresponding scale level (grain
+size), which is indicative .of the average size of dominant patches in the landscape. The height of the peak
+reflects the relative contribution of that particular
+scale level to the total variability of the landscape.
+Let’s take a look at two simple examples of how scale
+variance works, and compare it with semivariance
+analysis. Figure 2 shows two artificially constructed
+“landscapes” with multiple-scale patterns in which
+patches of different sizes form spatially nested hierarchies, i.e., larger patches are composed of smaller
+patches. The left column in Figure 2 is the pictorial
+version (for facilitating visualization) of the numerical map on the right (actually used in the following
+analyses). Can scale variance reveal this hierarchical structure? Is it more effective than, say, the simple
+variance, spatial autocorrelation, and semivariance
+analysis?
+Figure 3 shows that scale variance is indeed able to
+correctly and clearly identify three peaks corresponding to the three patch sizes (i.e., 1x1, 8x8 and 16x16
+BSUs, where BSU stands for the basic spatial unit
+that is defined as the pixel in the original data set).
+
+10
+
+Wu et al.: Multiscale Analysis of Landscape Heterogeneity
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9 3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 0 3 0 3 0 3 0 3 7 2 7 2 7 2 ? 2
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 4 3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9 3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9 3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 0 3 0 3 0 3 0 3 ? 2 7 2 7 2 7 2
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 2 7 2 7 2 7 2 7 3 0 3 0 3 0 3 0
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 7 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 2 7 2 7 2 7 2 7 3 6 3 6 3 8 3 8
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 ? 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 2 7 2 7 2 7 2 7 3 0 3 0 3 0 3 0
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 7 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 2 7 2 7 2 7 2 ? 3 0 3 0 3 0 3 0
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 7 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3
+3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7 1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9
+0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2 4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4
+3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7 1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9
+0 3 0 3 0 3 6 3 7 2 7 2 7 2 7 2 4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4
+3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7 1 4 1 4 1 4 1 4 4 ~ 4 9 4 ~ 4 ~
+0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2 4 1 4 1 4 1 4 1 g 4 9 4 9 4 g 4
+3 0 3 0 3 0 3 8 2 7 2 7 2 7 2 7 1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9
+0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2 4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4
+
+272727273030303049494~4~141414l4
+72727272030303039494~4g44l414I4l
+2 7 2 7 2 ? 2 7 3 0 3 0 3 0 3 0 4 9 4 9 4 g 4 9 1 4 1 4 1 4 1 4
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+72727272030303039494~4g44I414141
+272727273030303049494~4g14l41414
+7 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3 9 4 9 4 ~ 4 ~ 4 4 1 4 l 4 1 4 1
+2 7 2 7 2 7 2 7 3 0 3 0 3 0 3 0 4 9 4 9 4 g 4 g 1 4 1 4 1 4 1 4
+7 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3 9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1
+
+L
+
+2
+@
+
+i
+
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9 3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2
+1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9 3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7
+4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4 0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 2 7 2 7 2 7 2 7 3 0 3 0 3 0 3 0
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 7 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3
+4 9 4 9 4 9 4 9 1 4 1 4 1 4 1 4 2 7 2 7 2 7 2 7 3 0 3 0 3 0 3 0
+9 4 9 4 9 4 9 4 4 1 4 1 4 1 4 1 7 2 7 2 7 2 7 2 0 3 0 3 0 3 0 3
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 1 4 1 4 1 4 1 4 4 9 4 g 4 g 4 9
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 1 4 1 4 1 4 1 4 4 9 4 g 4 g 4 9
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4
+3 0 3 0 3 0 3 0 2 7 2 7 2 7 2 7 1 4 1 4 1 4 ( 4 4 9 4 9 4 9 4 9
+
+0 3 0 3 0 3 0 3 7 2 7 2 7 2 7 2 4 1 4 1 4 l 4 1 ~ 4 ~ 4 ~ 4 ~ 4
+3
+0
+5
+5
+5
+5
+2
+7
+2
+7
+
+0
+3
+5
+5
+5
+5
+7
+2
+7
+2
+
+3
+0
+5
+5
+5
+5
+2
+7
+2
+7
+
+0
+3
+5
+5
+5
+5
+7
+2
+7
+2
+
+3
+9
+5
+5
+5
+5
+2
+7
+2
+7
+
+0
+3
+5
+5
+5
+5
+7
+2
+7
+2
+
+3
+0
+5
+5
+5
+5
+2
+7
+2
+7
+
+0
+3
+5
+5
+5
+5
+7
+2
+7
+2
+
+2
+7
+5
+5
+5
+5
+3
+0
+3
+0
+
+7
+2
+5
+5
+5
+5
+6
+3
+0
+3
+
+2
+7
+5
+5
+5
+5
+3
+0
+3
+0
+
+7
+2
+5
+5
+5
+5
+0
+3
+0
+3
+
+2
+7
+5
+5
+5
+5
+3
+0
+3
+0
+
+7
+2
+5
+5
+5
+5
+0
+3
+0
+3
+
+2 7 1 4 1 4 1 4 1 4 4 9 4 9 4 9 4 9
+7 2 4 1 4 1 4 1 4 1 9 4 9 4 9 4 9 4
+5 5 4 9 4 9 4 g 4 g 1 4 1 4 1 4 1 4
+5 5 9 4 9 4 g 4 g 4 4 1 4 1 4 1 4 1
+5 5 4 9 4 9 4 g 4 9 1 4 1 4 1 4 1 4
+5 5 9 4 9 4 g 4 g 4 4 1 4 1 4 1 4 1
+3 0 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+0 3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+3 0 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+0 3 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5
+
+Figure 2. Two artificially constructed landscapes that exhibit multiple-scale patterns. The left column is the
+pictorial version of the numerical map on the right.
+Simple variance exhibits a staircase curve, also indicative of a hierarchical structure in the landscape,
+but not as conspicuous as scale variance (especially
+for the scale level of 16x16 BSUs). The graph of spatial autocorrelation against scale levels (similar to, but
+not the same as, a correlogram) also indicates a multiple-scale structure, but is not as easy to interpret as
+scale variance. Results for the second landscape (pattern 2) for the three methods further support the above
+observations. Here, three zoning alternatives are used,
+and in each case scale variance unambiguously reveals two or three hierarchical levels in the data set.
+Note that changing zoning systems affects the results
+of all three methods, which is part of MAUP (Jelinski
+and Wu 1996). At the same time, by knowing how the
+
+zones are oriented during the data aggregation, scale
+variance can provide information on the directionality of dominant elongated patches (see pattern 2 in
+Figure 2 and the scale variance graph for zoning system 2 in Figure 4).
+Figure 5 summarizes the results of a semivariance
+analysis of these two contrived landscapes. The graph
+at the top in each column shows that semivariance
+exhibits cyclic fluctuations, indicative of the periodic
+pattern in the two landscapes. While this periodicity
+is not specious, it is difficult to discern whether there
+exist hierarchical scales in these landscapes and how
+many from these semivariograms. We also divided
+the landscapes into four horizontal transects (8x32
+
+8
+
+(4
+u
+
+6-
+
+.-L
+
+4-
+
+(u
+
+c
+
+QI
+
+=-
+
+QI
+
+2n
+
+0
+
+Y
+
+1x1
+
+2x2
+
+2x4
+
+n
+
+Y
+
+4x4
+
+4x8
+
+-
+
+v
+
+8x8
+
+8x16
+
+16x16
+
+16x32
+
+8.0
+6.4
+
+-
+
+4.8
+
+-
+
+(6)
+
+(u
+
+.-I
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+p
+
+c
+
+.-&
+-
+
+e
+
+8
+
+U
+
+U
+
+e
+
+2
+1.5
+
+I
+0
+
+r\
+
+1.6 -
+
+3.2
+
+- (C)
+
+1-
+
+0.5
+
+-
+
+Y
+
+3
+.(R
+
+Y
+
+0-
+
+-0.5
+
+-
+
+(R
+
+Ln”
+
+-1
+
+I
+
+I
+
+I
+
+I
+
+I
+
+I
+
+I
+
+I
+
+I
+
+Scale Level
+
+Figure 3. Scale variance analysis of the artificially constructed landscape (pattern 1) in Figure 2. Variance
+and spatial autocorrelation indices are also provided for comparison. The horizontal axis for all three graphs
+is scale level, representing a hierarchy of grain sizes progressively increasing from 1by 1to 16 by 32 BSUs.
+pixels each), with transect 1 at the top and transect 4
+at the bottom. The semivariogram for the top transect
+in each landscape seems to indicate a scale break at
+the lag of 8 pixels, whereas the other three transects
+exhibit rather similar semivariograms without obvious scale breaks. In all cases, semivariance analysis
+does not seem to be able to clearly identify the hierarchical levels that apparently exist in the two landscapes. We further compare scale variance with
+semivariance analysis using a real landscape data set
+(a map of NDVI, normalized difference vegetation index), with 300x300 pixels each of which has a 30 m
+linear dimension. The landscape is a boreal forest
+region, composed of a large number of patches of different vegetation types that vary greatly in size. In
+Figure 6, scale variance and the percent total sum of
+squares (top) both show several peaks, indicative of
+the existence of a multiple-scale structure in the landscape. However, for real landscapes scale variance
+does not drop to near zero between scale levels, as for
+
+the contrived landscapes, because patch sizes may
+vary continuously, although not evenly; i.e., the nested
+patch hierarchies are not “neatly”organized. The variance plot (bottom) seems to corroborate this result,
+but is much less conspicuous. On the other hand, the
+semivariogram shows that semivariance increases
+rapidly initially with increasing lags and then gradually levels off (Figure 7). The multiscale structure of
+the landscape does not become discernable from either the semivariogramfor the entire landscape (top)
+or for the three transects (bottom three).
+
+Iv.MULTISCALE ANALYSES WITH PATTERN
+INDICES
+The indirect multiscale analysis is closely related to
+the study of the problem of spatial aggregation in general and MAUP in particular (Wu and Jelinski 1995,
+Jelinski and Wu 1996). Here we focus on the ques-
+
+12
+
+Wu et al.: Multiscale Analysis of Landscape Heterogeneity
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+tion: how different landscape pattern indices respond
+to systematic changes in grain size a s a spatial data
+set is progressively aggregated with its extent kept
+constant. We compute a series of landscape metrics
+using FRAGSTATS (McGarigal and Marks 1995)
+based on a land cover classification map of a n urbanrural-desert landscape in Nevada, USA, occupying a n
+area of 900 km2. The classification was conducted
+using a 1984 Landsat TM scene. The landscape was
+dominated by different arid vegetation types (e.g., different types of shrublands and woodlands) as well as
+burned, agricultural, and urban areas.
+
+gated, the number of patch types (patch richness) and
+patch diversity (Shannon-Weaver diversity index) both
+decrease monotonically (the two graphs at the bottom in Figure 8). While the staircase-like decline in
+patch richness is readily understandable, decreasing
+patch diversity is a result of the combined decrease in
+both the number of patch types and the evenness of
+each type. Comparing patch richness and diversity
+graphs reveals that the initial rapid decrease in diversity is due to decreasing evenness, whereas later
+changes in diversity closely resemble those in patch
+richness. The exact pattern of patch richness and diversity with increasing grain size is determined significantly by the details of landscape heterogeneity
+(Turner et al. 1989, Wickham and Riitters 1995, Wu
+et al. 1997).
+
+In total, seventeen commonly used landscape metrics
+are examined systematically. The total amount of
+edge, number of patches, edge density, and patch density all show a remarkably consistent power-law relationship with increasing grain size, suggesting that
+these indices can be predicted over a wide range of
+grain sizes with high accuracy (the first four graphs
+in Figure 8). As data become more and more aggre-
+
+Contagion index has been widely used to measure the
+extent to which patches of the same type are clumped
+(O’Neill et al. 1988, Li and Reynolds 1993, Riitters et
+al. 1996). One may expect that contagion should in-
+
+1 ;mr-Jy---J
+Zoning System 1
+
+m
+Q,
+
+#
+f.0
+
+1
+
+l?ziiLl
+m
+0
+
+0 1 2 3 4 5 6 7 8 9 1 0 0 1 2 3 4 5 6 7 8 9 1 0
+
+Q,
+
+c)
+
+c
+m
+
+5
+
+20
+0 0
+
+‘
+
+.-m
+v)
+
+Zoning System 3
+
+Zoning System 2
+
+-0.5
+-1
+
+1 2
+
+3 4
+
+5 6
+
+7 8
+
+9 10
+
+0
+
+Moran’s I
+
+2 3
+
+1
+
+7 8
+
+910
+
+3 4
+
+5
+
+0
+
+1 2
+
+3 4
+
+5 6 7
+
+0 1 2 3 4 5 6 7 8 9 1 0 0
+
+Scale Level
+
+Grain Size
+(for 3 Zoning
+Systems)
+
+6
+
+1 2
+
+6 7
+
+8 9 10
+
+8
+
+9 10
+
+Moran’s I
+
+0 1 2 3 4 5 6 7 8 9 1 0
+
+1
+
+Scale Level
+
+4 5
+
+0
+
+1
+
+2 3
+
+Scale Level
+
+2
+
+3
+
+4
+
+5 6
+
+7 8
+
+910
+
+Scale Level
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+32x32
+
+Unit
+
+(BSUslgrain)
+
+1
+
+1x1
+
+2x2
+
+2x4
+
+4x4
+
+4x8
+
+8x8
+
+8x16
+
+16x16
+
+16x32
+
+2
+
+1x1
+
+2x2
+
+4x2
+
+4x4
+
+8x4
+
+8x8
+
+16x8
+
+16x16
+
+3 ~ ~ 1 3
+6 ~ ~ 3 2(Bsus/grain)
+
+3
+
+1x1
+
+2x2
+
+2x4
+
+2x8
+
+4x8
+
+4x16
+
+8x16
+
+8x32
+
+16x32
+
+32x32
+
+(BSUs/grain)
+
+Figure 4. Scale variance graph (top row) of the artificially constructed landscape (pattern 2) in Figure 2.
+Variance (middle row) and spatial autocorrelation indices (bottom row) are provided for comparison. Three
+columns represent three different zoning alternatives. The horizontal axis for all graphs is scale level, representing a nested hierarchy of grain sizes.
+
+0.16
+
+13
+
+Vol. 6, No. 1,June 2000
+
+Geographic Information Sciences
+
+,
+
+0.16
+I
+
+0.14
+
+-
+
+Pattern 1 Entire data set
+
+0.12
+0.1
+
+0.12
+
+1
+
+~~
+
+-
+
+Pattern 2 Entire data set
+
+0.08
+
+0.06
+0.04
+
+0.04
+
+0.02
+
+0.02
+
+I
+
+0
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+0
+0
+
+16
+
+2
+
+4
+
+6
+
+10
+
+8
+
+12
+
+14
+
+16
+
+0.16
+
+0.16
+
+I
+
+0.14.
+
+QI
+
+0.12
+
+.-m
+
+0.1
+
+u
+c
+
+-
+
+Pattern 2 Transect 1
+
+L
+
+9
+
+.>
+
+5
+cr,
+
+0.06
+0.04
+0.02
+
+Pattern I - Transect 1
+
+0.02
+
+1
+
+0
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+10
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+.ll
+
+c)
+
+c
+
+.-m
+L
+
+m
+
+.2
+
+5
+
+Cr,
+
+I
+
+".:
+0.08
+
+Pattern 1 - Transect 2
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+Pattern 1 - Transect 3
+
+.-
+
+L
+
+cr)
+
+0.04
+0.02
+
+0
+
+2
+
+4
+
+0.14
+0.12
+
+c)
+
+9
+
+0
+
+.
+0.1 .
+
+QI
+
+c
+
+0.06
+
+16
+
+0.02
+
+0
+
+Y
+
+14
+
+0.06
+
+0.04
+
+0.02
+
+0.08
+
+12
+
+-
+
+0.04
+
+E
+
+16
+
+Pattern 2 Transect 2
+
+0.06
+
+9
+
+14
+
+0.08
+
+0
+
+.2
+
+12
+
+6
+
+8
+
+10
+
+-
+
+Panern 2 Transect 3
+
+0.08
+0.06
+
+.
+
+0.04
+0.02
+
+0
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+0.16
+0.14
+0.12
+Panern 1 -Trans%! 4
+
+Panern 2 - Transect 4
+
+0.1
+0.08
+
+0.08
+0.06
+
+0.06
+0.04
+0.02
+
+0
+
+I
+
+0
+
+I
+
+0.04
+0.02
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+Lag (No. of Pixels)
+
+d
+
+4
+
+6
+
+8
+
+10
+
+12
+
+14
+
+16
+
+Lag (No. of Pixels)
+
+Figure 5. Semivariance analysis of the artificially constructed landscape (pattern 1, left column; pattern 2,
+right column) in Figure 2. The top graph in each column is for the entire landscape, and the other four
+represent four evenly divided horizontal transects from top to bottom (8x32 BSUs each).
+crease monotonically with increasing grain size simply because of the progressive agglomeration of
+smaller patches into larger ones of the same type.
+However, this is not the case here. Figure 9 shows
+that contagion increases up to a certain grain size and
+then begins to decline. In fact, for a given spatial pattern a finer grain size renders a larger contagion
+(Frohn 1998). Because several factors, including patch
+diversity, spatial pattern, and grain size, together affect the value of contagion (see Li and Reynolds 1993,
+Riitters et al. 1996), it is difficult, if meaningful, to
+interpret its response curve. Square pixel index
+
+(Frohn 1998) and landscape shape index are both derived from the perimeter-area ratio. As grain size increases, landscape shape index decreases rapidly following a power law, whereas square pixel, a normalized shape index, decreases linearly (Figure 9). In
+contrast with the assertions by Frohn (1998), the insensitivity of square pixel to changing grain size suggests that it may not be a good measure for detecting
+changes in landscape shape complexity across scales
+or along a gradient (also see Wu in review). The fractal
+dimension of the landscape remains constant over a
+range of grain sizes, which may suggest self-similar-
+
+14
+
+I
+
+Wu e t al.: Multiscale Analysis of Landscape Heterogeneity
+
+2ol
+a
+
+I
+
++pct-TSS
+
+16 -
+
++scaleVar
+
+:
+12L
+
+-
+
+8 -
+
+u
+
+4 -
+
+a
+4
+
+v1
+
+40 Q)
+
+2mc
+
+.I
+
+0-
+
+s
+
+50-
+
+.-?
+
+30-
+
+5 o l . . ..
+10-
+
+0)
+
+0 0
+
+Boreal forest - Entire data
+
+20-
+
+0
+
+0
+
+,
+
+,
+
+,
+
+,
+
+,
+
+,
+
+,
+
+,
+
+,
+
+,
+
+,
+
+,
+
+I
+
+.
+
+.
+
+.
+
+4
+
+6
+
+8
+
+10
+
+12
+
+.
+
+.
+
+.
+
+..
+
+..
+
+..
+
+..
+
+..
+
+!
+j
+
+10 20 30 40 50 60 70 80 90 100110 120130 14015C
+
+-
+
+, ,
+14
+16
+
+: . ! ‘
+2
+
+.
+
+Scale Level
+
+50
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+40
+
+f
+4
+t
+
+m
+c
+m
+._
+L
+
+17
+
+._
+
+E
+
+Boreal forest - Transec
+
+10
+0
+0
+
+30
+
+10 20 30 40 50 60 70 80 90 100110 12013014015C
+
+I-
+
+s
+
+20
+50-
+
+10
+
+40.
+30.
+
+0
+0
+
+2
+
+4
+
+6
+8
+1 0 1 2 1 4
+Scale Level
+
+Figure 6. Scale variance graph (top) showing the
+multiple-scale structure of a boreal forest landscape
+in northern Canada. Also plotted along with scale
+variance is the percent total sum of squares. Variance at each scale level is also shown for comparison
+(bottom).
+ity, and then begins to fluctuate after grain size exceeds 50 pixels on a side. Together with contagion,
+the landscape fractal graph may be indicative of different landscape features emerging over coarse grain
+sizes. These features are more than likely “spatial”
+because the non-spatial measures, like landscape
+shape index and square pixel index, do not pick up
+this information (Figure 9).
+Figure 10 shows the response curves of mean patch
+size (MPS), patch size coefficient of variation (PSCV),
+mean patch fractal dimension (MPFD), area-weighted
+mean patch fractal dimension (AWMFD), patch size
+standard deviation (PSSD), mean patch shape index
+(MSI), and area-weighted mean patch shape index
+(AWMSI). It is trivial to speculate that MPS will increase with increasing grain size in any landscape.
+Yet, it is interesting to note that the increase in MPS
+is readily predictable and that its pattern seems to
+indicate multiple-scale patterns existing at grain sizes
+of about 60x60 and 80x80 pixels. This scale multiplicity in landscape pattern again is noticeable in the response curves of AWMFD, PSSD, MSI, and AWMSI
+(Figure 10). While patch size standard deviation in-
+
+or
+0
+
+I
+
+I
+
+.
+
+.
+
+I
+
+I
+
+I
+
+.
+
+.
+
+I
+
+I
+
+I
+
+I
+
+I
+
+1
+
+10 20 30 40 50 60 70 80 90 100110120130 1401!
+
+Figure 7. Semivariogram for a boreal forest landscape
+in northern Canada. The top graph is for the entire
+data set (300 x 300 pixels), and the lower three graphs
+are for three consecutive west-east transects (each 100
+x 300 pixels) from north to south, respectively.
+creases almost linearly with increasing grain size,
+patch size coefficient of variation, ie., patch size standard deviation divided by mean patch size, decreases
+again in a power-law fashion (Figure 10). Mean patch
+fractal dimension does not change notably with grain
+size, but area-weighted mean patch fractal dimension
+demonstrates a rapid nonlinear decline which is similar to that of area-weighted mean patch shape index.
+Also noticeable is mean patch shape index which
+seems sensitive to changing grain size, and thus may
+be used together with MPS, AWMFD, PSSD, and
+AWMSI to detect, in addition to describing, multiscale
+patterns in landscapes.
+
+15
+
+Vol. 6, No. 1,June 2000
+
+Geographic Information Sciences
+
+I
+
+45000 1
+40000
+
+35000
+30000
+25000
+20000
+15000
+10000
+
+~~
+
+~
+
+__
+
+7
+
+4,
+
+5000
+0
+
+o
+20
+40
+60
+ao
+Grain Size (no. pixels on a side)
+
+20
+40
+60
+Grain Size (no. pixels on a side)
+
+0
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+y = 220.59~-0'9343
+R' = 0.999
+
+0
+
+20
+40
+60
+80
+lo(
+Grain Size (no. uixels on a side)
+
+16 1
+
+1
+
+15
+
+5
+
+14
+13
+12
+
+5
+E
+a
+
+11
+10
+
+-
+
+g8
+
+g
+
+0
+
+20
+40
+60
+80
+101
+Grain Size (no. pixels on a side)
+
+0
+
+20
+40
+60
+80
+10(
+Grain Size (no. pixels on a side)
+
+0
+
+20
+40
+60
+80
+10(
+Grain Size (no. pixels on a side)
+
+2.45
+2.4
+X
+2.35
+-c 2.3
+t:
+2 2.25
+9 2.2
+S
+2.15
+
+Figure 8. Response curves of landscape metrics to progressively increasing grain size: total edge, number of
+patches, edge density, patch density, patch richness, and Shannon diversity index.
+
+V. DISCUSSION AND CONCLUSIONS
+The relationship between pattern and scale is extremely intriguing and important in ecology (Levin
+1992), but remains elusive even when pattern is restricted to spatial pattern and scale to grain and extent. Detecting, describing and understanding the
+multiple-scale structure of spatial heterogeneity are
+essential in landscape ecology, or more appropriately,
+spatial ecology. Although many methods have been
+used to achieve this goal in landscape ecology since
+the 1980s, the effectiveness of even the most widely
+used methods (e.g., correlograms, variograms) remains
+unclear or questionable.
+
+In this paper, we outline two complementary, yet parallel approaches to multiscale analysis of landscape
+pattern: the direct approach that uses multiscale statistical methods and the indirect approach that usually employs simple synoptic pattern indices with hierarchically resampled data. In particular, we illustrate the use of scale variance analysis with contrived
+landscape data as well as a real landscape data set.
+Semivariance analysis and spatial autocorrelation
+analysis are used for the purpose of comparison. The
+results show that scale variance analysis seems to be
+a more robust method for detecting and describing
+multiple-scale or hierarchical structures of landscapes.
+Townshend and Justice (1988,1990) have shown that
+scale variance analysis is just as powerful as complicated methods such a s spectral analysis, but much
+
+16
+
+Wu et al.: Multiscale Analysis of Landscape Heterogeneity
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+simpler in computation and much more transparent
+in interpretation. Although semivariance analysishas
+been claimed as one of the most effective methods for
+detecting the multi-scale or hierarchical structure of
+landscapes, our results here suggest that this may not
+always be true. In semivariograms of real landscapes,
+fine-scale variability can be "squeezed"by broad-scale
+variability, which makes it less likely for a clearlyidentifiable staircase curve (e.g., Robertson and Gross
+1994) to emerge. Meisel and Turner (1998) also
+pointed out that, although semivariance analysis did
+reveal the hierarchical structure in their artificial
+maps, it is unlikely to detect multiscale patterns in
+real landscapes.
+The results of our multiscale analysis with seventeen
+commonly used landscape pattern metrics show that
+almost all of them change considerably with increasing grain size. These changes reflect the notorious
+problem known as MAUP and, at least sometimes,the
+multiple-scale structure in landscape pattern. Some
+metrics (e.g., the number of patches, patch density,
+total edge, edge density, mean patch size, patch size
+coefficient of variation) seem to exhibit consistent
+patterns over a wide range of grain sizes, and thus
+can be predicted accurately with simple regression
+equations. On the other hand, nonlinear response
+40
+
+-
+
+35
+
+-
+
+curves are found for other metrics (e.g., patch diversity, contagion,landscape fractal dimension). It makes
+little sense to characterizelandscape pattern with any
+of these indices at a single scale, be it grain or extent.
+While a multiple-scale analysiswith several landscape
+metrics across scales is necessary for meaningfully
+describing landscape pattern, doing so can also render valuable information on detecting possible scale
+multiplicity in the pattern.
+All spatial data and all types of spatial analysis carry
+errors of one sort or another (Fotheringham 1989).
+The usefulness of a spatial study may be critically
+affected by the nature and the intrinsic meaningfulness of the objects or units in the data set (Openshaw
+1984). The multiple-scale analyses discussed here are
+intimately related to the problem of spatial aggregation in statistics and human geography in general.
+Specifically, MAUP may have significant influences
+on the detection of scale, the determination of relationships among organizational levels, and the translation of information across scales. Indeed, the modifiable areal unit problem suggests that results of many
+past ecological studies based on spatially aggregated
+data may be flawed or seriously biased and, therefore, should be reexamined. There is apparently a
+lack of awareness of the vast literature on MAUP in
+
+c
+
+.-0
+
+1
+
+30;
+25
+
+-
+
+20s
+
+0.2
+I
+
+.
+
+w
+
+.
+
+1
+
+*
+
+1
+
+I
+
+I
+
+.
+
+. ..
+I
+
+I
+
+I
+
+I
+
+.
+
+4
+
+0
+
+*
+
+0
+
+20
+
+40
+
+60
+
+80
+
+1 oc
+
+Grain Size (no. pixels on a side)
+
+100 x 90-*
+QI
+c 80
+QI
+70 a
+m 60 "
+J=
+50QI
+p 40$I 30-o
+2010
+07
+0
+
+-
+
+1
+
+1.4
+
+-
+
+-
+
+5
+
+-
+
+I
+
+.
+
+.
+
+.
+20
+
+s
+
+.
+
+r
+
+- -.T
+I
+
+40
+
+.
+
+.
+
+_1
+
+60
+Grain Size (no. pixels on a side)
+
+80
+
+100
+
+c
+0
+
+'g
+
+1.3
+
+!i
+
+U
+-
+
+1.2
+
+LL
+
+1.1
+
+!
+c
+
+I
+
+1
+0
+
+20
+
+40
+
+60
+
+Figure 9. Response curves of landscape metrics to progressively increasing grain size: contagion, square pixel
+index, landscape shape index, and landscape fractal dimension.
+
+17
+
+Vol. 6 , No. 1,June 2000
+
+Geographic Information Sciences
+
+3500
+~
+
+3000
+
+N
+
+iX 2500
+i
+
+?
+2ooo
+i
+1500
+
+n
+
+E
+
+3
+
+1000
+500
+
+0
+0
+
+20
+40
+60
+80
+100
+Grain Size (no. pixels on a side)
+
+-E-
+
+'2
+
+MPFD
+
+8
+
+E
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
++AWMFD
+
+4500 4000 3500
+3000
+
+-
+
+0
+Grain Size (no. pixels on a side)
+
+20
+40
+60
+80
+10(
+Grain Size (no. pixels on a side)
+
+EE
+
+3 1
+
+0
+
+20
+40
+60
+80
+Grain Size (no. pixels on a side)
+
+1
+
+0
+
+20
+40
+60
+80
+Grain Size (no. pixels on a side)
+
+101
+
+Figure 10. Response curves of landscape metrics to progressively increasing grain size: mean patch size,
+patch size coefficient of variation, patch fractal dimension, patch size standard deviation, mean patch shape
+index, and area-weighted mean patch shape index.
+
+scape? (3) What scaling laws exist for different patterns and processes in landscapes that are heterogeneous in various ways? In the case of no simple and
+mathematically tractable scaling laws, how do we develop systematic procedures to guide the translation
+or extrapolation of information from one scale t o anTo understand the role of scale in studying spatial other? The results of our study shed light on these
+heterogeneity, three related but distinctive groups of issues. However, these research questions may reresearch questions must be adequately addressed: (1) main among the most essential and the most chalHow does changing the scale of observation or analy- lenging in landscape ecology for a long time, and full
+sis affect research results and their interpretation, and answers to them dictate further continuing theoretiare these changes predictable? (2) Are ecological sys- cal and empirical studies.
+tems multiple-scaled or hierarchically structured, and
+if so, how do we identify and interpret characteristic
+scales in relation to patterns and processes in a landthe ecology community, and ecologists should make a
+conscious effort to integrate into their own understanding of pattern and scale the valuable information on the issue of scale in geography and social sciences (Marceau 1999,Wu and Qi this issue).
+
+18
+
+ACKNOWLEDGMENTS
+This research was in part supported by USDA NRICGP
+grant 95-37101-2028 (to PTT and JW), NSF grant DEB
+97-14833 (CAP-LTER), and US EPA grant R827676-01-0
+(to JW). Although the research described in this article
+has been funded in part by the above mentioned agencies,
+it has not been subjected to the Agencies’ required peer
+and policy review and therefore does not necessarily reflect the views of the agencies and no official endorsement
+should be inferred. We thank John David, Cindy Overton
+and Weijun Shen for their comments on the manuscript.
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+REFERENCES
+Barnsley, M. J., S. L. Barr, andT. T. 1997. Scalingand
+generalisation i n land cover mapping from satellite
+sensors. Pages 173-199 in P. R. van Gardingen, G. M.
+Foody, and P. J. Curran, editors. Scaling-up From Cell
+To Landscape. Cambridge University Press, New York.
+Bradshaw, G. A., and T. A. Spies. 1992. Characterizing
+canopy gap structure i n forests using wavelet analysis.
+Journal of Ecology, 80:205-215.
+Burrough, P. A. 1995. Spatial aspects of ecological data.
+Pages 213-265 in R. H. G. Jongman, C. J. F. Ter Braak,
+and v. T. F. R., editors. Data Analysis in Community and
+Landscape Ecology. Cambridge University Press, Cambridge.
+141 Cullinan, V. I.,M. A. Simmons, and J. M. Thomas. 1997.
+A Bayesian test of hierarchy theory: Scaling up variability in plant cover from field to remotely sensed data.
+Landscape Ecology, 12:273-285.
+Dale, M. R. T. 1999. Spatial Pattern Analysis in Plant
+Ecology. Cambridge University Press, Cambridge.
+Fortin, M. J. 1999. Spatial statistics in landscape ecology. Pages 253-279 in J. M. Klopatek and R. H. Gardner,
+editors. Landscape Ecological Analysis: Issues adn Applications. Springer-Verlag, New York.
+[71 Fotheringham, S. 1989. Scale-independent spatial
+analysis. Pages 221-228 inM. F. Goodchild and S. Gopal,
+editors. Accuracy of Spatial Databases. Taylor and
+Francis, London.
+Frohn, R. C. 1998. Remote Sensing for Landscape Ecology: New Metric Indicators for Monitoring, Modeling,
+and Assessment of Ecosystems. Lewis Publishers, Boca
+Raton.
+[91 Greig-Smith, P. 1983. Quantitative Plant Ecology. University of California Press, Berkeley.
+[lo] Gustafson, E. J. 1998. Quantifying landscape spatial
+pattern: What is the state of the art? Ecosystems, 1:143156.
+[ l l ] Henebry, G. M., and H. J. H. Kux. 1995. Lacunarity as a
+texture measure for SAR imagery. International Journal of Remote Sensing, 16:565-571.
+[12] Jelinski, D. E., and J. Wu. 1996. The modifiable areal
+unit problem and implications for landscape ecology.
+Landscape Ecology, 11:129-140.
+[13] Kolasa, J., and S. T. A. Pickett, editors. 1991. Ecological
+
+Wu
+
+e t al.: Multiscale Analysis of Landscape Heterogeneity
+
+Heterogeneity. Springer-Verlag, New York.
+[14] Krummel, J. R., R. H. Gardner, G. Sugihara, R. V. ONeill,
+and P. R. Coleman. 1987. Landscape patterns in a disturbed environment. Oikos, 48~321-324.
+[15] Legendre, P. 1993. Spatial autocorrelation: Trouble or
+new paradigm? Ecology, 74:1659-1673.
+[16] Legendre, P., and M.-J. Fortin. 1989. Spatial pattern
+and ecological analysis. Vegetatio 80:107-138.
+[17] Levin, S. A. 1992. The problem of pattern and scale in
+ecology. Ecology, 73:1943-1967.
+[18] Li, H., and J. F. Reynolds. 1993. A new contagion index
+to quantify spatial patterns of landscapes. Landscape
+Ecology, 8:155-162.
+[19] Marceau, D. J. 1999. The scale issue in social and natural sciences. Canadian Journal of Remote Sensing,
+25:347-356.
+[20] McGarigal, K., and B. J. Marks. 1995. FRAGSTATS:
+Spatial Pattern Analysis Program for QuantifyingLundscape Structure. Gen. Tech. Rep. PNW-GTR-351. Pacific
+Northwest research Station, USDA-Forest Service, Portland.
+[21] Meisel, J. E., andM. G. Turner. 1998. Scale detection in
+real and artificial landscapes using semivariance analysis. Landscape Ecology, 13:347-362.
+[22] Miller, D. H. 1978. The factor of scale: Ecosystem, landscape mosaic, a n d region. Pages 63-88 i n K. A.
+Hammond, G. Macinio and W.B. Fairchild, editor.
+Sourcebook on the Environment: A Guide to the Literature. University of Chicago Press, Chicago.
+[23] Milne, B. T. 1991. Lessons from Applying FractalModels to Landscape Patterns. Pages 199-235 in M. G. a. R.
+H. G. Turner, editor. Quantitative Methods in Landscape
+Ecology. Springer-Verlag, NY.
+[24] Moellering, H., and W. Tobler. 1972. Geographical variances. Geographical Analysis 4:34-64.
+[25] Nikora, V. I., C. P. Pearson, and U. Shankar. 1999. Scaling properties i n landscape patterns: New Zealand experience. Landscape Ecology, 14:17-33.
+[26] ONeill, R. V., D. L. DeAngelis, J. B. Waide, andT. F. H.
+Allen. 1986. A Hierarchical Concept of Ecosystems.
+Princeton University Press, Princeton.
+[27] ONeill, R. V., R. H. Gardner, B. T.Mlne, M. G. Turner,
+and B. Jackson. 1991. Heterogeneity and Spatial Hierarchies. Pages 85-96 in J. Kolasa and S. T. A. Pickett,
+editors. Ecological Heterogeneity. Springer-Verlag, New
+York.
+[28] O’Neill, R. V., B. T. Milne, M. G. Turner, and R. H.
+Gardner. 1988. Resource utilization scales and landscape pattern. Landscape Ecology 2:63-69.
+[29] Openshaw, S. 1984. The Modifiable Areal Unit Problem. Geo Books, Norwich.
+[30] Platt, T., and K. L. Denman. 1975. Spectral analysis in
+ecology. Ann. Rev. Ecol. Syst. 6:189-210.
+[31] Plotnick, R. E., R. H. Gardner, and R. V. O’Neill. 1993.
+Lacunarity indices as measures of landscape texture.
+Landscape Ecology, 8:201-211.
+[32] Riitters, K. H., R. V. O’Neill, J. D. Wickham, and K. B.
+Jones. 1996. A note on contagion indices for landscape
+
+Geomauhic Information Sciences
+
+Downloaded by [USP University of Sao Paulo] at 11:45 24 February 2014
+
+~~~
+
+~
+
+Vol. 6. No. 1. June 2000
+
+19
+
+~
+
+analysis. Landscape Ecology 11:197-202.
+[33]Ripley, B. D. 1978.Spectral analysis and the analysis
+of pattern in plant communities. Journal of Ecology,
+66~965-981.
+[34]Robertson, G. P. 1987.Geostatistics in ecology: Interpolating with known variance. Ecology, 68:744-748.
+[35]Robertson, G. P., and K. L. Gross. 1994.Assessing the
+heterogeneity of belowground resources: Quantifying
+pattern and scale. Pages 237-253 in M. M. Caldwell
+and R. W. Pearcy, editors. Exploitation of Enuironmental Heterogeneity by Plants :Ecophysiological Processes
+Above- and Belowground. Academic Press, San Diego.
+[36]Rossi, R. E.,D. J. Mulla, A. G. Journel, and E. H. Franz.
+1992.Geostatistical tools for modeling and interpreting ecological spatial dependence. Ecological Monographs, 62:277-314.
+[37]Saunders, S.C., J. Chen, T. R. Crow, andK. D. Brosofske.
+1998. Hierarchical relationships between landscape
+structure and temperature in a managed forest landscape. Landscape Ecology, 13:381-395.
+[38]Townshend, J. R. G., and C. 0.Justice. 1988.Selecting
+the spatial resolution of satellite sensors required for
+global monitoring of land transformations. Int. J. Remote Sensing, 9:187-236.
+[39]Townshend, J. R. G., and C. 0. Justice. 1990.The spatial variation of vegetation changes a t very coarse
+scales. Int. J. Remote Sensing, 11:149-157.
+[40]Turner, S.J., R. V. ONeill, W. Conley,M. R. Conley, and
+H. C. Humphries. 1991. Pattern and scale: Statistics
+for landscape ecology. Pages 17-49i n M. G. Turner and
+R. H. Gardner, editors. Quantitative Methods in Landscape Ecology. Springer-Verlag, New York.
+[41]Turner, M. G., R. V. O'Neill, R. H. Gardner, and B. T.
+Milne. 1989. Effects of changing spatial scale on the
+analysis of landscape pattern. Landscape Ecology,
+
+31153-162.
+[42]van Gardingen, P. R., G. M. Foody, and P. J. Curran, editors. 1997.Scaling-Up: From Cell to Landscape. Cambridge University Press, Cambridge.
+[43]Werner, B. T. 1999. Complexity in natural landform
+patterns. Science 284:102-104.
+[44]Wickham, J . D., and K. H. Riitters. 1995.Sensitivity of
+landscape metrics to pixel size. International Journal
+of Remote Sensing, 16:3585-3595.
+[45]Wu, J. 1999.Hierarchy and scaling: Extrapolating information along a scaling ladder. Canadian Journal of
+Remote Sensing, 25:367-380.
+[46]Wu, J. 2000.Pattern and scale: The behavior of landscape metrics. in review.
+[47]Wu, J., W.Gao, and P. T. Tueller. 1997.Effects of changing spatial scale on the results of statistical analysis
+with landscape data: A case study. Geographic Information Sciences, 3:30-41.
+[48]Wu, J., and D. E. Jelinski. 1995.Pattern and scale in
+ecology: The modifiable areal unit problem. Pages 1-9
+in B. Li, editor. Lectures in Modern Ecology. Science
+Press, Beijing.
+[49]Wu, J., D. E. Jelinski, and Y.Qi. 1994.Spatial pattern
+analysis of a boreal forest landscape: scale effects and
+interpretation. Pages 165 in Proceedings of the VI International Congress of Ecology, Manchester, UK.
+[50]Wu, J., and S. A. Levin. 1994.A spatial patch dynamic
+modeling approach to pattern and process in a n annual grassland. Ecological Monographs, 64(4):447-464.
+[51]Wu, J., and 0.L. Loucks. 1995.From balance-of-nature
+to hierarchical patch dynamics: A paradigm shift i n
+ecology. Quarter Review of Biology, 70:439-466.
+[52]Wu, J., and Y.Qi. 2000.Dealing with scale in landscape
+analysis: An overview. Geographic Information Sciences,
+6:l-5.
+
+

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 import cgi, cgitb 
 import numpy
 import scipy
@@ -132,14 +132,14 @@ if (userU == +1):
 	    tempArray = []
 	    if (len(userFeedbackTerm[i]) == 1):
 		if (numpy.where(terms == userFeedbackTerm[i][0])[1].size > 0):
-	        	userU[i, numpy.where(terms == userFeedbackTerm[i][0])[1][0]] = 1
+	        	userU[i, numpy.where(terms == userFeedbackTerm[i][0])[1][0]] = 1 
 	    else:
 	    	#step = 0.5/(len(userFeedbackTerm[i])-1)
                 step = 0.05
 	    	for j in range(len(userFeedbackTerm[i])):
 			if (numpy.where(terms == userFeedbackTerm[i][j])[1].size > 0):
 	        		userU[i, numpy.where(terms == userFeedbackTerm[i][j])[1][0]] = max(1 - j*step, 0.5)
-
+	
 
 
 
@@ -158,36 +158,36 @@ clusterDocs = []
 realK = 0
 
 while (realK < k):
-
+        
         idp = []
-
+        
         selectedCentroids = numpy.empty([k, M], dtype=float)
         attrVals = numpy.empty([M,k], dtype=float)
-
+        
 	fcm = Fuzzy.FuzzyCMeans(data.transpose(), k, options[0], 'cosine', userU)
         fcm()
         bestU = fcm.mu #.transpose()
-
+	
         for p in range(k):
 		sortIDX = numpy.argsort(bestU[p,:])
 		sortV = numpy.sort(bestU[p,:])
                 tempIndex = numpy.argmax(sortV > (1.0/k))
                 idp.append(sortIDX[tempIndex:])
-
+		
 	for p in range(k):
                 idx = []
                 idpp = idp[p]
-
+                
 		Varsp = Vars[idpp]
 		meanVarsp = numpy.mean(Varsp)
 		tempIndex = numpy.where(Varsp >= meanVarsp)[0]
                 keyTerms = idpp[tempIndex]
-
+                
 		newDataset = data[:,keyTerms]
 		sumDataset = numpy.mean(newDataset, axis = 1)
-
+		
 		temp, label = scipy.cluster.vq.kmeans2(sumDataset, 2, iter=100, thresh=1e-06, minit='random', missing='warn')
-
+		
 
 		idx.append(numpy.where(label == 0)[0])
                 idx.append(numpy.where(label == 1)[0])
@@ -195,15 +195,15 @@ while (realK < k):
 			relDocs = idx[1]
 		elif (idx[1].size == 0):
 			relDocs = idx[0]
-                else:
+                else: 
 			if (idx[0].size >= idx[1].size):
                     		relDocs = idx[1]
                 	else:
                     		relDocs = idx[0]
                 selectedCentroids[p,:] = numpy.mean(data[relDocs,:], axis = 0)
-
+                
         Y = cdist(data, selectedCentroids, 'cosine')
-
+	
 
 	minY = numpy.min(Y, axis=1)
         maxY = numpy.max(Y, axis=1)
@@ -212,24 +212,24 @@ while (realK < k):
         maxMmin = numpy.kron(numpy.ones((k,1)),maxMmin).transpose()
         tempY = numpy.multiply((Y - minY),numpy.power(maxMmin,-1.0))
         tempY = 1 - tempY
-
-
-
+	
+		
+	
 
 	threshold = 0.85
         tempY = (tempY > threshold)
 	clusters = []
         for p in range(k):
             clusters.append(numpy.where(tempY[:,p])[0])
-
-
-
+	
+	
+	
 
 	minY = numpy.min(Y)
 	maxY = numpy.max(Y)
 	tempY = 1 - numpy.multiply((Y - minY),numpy.power(maxY-minY,-1.0))
-
-
+	
+	
 	outputDocMembs = userDirectory+"documentMembs"
 	fo = open(outputDocMembs, "wb")
 	fo.write("name")
@@ -243,7 +243,7 @@ while (realK < k):
 		for p in range(k):
 			fo.write(","+str(tempY[i,p]*100))
 		fo.write("\n")
-
+		
 	fo.close()
 
 	realK = 0
@@ -257,7 +257,7 @@ while (realK < k):
 
 silhouette_avg = silhouette_score(data, IDX, 'cosine')
 
-
+	
 CM.computeX2(attrVals, clusters, data, N)
 attIDTemp = numpy.argmax(attrVals, axis = 1)
 id = []
@@ -267,13 +267,13 @@ for p in range(k):
 	temp = temp[::-1]
 	keyterms.append(temp[range(f)])
 
-
+	
 minV = numpy.min(attrVals)
 maxV = numpy.max(attrVals)
 attrVals = numpy.multiply((attrVals - minV),numpy.power(maxV-minV,-1.0))
+        		
 
-
-
+	
 outputTermMembs = userDirectory+"termMembs"
 fo = open(outputTermMembs, "wb")
 fo.write("name")
@@ -286,10 +286,10 @@ for i in range(M):
 	for p in range(k):
 		fo.write(","+str(attrVals[i,p]*100))
 	fo.write("\n")
-
+		
 fo.close()
-
-
+           
+                
 for p in range(k):
     tempStr = '['
     comma = ''
@@ -318,7 +318,7 @@ for p in range(k):
     fo2.write("<html>\n<head></head>\n<body>\n<p>")
     fo2.write("Cluster size: "+ str(len(clusters[p])))
     fo2.write("</p>\n</body>\n</html>\n</richcontent>\n")
-
+    
     for j in range(len(clusters[p])):
 	textFile = docs[0, clusters[p][j]]
 	fo2.write("<node LINK=\""+"http://demeter.research.cs.dal.ca/UserSupervisedClustering"+userDirectory[2:len(userDirectory)]+textFile[0:textFile.rindex('.')]+'.pdf'+"\" TEXT=\""+textFile+"\">\n")
@@ -326,22 +326,22 @@ for p in range(k):
 	fo.write(comma+docs[0, clusters[p][j]])
 	comma = ','
 	try:
-
+		
 		with open(userDirectory+docs[0, clusters[p][j]]) as textFile:
 			first_line = textFile.readline()
 			fo2.write("<richcontent TYPE=\"NOTE\">\n")
 			fo2.write("<html>\n<head></head>\n<body>\n<p>")
 			fo2.write(first_line[0:min(f,len(first_line))])
 			fo2.write("</p>\n</body>\n</html>\n</richcontent>\n")
-
+			
 
 		textFile.close()
 	except:
 		fo2.write("<richcontent TYPE=\"NOTE\">\n")
 		fo2.write("<html>\n<head></head>\n<body>\n<p>")
 		fo2.write("</p>\n</body>\n</html>\n</richcontent>\n")
-
-	fo2.write("</node>\n")
+	
+	fo2.write("</node>\n")	
     fo.write("\n")
     tempStr += ']'
     clusterDocs.append(tempStr)
@@ -367,3 +367,13 @@ output2 = json.dumps(clusterDocs)
 output3 = json.dumps(silhouette_avg)
 print "Content-type:application/json\r\n\r\n"
 print json.dumps({'termClusters':output1, 'docClusters':output2, 'silhouette':output3})
+        
+        
+                    
+                
+		
+		
+		
+		
+	
+

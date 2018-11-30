@@ -1,0 +1,1567 @@
+Probabilistic Latent Semantic Visualization:
+Topic Model for Visualizing Documents
+Tomoharu Iwata
+
+Takeshi Yamada
+
+Naonori Ueda
+
+NTT Communication Science Laboratories
+2-4 Hikaridai, Seika-cho, Soraku-gun, Kyoto, Japan
+
+{iwata,yamada,ueda}@cslab.kecl.ntt.co.jp
+ABSTRACT
+We propose a visualization method based on a topic model
+for discrete data such as documents. Unlike conventional
+visualization methods based on pairwise distances such as
+multi-dimensional scaling, we consider a mapping from the
+visualization space into the space of documents as a generative process of documents. In the model, both documents
+and topics are assumed to have latent coordinates in a twoor three-dimensional Euclidean space, or visualization space.
+The topic proportions of a document are determined by the
+distances between the document and the topics in the visualization space, and each word is drawn from one of the
+topics according to its topic proportions. A visualization,
+i.e. latent coordinates of documents, can be obtained by
+fitting the model to a given set of documents using the EM
+algorithm, resulting in documents with similar topics being
+embedded close together. We demonstrate the effectiveness
+of the proposed model by visualizing document and movie
+data sets, and quantitatively compare it with conventional
+visualization methods.
+
+Categories and Subject Descriptors
+H.2.8 [Database Management]: Database Applications—
+Data Mining; I.2.6 [Artificial Intelligence]: Learning; I.5.1
+[Pattern Recognition]: Model—Statistical
+
+General Terms
+Algorithms
+
+Keywords
+Visualization, Topic model, Probabilistic latent semantic
+analysis
+
+1. INTRODUCTION
+Recently there has been great interest in topic models for analyzing documents and other discrete data. A topic model
+is a hierarchical probabilistic model, in which a document is
+
+KDD’08, August 24–27, 2008, Las Vegas, Nevada, USA.
+
+modeled as a mixture of topics, where a topic is modeled as
+a probability distribution over words. Probabilistic Latent
+Semantic Analysis (PLSA) [10] and Latent Dirichlet Allocation (LDA) [4] are representative topic models, and they are
+used for a wide variety of applications such as information
+retrieval, text clustering and collaborative filtering.
+In this paper, we propose a nonlinear visualization method
+based on a topic model, which we call Probabilistic Latent
+Semantic Visualization (PLSV). Visualization is a useful
+tool for understanding complex and high dimensional data,
+and it enables us to browse intuitively through huge amounts
+of data. A number of document visualization methods have
+been proposed [8, 22], and the importance of visualizing documents is increasing since documents such as web pages,
+blogs, e-mails, patents and scientific articles are being accumulated rapidly.
+In PLSV, we consider a mapping from the visualization
+space into the space of documents as a generative process
+of documents. Both documents and topics are assumed to
+have latent coordinates in a two- or three-dimensional Euclidean space, or visualization space. The topic proportions
+of a document are determined by the Euclidean distances between the document coordinate and the topic coordinates.
+If a document is located near a topic, the probability that
+the document has the topic becomes high. Each word in a
+document is drawn from one of the topics according to its
+topic proportions, as in other topic models. The parameters
+in PLSV including latent coordinates of documents can be
+estimated by fitting the model to the given set of documents
+using the EM algorithm.
+A number of visualization methods have been proposed, such
+as Multi-Dimensional Scaling (MDS) [20], Isomap [19] and
+Locally Linear Embedding (LLE) [17]. However, most of
+these methods take no account of the latent structure in the
+given data such as topics in the case of document data. For
+example, MDS embeds samples so that pairwise distances in
+the visualization space accurately reflect pairwise distances
+in the original space, and it does not consider topics explicitly. On the other hand, because PLSV considers topics,
+documents with similar semantics are embedded close together even if they do not share any words.
+PLSA or LDA can extract a low-dimensional representation of a document as topic proportions. However, they are
+not appropriate for visualization since they cannot express
+
+more than three topics in the two-dimensional visualization
+space, and the representation is an embedding in the simplex
+space but not in the Euclidean space. In contrast, PLSV can
+express any number of topics even with a two-dimensional
+representation, and it embeds documents in the Euclidean
+space, which is a metric space that most closely corresponds
+to our intuitive understanding of space. The topic proportions estimated by PLSA or LDA can be embedded in the
+Euclidean space by Parametric Embedding (PE) [11], which
+can employ a set of topic proportions as input. However,
+the topic proportions may not be suitable when they are
+embedded in the visualization space since these topics are
+estimated in a different space from the visualization space.
+Moreover, errors accumulated in the topic estimation process with PLSA or LDA cannot be corrected in the embedding process with PE since they are modularized, and this
+method may result in poor visualization. On the other hand,
+since PLSV simultaneously estimates topics and visualizes
+documents in one probabilistic framework, topics are estimated so as to be optimal when documents are embedded
+in the two- or three-dimensional visualization space.
+The remainder of this paper is organized as follows. In
+Section 2, we formulate PLSV, and describe its parameter estimation procedures. In Section 3, we briefly review
+related work. In Section 4, we demonstrate the effectiveness of PLSV by visualizing document and movie data sets,
+and quantitatively compare it with conventional visualization methods. Finally, we present concluding remarks and
+a discussion of future work in Section 5.
+
+2. PROBABILISTIC LATENT SEMANTIC
+VISUALIZATION
+2.1 Model
+In the following discussion, we assume that the given data
+are documents. However, PLSV is applicable to other discrete data, such as purchase logs in collaborative filtering
+and gene sequences in bioinformatics.
+Suppose that we have a set of N documents C = {wn }N
+n=1 .
+Each document is represented by a sequence of Mn words denoted by wn = (wn1 , · · · , wnMn ), where wnm ∈ {1, · · · , W }
+is the mth word in the sequence of the nth document, Mn
+is the number of words in the nth document, and W is the
+vocabulary size.
+PLSV is a probabilistic topic model for finding the embedding of documents with coordinates X = {xn }N
+n=1 , where
+xn = (xn1 , · · · , xnD ) is a coordinate of the nth document
+in the visualization space, and D is its dimensionality, usually D = 2 or 3. We assume that there are Z topics indexed by {z}Z
+z=1 , and each topic has its associated coordinate φz = (φz1 , · · · , φzD ) in the visualization space. The
+topic proportion of a document is determined by its Euclidean distances from topics in the visualization space as
+follows:
+´
+`
+exp − 21 k xn − φz k2
+(1)
+P (z|xn , Φ) = PZ
+´,
+` 1
+2
+0
+z 0 =1 exp − 2 k xn − φz k
+where P (z|xn , Φ) is the zth topic proportion of the nth docPZ
+Z
+ument,
+z=1 P (z|xn , Φ) = 1, Φ = {φz }z=1 is the set of
+topic coordinates, and k · k represents the Euclidean norm
+
+x
+
+z
+
+w
+
+φ
+
+θ
+
+M
+
+N
+
+Z
+
+Figure 1: Graphical model representation of PLSV.
+in the visualization space. If we assume this topic proportion, when the Euclidean distance between coordinates of
+document xn and topic φz is small, the topic proportion
+P (z|xn , Φ) becomes high. Since documents located close together in the visualization space are similar distances from
+topic coordinates, they have similar topic proportions.
+PLSV assumes the following generative process for a set of
+documents C:
+1. For each topic z = 1, · · · , Z:
+(a) Draw word probability distribution
+θz ∼ Dirichlet(α).
+
+(b) Draw topic coordinate
+φz ∼ Normal(0, β −1 I).
+2. For each document n = 1, · · · , N :
+(a) Draw document coordinate
+xn ∼ Normal(0, γ −1 I).
+
+(b) For each word m = 1, · · · , Mn :
+
+i. Draw topic
+“
+”
+znm |xn , Φ ∼ Mult {P (z|xn , Φ)}Z
+z=1 .
+
+ii. Draw word
+“
+”
+wnm |znm , Θ ∼ Mult {P (w|znm , Θ)}W
+w=1 .
+Here Θ =P{θz }Z
+z=1 is a set of word probabilities, θz =
+{θzw }W
+w=1 ,
+w θzw = 1, and θzw = P (w|z, Θ) is the probability that the wth word occurs given the zth topic. As in
+LDA, each word wnm is sampled from a topic-specific multinomial distribution, where the multinomial parameters θz
+are generated by a Dirichlet distribution that is conjugate
+to multinomial. The coordinates xn and φz are assumed to
+be generated by zero-mean spherical Gaussian distributions
+for stabilizing the visualization. Given xn , Φ and Θ, the
+probability of wn is given as follows:
+P (wn |xn , Φ, Θ) =
+
+M
+n
+Y
+
+Z
+X
+
+m=1 z=1
+
+P (z|xn , Φ)P (wnm |z, Θ).
+
+(2)
+
+Figure 1 shows a graphical model representation of PLSV,
+where shaded and unshaded nodes indicate observed and
+latent variables, respectively. Since each word in a document
+can be sampled from different topics, PLSV can capture
+multiple topics as in PLSA and LDA.
+
+2.2 Parameter estimation
+We estimate the parameters in PLSV based on maximum
+a posteriori (MAP) estimation. The unknown parameters
+are a set of document coordinates X and a set of topic coordinates Φ as well as a set of word probabilities Θ. We
+represent all the unknown parameters by Ψ = {X , Φ, Θ}.
+The number of topics Z is assumed to be known and fixed.
+
+a closed form. Therefore, we estimate them by maximizing Q(Ψ|Ψ̂) using a gradient-based numerical optimization
+method such as the quasi-Newton method [15]. The gradients of Q(Ψ|Ψ̂) w.r.t. xn and φz are respectively:
+∂Q
+∂xn
+
+The log likelihood of parameters Ψ given a set of documents
+C is as follows:
+L(Ψ|C) =
+
+Mn
+N X
+X
+n=1 m=1
+
+log
+
+Z
+X
+z=1
+
+P (z|xn , Φ)P (wnm |z, Θ).
+
+(3)
+
+Following the generative process described in the previous
+subsection, we use a Dirichlet prior for word probability θz :
+`
+´ W
+Γ (α + 1)W Y α
+(4)
+θzw ,
+p(θz ) =
+Γ(α + 1)W w=1
+and a Gaussian prior with a zero mean and a spherical covariance for the coordinates of topic φz and document xn :
+“ β ”D
+“ β
+”
+2
+p(φz ) =
+exp − k φz k2 ,
+(5)
+2π
+2
+“ γ ”D
+“ γ
+”
+2
+p(xn ) =
+exp − k xn k2 ,
+(6)
+2π
+2
+where α, β and γ are hyper-parameters. We used α = 0.01,
+β = 0.1N and γ = 0.1Z in all the experiments described in
+Section 4.
+We estimate parameters Ψ by maximizing the posterior p(Ψ|C)
+using the EM algorithm [5]. The conditional expectation of
+the complete-data log likelihood with priors is represented
+as follows:
+Q(Ψ|Ψ̂)
+=
+
+Mn X
+N X
+Z
+X
+n=1 m=1 z=1
+
++
+
+N
+X
+n=1
+
+P (z|n, m; Ψ̂) log P (z|xn , Φ)P (wnm |z, Θ)
+
+log p(xn ) +
+
+Z
+X
+z=1
+
+log p(φz ) +
+
+Z
+X
+
+log p(θz ),
+
+(7)
+
+z=1
+
+where Ψ̂ represents the current estimate, and P (z|n, m; Ψ̂)
+represents the class posterior probability of the nth document and the mth word given the current estimate. In
+E-step, we compute the class posterior probability with the
+Bayes rule:
+P (z|x̂n , Φ̂)P (wnm |z, Θ̂)
+P (z|n, m; Ψ̂) = PZ
+,
+0
+0
+z 0 =1 P (z |x̂n , Φ̂)P (wnm |z , Θ̂)
+
+(8)
+
+where P (z|x̂n , Φ̂) is calculated by (1). In M-step, we obtain
+the next estimate of word probability
+θ̂zw by maximizing
+P
+Q(Ψ|Ψ̂) w.r.t. θzw subject to W
+w=1 θzw = 1:
+PN PMn
+n=1
+m=1 I(wnm = w)P (z|n, m; Ψ̂) + α
+,
+θ̂zw = PW P
+N PMn
+0
+w0=1
+n=1
+m=1 I(wnm = w )P (z|n, m; Ψ̂) + αW
+(9)
+where I(·) represents the indicator function, i.e. I(A) = 1 if
+A is true and 0 otherwise. The next estimates of document
+coordinate xn and topic coordinate φz cannot be solved in
+
+∂Q
+∂φz
+
+=
+
+Mn X
+Z “
+”
+X
+P (z|xn , Φ) − P (z|n, m; Ψ̂) (xn − φz )
+
+m=1 z=1
+
+−
+
+γxn ,
+
+=
+
+Mn “
+N X
+”
+X
+P (z|xn , Φ) − P (z|n, m; Ψ̂) (φz − xn )
+
+−
+
+βφz .
+
+(10)
+
+n=1 m=1
+
+(11)
+
+By iterating the E-step and the M-step until convergence,
+we obtain a local optimum solution for Ψ. We can embed a
+new document with low computational cost by fixing topic
+coordinates Φ̂ and word probabilities Θ̂ to the estimated
+values.
+
+3. RELATED WORK
+3.1 PLSA
+PLSV is based on Probabilistic Latent Semantic Analysis
+(PLSA) [10]. An essential difference between PLSV and
+PLSA is that a set of topic proportions are derived from coordinates of documents X and topics Φ in PLSV, whereas
+they are directly estimated as Λ = {λn }N
+n=1 in PLSA, where
+λn = {λnz }Z
+z=1 , and λnz = P (z|dn , Λ) is the zth topic proportion of the nth document. Therefore although PLSV
+can express any number of topics in D-dimensional space,
+PLSA can express only D +1 topics in D-dimensional space.
+The number of parameters for topic proportions in PLSV
+is (N + Z)D, and it is much smaller than that in PLSA
+N (Z − 1) since usually D ¿ Z ¿ N . Therefore, PLSV can
+prevent overfitting compared with PLSA.
+Under PLSA, the probability of wn given dn , Λ and Θ is as
+follows:
+P (wn |dn , Λ, Θ) =
+
+M
+n
+Y
+
+Z
+X
+
+m=1 z=1
+
+P (z|dn , Λ)P (wnm |z, Θ). (12)
+
+The unknown parameters in PLSA Υ are a set of topic proportions Λ and a set of word probabilities Θ. They can be
+estimated by maximizing the following likelihood with the
+EM algorithm:
+L(Υ|C) =
+
+Mn
+N X
+X
+
+log
+
+n=1 m=1
+
+Z
+X
+z=1
+
+P (z|dn , Λ)P (wnm |z, Θ).
+
+(13)
+
+In E-step, the class posterior probability given the current
+estimate can be computed as follows:
+P (z|dn , Λ̂)P (wnm |z, Θ̂)
+. (14)
+0
+0
+z 0 =1 P (z |dn , Λ̂)P (wnm |z , Θ̂)
+
+P (z|dn , wnm ; Υ̂) = PZ
+
+In M-step, the next estimate of topic proportion λ̂nz is given
+by:
+PMn
+P (z|dn , wnm ; Υ̂)
+,
+(15)
+λ̂nz = PZ m=1
+PMn
+0
+0
+z =1
+m=1 P (z |dn , wnm ; Υ̂)
+
+and the next estimate of word probability θ̂zw is given by:
+PN PMn
+I(wnm = w)P (z|dn , wnw ; Υ̂)
+.
+θ̂zw = PW n=1
+PN m=1
+PMn
+0
+n=1
+m=1 I(wnm = w )P (z|dn , wnm ; Υ̂)
+w0 =1
+(16)
+We can use Dirichlet priors for the topic proportions and
+word probabilities as in PLSV.
+
+3.2 Parametric Embedding
+Parametric Embedding (PE) [11] is a nonlinear visualization
+method, which takes a set of discrete probability distributions as its input. The topic proportions estimated using
+PLSA Λ̂ with any number of topics can be embedded in
+a D-dimensional Euclidean space by PE. PE embeds samples in a low-dimensional Euclidean space so as to preserve
+the input probabilities by minimizing the following sum of
+Kullback-Leibler divergences:
+E(X , Φ) =
+
+N X
+Z
+X
+
+P (z|dn , Λ̂) log
+
+n=1 z=1
+
+P (z|dn , Λ̂)
+,
+P (z|xn , Φ)
+
+(17)
+
+where P (z|xn , Φ) is the probability that the zth topic is chosen given a coordinate xn , and it is defined in the same equation as PLSV as in (1). The unknown parameters, a set of
+coordinates of documents X and topics Φ, can be obtained
+with a gradient-based numerical optimization method. The
+gradients of E(X , Φ) w.r.t. xn and φz are respectively:
+Z “
+”
+X
+∂E
+=
+P (z|dn , Λ̂) − P (z|xn , Φ) (xn − φz ),
+∂xn
+z=1
+
+(18)
+
+N “
+”
+X
+∂E
+=
+P (z|dn , Λ̂) − P (z|xn , Φ) (φz − xn ).
+∂φz
+n=1
+
+(19)
+
+We can use spherical Gaussian priors with zero means for
+the coordinates as in PLSV.
+The parameter estimation procedures in PLSV described in
+Section 2.2 show that the calculation of coordinates in PE is
+included in the M-step in PLSA. These coordinates are then
+mapped to the topic proportions of documents and used in
+the E-step.
+
+3.3 Other related work
+There are a few visualization methods based on generative models. The examples include Generative Topographic
+Mapping (GTM) [1] and the visualization method proposed
+in [13]. However, these methods are not topic models, in
+which each word is assumed to be drawn from one of the topics according to the topic proportions. A topic model with
+latent coordinates based on GTM is proposed in [12]. However, it is mainly used for predicting sequences, and not for
+visualization. The correlated topic model is a topic model
+that can model correlations among topics [3]. PLSV can
+also model the topic correlations because topics embedded
+close together in the visualization space are likely to occur
+together. PLSV is an unsupervised visualization method,
+where topics are unobservable variables, and it is different
+from supervised visualization methods, such as Fisher linear
+discriminant analysis [7].
+
+4. EXPERIMENTS
+4.1 Compared methods
+For evaluation, we compared PLSV with MDS, Isomap, PLSA
+and PLSA+PE by the visualization in the two-dimensional
+space D = 2.
+MDS is a linear dimensionality reduction method, which embeds samples so as to minimize the discrepancy between
+pairwise distances in the visualization space and those in
+the original space. We used word count
+PMn vectors as input
+vn = (vn1 , · · · , vnW ), where vnw =
+m=1 I(wnm = w) is
+the count of the wth word in the nth document. We normalized the vector so that the L-2 norm becomes one.
+Isomap is a nonlinear dimensionality reduction method, in
+which a graph is first constructed by connecting h-nearest
+neighbors, and then samples are embedded so as to preserve the shortest path distances in the graph by MDS. We
+used the cosine similarity between word count vectors vn
+for finding neighbors, which is widely used for the similarity measurement between documents. We set the number of
+neighbors at h = 5.
+In PLSA, we visualized documents using the procedures described in Section 3.1. In order to represent topic proportions in a two-dimensional space, we converted the topic
+proportions estimated by PLSA with Z = 3 to a coordinate
+in the two-dimensional simplex.
+PLSA+PE embeds documents using PE according to the
+topic proportions that are estimated by PLSA as described
+in Section 3.2.
+
+4.2 Data sets
+We used the following three data sets in the evaluations:
+NIPS, 20News and EachMovie.
+NIPS data consist of papers from the NIPS conference from
+2001 to 2003 1 . There were 593 documents, and the vocabulary size was 14,036. Each document is labeled with 13
+research areas, such as Neuroscience and Applications.
+20News data consist of documents in the 20 Newsgroups
+corpus [14]. The corpus contains about 20,000 articles categorized into 20 discussion groups. We omitted stop-words
+and words that occurred fewer than 50 times, and also omitted documents with fewer than 50 words. The vocabulary
+size was 6,754. We sampled 50 documents from each of 20
+classes, for a total of 1000 documents.
+EachMovie data consist of movie ratings, which are standard benchmark data for collaborative filtering. We regarded movies and users as documents and words, respectively, where a movie is represented by a sequence of rated
+users. Each movie is labeled with 10 genres, for instance Action, Comedy and Romance. We omitted users and movies
+with fewer than 50 ratings and movies labeled with more
+than one genre. The number of movies was 764, and the
+number of users was 7,180.
+
+4.3
+1
+
+Evaluation measurement
+
+Available at http://ai.stanford.edu/˜gal/
+
+We evaluated the visualization results quantitatively from
+the label prediction accuracy with the k-nearest neighbor
+(k-NN) method in the visualization space. Each sample
+in all three data sets is labeled with research area, discussion group or genre. Note that we did not use the label
+information for visualization in any of the methods, namely,
+we performed visualization with fully unsupervised settings.
+The accuracy generally becomes high when samples with
+the same labels are located close together and samples with
+different labels are located far away from each other in the
+visualization space.
+The k-NN method predicts a sample label from the most
+dominant label among the k nearest samples, where we used
+the Euclidean distance for finding
+The accuracy
+`
+´
+PN neighbors.
+is computed by acc(k) = N1
+n=1 I yn = ŷk (xn ) × 100,
+where yn is the label of the nth document, and ŷk (xn ) is
+the predicted label with the k-NN method for a sample with
+coordinate xn .
+
+4.4 Results
+The accuracies on NIPS, 20News and EachMovie data sets
+are shown in Figure 2 when documents are embedded in a
+two-dimensional space by PLSV, MDS, Isomap, PLSA and
+PLSA+PE. We set the number of topics at Z = 50 for PLSV
+and PLSA+PE. The number of topics for PLSA is automatically determined as Z = 3 since D = 2. In 20News, we
+created 30 evaluation sets by random sampling, where each
+set consists 1000 documents, and evaluated by the average
+accuracy over the 30 sets. In NIPS and EachMovie, the accuracies of PLSV, PLSA+PE and PLSA are averaged over 30
+visualizations for one data set with different initial parameters. Only the standard deviations for PLSV are shown.
+In all three data sets, the highest accuracies are achieved
+by PLSV. This result implies that PLSV can appropriately
+embed documents in the two-dimensional Euclidean space
+while keeping the essential characteristics of the documents.
+The accuracies achieved by PLSA+PE are lower than those
+achieved by PLSV since it embeds documents through two
+modularized processes, where the objective functions are different from each other. The accuracies achieved by PLSA
+are low since it has only three topics, and it may be inadequate to measure similarities among topic proportions based
+on the Euclidean distance.
+We also evaluated PLSV and PLSA+PE with different numbers of topics Z = 5, 10, · · · , 50. The accuracies with the
+one-nearest neighbor method are shown in Figure 3. With a
+small number of topics, the accuracies achieved by PLSV are
+not very high, and they are comparable to those achieved
+by PLSA+PE. However, as the number of topics increases,
+PLSV outperforms PLSA+PE. This result indicates that the
+topic proportions and the word probabilities overfit the high
+dimensional PLSA parameter space in PLSA+PE, and they
+may not be appropriately represented in the two-dimensional
+visualization space.
+Figures 4, 5 and 6 show visualization results obtained by
+PLSV (Z = 50), MDS, Isomap, PLSA (Z = 3) and PLSA+PE
+(Z = 50) on NIPS, 20News and EachMovie data sets, respectively. Here each point represents a document, and the shape
+and color represents the label. In the PLSV visualizations,
+documents with the same label are likely to be clustered
+
+together. On the other hand, with MDS and Isomap, documents with different labels are mixed, and thus the accuracy
+of their visualization is low. In PLSA, many documents are
+located at the corner, and the latent topic structure of the
+given data is not fully expressed in this dimensionality. In
+PLSA+PE, documents are slightly more mixed than those
+in PLSV as shown quantitatively by the accuracy.
+Figure 7 shows PLSV visualization results for NIPS data
+with different numbers of topics Z = 10, 20, 30 and 40. Although documents with different labels are mixed when the
+number of topics is small, the visualization with Z = 40
+shows similar quality to that with Z = 50.
+We analyzed the PLSV visualization in detail. Figure 8
+shows the visualization result for 20News data obtained by
+PLSV with Z = 50. Here each black circle represents a
+topic coordinate φz , and each black × represents a mean
+coordinate ofPdocuments for each label, which is calculated
+by µy = N1y N
+n=1 I(yn = y)xn , where Ny is the number of
+documents labeled with y. The number near the circle corresponds to the topic index in the table at the bottom, where
+the ten most probable words for each topic are shown. Documents with the same label are clustered together, and closely
+related labels are located nearby, such as rec.sport.baseball
+and rec.sport.hockey, rec.autos and rec.motorcycles, comp.sys.mac.hardware and comp.sys.ibm.pc.hardware, and soc.religion.christian and talk.religion.misc. In a topic located
+near a label mean, representative words for the label occur
+with high probability. For example, probable words in topics near rec.sport (z = 1 and z = 2) are ’team’, ’players’
+and ’game’, those near com.graphics (z = 5) are ’graphics’,
+’points’ and ’lines’, and those near sci.crypt (z = 8) are
+’clipper’, ’encryption’ and ’public’.
+Figure 9 shows the visualization result for certain movie titles from EachMovie data obtained by PLSV with Z = 50.
+Movies in the same genre are likely to be located close together. For example, classic movies are located in the bottom right, and foreign movies are located at the top. Classic
+movies are tightly clustered because there may be a number
+of people who see only classic movies.
+The computational time of PLSV on a PC with 3.2GHz
+Xeon CPU and 2GB memory were 117, 20, and 256 minutes
+for NIPS, 20News, and EachMovie data sets, respectively.
+
+5.
+
+CONCLUSIONS
+
+In this paper, we proposed a visualization method based on
+a topic model, Probabilistic Latent Semantic Visualization
+(PLSV), for discrete data such as documents. We have confirmed experimentally that PLSV can visualize documents
+with the latent topic structure. The results encourage us to
+believe that our data visualization approach based on PLSV
+is promising and will become a useful tool for visualizing
+documents.
+Since PLSV is a probabilistic topic model, we can extend
+PLSV easily based on other research on topic models. Topic
+models have been proposed that model not only documents
+but also other information, for example images [2], time [21],
+authors [16] and citations [6]. We can also visualize this
+information with documents using the framework proposed
+
+70
+
+60
+
+50
+
+50
+
+PLSV
+
+PLSA+PE
+50
+accuracy
+
+60
+PLSV
+
+60
+
+MDS
+
+Isomap
+
+40
+
+40
+
+PLSV
+PLSA+PE
+
+40
+
+30
+
+Isomap
+
+30
+
+PLSA+PE
+Isomap
+MDS
+
+PLSA
+
+30
+
+PLSA
+
+MDS
+20
+
+20
+
+20
+
+PLSA
+
+10
+
+10
+0
+
+5
+
+10
+
+15
+
+20
+
+25
+30
+#neighbors
+
+35
+
+40
+
+45
+
+50
+
+10
+
+0
+
+5
+
+10
+
+15
+
+(a) NIPS
+
+20
+
+25
+30
+#neighbors
+
+35
+
+40
+
+45
+
+50
+
+0
+
+5
+
+10
+
+15
+
+(b) 20News
+
+20
+
+25
+30
+#neighbors
+
+35
+
+40
+
+45
+
+50
+
+(c) EachMovie
+
+Figure 2: Accuracy with the k-nearest neighbor method in the visualization space with different numbers of
+neighbors k.
+60
+
+50
+PLSV
+
+50
+
+accuracy
+
+40
+PLSA+PE
+
+35
+
+Isomap
+
+30
+
+MDS
+
+30
+20
+
+30
+
+Isomap
+
+20
+
+MDS
+
+20
+
+15
+
+PLSA
+
+15
+
+5
+
+10
+
+15
+
+20
+
+25
+30
+#topics
+
+35
+
+(a) NIPS
+
+40
+
+45
+
+50
+
+0
+
+PLSA
+
+10
+
+5
+0
+
+MDS
+
+25
+
+10
+
+10
+
+Isomap
+PLSA+PE
+
+35
+
+25
+
+PLSA
+
+PLSV
+
+45
+
+40
+
+PLSA+PE
+40
+
+50
+PLSV
+
+45
+
+5
+5
+
+10
+
+15
+
+20
+
+25
+30
+#topics
+
+35
+
+40
+
+45
+
+50
+
+0
+
+5
+
+10
+
+15
+
+(b) 20News
+
+20
+
+25
+30
+#topics
+
+35
+
+40
+
+45
+
+50
+
+(c) EachMovie
+
+Figure 3: Accuracy with the one-nearest neighbor method in the visualization space with different numbers
+of topics Z for PLSV and PLSA+PE.
+AA: Algorithms & Architectures
+AP: Applications
+CN: Control & Reinforcement Learning
+CS: Cognitive Science & AI
+IM: Implementations
+LT: Learning Theory
+NS: Neuroscience
+SP: Speech & Signal Processing
+VS: Vison
+BI: Brain Imaging
+ET: Emerging Technologies
+VB: Vision (Biological)
+VM: Vision (Machine)
+
+(a) PLSV
+
+(b) MDS
+
+(c) Isomap
+
+(d) PLSA
+Figure 4: Visualization of documents in NIPS.
+
+(e) PLSA+PE
+
+alt.atheism
+comp.graphics
+comp.os.ms−windows.misc
+comp.sys.ibm.pc.hardware
+comp.sys.mac.hardware
+comp.windows.x
+misc.forsale
+rec.autos
+rec.motorcycles
+rec.sport.baseball
+rec.sport.hockey
+sci.crypt
+sci.electronics
+sci.med
+sci.space
+soc.religion.christian
+talk.politics.guns
+talk.politics.mideast
+talk.politics.misc
+talk.religion.misc
+
+(a) PLSV
+
+(b) MDS
+
+(c) Isomap
+
+(d) PLSA
+
+(e) PLSA+PE
+
+Figure 5: Visualization of documents in 20News.
+Action
+Animation
+Art Foreign
+Classic
+Comedy
+Drama
+Family
+Horror
+Romance
+Thriller
+
+(a) PLSV
+
+(b) MDS
+
+(c) Isomap
+
+(d) PLSA
+Figure 6: Visualization of movies in EachMovie.
+
+(e) PLSA+PE
+
+Z = 10
+
+Z = 20
+
+Z = 30
+
+Z = 40
+
+Figure 7: Visualization by PLSV with different numbers of topics Z on NIPS.
+
+comp.sys.ibm.pc.hardware
+comp.os.ms−windows.misc
+comp.sys.mac.hardware
+
+sci.crypt
+
+comp.windows.x
+
+7
+8
+
+6
+
+sci.electronics
+
+misc.forsale
+
+talk.policics.mideast
+
+5
+comp.graphics
+
+4
+rec.autos
+
+talk.policics.misc
+
+9
+3
+
+talk.policics.guns
+soc.religion.christian
+
+rec.motorcycles
+
+2
+
+10
+
+1
+
+sci.space
+
+talk.religion.misc
+
+rec.sport.hockey
+
+alt.atheism
+sci.med
+rec.sport.baseball
+
+1
+team
+players
+season
+league
+nhl
+teams
+average
+hall
+make
+dave
+
+2
+game
+good
+games
+play
+baseball
+guys
+win
+fans
+division
+guy
+
+3
+car
+bike
+big
+cars
+water
+drive
+buy
+thing
+front
+miles
+
+4
+high
+engine
+battery
+car
+stuff
+low
+bought
+dealer
+kind
+speed
+
+5
+graphics
+points
+lines
+point
+line
+reference
+image
+access
+program
+comp
+
+6
+windows
+pc
+keyboard
+drive
+mouse
+mac
+disk
+card
+memory
+dos
+
+7
+scsi
+printer
+bus
+windows
+drivers
+hp
+speed
+local
+network
+fonts
+
+8
+clipper
+encryption
+public
+system
+government
+keys
+chip
+security
+escrow
+nsa
+
+alt.atheism
+comp.graphics
+comp.os.ms−windows.misc
+comp.sys.ibm.pc.hardware
+comp.sys.mac.hardware
+comp.windows.x
+misc.forsale
+rec.autos
+rec.motorcycles
+rec.sport.baseball
+rec.sport.hockey
+sci.crypt
+sci.electronics
+sci.med
+sci.space
+soc.religion.christian
+talk.politics.guns
+talk.politics.mideast
+talk.politics.misc
+talk.religion.misc
+
+9
+israel
+israeli
+militia
+arab
+jewish
+jews
+turkish
+armenian
+armenians
+palestine
+
+10
+god
+jesus
+ra
+bible
+christ
+heaven
+people
+john
+scripture
+spirit
+
+Figure 8: Visualization of documents in 20News by PLSV with Z = 50. Each point represents a document,
+and the shape and color represent the discussion group. Each black circle indicates a topic coordinate φz ,
+and each black × indicates a label mean µy . The table at the bottom shows the ten most probable words
+for ten topics estimated with the visualization, i.e. the words are ordered according to P (w|z, Θ). The topic
+index corresponds to the number near the circle in the visualization.
+
+Farewell My Concubine
+Belle de Jour
+Three Colors: Red
+
+Action
+Animation
+
+Art Foreign
+Classic
+
+Comedy
+Drama
+
+Family
+Horror
+
+Romance
+Thriller
+
+Vanya on 42nd Street
+Burnt by the Sun
+
+Like Water For Chocolate
+
+Before the Rain
+The Wooden Man’s Bride
+Alphaville Il Postino
+The Eighth Day
+Picture Bride The Visitors The White Balloon
+Two
+Bits
+Shanghai Triad
+Pushing Hands Chungking Express
+Smoke
+Big Squeeze
+Crumb Living in Oblivion
+The City of Lost Children Pie inThe
+the Sky
+Before SunriseFlirting With Disaster Restoration
+Hoop Dreams Death and the Maiden
+Killer: A Journal of Murder
+Gone Fishin’
+Jeffrey
+The Crossing GuardCurdled Underworld
+Faces
+Kids
+My Family
+Larger than Life
+A
+Family
+Thing
+Clockers
+Fearless
+Beyond Rangoon
+The Crucible
+Switchblade Sisters
+The Saint Austin Powers
+Big Bully
+A Bronx Tale Menace II Society The Boys of St. Vincent
+The Trigger Effect Private Parts Grosse Pointe Blank
+Live Nude Girls High School
+High
+Nobody’s Fool
+Les Misôþables
+Fierce CreaturesDirty Dancing
+Heidi Fleiss: Hollywood Madam
+One Fine Day
+Dead Presidents Nemesis 2: Nebula Mr. Wrong
+Fled
+Cobb
+The Fan Michael
+Eye for an Eye
+The Show
+Malice
+Dracula: Dead and Loving It The Spitfire Grill
+Friday
+Blink
+Steal Big, Steal Little
+Bed of Roses
+Kingpin The First Wives Club
+The Promise
+Sudden Death
+Big Night
+Canadian Bacon
+Multiplicity
+The Scout
+It Takes Two
+The Juror
+Striptease Courage Under Fire
+Gordy
+Bushwhacked
+Grumpier Old Men A Time to Kill
+Mixed Nuts
+Father of the Bride Part II
+Tom and Huck
+Grace of My Heart
+Getting Even With Dad The Scarlet Letter
+Orlando
+Nixon
+Man of the House
+Mission: Impossible
+Bad Girls
+A Little Princess
+M. Butterfly Ran
+Leaving Las Vegas
+Supercop
+Renaissance Man Waiting to Exhale
+Ruby in Paradise Local Hero
+Hideaway
+Made in America
+Party Girl
+It Could Happen to You
+Princess Caraboo
+The Jerky Boys
+S.F.W.
+The Indian in the Cupboard
+Vampire
+in
+Brooklyn
+Glengarry Glen Ross
+8
+Seconds
+The Prophecy
+My Favorite Year
+The Paper
+Houseguest
+Street Fighter
+Casino
+The Jungle Book
+Another Stakeout
+The Doors
+Funny Face
+The RefDangerous MindsCarlito’s Way
+Barbarella
+Clerks
+Gigi
+Timecop
+The
+Right
+Stuff
+Billy
+Madison
+Blade
+Runner
+Robocop 3
+Exit to Eden
+Weekend at Bernie’s
+Breakfast at Tiffany’s
+Cutthroat Island
+Tommy Boy
+Private Benjamin
+Fair Game
+Crimson Tide
+Platoon
+Singing in the Rain
+Jade
+Ace Ventura: When Nature Calls
+Monty Python’s Life of Brian
+Heavy Metal
+Hackers
+Die Hard: With a Vengeance
+For Whom the Bell Tolls
+A Fish Called Wanda
+Goldeneye
+Die Hard
+Money Train Virtuosity
+Mortal
+Kombat
+My Fair Lady
+Last Action Hero
+Project S
+Terminal Velocity
+Foxfire
+The Old Man and the Sea
+Victor
+Victoria
+Species Demolition Man
+The Candidate
+Judge Dredd
+Assassins
+Cool
+Runnings
+Mary Poppins
+Just Cause
+
+The Specialist
+Drop Zone
+Under Siege 2: Dark Territory
+
+That Darn Cat
+Escape to Witch Mountain
+The Parent Trap
+
+Figure 9: Visualization of movies in EachMovie by PLSV with Z = 50. Each point represents a movie, and
+the shape and color represent the genre. Some examples of movie titles are also shown.
+in this paper. We assumed that the number of topics was
+known. We can automatically infer the number of topics by
+extending PLSV to a nonparametric Bayesian model such
+as the Dirichlet process mixture model [18]. In addition,
+we can achieve more robust estimation using the Bayesian
+approach, instead of MAP estimation, as in LDA [9].
+
+6. REFERENCES
+[1] C. M. Bishop, M. Svensen, and C. K. I. Williams. GTM:
+The generative topographic mapping. Neural Computation,
+10(1):215–234, 1998.
+[2] D. M. Blei and M. I. Jordan. Modeling annotated data. In
+SIGIR ’03: Proceedings of the 26th Annual International
+ACM SIGIR conference on Research and development in
+informaion retrieval, pages 127–134, 2003.
+[3] D. M. Blei and J. D. Lafferty. A correlated topic model of
+science. The Annals of Applied Statistics, 1(1):17–35, 2007.
+[4] D. M. Blei, A. Y. Ng, and M. I. Jordan. Latent Dirichlet
+allocation. Journal of Machine Learning Research,
+3:993–1022, 2003.
+[5] A. Dempster, N. Laird, and D. Rubin. Maximum likelihood
+from incomplete data via the EM algorithm. Journal of the
+Royal Statistical Society, Series B, 39(1):1–38, 1977.
+
+[6] L. Dietz, S. Bickel, and T. Scheffer. Unsupervised
+prediction of citation influences. In ICML ’07: Proceedings
+of the 24th International Conference on Machine Learning,
+pages 233–240, 2007.
+[7] R. A. Fisher. The use of multiple measurements in
+taxonomic problems. Annals of Eugenics, 7:179–188, 1936.
+[8] B. Fortuna, M. Grobelnik, and D. Mladenic. Visualization
+of text document corpus. Informatica, 29(4):497–502, 2005.
+[9] T. L. Griffiths and M. Steyvers. Finding scientific topics.
+Proceedings of the National Academy of Sciences, 101
+Suppl 1:5228–5235, 2004.
+[10] T. Hofmann. Probabilistic latent semantic analysis. In UAI
+’99: Proceedings of 15th Conference on Uncertainty in
+Artificial Intelligence, pages 289–296, 1999.
+[11] T. Iwata, K. Saito, N. Ueda, S. Stromsten, T. L. Griffiths,
+and J. B. Tenenbaum. Parametric embedding for class
+visualization. Neural Computation, 19(9):2536–2556, 2007.
+[12] A. Kabán. Predictive modelling of heterogeneous sequence
+collections by topographic ordering of histories. Machine
+Learning, 68(1):63–95, 2007.
+[13] A. Kabán, J. Sun, S. Raychaudhury, and L. Nolan. On class
+visualisation for high dimensional data: Exploring scientific
+data sets. In DS ’06: Proceedings of the 9th International
+Conference on Discovery Science, 2006.
+
+[14] K. Lang. NewsWeeder: learning to filter netnews. In ICML
+’95: Proceedings of the 12th International Conference on
+Machine Learning, pages 331–339, 1995.
+[15] D. C. Liu and J. Nocedal. On the limited memory BFGS
+method for large scale optimization. Math. Programming,
+45(3):503–528, 1989.
+[16] M. Rosen-Zvi, T. Griffiths, M. Steyvers, and P. Smyth. The
+author-topic model for authors and documents. In UAI ’04:
+Proceedings of the 20th Conference on Uncertainty in
+Artificial Intelligence, pages 487–494, 2004.
+[17] S. T. Roweis and L. K. Saul. Nonlinear dimensionality
+reduction by locally linear embedding. Science,
+290(5500):2323–2326, 2000.
+[18] Y. W. Teh, M. I. Jordan, M. J. Beal, and D. M. Blei.
+Hierarchical Dirichlet processes. Journal of the American
+Statistical Association, 101(476):1566–1581, 2006.
+[19] J. B. Tenenbaum, V. de Silva, and J. C. Langford. A global
+geometric framework for nonlinear dimensionality
+reduction. Science, 290(5500):2319–2323, 2000.
+[20] W. Torgerson. Theory and methods of scaling. Wiley, New
+York, 1958.
+[21] X. Wang and A. McCallum. Topics over time: a
+non-Markov continuous-time model of topical trends. In
+KDD ’06: Proceedings of the 12th ACM SIGKDD
+International Conference on Knowledge Discovery and
+Data mining, pages 424–433, 2006.
+[22] J. A. Wise, J. J. Thomas, K. Pennock, D. Lantrip,
+M. Pottier, A. Schur, and V. Crow. Visualizing the
+non-visual: spatial analysis and interaction with
+information from text documents. In INFOVIS ’95:
+Proceedings of the 1995 IEEE Symposium on Information
+Visualization, pages 51–58, 1995.
+
+

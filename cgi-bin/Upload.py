@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 # Author: Ehsan Sherkat
 import sys
-import cgi, cgitb
+import cgi, cgitb 
 import json
 import os
 
@@ -13,7 +13,7 @@ userDirectory = eval(form.getvalue('userDirectory'))
 file_content = eval(form.getvalue('file_content'))
 file_name = eval(form.getvalue('file_name'))
 file_type = eval(form.getvalue('file_type'))
-
+ 
 try:
 	saveFile = open(userDirectory + file_name, 'w')
 	file_content = file_content.split(';base64,')[1]
@@ -36,7 +36,7 @@ try:
 	pp_File = open(userDirectory + "pp.status", 'w')
 	pp_File.write("yes")
 	pp_File.close()
-
+	
 except Exception, e:
 	print "Content-type:application/json\r\n\r\n"
 	print json.dumps({'status':'error', 'except':json.dumps(str(e))})

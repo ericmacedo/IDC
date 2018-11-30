@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 # Author: Ehsan Sherkat - 2017
 import sys
 import json
@@ -24,7 +24,7 @@ try:
 			clusterDocs = clusterDocs.replace('\n', '').replace('\r', '')
 			clusterDocs = clusterDocs.split(',')
 
-			zipcluster = zipfile.ZipFile(userDirectory + serverClusterName[index] + '.zip', mode='w') #zip a cluster
+			zipcluster = zipfile.ZipFile(userDirectory + serverClusterName[index] + '.zip', mode='w') #zip a cluster		
 
 			for doc in clusterDocs:
 				zipcluster.write(userDirectory + doc, doc)

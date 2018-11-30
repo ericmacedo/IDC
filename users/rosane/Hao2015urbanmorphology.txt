@@ -1,0 +1,1906 @@
+Landscape and Urban Planning 137 (2015) 149–162
+
+Contents lists available at ScienceDirect
+
+Landscape and Urban Planning
+journal homepage: www.elsevier.com/locate/landurbplan
+
+Research paper
+
+Integrated effects of urban morphology on birdsong loudness and
+visibility of green areas
+Yiying Hao a,b , Jian Kang a,∗ , Johannes D. Krijnders b
+a
+b
+
+School of Architecture, University of Shefﬁeld, Western Bank, Shefﬁeld S10 2TN, United Kingdom
+INCAS3 , Dr. Nassaulaan 9, 9401 HJ Assen, The Netherlands
+
+h i g h l i g h t s
+• Inﬂuence of urban morphology on birdsong loudness is demonstrated.
+• Inﬂuence of urban morphology on visibility of green areas is revealed.
+• There are varied relations between birdsong loudness and visibility of green area.
+
+a r t i c l e
+
+i n f o
+
+Article history:
+Received 5 November 2013
+Received in revised form 9 December 2014
+Accepted 23 January 2015
+Available online 12 February 2015
+Keywords:
+Green area
+Urban morphology
+Urban morphological parameter
+Birdsong
+Loudness
+Visibility
+
+a b s t r a c t
+The aim of this study is to determine how to increase birdsong loudness and the visibility of green areas in
+low-density residential areas by controlling urban morphological parameters. The spatial sound level distributions of birdsong at 12 sites sampled from a GIS database of Assen, the Netherlands, were simulated
+by noise mapping techniques and calculated using a MATLAB program on spatial sound level matrices.
+The visibilities of green areas are analysed and calculated by Visibility Analysis Graph in Space Syntax.
+Correlation analyses were conducted between the obtained data on spatial sound level indices, the mean
+visibility and urban morphological parameters. The results show that birdsong loudness has signiﬁcant
+positive linear relationships with urban morphological parameters, including Building Plan Area Fraction (R2 = 0.491), Green Area Perimeters (R2 = 0.491) and Green Area Dispersion Index (R2 = 0.618), while
+the visibility of green area has negative linear relationships with morphological parameters, including
+Building Plan Area Fraction (R2 = 0.431) and Green Area Perimeters (R2 = 0.799). It has also been found
+that in the proximity of green areas, the visibility of green areas has a positive relationship with birdsong
+loudness, whereas in most areas further from green areas, the visibility of green areas has a negative
+relationship with birdsong loudness. Either increasing birdsong loudness or enhancing visibility of the
+green areas by controlling urban morphological parameters is helpful for the optimisation of soundscape
+design with masking effects. Bird habitats and vegetation are important ecological issues to consider for
+the enhancement of the roles of urban morphology.
+© 2015 Elsevier B.V. All rights reserved.
+
+1. Introduction
+Green areas are an important natural resource in urban areas
+and can fulﬁl a variety of human needs, such as natural view (Lange,
+Hehl-Lange, & Brewer, 2008), air quality (Currie & Bass, 2008),
+microclimate (Shashua-Bar and Hoffma, 2000) and noise reduction
+(Fang & Ling, 2003; Van Renterghem, Botteldooren, & Verheyen,
+2012). Green areas therefore are signiﬁcant for quality of life and
+
+∗ Corresponding author. Tel.: +44 114 2220325; fax: +44 114 2220315.
+E-mail addresses: y.hao@shefﬁeld.ac.uk (Y. Hao), j.kang@shefﬁeld.ac.uk (J. Kang),
+DirkjanKrijnders@incas3.eu (J.D. Krijnders).
+http://dx.doi.org/10.1016/j.landurbplan.2015.01.006
+0169-2046/© 2015 Elsevier B.V. All rights reserved.
+
+have high social and economic values (Anderson & Cordell, 1988; De
+Hollander & Staatsen, 2003; Kirkpatrick, Davison, & Daniels, 2012).
+In terms of natural view, green areas have often been studied from
+the perspectives of visibility (Yang, Zhao, Mcbride, & Gong, 2009),
+aesthetics, recreation (Lange et al., 2008), safety and preference
+(Jorgensen, Hitchmough, & Calvert, 2002) in urban life.
+Green areas are also an important supplier of birdsong due
+to their ecological function as habitats for birds and other animals (Hansson, 2000; Daniels & Kirkpatrick, 2006; Pellissier, Cohen,
+Boulay, & Clergeau, 2012). Birds are one of the best-known biological groups in cities (Pellissier et al., 2012); thus, birdsong is a
+frequent, distinct and frequency-adaptable natural sound source
+in the ambient noise of urbanised areas (Ryan & Brenowitz, 1985;
+
+150
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+Halfwerk and Slabbekoorn, 2009; Cardoso & Atwell, 2011). Birdsong is ranked at the top of the desired natural urban sounds
+(Yang & Kang, 2005) and beneﬁts people’s rejuvenation and health
+through its pleasantness (Gidlöf-Gunnarsson and Öhrström, 2007).
+It also commonly interferes with trafﬁc noise in urban areas
+(Best, Ozmeral, Gallun, Sen, & Shinn-Cunningham, 2005; GidlöfGunnarsson, Öhrström, & Ögren, 2007; Kang, 2007; Gold, 2010).
+Recently, with the emergence of the ‘soundscape’ concept
+(Zhang & Kang, 2007; Yu & Kang, 2009; Kang & Zhang, 2010;
+Brown, Kang, & Gjestland, 2011), research on the urban sound
+environment has been extended to perceptual assessment (Yang &
+Kang, 2005; Kang, 2007; Joynt & Kang, 2010), where “masking” has
+been employed to study the interference between natural sounds
+and urban noise (Nilsson, Alvarsson, & Rådsten-Ekman, 2009; De
+Coensel, Vanwetswinkel, & Botteldooren, 2011). Masking effects
+also have been considered as an important urban design technique (Siebein, Kwon, Smitthakorn, & Gold, 2007). Masking, which
+refers to a signiﬁcant everyday-life phenomenon in hearing (Yost,
+2008), has been widely identiﬁed and investigated in terms of two
+main categories:“energetic masking” and “informational masking”
+(Nilsson et al., 2009; Durlach et al., 2003; Watson, 2005). Watson
+(2005) deﬁned the interference among different sounds based only
+on the physical properties of the sound as “energetic masking” and
+the masking or interference caused by making the stimulus context variable and uncertain as “informational masking”. It has been
+demonstrated that as a result of “energetic masking” and “informational masking”, either increasing birdsong loudness or enlarging
+the visibility of green areas can signiﬁcantly improve the pleasantness and naturalness of the trafﬁc noise environment (Hao, 2014).
+Therefore, the main motivation of this study is to determine how to
+enhance the positive effects of masking for soundscape optimisation from these two perspectives, i.e., increasing birdsong loudness
+and enlarging the visibility of green areas in urban design.
+Urban morphology, which is at the root of urbanism and urban
+design (Kropt, 2005; Larkham, 2005), has direct and substantial
+impacts on both outdoor sound propagation (Raydan & Steemers,
+2006; Kang, 2007) and space visibility (Yang et al., 2009; Sander
+& Manson, 2007). In previous studies on urban environments
+(e.g., solar potential, atmospheric environment and trafﬁc noise),
+urban morphological factors, for example building density, building patterns, street layout and coverage and landscaping, have been
+represented and studied using a number of quantitative urban morphological parameters (Cheng, Steemers, Montavon, & Compagnon,
+2006; Xie, Huang, & Wang, 2006; Salomons & Pont, 2012). However,
+there is a shortage of integrated research on green areas from the
+perspectives of both birdsong loudness and visibility of green areas
+in the context of urban morphology to suggest practical landscape
+and urban design guidelines.
+Therefore, this study aims at exploring the integrated effects
+of urban morphological parameters that reﬂect the 3D nature of
+green areas and buildings on birdsong loudness and visibility of
+green areas. Correspondingly, this paper ﬁrst will show how urban
+morphology inﬂuences these two aspects and then how the two
+aspects are related.
+
+which may result in masking effects between the two main sound
+sources at the sites (i.e., trafﬁc noise and birdsong). In these areas,
+the daytime trafﬁc noise is relatively constant; the sound levels
+are typically 50–60 dBA, and most of the energy is between 100
+and 1600 Hz. The green ratio of Assen City, including gardens and
+forests, is approximate 36% according to ofﬁcial statistics released
+by the Assen Municipality (2011), therefore the grids that have this
+representative green ratio and main roads were randomly sampled.
+Fig. 1 shows ﬁgure-ground maps of the 12 sampled sites, with the
+buildings in black, roads in grey and green areas in light green.
+2.2. Sound mapping of birdsong
+
+2.1. Site sampling
+
+To simulate the spatial distribution of birdsong sound levels, sound maps were calculated using a common noise-mapping
+package, Cadna/A (DataKustik GmbH, 2006; Szulecki, Zwerling,
+Anderson, & Turpin, 2010; McGowan, 2012). For noise mapping,
+the propagation of the frequency components of birdsong was
+calculated in the models. First, in the simulation, birdsong is emitted from green areas (250 m × 250 m) in eight idealised wild open
+spaces (see Section 2.2.1); this is a pilot study of birdsong loudness
+for the further study of birdsong in the actual urban morphology of
+the sampled sites (see Section 2.2.2).
+The representative heights of major bird habitats in urban trees
+were used for the simulation sound source heights because in
+town centres birds nest more in trees than on the ground or in
+shrubbery, as is the case in the countryside. Approximately 70%
+of Passeriformes nest higher than 4 m in the centres of European
+towns (Clergeau, Croci, Jokimäki, Kaisanlahti-Jokimäki, & Dinetti,
+2006). Tree nesters are considered to be better urban adaptors. The
+increased planting of trees may provide more suitable nesting habitats for the tree nesting guild, further increasing their abundance
+(Huhta, Jokimäki, & Rahko, 1999; Clergeau et al., 2006; Pellissier
+et al., 2012).
+Patch size and its inﬂuence on avian habitats are also important
+issues to consider in the modelling because the green areas are
+composed of patches of different sizes in both idealised wide open
+spaces and the morphology of the study sites. Patch sizes in idealised open spaces vary from 0.28 to 2.25 ha, and the patch sizes in
+the actual urban morphology are 0.1 to 2.02 ha, except for one patch
+with an area of 0.06 ha. The effects of patch size on avian density and
+nesting are debated; it has been suggested that they are not clearly
+inﬂuenced by patch size but vary among regions, number of years
+of vegetation and species (Winter, Johnson, Sharffer, Donovan, &
+Svedarsky, 2006; Davis, 2004; Schmiegelow & Mönkkönen, 2002;
+Schieck, Lertzman, Nyberg, & Page, 1995; Andrén, 1994; Van Dorp
+& Opdam, 1987). However, Van Dorp and Opdam (1987) utilised
+0.1 ha as a lower limit for the habitat of birds and proved that multiple bird species inhabited patches of 0.1 ha. Moreover, roads in
+the residential areas in Assen are primarily two-lane without a
+disturbed roadside, so they are not considered as patch barriers
+(Winter et al., 2006). Birds in the small patches can still use the
+resources of the neighbouring patches (Andrén, 1994). Therefore,
+although there is a risk that birds may not inhabit the small patches,
+for this study it was assumed that the fragmentation of the green
+areas has little inﬂuence on avian density in the same region and
+with similar vegetation and avian species. Given the same green
+area ratio, the number of birds in each site was set as a constant
+parameter to compare the effects of urban morphology.
+
+The study sites were sampled in Assen, which is the capital city
+of the province of Drenthe. Assen can be regarded as a typical European town with diverse low-density urban morphologies and trafﬁc
+characteristics (Hao & Kang, 2013). Using a GIS database with 763
+grids (each 250 m × 250 m) of the built-up areas of Assen, approximately 51% of the grids have both the trafﬁc arboreal green areas,
+
+2.2.1. Idealised wide open spaces
+To initially examine the inﬂuence of geometric conﬁgurations of
+green areas and distributions of sound sources on birdsong loudness without sound obstacles (e.g., buildings), eight idealised wild
+open spaces were simulated. The open spaces have a consistent
+green ratio of 36%, which is a control parameter in the sound
+
+2. Methodology
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+151
+
+Fig. 1. Figure-ground maps of the12 sampled study sites. The IDs of the sites are composed by letters and numbers. Green areas are presented in light green, buildings in
+black, main roads in grey and all other open areas in white. (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this
+article.)
+
+mapping. The ratio is the same as the green ratio of Assen, as mentioned above. The geometric conﬁgurations of the green areas are
+abstracted from the commonly seen design of green areas in the
+residential communities in the Assen GIS database. Birdsong may
+attenuate less rapidly at an intermediate “frequency window” from
+1600 to 2500 Hz, particularly in long-range communication in lowforest habitats (Morton, 1975), the birdsong was initially simulated
+using a song band source at a representative frequency of 2000 Hz
+and a representative habitat height of 4 m. Fig. 2 shows the sound
+maps of the birdsong emitted from the eight green areas.
+The distribution of sound sources, i.e., where birdsongs are emitted in the green areas, is a substantial issue in the simulation.
+Because of the effects of edges on bird habitats (e.g., feeding, foraging, and nest selection), as noted in several studies (Hansson, 1994;
+D McCollin, 1998; Huhta et al., 1999), and because deciduous trees
+are most widely planted in green areas and along the local streets
+in Assen (Gemeente Assen, 2006, 2009), sources that are localised
+on the boundaries of green areas were considered along with uniformly distributed sources throughout the green areas. Therefore,
+as shown in Fig. 2, four different types of sound source distributions
+were examined, including an idealised situation of full distribution
+of sound sources in rectangular arrays (RF), random distribution of
+50% sound sources in rectangular arrays (RR), full distribution of
+sound sources along green area boundaries (BF), and a random distribution of 50% sound sources along green area boundaries (BR).
+For the two types of full distributions, RF and BF, the tree spacing
+was 10 m × 10 m. To make the 4 types comparable, the total sound
+energy of birdsong of RF was the same as that of BF, based on the
+
+assumption that a same size of green area affords a same bird population. Receivers in a rectangular array of 5 m × 5 m were placed
+to obtain the sound levels of birdsong outside of the green areas at
+each site in the simulations.
+Fig. 3 shows the percentage of the areas at different sound levels of birdsong in the eight idealised open spaces. Although the
+total birdsong energy and green area ratio are the same for the
+eight open spaces, certain geometric conﬁgurations have more
+area with louder birdsong than others. For example, as shown in
+Fig. 3b and d, when examining the RF (Rectangular array, full distribution of birdsong), 25.6% of the area in Pattern D-1 has 68 dB
+birdsong and only 10.1% of the area in Pattern B has 68 dB birdsong. It is also important to note that in general, the four types
+of sound source distributions of each pattern have rather similar
+distribution curves (see Fig. 3), which indicates that the geometric conﬁgurations of the green areas rather than the distributions
+of individual sound sources may inﬂuence the spatial distribution
+forms of birdsong sound levels outside of the green areas, even
+when the density of sound sources is reduced by half by random
+sampling. Therefore, in accordance with Adolphe’s study (2001) on
+the model of urban morphology, wherein ‘useful area’ is deﬁned
+as an element in highly mineral urban spaces from the perspective
+of the environmental performance to simplify the parameterisation of vegetation and bodies of water, the green areas in this study
+can also be studied as an integrated component with a ‘circumscribed cylinder’ shape (Adolphe, 2001) composed of vegetation
+and birds in an urban morphology, without particular attention to
+the distributions of individual sound sources and as demonstrated
+
+152
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+Fig. 2. Sound maps of birdsong emitted from 8 typical patterns of green areas. Four different types of sound source distributions in green areas are considered and compared.
+(Rectangular array, full distribution of birdsong
+distribution of 50% birdsong
+
+and random distribution of 50% birdsong
+
+; Boundary, full distribution of birdsong
+
+and random
+
+.). (For interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.)
+
+by the results. Homogenisation effects of urbanisation on biological
+communities are also an important reason for the hypothesis.
+It can also be seen in Fig. 3a and b, that in Patterns A and B, more
+areas have high sound levels of birdsong when birdsong energy is
+emitted entirely from the boundaries. For example, 10.5% of the
+area has 71 dB birdsong in Pattern A when it is BF, but this value
+is only 3.0% when it is RF. The reason might be that Patterns A and
+B have smaller green area perimeters, therefore the sound level
+of birdsong per meter is higher than the other six patterns under
+the condition of the same total amount of sound energy, which
+results in more peak sound levels in proximity to the green area.
+As green area perimeter increases, this effect of peak sound levels
+is generally decreased, as shown in Fig. 3c–f and h.
+
+Therefore, in the present study of birdsong in the actual urban
+morphology of the sample sites, the geometric characteristics of
+green areas rather than the types of sound source distribution are
+the principal factors examined. The total sound energy of birdsong
+was set to a constant value based on the assumption that a same
+size of green area affords a same bird population.
+2.2.2. Actual urban morphology
+In the sound mapping of birdsong in the actual urban morphology, the 3D information of the sampled sites that can be converted
+into vector maps in Cadna/A was obtained from a GIS database of
+Assen from TOP10NL of Kadaster (2008). The conditions of building façades and ground were gained from the in-situ investigation
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+28
+
+28
+
+20
+
+RF
+RR
+BF
+BR
+
+24
+
+Area Percentage (%)
+
+Area Percentage (%)
+
+24
+
+16
+12
+8
+4
+
+20
+
+RF
+RR
+BF
+BR
+
+16
+12
+8
+4
+
+0
+
+0
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+SPL(dB)
+
+SPL(dB)
+
+(a) Pattern A
+
+(b) Pattern B
+
+28
+
+20
+
+28
+RF
+RR
+BF
+BR
+
+24
+
+Area Percentage (%)
+
+Area Percentage (%)
+
+24
+
+16
+12
+8
+4
+
+20
+
+RF
+RR
+BF
+BR
+
+16
+12
+8
+4
+
+0
+
+0
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+SPL(dB)
+
+SPL(dB)
+
+(c) Pattern C
+
+(d) Pattern D
+
+28
+
+28
+
+20
+
+RF
+RR
+BF
+BR
+
+24
+
+Area Percentage (%)
+
+Area Percentage (%)
+
+24
+
+16
+12
+8
+
+20
+
+RF
+RR
+BF
+BR
+
+16
+12
+8
+4
+
+4
+
+0
+
+0
+
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+SPL(dB)
+
+SPL(dB)
+(e) Pattern E
+
+(f) Pattern F
+
+28
+
+20
+
+28
+RF
+RR
+BF
+BR
+
+24
+
+Area Percentage (%)
+
+Area Percentage (%)
+
+24
+
+153
+
+16
+12
+8
+4
+0
+
+20
+
+RF
+RR
+BF
+BR
+
+16
+12
+8
+4
+0
+
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+SPL(dB)
+(g) Pattern G
+
+56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+
+SPL(dB)
+(h) Pattern H
+
+Fig. 3. Area ratios at different sound levels of birdsong outside of the green areas for Pattern A–H (shown in Fig. 2) in the eight idealised open spaces, with the 4 types of
+sound source distributions (i.e., RF, RR, BF and BR). The abbreviation RF means rectangular array, full distribution of birdsong
+
+; RR means rectangular array, random
+
+; BF means boundary, full distribution of birdsong
+; BR means boundary, random distribution of 50% birdsong
+distribution of 50% birdsong
+interpretation of the references to color in this ﬁgure legend, the reader is referred to the web version of this article.)
+
+. (For
+
+154
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+Fig. 4. Sound maps of birdsong at 4000 Hz at a height of 4 m in the 12 sites.
+
+and Google Maps. Because the study is more a parameter study on
+urban morphology, to make the analysis results comparable, the
+sound sources are all localised along the green area boundaries with
+a constant distance of 10 m between two trees and emit the same
+total amount of sound energy of birdsong in each site. The ground
+absorption was set to 0 outside of green areas and 0.6 inside the
+green areas.
+Great tit (Parus major), common blackbird (Turdus merula)
+and sparrow (Passer) are the three common urban passerine bird communities found in Assen. The energy of the
+birdsong of the three communities concentrates in the frequency range of 2000 to 8000 Hz (Franco & Slabbekoorn, 2009;
+Pohl, Leadbeater, Slabbekoorn, Klump, & Langemann, 2012;
+Nemeth et al., 2013; Schmidt, Moore, MacDougall-Shackleton, &
+MacDougall-Shackleton, 2013), and the frequencies between 2000
+and 8000 Hz are especially impacted by the shape, material and
+height of noise barriers between the noise source and bird breeding
+habitat (Slabbeckoorn & Ripmeester, 2008). Therefore, the birdsong
+was simulated as single-band sound sources at three representative
+frequencies, i.e., 2000, 4000 and 8000 Hz. There are two main reasons for the generic setting of the birdsong frequencies. First, the
+homogenisation effects of urbanisation has altered the composition of biological communities (Turner, Nakamura, & Dinetti, 2004;
+Marzluff, 2001) and increased species similarity (Blair, 2001). In
+European cities, heterogeneity of avifauna species in towns is low,
+especially in the centre, indicating simple urban bird communities and the replacement of specialist species by generalist species
+(Clergeau et al., 2006; Pellissier et al., 2012). Second, urban noise
+has caused a reduction in avian species richness and the adaption
+of birdsong to higher frequencies (Francis, Ortega, & Cruz1, 2009;
+Pohl et al., 2012; Nemeth et al., 2013).
+As mentioned above, because the building heights are primarily between 8 and 10 m, the birdsong sources are set to two
+representative heights in trees in the sites: 4 m (lower than the
+
+typical building height) and 10 m (higher than the typical building
+height); sound reﬂections by buildings with these two conditions
+can be compared. Fig. 4 shows sound maps of birdsong at 4000 Hz
+with a sound source height of 4 m, for example.
+It is also important to model how urban morphology can impact
+birdsong distribution when there are fewer birds (as there might
+be under different ecological environments, e.g., vegetation and climate); therefore the modelled number of birds was reduced to 1/2
+and 1/4 of the initial setting.
+2.3. Selection and calculation of urban morphological parameters
+To quantitatively compare diverse urban textures, urban
+morphological parameters have been explored, developed and
+employed in studies of environmental performance, landscape,
+land use, atmospheric and wind environment (Xie et al., 2006;
+Adolphe, 2001; Esbah, 2009; Ng, Yuan, Chen, Ren, & Fung, 2011;
+Van de Voorde, Jacquet, & Canters, 2011). The urban morphological parameters that might be related to birdsong distribution and
+view of green area have been selected and developed from the perspective of possible effects of urban morphology on outdoor sound
+propagation (e.g., distance and ground, barrier and canyon effects)
+and urban view block. The parameters can indicate the characteristics of plot and street pattern, ground and building surface
+condition and building (barrier) geometry (Kang, 2007; Raydan
+& Steemers, 2006; Stamps, 2001). Seven quantitative parameters
+were used in this study: Building Plan Area Fraction (BPAF), Complete Aspect Ratio (CAR), Building Surface Area to Plan Area Ratio
+(BSAPAR), First-row Building Frontal Length Index (FBFLI), Distance of First-row Building to Green Area (DFBGA), Green Area
+Perimeter (GAP), and Green Area Dispersion Index (GADI). The ﬁrst
+three parameters are for 2D and 3D characterisations of buildings,
+the fourth and ﬁfth characterise the relative locations between
+buildings and green areas, and the last two parameters are for the
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+155
+
+Table 1
+Calculations of the seven urban morphological parameters.
+Parameter
+
+Deﬁnition
+
+Formula
+
+Building Plan Area Fraction
+(BPAF)
+
+The ratio of the plan area of buildings to the
+total surface area of the study region
+
+BPAF =
+
+Complete Aspect Ratio
+(CAR)
+
+The summed area of roughness elements and
+exposed ground divided by the total surface
+area of the study region (Voogt & Oke, 1997;
+Grimmond & Oke, 1999)
+
+CAR =
+
+Building Surface Area to
+Plan Area Ratio (BSAPAR)
+
+The sum of the building surface area divided by
+the total surface area of the study region
+
+BSAPAR =
+
+First-row Building Frontal
+Length Index (FBFLI)
+
+The total length of the ﬁrst-row buildings
+parallel with the green area edges (Lpara1 )
+divided by the sum of the perimeters of
+building footprints of the study region (LT )
+
+BFAI() =
+
+Distance of First-row
+Building to Green Area
+(DFBGA)
+
+The mean of the distances from the frontal
+façades of the ﬁrst-row buildings to the green
+area
+
+DFBR =
+
+Green Area Perimeter
+(GAP)
+
+The sum of the perimeters of all green areas
+within the study region
+
+GAP =
+
+Green Area Dispersion
+Index (GADI)
+
+The variance of the linear distances between
+the geometrical centre of the study region and
+each vertex of green areas divided by the mean
+value of the linear distances
+
+GADI =
+
+2D characteristics of green areas based on the results of the pilot
+study.
+More than 70% of the residential buildings in Assen are low-rise
+terraced and detached buildings with heights primarily between
+8 and 10 m (Kadaster, 2008). Table 1 shows the formulas for the
+calculation of the urban morphological parameters.
+2.4. Matlab processing
+The RGB raster sound maps of the 12 sites are transformed into
+matrices of spatial sound level values in dB to obtain the spatial
+sound level indices by a Matlab program developed for this study
+(Hao & Kang, 2013). For each case, all of the spatial sound level values at each site are ranked in descending order. The spatial sound
+level indices of Ln , include Lmax , L10 , L20 , L30 , L40 , L50 , L60 , L70 , L80 ,
+L90 and Lmin , where Ln speciﬁes one certain sound level value at the
+position of n% in all of the descending values. For example, L10 is
+the value located at the top 10% in the rankings of all of the spatial
+noise level values, Lmax means the highest value in the ranking, and
+Lmin means the lowest value (Wang & Kang, 2011). Lavg is used to
+indicate the mean of all of the spatial noise levels of a given site. To
+investigate the birdsong environments both indoors and outdoors,
+the spatial sound level values on building façades and in open areas
+were processed separately. In this study the green areas were studied as integrated components that impact birdsong distribution in
+the spaces outside of green areas, so the spatial sound levels within
+the green areas were excluded.
+2.5. Space syntax for visibility
+To evaluate the visibilities of green areas at the sites, Visibility Graphs were calculated with a commonly used Open Source
+application, UCL Depthmap, which performs visibility analysis of
+architectural and urban systems under a theory of Space Syntax
+related to spatial cognition (Jiang & Claramunt, 2002; Bafna, 2003;
+Turner, 2003; Hillier, 2012). Visibility Graphs can analyse how
+much any one point in a spatial network is currently visible from
+
+Ap
+AT
+
+AC
+AT
+
+1
+n
+
+=
+
+AW +Ar +AG
+AT
+
+Ar +AW
+AT
+
+Lpara1
+LT
+
+Notes
+
+Range
+
+Ap is the plan area of buildings at
+ground level, and AT is the total plan
+area of the region of interest
+AC is the combined surface area of the
+buildings and exposed ground, AW is
+the wall surface area, Ar is the roof
+area, and AG is the area of exposed
+ground (Burian, Han, & Brown, 2005)
+Ar is the plan area of rooftops, and AW
+is the total area of non-horizontal
+roughness element surfaces (e.g.,
+walls) (Burian et al., 2005)
+
+0.10–0.21
+
+1.20–1.48
+
+0.31–0.69
+
+ Is the direction of the green area edge
+
+0.23–0.77
+
+n Is the total number of ﬁrst-row
+buildings, and di is the distance from
+the ﬁrst-row building to the green area
+
+4.24–17.34 m
+
+N Is the total number of green areas,
+and Ci is the perimeter of the green
+area
+
+869–2340 m
+
+ 2 Is the variance, and  is the mean
+value
+
+10.11–18.62 m
+
+n
+
+
+di
+i=1
+
+N
+
+
+Ci
+i=1
+2
+
+
+any other point (Turner, 2004). Desyllas and Duxbury (2001) conducted a study to test the correlation of graph measurement by
+both Axial Maps and Visibility Graph Analysis (VGA) with observed
+ﬂow in central London, which shows that the measure of visibility by Visibility Graph Analysis performed signiﬁcantly better than
+the Axial Map measures. Therefore, in this study, the visibility of
+the green areas of each site was measured as the mean value of
+visual connectivity in VGA. The seed points were spaced on all of
+the green areas with a 5 m × 5 m gird, with vector plans of the sites
+at an eye level of 1.6 m. The connectivity of each location refers to
+how many locations each node can directly see (Turner, 2004), and
+the value ranges of connectivity vary widely depending on the site
+situation analysed (e.g., area size and obstacle).
+3. Results
+This section addresses three issues: (1) what are the characteristics of birdsong distribution in the actual urban morphology; (2)
+how do the urban morphological parameters inﬂuence audibility
+of birdsong and visibility of green areas; (3) does visibility of green
+areas have any relationship to birdsong loudness.
+3.1. Birdsong loudness in actual urban morphology
+Fig. 5 shows the mean sound levels of birdsong of the 12 sampled sites at 2000, 4000 and 8000 Hz in terms of spatial sound
+level indices of L10 , L50 , L90 and Lavg , where it can be seen that
+the mean sound levels are 1–4 dB higher when the sound sources
+are 4 m high than at 10 m for L10 , L50 or Lavg , in both open areas
+and on facades, while for L90 , the mean sound levels in open areas
+are 0–2 dB higher when the height is 10 m. Therefore, to generally increase the birdsong loudness in low-density residential areas,
+the species of tree-dwelling birds that have lower habitats are preferred, whereas to raise the birdsong loudness in areas far from
+green areas, birds with more elevated habitats are preferred.
+Different urban morphologies indeed induce different spatial
+birdsong distributions, as indicated by the standard deviations of
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+72
+
+56
+
+70
+
+54
+
+68
+
+52
+
+66
+
+50
+
+Mean SPL
+
+Mean SPL
+
+156
+
+64
+62
+60
+58
+56
+
+4m, on façades
+4m, in open areas
+10m, on façades
+10m, in open areas
+2
+
+4
+
+48
+46
+44
+42
+40
+
+8
+
+4m, on façades
+4m, in open areas
+10m, on façades
+10m, in open areas
+2
+
+Freqency
+
+72
+
+72
+
+70
+
+70
+
+68
+
+68
+
+66
+
+66
+
+64
+62
+
+58
+56
+
+4m, on façades
+4m, in open areas
+10m, on façades
+10m, in open areas
+2
+
+4
+
+8
+
+(c) L90
+
+Mean SPL
+
+Mean SPL
+
+(a) L10
+
+60
+
+4
+
+Freqency
+
+4m, on façades
+4m, in open areas
+10m, on façades
+10m, in open areas
+
+64
+62
+60
+58
+56
+
+8
+
+Freqency
+(b) L50
+
+2
+
+4
+
+8
+
+Freqency
+(d) Lavg
+
+Fig. 5. Mean sound levels of birdsong at 2000, 4000 and 8000 Hz in the 12 sites in terms of L10 (a), L50 (b), L90 (c) and Lavg (d).
+
+the spatial sound level indices among the sampled sites in Fig. 6.
+The spatial sound level indices L70 , L80 and L90 have higher variations than the other indices at 2000 and 4000 Hz, both on façades
+and in open areas, as shown in Fig. 6, which means spatial sound
+level distributions of birdsong are more sensitive to urban morphology at 2000 and 4000 Hz in relatively quiet areas. The largest
+variation occurs at L80 at 4000 Hz in open areas when sound sources
+are 4 m high, with a standard deviation as 7.2 dB, followed by L90 at
+2000 Hz in open areas (6.6 dB) (see Fig. 6). The standard deviations
+of the indices for louder birdsong areas (e.g., L20 , L30 , L40 and L50 )
+at 8000 Hz are larger than those at 2000 and 4000 Hz (see Fig. 6),
+especially for a height of 4 m; this may be because building barrier effects are crucial for the attenuation of high frequency sound
+components at shorter distances, which increases the inﬂuence of
+urban morphology on the birdsong environment in the proximity
+of green areas.
+It is also important to note that the spatial sound level distribution on façades and in open areas shows different characteristics
+from the perspective of variation (see Fig. 6a–d), although their
+differences of mean values of the indices are not large in Fig. 5.
+Accordingly, this study will further investigate birdsong attenuation from the viewpoints of both façades and open areas, which
+concerns not only indoor birdsong from green areas but also the
+incidence of birdsong in open space.
+When the number of birds is reduced to 1/2 or 1/4, the spatial sound levels are all reduced by 3 or 6 dB when the birdsong
+propagates in the same site. The standard deviations of the spatial
+sound levels are the same as those of the full number of birds, which
+means the impacts of urban morphology on birdsong distribution
+remain constant, and the rules still work when the number of birds
+
+is reduced. However, the perceived loudness of birdsong may be
+signiﬁcantly reduced when the spatial sound levels are reduced by
+6 dB.
+3.2. Relationships with urban morphological parameters
+The values of the seven urban morphological parameters of the
+sampled sites were ﬁrst calculated according to the formulas in
+Table 1. In general, the values of each parameter evenly distribute
+in the ranges (see Table 1), indicating a quantitative diversity of the
+urban morphologies of the sites within the ranges.
+3.2.1. Birdsong loudness
+To investigate whether and how the spatial sound level distribution of birdsong is related to urban morphology, a correlation
+analysis was conducted between urban morphological parameters
+and the indices of L60 , L70 , L80 and L90 , which have higher variations, as shown in Fig. 6. Table 2 shows the R-squared values of the
+linear regressions between the parameters and indices, which have
+signiﬁcant bivariate correlations (p < 0.05, two tailed). The results
+show that the spatial sound level indices are related to the urban
+morphological parameters. The indices are more correlated to the
+parameters when the sound sources are at a height of 4 m than
+when the sources are a height of 10 m (see Table 2). It is not surprising that the indices at 8000 Hz are more strongly correlated
+than at 2000 and 4000 Hz because building barrier effects play a
+more signiﬁcant role on attenuation at the relatively high frequency
+components of birdsong.
+The parameters for the characteristics of green areas (i.e., GAP
+and GADI) have stronger correlations with the spatial sound level
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+8
+
+7
+
+Standard Deviation dB
+
+Standard Deviation dB
+
+8
+2kHz
+4kHz
+8kHz
+
+6
+5
+4
+3
+2
+
+7
+
+2kHz
+4kHz
+
+6
+
+8kHz
+
+5
+4
+3
+2
+1
+
+1
+
+0
+
+0
+
+Lmax L10 L20 L30 L40 L50 L60 L70 L80 L90 Lmin
+
+Lmax L10 L20 L30 L40 L50 L60 L70 L80 L90 Lmin
+
+Spatial Sound Level Indices
+
+Spatial Sound Level Indices
+
+(a) 4m high, on façades
+
+(c) 10m high, on façades
+8
+
+8
+7
+
+2kHz
+4kHz
+8kHz
+
+6
+
+Standard Deviation dB
+
+Standard Deviation dB
+
+157
+
+5
+4
+3
+2
+
+7
+
+2kHz
+4kHz
+
+6
+
+8kHz
+
+5
+4
+3
+2
+1
+
+1
+
+0
+
+0
+
+Lmax L10 L20 L30 L40 L50 L60 L70 L80 L90 Lmin
+
+Lmax L10 L20 L30 L40 L50 L60 L70 L80 L90 Lmin
+
+Spatial Sound Level Indices
+
+Spatial Sound Level Indices
+
+(d) 10m high, in open areas
+
+(b) 4m high, in open areas
+
+Fig. 6. Standard deviations of spatial sound level indices of the 12 sites, at frequencies of 2000, 4000 and 8000 Hz.
+
+distribution of birdsong than those for the characteristics of buildings (BPAF, CAR and BSAPAR) and for the relative locations between
+buildings and green areas (FBFLI and DFBGA), which means that the
+geometry of a green area has the largest inﬂuence on birdsong propagation in low-density residential urban morphology. Fig. 7 further
+shows two examples of the relationships between the indices and
+urban morphological parameters and green areas. In the range 869
+to 2340 m, when Green Area Perimeter increases, L60 at 8000 Hz
+constantly increases, and the differences among the sites are rather
+large (i.e., 11 dB) (see Fig. 7a); even the Green Ratios of the sites are
+
+constant. L70 at 8000 Hz increases with an increase of Green Area
+Dispersion Index in the range 10.1 to 18.6, and the value differences
+of L70 are up to 10 dB (see Fig. 7b). In conclusion, to enhance the
+birdsong loudness in a site with a certain Green Ratio, it is important to segment green areas, increase the boundary lengths of green
+areas, and scatter green areas throughout the whole site.
+Building Plan Area Fraction, which refers only to 2D building information, is the most signiﬁcant building-related parameter
+according to the correlation analysis in Table 2. Fig. 8 shows the positive relationships between the indices and BPAF in a range from 0.1
+
+Table 2
+Signiﬁcant relationships between spatial sound level indices of birdsong and urban morphological parameters in terms of the R-squared values of linear regression, where *
+indicates p < 0.05 level (2-tailed), and ** indicates p < 0.01 level (2-tailed) in bivariate correlation.
+Urban parameters
+
+Morphological
+
+BPAF
+
+4 m, 2 kHz
+4 m, 4 kHz
+
+Indices
+Façades
+Façades
+
+L70
+L70
+
+4 m, 8 kHz
+
+10 m, 8 kHz
+
+Façades
+Open areas
+
+Façades
+Open areas
+
+CAR
+
+BSAPAR
+
+FBFLI
+
+DFBGA
+
+GAP
+
+GADI
+0.341*
+0.340*
+
+L70
+L70
+L80
+
+0.463*
+0.491*
+
+L60
+L70
+L60
+L70
+
+0.395*
+
+0.400*
+
+0.357*
+0.397*
+
+0.591**
+0.380*
+
+0.409*
+
+0.514*
+0.618**
+
+0.375*
+
+0.491*
+0.347*
+
+0.409*
+
+65
+63
+61
+59
+57
+55
+53
+51
+49
+47
+45
+
+R² = 0.491
+
+500
+
+1000
+1500
+2000
+Green Area Perimeter m
+
+2500
+
+65
+63
+61
+59
+57
+55
+53
+51
+49
+47
+45
+
+R² = 0.618
+8
+
+65
+63
+61
+59
+57
+55
+53
+51
+49
+47
+45
+0.08
+
+10 m, 8000 Hz, in open areas
+
+12
+16
+20
+Green Area Dispersion Index (m)
+(b)
+
+10 m, 8000 Hz, on façades
+
+Fig. 7. Relationships between spatial sound level indices of birdsong and urban
+morphological parameters of green areas. (For interpretation of the references to
+color in this ﬁgure legend, the reader is referred to the web version of this article.)
+
+to 0.2, indicating that the reﬂections of birdsong by buildings are
+crucial for increasing birdsong loudness in relatively quiet areas.
+
+3.2.2. Visibility of green areas
+The results of the mean visibility of green areas of the sampled
+sites widely and evenly cover a range of 88.9 to 710.3. A bivariate
+correlation study was also conducted that compared the visibility
+of green areas with respect to urban morphological parameters. The
+results show that the visibility is signiﬁcantly correlated to Building
+Plan Area Fraction (p = 0.020), Building Surface Area to Plan Area
+Ratio (p = 0.043) and Green Area Perimeter (p = 0.000). In accordance with the analysis results on birdsong and urban morphology,
+the parameters on the relative locations between buildings and
+green areas (FBFLI and DFBGA) have little inﬂuence on visibility
+of green area. Unsurprisingly, the visibility of green area decreases
+when BPAF increases (see Fig. 9a), which means sites with lower
+building density have higher visibility of green areas. As shown
+in Fig. 9b, another important parameter is Green Area Perimeter,
+which has a rather signiﬁcant negative relationship with the visibility of green areas because the segmenting of green areas may
+enhance the effects of view block by buildings.
+It is important to notice that, in contrast to the positive relations between birdsong loudness in relatively quiet areas and urban
+morphological parameters, the signiﬁcant relations between the
+visibility of green areas and the three correlated parameters are all
+negative. Hence, in practical designs, the control of the parameters
+in this study almost entirely depends on which aspect is the main
+concern.
+
+R² = 0.491
+
+0.12
+0.16
+0.20
+0.24
+Building Plan Area Fraction
+(a) 4m high, 8000 Hz, in open areas
+
+L70 (dB)
+
+L70 (dB)
+
+(a)
+
+L70 (dB)
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+L60 (dB)
+
+158
+
+65
+63
+61
+59
+57
+55
+53
+51
+49
+47
+45
+0.08
+
+R² = 0.463
+
+0.12
+0.16
+0.20
+Building Plan Area Fraction
+
+0.24
+
+(b) 4m high, 8000 Hz, on façades
+Fig. 8. Relationships between spatial sound level indices of birdsong and Building
+Plan Area Fraction.
+
+3.3. Relationship between visibility of green areas and birdsong
+loudness
+To examine possible relationships between visibility of green
+areas and spatial sound level distribution of birdsong, an analysis
+was performed (Table 3). It can be seen that the mean visibility has
+signiﬁcant correlations (p < 0.050, 2 tailed) with spatial sound level
+indices of birdsong primarily at 4 m, both on façades and in open
+areas; when the height is 10 m, the signiﬁcant correlations merely
+exist at 8000 Hz. Compared to the 2000 Hz frequency, the 4000
+and 8000 Hz frequencies have more signiﬁcant correlations (see
+Table 3), which means that the visibility of green area is more correlated to the sound propagation of higher frequency components
+of birdsong.
+The visibility of green areas is much less correlated to the indices
+for relatively quiet areas, i.e., L70 , L80 and L90 , which indicates that
+the sites with higher visibility of green area may not have necessarily quieter birdsong than the areas far from the green areas
+(see Table 3). The linear regression analysis results show an interesting phenomenon between visibility and birdsong propagation.
+The visibility has positive relations to the indices that represent
+sound levels in the proximity of green areas (i.e., Lmax and L10 ) and
+negative relations to the other indices (i.e., L20 , L30 , L40 , L50 , L60
+and Lmin ), as shown by the examples in Fig. 10. This means that
+the more visible green areas are, the louder birdsong in proximity
+of green areas is compared to most of the areas that are further
+away. From the viewpoint of urban morphology, the reason for this
+phenomenon is that buildings close to green areas play important
+roles as both sound barriers and view block, but buildings further
+from green areas, which still block the view of green areas, are
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+Table 3
+Signiﬁcant relationships, i.e., p < 0.05 level (2-tailed), between spatial sound level
+indices of birdsong and mean visibility in terms of p value in bivariate correlation.
+
+Mean Visibility
+
+760
+660
+
+R² = 0.431
+
+560
+460
+
+Façades
+
+Height of
+birdsong (m)
+
+Frequency
+(kHz)
+
+Indices
+
+p Value
+
+4
+
+2
+4
+4
+8
+8
+8
+8
+8
+8
+8
+8
+8
+2
+4
+4
+4
+4
+8
+8
+8
+8
+8
+8
+8
+8
+
+Lmax
+Lmax
+L60
+L30
+L40
+L50
+L60
+Lmin
+Lmax
+L20
+L40
+Lmin
+Lmax
+Lmax
+L20
+L40
+L50
+L30
+L50
+L60
+Lmin
+Lmax
+L10
+L60
+Lmin
+
+0.001
+0.020
+0.013
+0.024
+0.025
+0.035
+0.022
+0.032
+0.028
+0.034
+0.039
+0.034
+0.001
+0.020
+0.010
+0.022
+0.018
+0.018
+0.038
+0.015
+0.032
+0.028
+0.029
+0.036
+0.034
+
+360
+260
+160
+60
+0.08
+
+0.12
+
+0.16
+
+0.20
+
+0.24
+
+10
+
+Building Plan Area Fraction
+(a)
+
+Open areas
+
+4
+
+760
+Mean Visibility
+
+159
+
+660
+
+R² = 0.799
+
+560
+460
+
+10
+
+360
+260
+160
+60
+500
+
+1000
+
+1500
+
+2000
+
+2500
+
+Green Area Perimeter (m)
+(b)
+Fig. 9. Relationships between visibility of green areas and urban morphological
+parameters. (For interpretation of the references to color in this ﬁgure legend, the
+reader is referred to the web version of this article.)
+
+primarily sound reﬂectors rather than sound barriers; this
+enhances the audibility of birdsong in the relatively quiet areas,
+in accordance with the results in Section 3.2.1.
+4. Discussion
+Based on actual situations of birdsong and trafﬁc noise in Assen,
+parallel lab experiments have been conducted to investigate the
+impact of the acoustic characteristics of the two sounds on the
+masking effects (Hao, 2014). The results show that when birdsong loudness increases, the masking effects of birdsong become
+more signiﬁcant, the naturalness and pleasantness of the soundscape increase, and annoyance decreases. The study also shows
+that occurrence frequency of birdsong is a signiﬁcant factor that
+inﬂuences masking effects. As the occurrence frequency of birdsong
+increases, the soundscape quality increases continuously (Hao,
+2014), so it is also meaningful to attract bird species that chirp more
+frequently to inhabit the areas.
+The ecology of bird habitat and vegetation structure is the bases
+for the study of birdsong distribution. The ecological issues, such
+as patch size, bird density, effects of surrounding noise and habitat
+height, can be seen in this study. For example, to generally enhance
+birdsong loudness over a whole site in an actual urban area, species
+of tree birds that live in lower habitats are preferred because it
+has been demonstrated that with either L10 , L50 or Lavg the mean
+sound levels at all of the sampled sites are 1–4 dB higher when
+the sound sources are 4 m high (lower than the surrounding buildings at 8–10 m) than those at 10 m. Additionally, compared to 10 m,
+when the height of sound source is 4 m, urban morphology has a
+
+greater impact on birdsong loudness in the low-density residential areas. Green areas can be studied as integrated components for
+their birdsong emissions, and the impacts of urban morphology on
+birdsong propagation are not reduced by a reduction of bird density
+in one region in a certain range.
+The urban morphological parameters do have effects on both
+birdsong loudness and the visibility of green areas. In terms of the
+2D geometric conﬁguration of green areas, at 8000 Hz and with
+Green Area Perimeter increasing from 869 to 2340 m, the sound
+levels of birdsong in the areas further from green areas can be
+increased by up to 11 dB; with a Green Area Dispersion Index that
+increases from 10.11 to 18.62, the sound levels can go up by 10 dB.
+However, the sites with higher Green Area Perimeters have a lower
+visibility of green areas. Therefore, for a given Green Ratio, segmenting green areas, increasing boundary lengths of green areas
+and scattering green areas throughout the whole site can increase
+birdsong loudness and reduce the visibility of green areas. In terms
+of building characteristics, Building Plan Area Fraction is the most
+important urban morphological parameter for the audibility of
+birdsong. It is possible to increase the sound level of 8000 Hz birdsong at L70 up to 12 dB in open areas and up to 10 dB on façades
+by increasing the Building Plan Area Fraction from 0.10 to 0.21.
+However, in accordance with the Green Area Perimeter, sites with
+higher Building Plan Area Fractions have lower green area visibility; Mean Visibility decreases from 710.3 to 88.9. The parameters
+for the relative locations between buildings and green areas, i.e.,
+Building Frontal Length Index and Distance of First-row Building
+to Green Area, have little inﬂuence on either birdsong loudness or
+green area visibility.
+In a parallel study (Hao, 2014), it was also demonstrated that
+visibility of green areas can enhance the masking effects through
+aural-visual interaction. In this study, it has been shown that in
+areas further from green areas, urban morphology that has higher
+green area visibility has lower birdsong loudness due to the reduction of sound reﬂected by the buildings. Therefore, “informational
+masking” in the visual context can play an important role on the
+masking effects by compensating for the reduced “energetic masking” in these areas.
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+80
+79
+78
+77
+76
+75
+74
+73
+72
+71
+70
+
+L20 (dB)
+
+Lmax (dB)
+
+160
+
+R² = 0.693
+60
+
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60
+
+R² = 0.504
+60
+
+160 260 360 460 560 660 760
+
+160 260 360 460 560 660 760
+Mean Visibility
+
+Mean Visibility
+
+(c) 4 m, 4000 Hz, in open areas
+
+70
+69
+68
+67
+66
+65
+64
+63
+62
+61
+60
+
+R² = 0.398
+
+60
+
+160 260 360 460 560 660 760
+
+L60 (dB)
+
+L10 (dB)
+
+(a) 4 m, 2000 Hz, on façades
+
+67
+66
+65
+64
+63
+62
+61
+60
+59
+58
+57
+
+R² = 0.477
+60
+
+160 260 360 460 560 660 760
+Mean Visibility
+
+Mean Visibility
+
+(d) 4 m, 4000 Hz, on façades
+
+(b) 10 m, 8000nHz, in open areas
+
+Fig. 10. Relationships between visibility of green areas and spatial sound level indices of birdsong. (For interpretation of the references to color in this ﬁgure legend, the
+reader is referred to the web version of this article.)
+
+Additionally, the masking effects of birdsong are more efﬁcient when the road trafﬁc noise environment is relatively low, i.e.
+approximately 50 dBA (Hao, 2014). Therefore, to optimise soundscape design, in addition to increasing the loudness and occurrence
+frequency of birdsong, attenuating the trafﬁc noise level is essential.
+
+5. Conclusions
+This study explores how urban morphology inﬂuences the incidence of green area from the perspective of audibility of birdsong
+and visibility of green areas in meso-scale, low-density residential areas. Seven urban morphological parameters that are related
+to building characteristics, the relative locations of buildings and
+green areas, and characteristics of green areas were deﬁned. Noise
+mapping techniques and Visibility Graph Analysis in Space Syntax
+were employed to analyse the sampled sites with diverse urban
+morphologies.
+The results show that birdsong loudness has signiﬁcant, positive
+linear relationships with urban morphological parameters, including Building Plan Area Fraction (R2 = 0.491), Green Area Perimeters
+(R2 = 0.491) and Green Area Dispersion Index (R2 = 0.618), while
+visibility of green area has negative linear relationships with
+morphological parameters, including Building Plan Area Fraction
+(R2 = 0.431) and Green Area Perimeters (R2 = 0.799). It was also
+found that in the proximity of green areas, the visibility of green
+areas has positive relationships with birdsong loudness, whereas
+in most areas further from green areas, the visibility of green areas
+has a negative relationship with birdsong loudness.
+To conclude, controlling the urban morphological parameters
+(e.g., Green Area Perimeter and Building Plan Area Fraction) is an
+efﬁcient and integrated implementation measure to optimise the
+
+sonic and visual environment of birdsong. The masking effects of
+birdsong can be considered as a design technique in terms of both
+“energetic masking” and “informational masking” in the soundscape. Meanwhile, it is crucial to carefully consider the ecology of
+bird habitat and vegetation to enhance the role of urban morphology on birdsong loudness and the visibility of green areas.
+Acknowledgements
+This project is supported by the Northern Netherlands Provinces
+and funded by the European Fund for Regional Development, the
+Dutch Ministry of Economic Affairs, Peaks in the Delta, and China
+NSF (50928801). The authors are indebted to the other members at
+the Acoustic Group of School of Architecture, University of Shefﬁeld
+for their kindly help, and the Assen Municipality for their collaboration on this work.
+References
+Adolphe, L. (2001). A simpliﬁed model of urban morphology: Application to an analysis of the environmental performance of cities. Environment and Planning B:
+Planning and Design, 28, 183–200.
+Anderson, L. M., & Cordell, H. K. (1988). Inﬂuence of trees on residential property values in Athens, Georgia (U.S.A.): A survey based on actual sales prices. Landscape
+and Urban Planning, 15, 153–164.
+Andrén, H. (1994). Effects of habitat fragmentation on birds and mammals in
+landscapes with different proportions of suitable habitat: A review. Oikos, 71,
+355–366.
+Assen Municipality. (2011). Assen in cijfers. Assen Municipality. From:
+http://assen.buurtmonitor.nl/ (retrieved February 08, 2012).
+Bafna, S. (2003). Space syntax: A brief introduction to its logic and analytical techniques. Environment and Behavior, 35(1), 17–29.
+Best, V., Ozmeral, E., Gallun, F. J., Sen, K., & Shinn-Cunningham, B. G. (2005). Spatial
+unmasking of birdsong in human listeners: Energetic and informational factors.
+The Journal of the Acoustical Society of America, 118, 3766–3773.
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+Blair, R. B. (2001). Creating a homogenous avifauna. In J. M. Marzluff, R. Bowman,
+& R. Donnelly (Eds.), Avian ecology and conservation in an urbanizing world (pp.
+459–486). Boston, MA: Kluwer Academic Publisher.
+Brown, A. L., Kang, J., & Gjestland, T. (2011). Towards standardization in soundscape
+preference assessment. Applied Acoustics, 72(6), 387–392.
+Burian, S. J., Han, W. S., & Brown, M. J. (2005). Morphological analyses using 3D
+building databases: Oklahoma City, OK. In LA-UR-05-1821. Los Alamos, NM: Los
+Alamos National Laboratory.
+Cardoso, G. C., & Atwell, J. W. (2011). On the relation between loudness and the
+increased song frequency of urban birds. Animal Behaviour, 82, 831–836.
+Cheng, V., Steemers, K., Montavon, M., & Compagnon, R. (2006). Urban form, density
+and solar potential. In Proceedings of the 23rd Conference on Passive and Low
+Energy Architecture Geneva, Switzerland.
+Clergeau, P., Croci, S., Jokimäki, J., Kaisanlahti-Jokimäki, M. L., & Dinetti, M. (2006).
+Avifauna homogenisation by urbanisation: Analysis at different European latitudes. Biological Conservation, 127, 336–344.
+Currie, B. A., & Bass, B. (2008). Estimates of air pollution mitigation with
+green plants and green roofs using the UFORE model. Urban Ecosystems, 11,
+409–422.
+Daniels, G. D., & Kirkpatrick, J. B. (2006). Does variation in garden characteristics
+inﬂuence the conservation of birds in suburbia? Biological Conservation, 133,
+326–335.
+DataKustik GmbH. (2006). Cadna/A for windows—user manual. Greifenberg:
+DataKustik GmbH.
+Davis, S. K. (2004). Area sensitivity in grassland passerines: Effects of patch size,
+patch shape, and vegetation structure on bird abundance and occurrence in
+southern Saskatchewan. The Auk, 121(4), 1130–1145.
+De Coensel, B., Vanwetswinkel, S., & Botteldooren, D. (2011). Effects of natural
+sounds on the perception of road trafﬁc noise. The Journal of the Acoustical Society
+of America, 129(4), EL148–EL153.
+De Hollander, A. E. M., & Staatsen, B. A. M. (2003). Health, environment and quality
+of life: An epidemiological perspective on urban development. Landscape and
+Urban Planning, 65, 53–62.
+Desyllas, J., & Duxbury, E. (2001). Axial maps and visibility graph analysis: A comparison of their methodology and use in models of urban pedestrian movement.
+In Proceedings of the Space Syntax Third International Symposium. Atlanta, GA:
+Georgia Tech.
+Durlach, N. I., Mason, C. R., Kidd, G., Jr., Arbogast, T. L., Colburn, H. S., &
+Shinn-Cunningham, B. G. (2003). Note on informational masking (L). Journal of
+the Acoustical Society of America, 113, 2984–2987.
+Esbah, H. (2009). Analyzing landscape change through landscape structure
+indices: Case of the City of Aydin, Turkey. Journal of Applied Sciences, 9,
+2744–2752.
+Fang, C. F., & Ling, D. L. (2003). Investigation of the noise reduction provided by tree
+belts. Landscape and Urban Planning, 63, 187–195.
+Francis, C. D., Ortega, C. P., & Cruz1, A. (2009). Noise pollution changes avian communities and species interactions. Current Biology, 19, 1415–1419.
+Franco, P., & Slabbekoorn, H. (2009). Repertoire size and composition in great tits:
+A ﬂexibility test using playbacks. Animal Behaviour, 77, 261–269.
+Gemeente Assen. (2006). Groenstructuurvisie. Gemeente Assen (in Dutch).
+From: http://www.assen.nl/dsresource?objectid=7388&type (retrieved June
+03, 2012).
+Gemeente Assen. (2009). Het Groene Frame van Assen. Gemeente Assen (in Dutch).
+From: www.assen.nl/dsresource?objectid=8559 (retrieved June 03, 2012).
+Gidlöf-Gunnarsson, A., & Öhrström, E. (2007). Noise and well-being in urban residential environments: The potential role of perceived availability to nearby green
+areas. Landscape and Urban Planning, 83, 115–126.
+Gidlöf-Gunnarsson, A., Öhrström, E., & Ögren, M. (2007). Noise annoyance and
+restoration in different courtyard settings: Laboratory experiments on audiovisual interactions. In Proceedings of Internoise 2007 Istabul, Turkey.
+Gold, M. (2010). Planning for the soundscape of transportation. In Proceedings of
+Designing Soundscape for Sustainable Urban Development Stockholm, Sweden.
+Grimmond, S., & Oke, T. (1999). Aerodynamic properties of urban areas derived from
+analysis of surface form. Journal of Applied Meteorology, 38, 1262–1292.
+Halfwerk, W., & Slabbekoorn, H. (2009). A behavioural mechanism explaining noise-dependent frequency use in urban birdsong. Animal Behaviour, 78,
+1301–1307.
+Hansson, L. (1994). Vertebrate distributions relative to clear-cut edges in a boreal
+forest landscape. Landscape Ecology, (2), 105–115.
+Hansson, L. (2000). Edge structures and edge effects on plants and birds in ancient
+oak-hazel woodlands. Landscape and Urban Planning, 46, 203–207.
+Hao, Y., & Kang, J. (2013). Trafﬁc resistance of low-density residential areas in context
+of urban morphology. In Proceedings of Conference AIA-DAGA 2013 Merano, Italy.
+Hao, Y. (2014). Effects of urban morphology on urban sound environment from the
+perspective of masking effects. University of Shefﬁeld (Ph.D. Thesis).
+Hillier, B. (2012). Studying cities to learn about minds: Some possible implications
+of space syntax for spatial cognition. Environment and Planning B: Planning and
+Design, 39(1), 12–32.
+Huhta, E., Jokimäki, J., & Rahko, P. (1999). Breeding success of pied ﬂycatchers in
+artiﬁcial forest edges: The effect of a suboptimally shaped foraging area. The
+Auk, 116(2), 528–535.
+Jiang, B., & Claramunt, C. (2002). Integration of space syntax into GIS: New perspectives for urban morphology. Transactions in GIS, 6(3), 295–309.
+Jorgensen, A., Hitchmough, J., & Calvert, T. (2002). Woodland spaces and edges: Their
+impact on perception of safety and preference. Landscape and Urban Planning,
+60, 135–150.
+
+161
+
+Joynt, J., & Kang, J. (2010). The inﬂuence of preconceptions on perceived sound reduction by environmental noise barriers. Science of the Total Environment, 408(20),
+4368–4375.
+Kadaster. (2008). TOP10NL. From: http://www.kadaster.nl/window.html?inhoud=
+/top10nl/ (retrieved March 03, 2012).
+Kang, J. (2007). Urban sound environment. London: Taylor Francis.
+Kang, J., & Zhang, M. (2010). Semantic differential analysis of the soundscape in
+urban open public spaces. Building and Environment, 45(1), 150–157.
+Kirkpatrick, J. B., Davison, A., & Daniels, G. D. (2012). Resident attitudes towards
+trees inﬂuence the planting and removal of different types of trees in eastern
+Australian cities. Landscape and Urban Planning, 107, 147–158.
+Kropt, P. (2005). The handling characteristics of urban form. In R. Evans (Ed.), Urban
+morphology, urban design (pp. 9317–9318). London: Urban Design Group.
+Lange, E., Hehl-Lange, S., & Brewer, M. J. (2008). Scenario-visualization for the assessment of perceived green space qualities at the urban–rural fringe. Journal of
+Environmental Management, 89, 245–256.
+Larkham, P. (2005). Understanding urban form? In R. Evans (Ed.), Urban morphology,
+urban design (pp. 22–24). London: Urban Design Group.
+Marzluff, J. M. (2001). Worldwide urbanization and its effects on birds. In J. M.
+Marzluff, R. Bowman, & R. Donnelly (Eds.), Avian ecology and conservation in
+an urbanizing world (pp. 19–47). Boston, MA: Kluwer Academic Publishers.
+McCollin, D. (1998). Forest edges and habitat selection in birds. Ecography, 21(3),
+225–335.
+McGowan, E. W. (2012). The effect of building reﬂections on the equivalent noise
+level (Leq) from trafﬁc on Lake Shore Drive. The Journal of the Acoustical Society
+of America, 132, 2085-2085.
+Morton, E. S. (1975). Ecological sources of selection on avian sounds. American Naturalist, 109, 17–34.
+Nemeth, E., Pieretti, N., Zollinger, S. A., Geberzahn, N., Partecke, J., Miranda, A. C.,
+et al. (2013). Bird song and anthropogenic noise: Vocal constraints may explain
+why birds sing higher-frequency songs in cities. Proceedings of the Royal Society
+B—Biological Sciences, 280, 1–7.
+Nilsson, M. E., Alvarsson, J., & Rådsten-Ekman, M. (2009). Loudness of Fountain and
+Road Trafﬁc Sounds in a City Park. In Proceedings of the 16th International Congress
+on Sound and Vibration Krakow, Poland.
+Ng, E., Yuan, C., Chen, L., Ren, C., & Fung, J. C. H. (2011). Improving the wind environment in high-density cities by understanding urban morphology and surface
+roughness: A study in Hong Kong. Landscape and Urban Planning, 101, 59–74.
+Pellissier, V., Cohen, M., Boulay, A., & Clergeau, P. (2012). Birds are also sensitive to
+landscape composition and conﬁguration within the city centre. Landscape and
+Urban Planning, 104, 181–188.
+Pohl, N. U., Leadbeater, E., Slabbekoorn, H., Klump, G. M., & Langemann, U. (2012).
+Great tits in urban noise beneﬁt from high frequencies in song detection and
+discrimination. Animal Behaviour, 83, 711–721.
+Raydan, D., & Steemers, K. (2006). Environmental urban design. In M. Santamouris
+(Ed.), environmental design of urban buildings: An integrated approach (pp. 1–35).
+London: Earthscan.
+Ryan, M. J., & Brenowitz, E. A. (1985). The role of body size, phylogeny, and ambient
+noise in the evolution of bird song. The American Naturalist, 126(1), 87–100.
+Salomons, E. M., & Pont, M. B. (2012). Urban trafﬁc noise and the relation to urban
+density, form, and trafﬁc elasticity. Landscape and Urban Planning, 108(1), 2–16.
+Sander, H. A., & Manson, S. M. (2007). Heights and locations of artiﬁcial structures in
+viewshed calculation: How close is close enough? Landscape and Urban Planning,
+82(4), 257–270.
+Schieck, J., Lertzman, K., Nyberg, B., & Page, R. (1995). Effects of patch size on birds
+in old-growth montane forests. Conservation Biology, 9(5), 1072–1084.
+Schmidt, K. L., Moore, S. D., MacDougall-Shackleton, E. A., & MacDougall-Shackleton,
+S. A. (2013). Early-life stress affects song complexity, song learning and volume
+of the brain nucleus RA in adult male song sparrows. Animal Behaviour, 86(1),
+25–35.
+Schmiegelow, F. K. A., & Mönkkönen, M. (2002). Habitat loss and fragmentation
+in dynamic landscapes: Avian perspectives from the boreal forest. Ecological
+Applications, 12(2), 375–389.
+Shashua-Bar, L., & Hoffman, M. E. (2000). Vegetation as a climatic component in the
+design of an urban street: An empirical model for predicting the cooling effect
+of urban green areas with trees. Energy and Buildings, 31, 221–235.
+Siebein, G. W., Kwon, Y., Smitthakorn, P., & Gold, M. A. (2007). Case study of soundscape assessment and design methods. The Journal of the Acoustical Society of
+America, 121(5), 3113-3113.
+Stamps, A. E. (2001). Evaluating enclosure in urban sites. Landscape and Urban Planning, 57(1), 25–42.
+Slabbeckoorn, H., & Ripmeester, E. A. (2008). Birdsong and anthropogenic noise:
+Implications and applications for conservation. Molecular Ecology, 17(1), 72–83.
+Szulecki, S., Zwerling, E., Anderson, C., & Turpin, B. (2010). Modeling with the use of
+the commercial software package CADNAA (Computer-Aided Noise Abatement)
+to estimate the probability of awakening associated with train horns. The Journal
+of the Acoustical Society of America, 127 (A). 1764-1764.
+Turner, A. (2003). Analysing the visual dynamics of spatial morphology. Environment
+and Planning B: Planning and Design, 30, 657–676.
+Turner, A. (2004). Depthmap 4: A researcher’s handbook. London: Bartlett School of
+Graduate Studies, University College London.
+Turner, W. R., Nakamura, T., & Dinetti, M. (2004). Global urbanization and the separation of humans from nature. BioScience, 54, 585–590.
+Van de Voorde, T., Jacquet, W., & Canters, F. (2011). Mapping form and function in
+urban areas: An approach based on urban metrics and continuous impervious
+surface data. Landscape and Urban Planning, 102, 143–155.
+
+162
+
+Y. Hao et al. / Landscape and Urban Planning 137 (2015) 149–162
+
+Van Dorp, D., & Opdam, P. F. M. (1987). Effects of patch size, isolation and regional
+abundance on forest bird communities. Landscape Ecology, 1(1), 59–73.
+Van Renterghem, T., Botteldooren, D., & Verheyen, K. (2012). Road trafﬁc noise
+shielding by vegetation belts of limited depth. Journal of Sound and Vibration,
+331, 2404–2425.
+Voogt, J., & Oke, T. (1997). Complete urban surface temperatures. Journal of Applied
+Meteorology, 36, 1117–1132.
+Wang, B., & Kang, J. (2011). Effects of urban morphology on the trafﬁc noise distribution through noise mapping: A comparative study between UK and China.
+Applied Acoustics, 72, 556–568.
+Watson, C. S. (2005). Some Comments on informational masking. Acta Acustica united
+with Acustica, 91, 502–512.
+Winter, M., Johnson, D. H., Sharffer, J. A., Donovan, T. M., & Svedarsky, W. D. (2006).
+Patch size and landscape effects on density and nesting success of grassland
+birds. Journal of Wildlife Management, 70(1), 158–172.
+
+Xie, X., Huang, Z., & Wang, J. (2006). The impact of urban street layout on local
+atmospheric environment. Building and Environment, 41, 1352–1363.
+Yang, J., Zhao, L., Mcbride, J., & Gong, P. (2009). Can you see green? Assessing the
+visibility of urban forests in cities. Landscape and Urban Planning, 91, 97–104.
+Yang, W., & Kang, J. (2005). Soundscapes and sound preferences in urban squares.
+Journal of Urban Design, 10, 69–88.
+Yost, W. A. (2008). Perceiving sound sources. In W. A. Yost, A. N. Popper, & R. R. Fay
+(Eds.), Auditory Perception of Sound Source (pp. 1–12). New York: Springer.
+Yu, L., & Kang, J. (2009). Modeling subjective evaluation of soundscape quality in
+urban open spaces – An artiﬁcial neural network approach. The Journal of the
+Acoustical Society of America, 126(3), 1163–1174.
+Zhang, M., & Kang, J. (2007). Towards the evaluation, description and creation of
+soundscape in urban open spaces. Environment and Planning B: Planning and
+Design, 34(1), 68–86.
+
+

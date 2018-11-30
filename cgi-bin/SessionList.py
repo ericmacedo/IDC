@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 # Author: Ehsan Sherkat
 import sys
-import cgi, cgitb
+import cgi, cgitb 
 import json
 import os
 
@@ -10,7 +10,7 @@ cgitb.enable()
 form = cgi.FieldStorage()
 
 userDirectory = eval(form.getvalue('userDirectory'))
-
+ 
 try:
 	sessions = []
 	sessionDescription = []
@@ -25,15 +25,15 @@ try:
 			dataJson = json.loads(data)
 			sessionDescription.append(dataJson['sessionDescription'])
 			sessions.append(dataJson['fileName'])
-
-	if len(sessions) > 0 :
+	
+	if len(sessions) > 0 :	
 		print "Content-type:application/json\r\n\r\n"
-		print json.dumps({'status':'yes', 'sessions':sessions, 'sessionDescription':sessionDescription})
-
+		print json.dumps({'status':'yes', 'sessions':sessions, 'sessionDescription':sessionDescription})	
+	
 	else:
 		print "Content-type:application/json\r\n\r\n"
-		print json.dumps({'status':'no'})
-
+		print json.dumps({'status':'no'})		
+	
 except:
 	print "Content-type:application/json\r\n\r\n"
 	print json.dumps({'status':'error'})

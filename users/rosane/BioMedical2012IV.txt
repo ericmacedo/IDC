@@ -1,0 +1,699 @@
+2012 16th International Conference on Information Visualisation
+
+A Survey and Classification of Visualisation in Multiscale Biomedical Applications
+N J B McFarlane1, X Ma1, G J Clapworthy1, N Bessis1,2, D. Testi3
+1
+
+Dept. of Computer Science and Technology, University of Bedfordshire, Luton, UK
+2
+School of Computing and Mathematics, University of Derby, Derby, UK
+3
+Biocomputing Competence Centre, SCS, Bologna, Italy
+{nigel.mcfarlane, xiangyin.ma, gordon.clapworthy}@beds.ac.uk
+Astrophysical data and simulations can generate very
+large datasets comprising an enormous range of scales;
+multiscale visualisation techniques such as Adaptive
+Mesh Refinement [7] and the compression of distances
+using log scales are well-established in tools such as the
+World in Miniature [8], AMUSE [9] and Uniview [10].
+The biomedical field has seen a rapid increase in the
+size and complexity of datasets, creating challenges in
+usability, visual analysis and standardisation [11].
+Biological data visualisation covers a broad range of
+scales, from whole organisms to macromolecules, where
+even genes and proteins are themselves multiscale
+structures. Akkiraju et al. [12] used immersive virtual
+reality to explore protein structure in multiscale. Nielsen
+et al. [13] presented a multiscale tool called VISTA for
+comparing genomes. However, despite numerous calls
+for multiscale visualisation in the biomedical field [14]
+there has so far been little demand from applications,
+outside the fields of protein visualisation and genomics,
+for the kind of interactive multiscale views that are now
+common in cartography and astrophysics. Multiscale
+visualisations have been presented for the lung [15] and
+for blood flow [16], but thus far these examples are few,
+and there is no equivalent to Google Earth for the human
+body. One reason is the poor availability of medical
+data: integrated datasets are difficult and expensive to
+produce, and time-consuming to publish; another is the
+lack of accessible visualisation tools for multiscale
+problems. Auer et al. [17] questioned whether it was
+worthwhile to collect multiscale data without having the
+means to visualise it adequately. In fact, as we will show
+in Section 2, a wide variety of methods do exist, but only
+as isolated bespoke solutions; the effort required to
+reproduce them is prohibitive for most research projects.
+One such application, which is one of several exemplar
+projects in MSV, is the blood-clotting protein fibrin [18],
+the structure and dynamics of which are hierarchical and
+require simultaneous visualisation to achieve an
+understanding of how the different scale levels interact.
+In the following section, we present a brief survey of
+the functional components of a multiscale visualisation
+and the techniques available for each. We then discuss
+some design considerations for multiscale visualisation
+and draw conclusions about approaches to adopt.
+
+Abstract
+The MSV project aims to survey current best practice in
+multiscale visualisation and to construct a software
+toolkit which will make multiscale techniques readily
+accessible to biomedical researchers and clinicians. In
+this paper, current methods for multiscale data
+visualisation in several domains are reviewed, and a
+novel classification of multiscale techniques for
+biomedical applications by function is proposed. The
+classification will form the basis of a design menu and
+toolkit for multiscale visualisation.
+
+1. Introduction
+The term “multiscale visualisation” generally implies
+that an image or scene contains detail over a range of
+scales that exceeds the resolution of the display or the
+human eye. The term encompasses a wide variety of
+types of data and the techniques required to visualise it;
+for example, the multiscale may be spatial or temporal;
+data may be a single image, a multi-object scene, or
+perhaps a high-resolution graph; and techniques may be
+required to deal with occlusions, ill-conditioning, levelsof-detail and scene navigation.
+Domains such as medical visualisation, architecture
+and urban design, geospatial scanning, astrophysics,
+biochemistry and abstract data analysis are regularly
+producing massive datasets containing features that are
+many orders of magnitude apart in scale.
+The MSV project [1], part of the European
+Commission Virtual Physiological Human (VPH)
+programme [2,3], aims to survey current best practice in
+multiscale visualisation and to construct a software
+toolkit which will make multiscale techniques readily
+accessible, particularly to biomedical researchers.
+The best known multiscale visualisations are Google
+Maps and Google Earth [4], in which the dataset consists
+of the whole planet, from the entire globe down to street
+level. The challenges of navigation in a multiscale
+cartographic environment have been addressed in detail
+in McCrae et al. [5,6], including the automatic sensing of
+the current scale, and the provision of widgets to assist
+with global orientation.
+
+1550-6037/12 $26.00 © 2012 IEEE
+DOI 10.1109/IV.2012.95
+
+561
+
+2. Multiscale techniques
+
+Issues in the navigation of such structures are path
+planning [27, 28], collision detection and seeing into
+occluded corners.
+
+A wide variety of techniques are in current use in
+multiscale visualisation. We propose that almost all of
+these techniques can be grouped under the following
+headings, according to the function which they perform
+in the visualisation:
+• handling of large data
+• interaction mode
+• representation of sub-scale data
+• magnification of sub-scale data
+• level of detail (LoD)
+• global context
+• numerical precision
+• temporal multiscale.
+
+Figure 1. Virtual colonoscopy on two scales,
+showing global context with path planning and
+virtual fly-through. Images courtesy of [28], © IEEE
+2001.
+
+2.1 Handling of large data
+Datasets larger than 1-3 GB might not fit into the RAM
+of a typical PC, nor into the 1GB memory of a typical
+GPU. Data which exceeds the size of the memory must
+be stored on slower media, and loaded into the graphics
+pipeline as required. Most solutions to this use a class of
+technique called bricking (also variously called blocking
+or chunking), in which the data is stored out-of-core in a
+form optimised for efficient retrieval. Other techniques
+involve the precomputing of visibility from different
+viewpoints, in order to avoid loading data which is
+occluded or outside the viewing frustrum; LoD
+management, in which data is loaded at a resolution
+proportional to the current region of interest [19];
+prefetching, in which data are loaded on-the-fly in
+anticipation of it being required; and rendering objects
+such as distant scenery as images.
+Surveys of methods for out-of-core handling of large
+datasets can be found in [20-23]. Biomedical examples
+of large datasets include the well-known Visible Human
+Male and Female, at 15 and 40 GB respectively [24], and
+a 55 GB cryo-image of a whole mouse [25].
+
+2.3 Representation of sub-scale data
+The representation of embedded sub-scale targets in a
+scene is an important consideration.
+One method is to use small placeholder tokens to
+indicate data which is too small to resolve; for example,
+McFarlane et al. [29] presented a femur visualisation
+containing nested images of the bone structure, in which
+sub-scale data was represented by small click-and-zoom
+cubes (Figure 2). Thurmond et al. [30] used hyperlinks
+to mark sub-scale datasets in geological outcrops;
+hyperlinks provide a convenient method for embedding
+data in scenes, and are particularly useful for calling up
+textual metadata and related files, but they are a rather
+crude and disorientating method of navigating between
+objects. The main disadvantage of using placeholder
+tokens is occlusion: in cluttered scenes, or with
+visualisation styles such as isosurfaces and direct volume
+rendering, the tokens can be hidden behind or within
+larger objects.
+
+2.2 Interaction mode
+Two common modes in which a user interacts with the
+graphical display of a spatial scene are scene-in-hand and
+fly-through [5, 26]. Scene-in-hand is widely used when
+interacting with graphical objects on a desktop display:
+the user visualises the object from the outside and
+manipulates it using the mouse. Fly-through interaction
+is used in the street level visualisation of Google maps
+[4]: the metaphor is that of the user being immersed in
+the scene and walking or flying through it. The user
+might move about between pre-defined targets or have
+unconstrained movement in the form of flight controls.
+Fly-through interaction is well-suited for large, complex
+scenes, such as cities, where the scene is so much larger
+than the scale of the user that the scene-in-hand metaphor
+cannot be sustained. A form of fly-through interaction
+frequently used in medicine is virtual endoscopy [27,
+28], in which the colon, lung and blood vessels are
+visualised and navigated from the inside. Figure 1 shows
+a dual-scale visualisation of a virtual colonoscopy.
+
+Figure 2. Micro-CT image (20mm) of the trabecular
+structure of a human femur, with click-and-zoom
+placeholder token marking location of embedded
+nano-CT image (0.8mm) Image courtesy of [29], ©
+IEEE 2008.
+
+Another method of indicating sub-scale data is to use
+call-outs. In visualisation and illustration, a call-out is an
+annotation that is associated with a point in an image and
+
+562
+
+connected to the point by means of a pointer. This could
+be a text label connected to an image feature by a line or
+arrow, a flag, or even a speech balloon. Call-outs are
+also a powerful way to magnify data, and this will be
+discussed further in the next section. For marking the
+presence of sub-scale data, call-outs have an advantage
+because they can be placed where they are visible,
+beyond the clutter and occlusions of the scene.
+In scenes consisting of a single large image, such as
+the Visible Human [24], where there are no pre-defined
+targets, the user may define their own subvolumes of
+interest as they navigate the scene. One such method,
+which might be termed “crop-and-zoom”, was used in
+[19]: the user advanced into the data by using a bounding
+box widget to define a volume-of-interest, followed by
+cropping and zooming in on the sub-volume.
+In very complex scenes, the scene structure might
+have to be navigated using GUI panels which are
+external to the scene. Zomit [31], a click-and-zoom
+interface with a rich set of navigation tools, including a
+hierarchical data tree, has been employed in diverse
+applications such as library navigation and genomics.
+
+an important means of magnification. In multiscale
+illustration, a magnifying call-out is an enlarged subregion, expanded out of the parent image and magnified
+into a new image. Callouts are most often seen in static
+illustrations but they have also been used interactively.
+ExoVis [34] used magnifying call-outs for interactive 3D
+visualisation of medical data, allowing a subvolume to be
+pulled out of the image and magnified into a new image,
+with pointers connecting it to the corresponding region in
+the original (Figure 4). This is an excellent way of
+viewing sub-scale detail and global position at the same
+time, since the whole path through the scales is visible
+and located at each step. The ability to view two or more
+scales simultaneously is also potentially powerful,
+especially if the data is time-varying. A disadvantage is
+that it is extravagant with screen space, since each
+change in scale requires a new image, but this is not an
+insurmountable problem as two images can easily be
+displayed on a split screen without much loss of size, and
+more could be accommodated, given suitable
+management of the screen space.
+
+2.4 Magnification of sub-scale data
+Indicating the presence and location of target data in a
+scene is only half the story; the subscale data must also
+be magnified, which can be achieved in various ways.
+The most common approach to magnifying data is
+with a zoom interaction, usually initiated by a click on
+the target, as in [4] or [29]. Ideally, the zoom should be
+slow, allowing users to see what is happening and where
+they are heading. Thus the familiar click-and-zoom
+interaction can be regarded as a composite of two
+techniques: placeholder tokens to indicate the targets and
+a zoom to magnify them.
+Another method for magnification is lensing. A lens
+is a magnified region of an image or scene, located in the
+scene at the point being magnified. Lenses provide
+magnification of detail which is in-place and therefore
+retains the position and context in the global view.
+Lenses are normally used in 2D visualizations, though
+some work has been done to extend them into 3D [32,
+33]. Figure 3 shows a frog heart magnified by a 3D lens.
+
+Figure 4. Visualisation in ExoVis, showing volume
+of interest magnified by call-out. Image courtesy
+of [34], © AK Peters 2003.
+
+A visually striking form of magnification was recently
+presented in [35]. By use of non-linear ray-tracing,
+multiscale detail was pulled seamlessly out of the target
+image with increasing magnification, in the manner of a
+continuous call-out, or a stretched lens. The results were
+remarkable in terms of illustrative rendering, though
+difficult to interpret quantitatively, and too
+computationally expensive for real-time rendering.
+2.5 Level-of-detail
+All multiscale visualisations must consider what to do
+about the Level of Detail (LoD) that is to be rendered at
+a particular scale. Does the data need to be resampled,
+redrawn or relabelled at different scales? Should data
+too small to be seen be marked by a placeholder, redrawn
+to suit the scale, or simply allowed to vanish? In its
+simplest form, LoD might simply consist of modifying
+the resolution of an image to avoid processing voxels
+that are too small to be resolved. More complex
+examples can be found in fields such as cartography, in
+which a large body of algorithms exists describing how
+features should be added, deleted and redrawn at
+different scales in order to preserve properties such as
+connectivity [36]; and in genomics, in which the
+
+Figure 3. Volume rendered image of frog, showing
+heart magnified by 3D lens. Image courtesy of [33],
+© IEEE 2005.
+
+Callouts have already been discussed as a means of
+indicating the location of sub-scale data, but they are also
+
+563
+
+semantic requirements of the visualisation are highly
+scale-dependent [37, 38].
+Long thin objects in the form of collections of fibres
+are a special case in multiscale visualisation. They occur
+in medical images of brains and muscles, in vector and
+tensor field visualisations, and in diagrams of
+interconnected items and densely connected edge graphs
+[39]. The problem of visualising fibrous connections at
+multiresolution is so important that it has its own LoD
+technique, called bundling. This is analogous to the way
+in which electric wires are merged into bundles along
+shared paths, fanning out at the ends to connect distinct
+endpoints. The technique is important in visualising the
+complex connections of brain fibres [40-42]. Figure 5
+shows bundling of fibres in the brain.
+
+control panel with the global position in the other; the
+camera could be moved in either view, using the mouse
+or the control panel.
+
+Figure 5. Bundling of DTI fibres in the human
+brain. Image courtesy of [41], © IEEE 2009
+
+2.7 Numerical precision
+Numerical precision problems can arise in multiscale
+datasets when small objects are located far from the
+origin in a much larger world coordinate system. Such
+problems in a large cartographic scene were reported by
+[5], when attempting to visualise small objects in a
+coordinate system with a fixed origin at the centre of the
+Earth; the ill-conditioning was removed by locating
+objects relative to a local, mobile origin.
+The range of scales in cartography is dwarfed by that
+in astrophysics, which can cover 40 orders of magnitude,
+from nuclear physics to the observable universe. Power
+scaled coordinates [44] provide an elegant solution to the
+precision problem, with the homogenous coordinate,
+already present as the fourth component of all graphics
+coordinates, being used to carry the exponent of the
+spatial scale. Objects can be viewed at their own spatial
+scale simply by setting the exponent to unity.
+The risk of precision problems depends on the
+underlying floating point representation. A 4-byte float
+typically has 6-7 significant digits; an 8-byte double has
+15-16. Many applications, particularly those including
+biomolecular simulations, could exceed the singleprecision limit. The double-precision limit is unlikely to
+be breached, except in extreme astrophysical
+applications. Thus, the use of double precision is a
+simple method of avoiding ill-conditioning, provided it is
+supported by the underlying software and target
+hardware, including the GPU.
+
+2.6 Global context
+It can be difficult for users to orient themselves (i.e.
+understand their pose and location) in cluttered
+multiscale scenes. Navigating large scenes requires the
+user to obtain both detailed content and sufficient context
+information, exploring small details and changing scale
+without losing track of the global context. Interaction in
+a large scene can be considered as two tasks – moving
+and wayfinding [43]. The main ways in which users
+move around a scene are: target-based motion, in which
+the user selects an object and moves directly towards it;
+path-based, in which the user moves along a pre-planned
+and landmarked path, as when following a road in
+Google Streetview [4]; steering-based, in which the user
+steers towards a target and (probably) change the scale
+when it is reached; and map-based, in which the user
+manipulates their position from an external map or
+hierarchical representation of the scene. McCrae et al.
+[6] used a wide variety of widgets, such as radars and
+maps, placed within the scene to aid navigation in a large
+cartographic environment. A click-and-zoom interface
+called Zomit [31], provided a rich set of navigational
+tools, including pop-up pie menus, context and history
+overlays and a scene hierarchy. Context is very
+important in virtual endoscopy, which has already been
+discussed in Section 2.2. Lin et al. [28] used a split
+screen to show the endoscope view in one half and a
+
+2.8 Temporal multiscale
+Data may be multiscale in time as well as space, in that
+the data contains features of interest at a range of
+timescales. Even if we exclude biochemistry, the human
+body undergoes processes at timescales ranging from
+milliseconds to decades. The electrical activity of the
+human body, as measured by electromyography (EMG),
+electrocardiography (ECG) and electroencephalography
+(EEG), is a rich source of temporal multiscale data. A
+temporal multiscale view of EMG data of a muscle was
+presented in [45], showing features at timescales of 2s,
+200ms and 20ms. The graph of the electrical data was
+coupled with an animated spatial view of the electrical
+activity in the muscle. A temporal zoom expanded the
+time-axis of the graph to show the activity on that scale,
+while the corresponding spatial animation was slowed
+down in order to be visible to the user.
+Lenses are a popular technique for time-series data,
+since they work well in 1D and retain the global context
+of the magnified region [46, 47]. Figure 6 shows a signal
+magnified by a temporal lens.
+Because time is one-dimensional, selecting the time
+of interest and the timescale is relatively simple
+compared with the spatial case. However, unlike spatial
+data, the sampling frequency of time data can be very
+high, with the scales of interest somewhere between the
+highest and lowest frequencies. Wavelets [48] have been
+
+564
+
+Figure 6. Time series lensing using the SignalLens
+system, showing magnification and context of a
+small section of an electrical signal. Marks below
+the signal indicate the locations of tracked
+features. Image courtesy of [47], © IEEE 2010.
+
+There are many multiscale techniques, most of which
+perform one of eight functions: handling large data,
+interaction mode, representing sub-scale data,
+magnifying sub-scale data, level of detail, global context,
+numerical precision and temporal techniques. These
+functional groups form both a classification and a design
+menu for developers.
+Visualisation design consists of choosing a technique
+for each functional component, and depends on the data
+type, visualisation style, interaction style and various
+properties inherent in the data.
+For most applications, multiscale visualisation does
+not require new techniques, but rather a new unified
+approach. Currently it takes a great deal of research and
+programming effort to create a multiscale visualisation
+for an application, but with suitable guidelines to provide
+an infrastructure for design, and a software library that
+supports a range of multiscale methods, multiscale
+visualisation will become more accessible, and many
+more problems will become amenable to solution.
+
+3. Design considerations for multiscale
+
+Acknowledgement
+
+There are many multiscale techniques, almost all of
+which perform one of the functions listed in Section 2. It
+is notable that the multiscale techniques described here
+are all add-ons, to be integrated into a scene after the
+user has selected the basic visualisation style. None of
+these techniques is a visualisation style in its own right;
+they are ways of navigating datasets in multiscale, but do
+not introduce new ways of presenting the data. It is also
+notable that all of the functional components have more
+than one possible solution, so that our grouping of
+techniques by function forms not only a classification but
+also a basic design menu from which the visualisation
+developer may select techniques.
+A detailed analysis of the relative merits of each
+technique is beyond the scope of this report. However,
+the choice is broadly influenced by the following:
+• data type and visualisation style (surface, volume,
+plane, vector field, etc.)
+• interaction style (scene-in-hand, fly-through)
+• quantitative properties of data (range of scales, size of
+data, number of targets, amount of occlusion,
+periodicity, fibrous structure, ill-conditioning, etc.).
+
+This work was partially supported by the Virtual
+Physiological Human Programme of the European
+Commission under the MSV project (FP7 #248032).
+
+used to assist the user in locating the times and
+timescales of interest in the data. Another important
+factor is that time data is often periodic, in which case it
+may be necessary to select and track small periodic or
+recurring features over longer timescales [47].
+
+References
+[1] MSV Project (2010) Multiscale Spatiotemporal Visualisation:
+Development of an Open-Source Software Library for the
+Interactive Visualisation of Multiscale Biomedical Data, EU
+funded project FP7 248032, http://www.vph-noe.eu/vphprojects?start=1
+[2] PJ. Hunter, M Viceconti (2009) The VPH-Physiome Project:
+Standards and Tools for Multiscale Modeling in Clinical
+Applications. IEEE Reviews in Biomedical Engineering 2:4253
+[3] VPH Network of Excellence, http://www.vph-noe.eu
+[4] Google Maps API Family (2012)
+http://www.google.com/apis/maps
+[5] J McCrae, I Mordatch, M Glueck, A Khan (2009) Multiscale
+3D navigation. In Proc. Symposium on Interactive 3D
+Graphics, I3D’09 pp. 7-14, Feb 27 - Mar 1, Boston, USA
+[6] J McCrae, M Glueck, T Grossman, A Khan, K Singh (2010)
+Exploring the design space of multiscale 3D orientation. In
+Proc. Int. Conf. on Advanced Visual Interfaces, AVI’10, pp
+81-88, May 25-29, Rome
+[7] R Kahler, D Cox, R Patterson, S Levy, HC Hege, T Abel
+(2002) Rendering the first star in the universe - a case study.
+In Proc. IEEE Visualization, VIS 02, pp 537-540, Oct 27 Nov 1, Boston, USA
+[8] YG Li, CW Fu, AJ Hanson (2006) Scalable WIM: Effective
+exploration in large-scale astrophysical environments. IEEE
+Transactions on Visualization and Computer Graphics
+12(5):1005-1011
+[9] The AMUSE project, http://www.amusecode.org
+[10] Uniview, SCISS AB, Sweden,
+http://www.scalingtheuniverse.com
+[11] SI O’Donoghue, AC Gavin, N Gehlenborg et al.(2010)
+Visualizing biological data - now and in the future. Nature
+Methods 7(3): S2-S4
+[12] N Akkiraju, H Edelsbrunner, P Fu, J Qian (1996) Viewing
+geometric protein structures from inside a CAVE. IEEE
+Computer Graphics and Applications 16(4):58-61
+
+4. Conclusions
+Multiscale visualisation is widely used in cartography
+and astrophysics but, with the exception of genomics,
+has received less attention in the biomedical field, largely
+because of the difficulty and expense of creating highresolution datasets, and the bespoke nature of current
+solutions.
+Multiscale techniques are not visualisation styles in
+their own right, in the manner of volumes, surfaces,
+slices or streamlines; they provide additional navigation
+features which are integrated into a view after the
+visualisation style has been decided by the user.
+
+565
+
+[13] CB Nielsen, M Cantor, I Dubchak, D Gordon, T Wang (2010)
+Visualizing genomes: techniques and challenges. Nature
+Methods 7(3): S5-S15 (doi: 10.1038/nmeth.1422)
+[14] BS Brook, SL Waters, eds (2007) Research challenges. In
+Seeding the EuroPhysiome: A roadmap to the Virtual
+Physiological Human, Ch. 6, pp 38-55, European
+Commission FP6-IST-2004 Co-ordination action 027642
+[15] L Wiechert, A Comerford, S Rausch, WA Wall (2011)
+Advanced Multi-scale Modelling of the Respiratory System.
+In M Klass, E Koch, W Schroder eds., Fundamental Medical
+and Engineering Investigations on Protective Artifical
+Respiration, Notes on Numerical Fluid Mechanics and
+Multidisciplinary Design, Vol. 116/2011, pp. 1-32, Springer
+[16] JA Insley, L Grinberg, ME Papka (2011) Visualizing
+Multiscale, Multiphysics Simulation Data: Brain Blood Flow.
+Preprint ANL/MCS-P1930-0911, Sept 2011, U.S. Dept. of
+Energy
+[17] M Auer, HC Peng, A Singh (2007) Development of
+multiscale biological image data analysis: Review of 2006
+International Workshop on Multiscale Biological Imaging,
+Data Mining and Informatics, Santa Barbara, USA (BII06)
+BMC Cell Biology 8(Suppl 1):S1
+[18] CISMM (2012) Computer Integrated Systems for Microscopy
+and Manipulation: Fibrin network tracking (2012), U. of N.
+Carolina, USA, http://cismm.cs.unc.edu/tag/fibrin
+[19] A Agrawal, J Kohout, GJ Clapworthy, NJB McFarlane, F
+Dong, M Viceconti, F Taddei, D Testi (2010) Enabling the
+interactive display of large medical volume datasets by
+multiresolution bricking. Journal of Supercomputing 51(1):319
+[20] CT Silva, YJ Chiang, J El-Sana, P Lindstrom (2002) Out-ofcore algorithms for scientific visualization and computer
+graphics. Tutorial 4, Course Notes for IEEE Visualization
+2002
+[21] P Ljung (2006) Efficient methods for direct volume rendering
+of large data sets. Linköping Studies in Science And
+Technology Dissertations no. 1043, Linköping University
+Institute of Technology
+[22] KI Joy (2009) Massive data visualization: a survey. In T
+Moller, B Hamann, RD Russell, eds., Mathematical
+Foundations of Scientific Visualization, Computer Graphics,
+and Massive Data Exploration, pp 285-302, Springer
+[23] DR Lipsa, RS Laramee, RD Bergeron, TM Sparr (2011)
+Techniques for large data visualization. Int. J. of Research
+and Reviews in Computer Science 2(2):315-322
+[24] The Visible Human Project (1994),
+http://www.nlm.nih.gov/research/visible
+[25] D Roy; GJ Steyer, M Gargesha, ME Stone, DL Wilson (2009)
+3D cryo-imaging: a very high-resolution image of the whole
+mouse. The anatomical record 292(3):343-351
+[26] C Ware, S Osborne (1990) Exploration and virtual camera
+control in virtual three dimensional environments. ACM
+SIGGRAPH Computer Graphics 24(2):175-183
+[27] P Vagli, E Neri, F Turini, F Cerri, C Checchi, A Bardine, D
+Caramella (2008) Virtual Endoscopy. In E Neri, D Caramella,
+C Bartolozzi eds., Image Processing in Radiology ch. 7, pp.
+87-89, Springer
+[28] H Lin, GJ Clapworthy, F Dong, M Krokos, J Shi (2001)
+Slice-based virtual endoscopy navigation. In Proc IEEE 5th
+Int. Conf. on Information Visualization (IV 2001), pp 711716, July 25-27, London, UK
+[29] NJB McFarlane, GJ Clapworthy, A Agrawal, M Viceconti, F
+Taddei, E Schileo, F Baruffaldi (2008) 3D Multiscale
+Visualisation for Medical Datasets. In Proc. 5th IEEE Int.
+Conf on Biomedical Visualization (MediVis 08), pp 47-52,
+July 8-12, London, UK
+[30] JB Thurmond, PA Drzewiecki, X Xu (2005) Building simple
+multiscale visualizations of outcrop geology using virtual
+
+[31]
+
+[32]
+
+[33]
+
+[34]
+
+[35]
+
+[36]
+[37]
+
+[38]
+
+[39]
+
+[40]
+
+[41]
+
+[42]
+
+[43]
+
+[44]
+
+[45]
+
+[46]
+
+[47]
+
+[48]
+
+566
+
+reality modeling language (VRML). Computers and
+Geosciences 31(7):913-919
+S Pook, E Lecolinet, G Vaysseix, E Barillot (2000) Context
+and interaction in zoomable user interfaces. In Proc. Int.
+Conf. on Advanced Visual Interfaces (AVI 00) pp. 227-231,
+May 24-26, Palermo, Italy
+E LaMar, B Hamann , KI Joy (2001) A magnification lens for
+interactive volume visualization. In Proc. 9th Pacific Conf. on
+Computer Graphics and Applications, pp. 223-232
+L Wang, Y Zhao, K Mueller, A Kaufman (2005) The Magic
+Volume Lens: an interactive focus+context technique for
+volume rendering. In IEEE Visualization 2005 (Vis 05), pp
+367-374, Oct 23-28, Minneapolis, USA
+M Tory, C Swindells (2003) Comparing ExoVis, orientation
+icon, and in-place 3D visualization techniques. In 29th
+Graphics Interface Conf., pp 57-64, Halifax, Canada
+WH Hsu, KL Ma, C Correa (2011) A rendering framework
+for multiscale views of 3D models, ACM Transactions on
+Graphics 30(6) pp 131:1-10
+Z Li (2007) Algorithmic foundation of multi-scale spatial
+representation, CRC Press
+J Hong, DH Jeong, CD Shaw, W Ribarsky, M Borodovsky, C
+Song (2005) GVis: a scalable visualization framework for
+genomic data. In Eurographics/IEEE Symposium on
+Visualization (EuroVis 2005), pp 191-198, June 1-3, Leeds
+CB Nielsen, M Cantor, I Dubchak, D Gordon, T Wang (2010)
+Visualizing genomes: techniques and challenges. Nature
+Methods 7(3): S5-S15
+M. Meyer, T. Munzer and H. Pfister (2009) MizBee: a
+multiscale synteny viewer. IEEE Transactions on
+Visualization and Computer Graphics 15(6):897-904
+B Moberts, A Vilanova, JJ van Wijk (2005) Evaluation of
+fiber clustering methods for diffusion tensor imaging. In
+Proc. IEEE Visualization 2005 (Vis 05), pp 65-72, Oct 23-28,
+Minneapolis, USA
+S Zhang, S Correia, DH Laidlaw (2008) Identifying whitematter fiber bundles in DTI data using an automated
+proximity-based fiber-clustering method. IEEE Trans.
+Visualization and Computer Graphics, 14(5):1044-1053
+R Cardenes, E Munoz-Moreno, A Tristan-Vega, M MartinFernandez (2010) Saturn: a software application of tensor
+utilities of research in neuroimaging. Computer Methods and
+Programs in Biomedicine 97(3):264-279
+DA Bowman, S Coquillart, B Froehlich, M Hirose, Y
+Kitamura, K Kiyokawa, W Stuerzlinger (2008) 3D User
+Interfaces: New Directions and Perspectives. IEEE Computer
+Graphics and Applications 28(6):20-36
+CW Fu, AJ. Hanson (2007) A transparently scalable
+visualization architecture for exploring the universe. IEEE
+Transactions on Visualization and Computer Graphics
+13(1):108-121
+M Viceconti, G Clapworthy, D Testi, F Taddei, N McFarlane
+(2011) Multimodal fusion of biomedical data at different
+temporal and dimensional scales. Computer Methods and
+Programs in Biomedicine 102(3):227-237
+J Zhao, F Chevalier, E Pietriga, R Balakrishnan (2011)
+Exploratory analysis of time-series with ChronoLenses. IEEE
+Transactions on Visualization and Computer Graphics
+17(12): 2422-2431
+R Kincaid (2010) SignalLens: Focus+Context Applied to
+Electronic Time Series. IEEE Transactions on Visualization
+and Computer Graphics 16(6):900-907
+J Woodring, HW Shen (2009) Multiscale time activity data
+exploration via temporal clustering visualization spreadsheet.
+IEEE Transactions on Visualization and Computer Graphics
+15(1):123-137
+
+

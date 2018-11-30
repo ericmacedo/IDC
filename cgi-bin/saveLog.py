@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 import cgi, cgitb 
 import sys
 import json

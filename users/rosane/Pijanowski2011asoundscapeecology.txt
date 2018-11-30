@@ -1,0 +1,1067 @@
+Articles
+
+Soundscape Ecology: The Science
+of Sound in the Landscape
+Bryan C. Pijanowski, Luis J. Villanueva-Rivera, Sarah L. Dumyahn, Almo Farina, Bernie L. Krause,
+Brian M. Napoletano, Stuart H. Gage, and Nadia Pieretti
+
+Keywords: soundscapes, bioacoustics, biophony, nature deficit disorder, dawn and dusk chorus
+
+S
+
+ounds are a perpetual and dynamic property of all 
+
+landscapes. The sounds of vocalizing and stridulating
+animals and the nonbiological sounds of
+  This article contains
+running water and
+sound files that may be
+rustling wind emaaccessed by reading the fullnate from natural
+text version of this article
+landscapes. Urban
+online at dx.doi.org/10.1525/
+landscapes, in conbio.2011.61.3.6.
+trast, are dominated
+by human-produced
+sounds radiating from a variety of sources, such as machines,
+sirens, and the friction of tires rotating on pavement (Barber et al. 2010). Since Rachel Carson’s seminal work, Silent
+Spring (1962), nature’s sounds have been inextricably linked
+to environmental quality. Because sound is a fundamental
+property of nature and because it can be drastically affected
+by a variety of human activities, it is indeed surprising
+that sound has not become a more universally appreciated
+measure of a coupled natural–human system (Liu et al.
+2007). To date, no coherent theory regarding the ecological
+significance of all sounds emanating from a landscape exists.
+Fortunately, new technologies such as automated recording devices (e.g., Acevedo and Villanueva-Rivera 2006), the
+existence of inexpensive storage capabilities, developments
+in acoustic data processing (e.g., Sueur et al. 2008, Trifa et al
+2008), and theories of related ecological disciplines such as
+landscape ecology (Forman and Godron 1981, Urban et al.
+1987, Turner 1989, Turner et al. 2001, Farina 2006) have
+advanced sufficiently to allow research on the ecological
+significance of sounds in landscapes to progress.
+
+The purpose of this article is to present a new field of
+study called soundscape ecology, emphasizing the ecological
+characteristics of sounds and their spatial-temporal patterns
+as they emerge from landscapes. We believe that soundscape
+ecology shares considerable parallels with landscape ecology
+(Forman and Godron 1981, Urban et al. 1987, Turner 1989,
+Turner et al. 2001, Farina 2006), because processes occurring
+within landscapes can be tightly linked to and reflected in
+patterns of sounds in landscapes.
+To illustrate the main themes of this relatively unexplored
+field, we introduce new terms and a conceptual framework
+for soundscape ecology, summarize what is known about
+sounds in the environment, and present overviews of four
+case studies that quantify soundscape dynamics. We conclude with an argument for the need to conserve natural
+soundscapes. This article also represents an innovation in
+presentation; we introduce sound recordings as an integral component of the article. All acoustic recordings used
+in this article as single demonstrations and many others
+used in our analyses may be accessed online in two places:
+(1) by reading the full-text version of this article online (dx.
+doi.org/10.1525/bio.2011.61.3.6); and (2) at our own selfhosted site (www.purdue.edu/soundscapes/bioscience), which
+features additional Web tools for learning.
+What is soundscape ecology?
+The term “soundscape” has been used by a variety of disciplines to describe the relationship between a landscape
+and the composition of its sound. The work of Southworth
+(1969) exemplifies one of the first uses of the term in the
+literature. Southworth was interested in urban soundscapes;
+
+BioScience 61: 203–216. ISSN 0006-3568, electronic ISSN 1525-3244. © 2011 by American Institute of Biological Sciences. All rights reserved. Request
+permission to photocopy or reproduce article content at the University of California Press’s Rights and Permissions Web site at www.ucpressjournals.com/
+reprintinfo.asp. doi:10.1525/bio.2011.61.3.6
+
+www.biosciencemag.org 	
+
+March 2011 / Vol. 61 No. 3 • BioScience 203
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+This article presents a unifying theory of soundscape ecology, which brings the idea of the soundscape—the collection of sounds that emanate
+from landscapes—into a research and application focus. Our conceptual framework of soundscape ecology is based on the causes and consequences of biological (biophony), geophysical (geophony), and human-produced (anthrophony) sounds. We argue that soundscape ecology shares
+many parallels with landscape ecology, and it should therefore be considered a branch of this maturing field. We propose a research agenda for
+soundscape ecology that includes six areas: (1) measurement and analytical challenges, (2) spatial-temporal dynamics, (3) soundscape linkage to
+environmental covariates, (4) human impacts on the soundscape, (5) soundscape impacts on humans, and (6) soundscape impacts on ecosystems.
+We present case studies that illustrate different approaches to understanding soundscape dynamics. Because soundscapes are our auditory link to
+nature, we also argue for their protection, using the knowledge of how sounds are produced by the environment and humans.
+
+Articles
+
+204 BioScience • March 2011 / Vol. 61 No. 3	
+
+www.biosciencemag.org
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+in particular, his work addressed how the sounds of the
+composition of all sounds heard at a location that are biobuilt environment enhanced people’s perception of space
+logical, geological, or anthropogenic. Another rich area of
+and their relationship to the activities occurring within citacoustics research has focused on noise in the environment.
+ies. As a result, the first mention of soundscapes appears
+Primarily in the field of engineering, significant research
+in urban planning literature. Nearly a decade later, Schafer
+has addressed the physics of sound (e.g., Hartmann 1997),
+(1977) recognized that sounds are ecological properties
+and new methods have been employed to calculate noise
+of landscapes, referring to soundscapes as “the acoustical
+produced from planes and automobiles across large regions
+characteristics of an area that reflect natural processes.” His
+(Miller 2008).
+primary interest was in characterizing
+natural sounds that could be used to
+Conceptual framework for
+“Over increasingly large areas of the United
+compose music. Krause (1987) later
+soundscape ecology
+attempted to describe the complex arSince its conception, landscape ecolStates, spring now comes unheralded by the
+rangement of biological sounds and
+ogy has focused on the interaction of
+return of the birds, and the early mornings
+other ambient sounds occurring at a
+pattern and ecological processes across
+site, and introduced the terms “biolarge spatial regions (Urban et al. 1987,
+are strangely silent where once they were
+phony” to describe the composition
+Turner 1989, Turner et al. 2001, Farina
+filled with the beauty of bird song.”
+of sounds created by organisms and
+2006). Many of the basic principles
+“geophony” to describe nonbiological
+of soundscape ecology are common
+— Rachel Carson, Silent Spring (1962)
+ambient sounds of wind, rain, thunder,
+to those of landscape ecology. These
+and so on. We extend this taxonomy of
+include the assignment of a soundsounds to include “anthrophony”—those caused by humans.
+scape to a geographic context, the identification of anthroSoundscape ecology thus can be described by our working
+pogenic and biological processes and spectral and temporal
+definition as all sounds, those of biophony, geophony, and
+patterns in the soundscape, how disturbance alters patterns
+anthrophony, emanating from a given landscape to create
+and processes across scales, the emphasis on interactions beunique acoustical patterns across a variety of spatial and
+tween biological and anthropogenic factors, how organisms
+temporal scales.
+perceive spatial configuration in landscapes, and the need to
+At the onset, we wish to separate other acoustic studies
+develop tools to quantify pattern.
+from what we believe is a unique field of acoustics presented
+Our general conceptual framework (figure 1) bases
+here. To our knowledge, soundscape ecology has not been
+soundscape ecology on the same foundations as landscape
+used in the literature to describe a field of ecology. Acoustic
+ecology and draws from areas of coupled natural–human
+ecology, as introduced by Schafer (1977) and Truax (1999),
+systems (Liu et al. 2007), with natural and human systems
+is seen as complementary to traditional ecological concepts
+interacting to form spatial-temporal patterning of sound
+rather than situated within them. Broadly interdisciplinary,
+in landscapes. Humans transform landscapes (Lambin and
+acoustic ecology studies the relationships and interactions
+Geist 2006) through land-use and land-cover change (figamong humans and sounds in an environment, includure 1, arrow 1), and these human modifications of the land
+ing musical orchestrations, aural awareness, and acoustic
+interact with a variety of biophysical features (e.g., terrain,
+design (Schafer 1977, Truax 1999). Acoustic ecology largely
+soils) to produce heterogeneity in spatial structure across
+emphasizes
+human-centered
+inquiry rather than the larger
+socioecological systems approach
+taken here.
+Bioacoustics (Fletcher 2007)
+is another related research
+area that we distinguish from
+soundscape ecology. The study
+of animal communication is a
+rich and mature field, spanning
+behavior, life-history theory, and
+the physics of sound production
+by animals. However, a majority of these studies focus on a
+single species or a comparison
+of species. Our presentation
+of soundscape ecology focuses
+mostly on macro or community
+Figure 1. Conceptual framework for soundscape ecology.
+acoustics. We are interested in the
+
+Articles
+works (Wrightson 2000). As such, many policies have been
+enacted to control noise. For example, the importance of
+sounds in national parks was identified early on with the
+increasing volume of motorized recreation (National Parks
+Overflight Act of 1987). The National Park Service (NPS)
+formally recognizes soundscapes as a park resource, and
+that the organization should “restore to the natural condition wherever possible those park soundscapes that have
+become degraded by unnatural sounds (noise), and will
+protect natural soundscapes from unacceptable impacts”
+(NPS 2006, p. 56).
+In the opposing direction, soundscapes can influence
+human well-being (figure 1, arrow 7). As with other natural resources, natural and unique soundscapes have many
+associated human ideals, such as cultural, sense of place,
+recreational, therapeutic, educational, research, artistic, and
+aesthetic values. Many of these values foster a conservation
+ethic by directly influencing people’s ability to connect with
+the natural world (Rolston 1988). Indeed, the NPS recognizes
+the importance of healthy soundscapes for positive park visitor experiences (Miller 2008). Natural sounds engage one of
+our senses and provide information about our surroundings.
+Wilson (1999) suggested that the natural world is the most
+information-rich environment that humans can experience,
+and we believe that some of the important information conveyed is through sound. In contrast, urban soundscapes are
+described as containing little acoustic information (Schafer
+1977), reinforcing a growing disconnect between humans
+and nature (Louv 2008). Therefore, the sounds of an environment should not be something that we try to block out,
+but rather something that we value.
+
+Figure 2. Spectrogram of an 11-second recording of the dawn chorus at the La Selva Biological Station, Costa Rica. Birds and
+insects are creating a variety of sounds from 1 kilohertz (kHz) to some even above 12 kHz. There is considerable biophonic
+activity between 4 and 6 kHz, with the loudest sounds occurring 1 second into this recording. Crickets are stridulating at 4.7, 5.3,
+and 6.0 kHz. Note that raindrops falling from the tropical canopy can be heard (sounds below 2 kHz), an example of geophony.
+www.biosciencemag.org 	
+
+March 2011 / Vol. 61 No. 3 • BioScience 205
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+the landscape (Farina 2006). Landscape structure in turn
+(figure 1, arrow 2) influences the distribution and abundance of species and their interactions at multiple spatial
+and temporal scales (MacArthur and MacArthur 1961).
+Landforms (e.g., valleys, rivers) also provide for types of
+geophysical motion patterns, especially those that make
+frequent sounds such as water and wind. Furthermore, climate (figure 1, arrow 3) controls the distribution of species
+(Currie 1991) in conjunction with the timing of specific
+life-history events (e.g., breeding or the emergence of noisy
+insects; e.g., Brown et al. 1999, Beebee 2002, Ahola et al.
+2004). Climate (arrow 3) also influences geophonic sounds.
+The natural components of biophony and geophony (both
+as arrow 4) at any given location and time contribute to the
+observed soundscape. Human activities produce sounds
+(anthrophony) as well (arrow 5). Biophony, geophony, and
+anthrophony (arrows 4 and 5) integrate to create the complete soundscape. What occurs in the soundscape can feed
+back to natural processes (arrow 6); for example, animal
+vocalizations masked by human-generated noise may alter
+population or community dynamics such as predator-prey
+relationships (Barber et al. 2009).
+Our conceptual framework for soundscapes also emphasizes two unidirectional components between humans and
+soundscapes (figure 1, arrows 5 and 7); such feedbacks
+characterize coupled natural–human systems (Liu et al.
+2007). In the direction of humans to soundscapes (arrow 5),
+anthropogenic sounds often permeate natural landscapes.
+Unwanted sound, or noise, is a common issue in cities globally, and the problem has spread to more rural and remote
+areas with the expansion of motorized transportation net-
+
+Articles
+Sound in the environment
+There are many ways to quantify sounds in the environment.
+Measuring sound.  Soundscapes can be measured using
+
+Relevant ecological hypotheses.  Two complementary
+hypotheses, the morphological adaptation hypothesis
+(MAH) and the acoustic adaptation hypothesis (AAH),
+describe how ecological feedback mechanisms give rise
+to changes in animal signals, whereas the acoustic niche
+hypothesis (ANH) describes how these feedback mechanisms lead to the complex arrangement of signals in the
+soundscape. The MAH focuses on the sender, and posits
+that an organism’s physical attributes, such as its body
+size, the length of its trachea, and the structure of its
+beak, influence what sorts of sound signals an organism
+can produce (e.g., Bennet-Clark 1998). A larger bird with
+a longer trachea, such as a heron or a goose, will usually
+produce sounds at lower frequencies than a smaller
+bird with a shorter trachea, such as a thrush or a finch.
+
+Biophysical models of sound transmission.  Biologists have
+
+invested significant effort into understanding animal
+communication, and their findings offer insight into the
+soundscape’s role in ecological communities. Much of the
+research into animal acoustic communication (e.g., Marten
+et al. 1977) has utilized the Sender-Propagation-Receiver
+(SPR) model to describe the three primary elements of
+information propagation: (1) the sender’s biophysical characteristics and the intent of its message, (2) the role of the
+physical environment in shaping the signal, and (3) the
+perception and interpretation of the signal by its recipient
+(figure 3a). The sender encodes a string of information
+into a sound signal that is composed of certain physical
+factors, including the signal’s (a) frequency, (b) energy or
+amplitude, (c) directionality, and (d) the point (or points,
+if the sender is in motion) of origin. The propagation of
+the signal depends both on the medium through which it
+passes (air, water, solid media, etc.) and on the arrangement of reflective and absorptive surfaces of that medium
+(e.g., vegetation, buildings, and water bodies). Finally, the
+signal the receiver interprets will be further influenced by
+that receiver’s hearing range and its ability to translate the
+signal back into information (Forrest 1994). Although most
+organisms cannot actively control which sound signals they
+receive, selection pressures can adjust the configuration of
+their auditory organs to optimize their ability to detect conspecific signals (Dooling et al. 1992).
+206 BioScience • March 2011 / Vol. 61 No. 3	
+
+Figure 3. Sound transmission models for (a) single and
+(b) multiple sources of sound.
+www.biosciencemag.org
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+automated digital recording systems. Digital acoustic
+recorders store the timing and intensity (or power) of
+the sounds detected by microphones, which allows signal
+processors to reconstruct the frequency distribution of signal
+intensity over time. Intensity is most commonly recorded
+as dB (decibels), although digital recorders store amplitude
+in dBFS (or decibels full scale); the peak is assigned a value
+of dBFS = 0, and all other values scale on the basis of the bit
+value of the recording. Humans tend to interpret frequency
+as pitch (although the relationship is not one to one) and ideally can detect signals with frequencies ranging from 20 hertz
+(Hz) to 20 kilohertz (kHz). Many digital sound recorders
+sample at 44.1 kHz with a 16-bit depth, which is CD quality,
+and store the data as uncompressed WAVE (or WAV) files.
+Figure 2 shows a visual representation, called a spectrogram, of a 10-second recording from the La Selva Biological Reserve in Costa Rica (for reference, listen to sound file
+1). This spectrogram contains three dimensions of sound:
+(1) time, along the x axis; (2) frequency, represented along the
+y axis; and (3) energy, also called amplitude, normally color
+coded or plotted on the z axis. Reading a spectrogram, also
+called a sonogram, is done in the same way that one reads
+sheet music: Notes are arranged linearly through time with
+higher frequencies (or pitch) at the top of the musical staff.
+
+A multisource model is illustrated in figure 3b. Note that
+sounds from birds and amphibians may be interfered with by
+wind, rushing water, or potentially noise created by humans
+(Ryan and Brenowitz 1985). The integration of all these signals, natural and human, makes up the soundscape. Note also
+that an acoustic sensor array could be employed to record
+sounds at multiple locations; sound waves could then be conceptualized as an acoustic field that changes with time.
+
+Articles
+prompt organisms to adjust their signals to exploit vacant
+niches in the auditory spectrum to minimize spectral or
+temporal overlaps in interspecific vocalizations. Ficken
+and colleagues (1974), for instance, observed that least flycatchers (Empidonax minimus) at Lake Itasca, Minnesota,
+would insert their shorter songs between the longer songs
+of red-eyed vireos (Vireo olivaceus) when the two species
+shared the same habitat. An important prediction that
+follows from this hypothesis is that less-disturbed habitats with unaltered species assemblages will exhibit higher
+levels of coordination between interspecific vocalizations
+than more heavily disturbed habitats, in which species
+assemblages were recently altered. Likewise, invasive species could create biophonic disturbances, thereby altering
+natural acoustic partitioning (figure 4, sound files 2–4).
+Finally, Farina and Belgrano’s (2006) eco-field hypothesis
+can be used to describe the soundscape from the receiver’s
+perspective as a carrier of meaning. This hypothesis
+proposes that an organism uses the signs it identifies in
+
+Figure 4. Spectrograms of two endemic birds, Turdus merula (a) and Sylvia atricapilla (b), and the nonendemic,
+invasive Leiothrix lutea (c). Note that L. lutea and T. merula have overlapping frequencies in their songs, especially
+around 2 kilohertz (kHz), which are the loudest parts of their calls. Sylvia atricapilla sings at higher frequencies that are
+potentially masked by L. lutea, which has many parts of its song in high frequencies (> 6 kHz) and with clear modulation
+patterns. Leiothrix lutea has more behavioral overlap with S. atricapilla than it does with T. merula.
+www.biosciencemag.org 	
+
+March 2011 / Vol. 61 No. 3 • BioScience 207
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+The AAH (e.g., Daniel and Blumstein 1998) focuses on
+interactions between the sender and the medium, and
+proposes that certain groups of organisms will adjust the
+attributes of their sounds to maximize their propagation
+(Morton 1975). Support for the AAH has been mixed;
+some researchers found no correlation between signal
+composition and habitat (Daniel and Blumstein 1998),
+whereas others (e.g., Brown et al. 1995) found evidence
+that the acoustic properties of an environment can influence the evolution of vocalizations.
+In his formulation of the ANH, Krause (1987) pointed
+out that both the morphological and the behavioral
+adaptations described by the MAH and the AAH can also
+be triggered by interspecific interference when organisms’ calls contain similar frequency and timing features.
+After repeatedly observing complex arrangements of
+nonoverlapping signals in his recordings of soundscapes
+in multiple habitat types, Krause (1987) postulated that
+such interspecific competition for auditory space would
+
+Articles
+the soundscape to construct a cognitive template that it
+then uses to match particular spatial configurations with
+life functions such as food, water, and shelter.
+
+208 BioScience • March 2011 / Vol. 61 No. 3	
+
+Rhythms of nature.  The sounds of nature contain numer-
+
+ous rhythms or cycles. Many recognized temporal cycles
+of communication occur in terrestrial animals, the most
+well studied being those of birds, amphibians, and insects.
+Collectively, we refer to these periodic acoustic patterns
+as “the rhythms of nature.” Most songbirds are known to
+begin singing at the same time each year (Saunders 1947),
+and these birds sing most intensely early in the morning
+(Kacelnik and Krebs 1982) and late evening (referred to as
+the dawn and dusk chorus, respectively). Dawn chorus in
+birds is thought to occur when individuals, arriving back to
+their territory, use songs to advertise their presence (Staicer
+et al. 1996). This circadian pattern of singing in birds, the
+timing of which is largely affected by weather and climatic
+conditions, strongly correlates with sunrise and sunset and
+becomes more pronounced with the onset of breeding and
+migration.
+A research agenda for soundscape ecology
+We believe that we are now well poised to place soundscape ecology into a more research and application focus.
+Research is needed in several new areas, organized around
+the following main themes: measurement and quantification, spatial-temporal dynamics, environmental covariates,
+www.biosciencemag.org
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+What produces sound?  The urban environment generally contains sounds with considerably different spectral and temporal properties from those produced by living organisms.
+Urban landscapes are saturated with signals that carry little
+or no intentional information and are regarded as unwanted
+noise by many people. These signals emanate from vehicles
+(e.g., motors and road noise) and stationary machines (e.g.,
+air conditioners; sound file 5). Most of these sounds occur at
+low acoustic frequencies (less than 4 kHz).
+The geophysical environment produces a variety of in situ,
+contextual ambient sounds. Familiar such sounds are wind,
+rain, and running water, the frequencies of which occur
+between 100 Hz and 1 kHz with little rain, or between
+100 Hz to 8 kHz during windy or moderate to heavy rain.
+Geophony varies seasonally and diurnally.
+Among terrestrial organisms, vertebrates and certain
+groups of insects produce the most sound. The most audible
+insects are crickets, katydids, grasshoppers, and cicadas.
+Insects produce sounds most strongly around 3 to 4 kHz and
+6 to 8 kHz, either through stridulation (crickets and katydids)
+or by vibrating a rigid membrane (cicadas). Stridulation is
+created by insects by rubbing body parts together. Insects
+call during the day (cicadas), at night (crickets), or both
+(some cicadas). Additionally, songs from many insects possess a certain periodicity. For example, sounds from crickets
+are composed of pulses and chirps produced at precise intervals, and crickets are well known for having chirp rates that
+are strongly influenced by temperature (Walker 1962). Other
+cyclical patterns of sound production in insects throughout
+the year relate to the phenological life cycle of the species.
+Annual cicadas (Tibicen spp.), for instance, will sing during hot days, late in the summer after they emerge from
+the ground, with the timing of emergence being a function
+of accumulated heating degree days (Williams and Simon
+1995). Sounds produced from wing beats from flies, bees,
+and wasps could contribute significantly to the soundscapes
+if these insects are present in large numbers.
+Amphibians such as frogs and toads rely primarily on
+vocalizations to attract mates (Gerhardt 1994). In the northern
+temperate regions of eastern North America, spring peepers
+(Pseudacris crucifer) are common singers at night in wetlands
+and ponds. Calls are intense during the breeding seasons, which
+extend from late winter (February) to early spring (May) in the
+northern United States and from late fall (October) to early
+spring (March) in more southern locations. Frequencies of
+frog and toad choruses range from 2 to 5 kHz.
+Almost all birds use sound to attract mates, defend territories, sound alarms, and communicate other types of
+information. Many of the passerines are especially known
+for producing elaborate songs (Kroodsma 2005). Most songs
+and calls produced by birds occur in the 2 to 6 kHz range.
+The acoustic frequency of a bird’s song relates to its body
+
+size (large-bodied birds produce sounds as low as 1 kHz) and
+habitat type and structure; for example, some tropical birds
+use protracted pure tones in environments with persistent
+geophonic sounds of wind and rain, and some vocalizations
+reach frequencies in the 10 to 12 kHz range (Kerry Rabenold,
+Department of Biological Sciences, Purdue University, West
+Lafayette, Indiana, personal communication, 5 October 2010).
+A variety of terrestrial mammals also produce sounds
+(McComb and Reby 2005). Groups that are frequent contributors of sound produced in landscapes include primates
+(e.g., monkeys, baboons), elephants, canines (e.g., wolves
+and coyotes), rodents (e.g., squirrels, chipmunks), and
+felines (e.g., lions), among others. Bats generally produce
+two types of sound; the first, referred to as “echolocation,”
+is emitted as ultrasonic frequencies (above human hearing
+ability) and is used to locate prey. The second, communication calls, are more readily audible to humans and are used
+to identify individuals.
+Recently, considerable evidence has emerged showing
+that anthrophony can influence animal communication
+in a variety of ways. For example, American robins (Turdus migratorius) shift the timing of their singing in urban
+environments to the night (Fuller et al. 2007). In song sparrows (Melospiza melodia), the lowest-frequency notes were
+higher in environments with high ambient noise (Wood
+and Yezerinac 2006). Brumm (2004) found that freeranging nightingales (Luscinia megarhynchos) in noisier
+environments sing more loudly than those in quieter environments, and Slabbekoorn and Peet (2003) determined
+that the great tit (Parus major) sings at higher pitches in
+urban noise conditions.
+
+Articles
+human impacts on soundscapes, soundscape impacts on
+humans, and soundscape impacts on wildlife.
+Theme 1: Improve the measurement and quantification of
+sounds.  Acoustic sensors are needed that can automate the
+
+Theme 2: Improve our understanding of spatial-temporal dynamics
+across different scales.  Research is needed on how soundscapes
+
+vary with landscape patterns and processes (figure 1, arrows
+1 and 2). How do soundscapes differ with land-use patterns?
+Comparisons of soundscape dynamics should be made of
+various natural ecosystems around the world but also across
+areas that differ in the amount of human disturbance within
+an ecosystem. Vertebrate species richness has been shown
+to vary with vegetation structure (canopy height, density).
+Is soundscape diversity greatest where vegetation structure
+is most complex? More research is needed that attempts to
+characterize the different types of the temporal patterns of
+soundscapes. How do soundscapes vary over different time
+frames (seconds, minutes, hours, diurnally, annually) (figure
+1, arrows 4 and 5) in different landscapes? How are the dawn
+and dusk choruses affected by human activities?
+Theme 3: Improve our understanding of how important environmental covariates impact sound.  Biophonic and geophonic
+
+sounds very likely vary according to many environmental
+factors, such as weather, plant phenology, and elevation.
+Specific research is needed on how soundscapes vary by
+temperature (air, soil, and water), solar radiation, lunar
+radiation, relative humidity, heating degree days, and moisture budgets (figure 1, arrow 4). Knowledge of these covariates will be necessary as researchers attempt to understand
+how human activity impacts natural soundscape dynamics.
+Studies on how geophonic sounds of wind, running water,
+and rain affect biophonic patterns will help us to understand
+the plasticity of biological communication as it relates to
+human-generated sounds.
+Theme 4: Assess the impact of soundscapes on wildlife.  There is a
+need for more research on how certain soundscape qualities
+www.biosciencemag.org 	
+
+Theme 5: Assess the impacts of humans on soundscapes.  Humans
+create many objects that produce sounds (figure 1, arrow
+5). How do engines, road noises, bells, sirens, and other
+machines affect soundscape composition? As new technologies emerge, how do these affect the soundscape? What policies are needed to protect soundscapes in various settings
+such as national parks or our cities and neighborhoods?
+How can land-use planners and policymakers determine
+future soundscapes?
+Theme 6: Assess soundscape impacts on humans.  Humans
+are surrounded by sounds that emanate from the environment and these sensory connections to nature are from the
+soundscape (figure 1, arrow 7). Research is needed on how
+natural sounds influence the development of individuals’
+sense of place, place attachment, and connection to nature.
+More specifically, how do human demographic variables
+such as culture, place of residence, or age affect the strength
+of human values associated with soundscapes? What factors
+affect human (in)tolerance of soundscape changes, especially where those changes increase noise?
+
+Soundscape ecology case studies
+We present four case studies that illustrate various aspects of
+soundscape ecology. These studies also exemplify the kinds
+of research that can be conducted across the six research
+themes posed above. The first case study, which is not a separate study in itself as are the three others, represents selected
+recordings from the massive Krause 40-year-old soundscape
+archive. Krause, a musician and recording engineer, has
+recorded natural sounds for use in the entertainment industry. The second focuses on characterizing the “rhythms of
+nature” in midlatitude landscapes that vary across a human
+disturbance gradient. A third study, conducted in Sequoia
+National Park in the United States, attempts to determine
+whether organisms are partitioning their sounds and the
+extent to which geophonic sounds, such as rivers and wind,
+interfere with animal communication. The final study, conducted in montane forests in Tuscany, Italy, centers on mapping dynamic soundscapes.
+Krause ambient sounds soundscape archive.  We use sev-
+
+eral field recordings that are part of the massive Krause
+soundscape archive to illustrate how sounds reflect certain characteristics of landscapes and the organisms that
+live within them. A 1-minute-28-second recording of a
+tropical forest in Madagascar in 1996 (sound file 6) represents an excellent example of the ANH, exemplifying
+March 2011 / Vol. 61 No. 3 • BioScience 209
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+recording of sounds, that are inexpensive, and that can be
+placed in large networks in hostile environments. Research is
+required that can automatically differentiate all sounds emanating from landscapes. For example, researchers need tools
+that can classify biological, geophysical, and anthropogenic
+sources of sounds. Scientists also need a better understanding of how these sources of sounds differ in their composition. How do anthrophonic sounds differ in composition
+(acoustic frequency, time interval) from biophonic sounds?
+Is the presence of certain kinds of sounds indicative of a
+healthy or deteriorating landscape? In situ measurements of
+biodiversity need to be compared with soundscape measures
+to determine how well vocal organisms provide a proxy for
+biodiversity in general. Research in this area can also advance
+our ability to use soundscape measures for natural resource
+management and biological conservation.
+
+(e.g., noise, ambient sounds like running water and wind)
+affect individual wildlife species and populations (figure 1,
+arrow 6). Research is required on the ways anthrophony affects
+wildlife behavior, such as breeding, predator-prey relationships, and physiology. As soundscape patterns such as signal
+composition, sound diversity, and temporal cycles change,
+what are the impacts to species’ life-history patterns?
+
+Articles
+
+210 BioScience • March 2011 / Vol. 61 No. 3	
+
+www.biosciencemag.org
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+that sounds produced by animals are separated in space,
+the human ear but are known to occur continuously in ant
+time, and frequency. Here, dozens of birds vocalize with
+colonies. Recent research (Hickling and Brown 2000) has also
+little frequency or temporal overlap. One bird (probably a
+shown that only sounds produced in a near field on the order
+sickle-billed vanga, Falculea palliata) produces four rapid
+of 100 millimeters or less are detected by ants, and ambient
+calls followed by a brief pause at 1 kHz, much below the
+sounds produced farther away are ignored.
+frequency of other bird vocalizations. This recording
+Sounds produced by many organisms may also reflect the
+most likely represents some of the greatest acoustic niche
+animals’ complex social structure. The recording (sound file
+separation in the world.
+10) of gray wolves (Canis lupus) in Canada’s Algonquin ProThe nighttime recording of organisms producing sounds in
+vincial Park in 2008 captures the vocalizations of wolves as
+a bai in the Central African Republic (sound file 7) illustrates
+the normal foreground biophony progresses. This recording
+how unique landscapes can create unique soundscapes. Here,
+may also elicit a strong sense of wildness, triggering many
+the normal synchronous production of nighttime sounds by
+human senses and values. The entire context of wolves howlinsects and frogs is interwoven with the loud trumpeting, beling among the tapestry of boreal sounds can be a memorable
+lowing, and grunting of forest elephants (Loxodonta cyclotis).
+experience (sensu Fisher 1998), emphasizing the importance
+A bai is a special landscape where forest elephants go (areas
+of our auditory connection with nature.
+have been cleared by elephants) because of the high salt content of the mud surrounding ponds created by groundwater
+Tippecanoe Rhythms of Nature study.  Several of this article’s
+upwelling; thus, landscape structure and the specific animals
+authors (LJV, BCP, and BMN) conducted a yearlong study to
+occupying these areas can create a unique soundscape.
+measure near-continuous sounds in a variety of landscapes
+A recording (sound file 8) of the dawn chorus in
+in northwestern Tippecanoe County, Indiana (see online
+Zimbabwe illustrates not only the complexity of sounds
+supplementary material at www.jstor.org/stable/10.1525/
+produced in the morning but also animals’ use of special
+bio.2011.61.3.6), in order to characterize different rhythms
+landforms to propagate calls. The first minute contains
+of nature and the impacts of humans on them. We deployed
+a typical chorusing of about 30 different species of birds
+automated Wildlife Acoustics Songmeters in eight locations
+(see supplementary online materials at www.jstor.org/
+that varied in land-use characteristics, spanning old growth
+stable/10.1525/bio.2011.61.3.6). At 1:13 into this recordforest to agricultural fields (figure 5). The proportion of
+ing, however, baboons (Papio
+cynocephalus) begin to bark.
+Note how the echo decay of the
+baboons (> 4 seconds) differs
+from the echo decay of the birds
+(approximately one-third of a
+second), such as the black-eyed
+bulbul (Pycnonotus barbatus) in
+the dry forest. The landform is
+thus exploited by these animals
+to propagate their voices. Many
+animals, such as African lions
+(Panthera leo), forest and plains
+elephants, and hyenas, choose
+the time and place to make their
+voices echo.
+Wiens and Milne (1989), among
+others, have emphasized the need
+to understand landscapes from
+the perspective of the size of an
+organism; they found that from a
+beetle’s point of view, the very fine
+Figure 5. Land-use and land-cover composition within 100 meters of each acoustic
+structure of a landscape influences
+recorder. Land-use and -cover data were from the 30-meter 2001 National Land
+movement patterns. Additionally,
+Cover Database, classified into major land-use and -cover types. Martell Forest
+many insects produce sounds that
+is a secondary forest owned by Purdue University, the Wildlife Area is a wetland
+aid in breeding or communicasurrounded by 10- to 15-year-old trees, Ross Reserve is an old growth forest also
+tion that may not be audible to
+owned by Purdue University. FNR Farm and McCormick Woods are two mixedhumans or to other organisms in
+use sites; the former is an abandoned orchard and McCormick Woods is a small
+the landscape. Ant stridulations
+(40-hectare) forest stand surrounded by residential urban development.
+(sound file 9) are not audible to
+
+Articles
+a yearlong study to determine whether (a) sounds from
+animals occurred with any acoustic niche separation, and
+(b) geophony affected biophony patterns. A forest riparian
+zone (near a relatively noisy stream), an oak savanna, a dry
+savanna chaparral (with high winds), and an old-growth
+forest site were monitored daily at dawn, midday, dusk,
+and midnight (for 60 minutes during the period of September 2001 through October 2002) using digital acoustic
+recorders (see supplementary online materials for details).
+Randomly selected 11.5-second segments were analyzed by
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+urban and agriculture within 100 meters of the recorder
+was used as a measure of human disturbance. We collected
+and analyzed more than 34,000 15-minute recordings.
+We were also interested in applying metrics traditionally
+used by ecologists, such as diversity, evenness, richness,
+and dominance. To accomplish this, we discretized the
+spectrogram into 10 frequency bands and calculated the
+amount of sound occurring in each band. We used these
+values to calculate (a) diversity (using Shannon’s index) and
+(b) evenness (using the Gini coefficient). We also determined the most dominant frequency band occurring in each
+15-minute recording. The total
+amount of acoustic activity in
+each recording was used as a surrogate for sound sources, which
+in some cases will be correlated
+to species richness. These metrics
+were examined across landscapes
+and over two time periods.
+Activity, diversity, and evenness were greatest for the natural
+landscapes (forests and wetlands),
+and all values decreased as human
+disturbance increased (figure 6).
+A plot of mean monthly Shannon’s diversity index values by
+site (figure 7a) shows that a peak
+in entropy occurs during the late
+summer. Late summer soundscapes are composed of birds
+and insects (mostly cicadas and
+crickets). Comparing these same
+sites across time of day (figure 7b)
+aggregated from May through
+September, a 7:00 a.m. (i.e., dawn
+chorus) and 10:00 p.m. peak (i.e.,
+dusk chorus) are evident in all
+but the agricultural sites. Nighttime entropy values are twice
+that of midday values in all sites
+except the cornfield site. Sound
+files 11–34 contain a full day of
+recording from our wetland site.
+In May, all sites were dominated by
+low-frequency sounds (figure 8),
+but by late summer (August and
+September) bands 3 through 8
+became prominent, especially in
+natural landscapes.
+Sequoia National Park acoustic niche
+hypothesis study.  Four relatively
+
+pristine habitats located in the
+Sequoia National Park were selected
+by BK and SHG (see figure 9) for
+www.biosciencemag.org 	
+
+Figure 6. Annual average values for (a) total activity, (b) frequency band diversity,
+and (c) frequency band evenness in the Tippecanoe Rhythms of Nature Study.
+March 2011 / Vol. 61 No. 3 • BioScience 211
+
+Articles
+
+Mapping the soundscapes in the Tuscany study.  A two-month
+
+Figure 7. Temporal cycles of frequency band diversity
+plotted by (a) month and (b) hour. (a) Monthly average
+frequency band diversity (Shannon’s) as it differs between
+sites and (b) hourly average frequency band diversity
+(Shannon’s) as it differs between sites.
+examining spectrograms and listening to the recordings.
+A total of 190 spectrograms were produced, and the vocal
+niches in these spectrograms were analyzed (a) qualitatively, by describing biophonic and geophonic patterns;
+and (b) quantitatively, by calculating the acoustic activity
+occurring at each site.
+The vocalizations of American robins and the American
+dippers (Cinclus mexicanus) in the riparian zone (Buckeye
+Flats) location were evident, with frequencies of songs
+occurring in a manner that avoided masking by the nearby
+noisy stream. Insects produced sounds that were higher in
+pitch than birds, demonstrating niche partitioning. Only
+57% of the spectrograms contained sounds. Within the
+oak savanna site (Sycamore Creek), vocalizations by birds
+ranged from 500 Hz (mourning dove, Zenaida macroura)
+to more than 20 kHz (unidentified bird); approximately
+94% of the spectrogram was occupied by at least one vocal
+organism. The dry savanna chaparral (Shepard’s Saddle)
+212 BioScience • March 2011 / Vol. 61 No. 3	
+
+study was conducted from June to July of 2008 in a secondary montane beech forest in the Italian Apennine National
+Park, located along the northern slopes of Mount La Nuda.
+The study was conducted to determine how spatially variable
+soundscapes are in a relatively homogenous forest. Twenty
+digital recorders (Handy Recorder, H4) were placed in a
+5 × 4 grid with 100-meter spacing. Eleven three-hour recordings (0600 to 0900) were collected under ideal meteorological
+conditions. Approximately 13 species of birds, such as the
+European robin (Erithacus rubecula), the chaffinch (Fringilla
+coelebs), and the blackcap (Sylvia atricapilla), vocalize in this
+forest (sample in sound file 39). An acoustic complexity index
+(see supplementary online materials) was used to quantify
+spectral complexity, and interpolation software was used to
+create soundscape maps.
+Data from the acoustic recorders were used to construct
+soundtopes (Farina 2006)—a three-dimensional map of
+acoustic complexity (y axis) plotted across the landscape
+(plotted across the x and z axes). The 11 daily soundscape
+maps for this landscape (figure 10) indicate that large
+interseasonal changes of the soundscape occur. We anticipated that the soundscape maps would be similar throughout the year, reflecting static territorial boundaries. The
+breeding period of every species has a different phenological
+time and for each time requires specific resources (food,
+shelter, singing spots, etc.), these resources are spatially and
+temporally variable as well. The soundtope shifts across the
+environment consequently.
+Summary of case studies.  The above case studies illustrate
+
+various ways that data can be collected, analyzed, and
+interpreted. These case studies highlight many of the
+research themes described above. The Krause archive
+demonstrates the complex composition of a community
+of organism vocalizations, the interaction of landscape
+features and sound propagation, and the importance of an
+organism’s perception of scale in the landscape in which it
+lives. The Tippecanoe study shows that temporal patterns
+www.biosciencemag.org
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+site possessed the greatest diversity of sounds, from flies
+(200 Hz) to birds (8.7 kHz from one unidentified bird).
+Finally, in the old-growth site (Crescent Meadow), animals
+produced sounds from 200 Hz (flies) to around 9 kHz
+(birds); about 82% of the spectrogram was occupied by
+vocalizations. Frogs chorused between 600 Hz to 2 kHz,
+just below the acoustic frequency of the robin, which sings
+in the 2 to 3.3 kHz range. Sound files 35–38 contain sample
+dawn chorus recordings from this study. The amount
+of acoustic activity for each site (figure 9a) shows that
+the Buckeye Flats site contained more than 10 times the
+amount of acoustic activity, mostly from the geophonic
+sounds of the stream. Within each site (figure 9b), acoustic
+activity was highly variable over a season; fall, in half of the
+cases, was the most acoustically active season (see sample
+sound files 35–38).
+
+Articles
+
+of soundscapes exhibit strong dawn and dusk chorus
+peaks that diminish with increasing human disturbance
+on the landscape. The Sequoia study attempts to quantify
+the effects of geophony on biophonic patterns, and shows
+that animals that communicate in each habitat do so at
+different frequencies to avoid overlap. Lastly, the Tuscany
+soundscape mapping study illustrates that soundtopes
+constructed from acoustic arrays could be used to quantify
+the spatial dynamics of soundscapes.
+The way forward
+The study of soundscapes can yield valuable information
+about the dynamics of a variety of landscapes. Given that
+technological advances are occurring rapidly and theories
+about the interplay of patterns and processes occurring
+within landscapes are maturing, we believe that soundscape
+ecology can enhance our understanding of how humans
+affect ecosystems. Indeed, we are at a critical juncture in our
+history, and there is a need for transformative approaches
+that help us to more thoroughly elucidate how humans
+affect our planet (Vitousek et al. 1997, Chapin et al. 2000).
+At present, there is a renewed interest in studying ecosystems at large, continental scales. Automated acoustic
+recordings could provide a means to collect information
+www.biosciencemag.org 	
+
+at fine temporal resolutions (Porter et al. 2005). Initiatives
+such as the National Science Foundation’s NEON (National
+Ecological Observatory Network) project are being built to
+study ecosystems at subcontinental scales (Keller et al. 2008).
+Furthermore, recordings made today will become tomorrow’s “acoustic fossils,” possibly preserving the only evidence
+we have of ecosystems that may vanish in the future because
+of a lack of desire or ability to protect them.
+We also argue that society should value natural soundscapes as it does other aspects of nature. Soundscapes represent the heritage of our planet’s acoustic biodiversity,
+and reflect Earth’s natural assemblage of organisms—
+soundscapes are an ecosystem service (MA 2005) that
+provides cultural and other services. Natural sounds
+are our auditory link to nature, and the trends toward
+increasing society’s “nature deficient disorder” (Louv
+2008) are likely to continue as we replace natural sounds
+with those made by humans. This research reflects again
+on Rachel Carson’s call made in Silent Spring, in which she
+highlighted the dangers of pesticides and their potential
+threat to wildlife and the environment. The unintended
+silencing of organisms by a myriad of human activities
+provides yet another indication of our impact on the
+planet’s ecosystems.
+March 2011 / Vol. 61 No. 3 • BioScience 213
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+Figure 8. Frequency band dominance summarized for four months of the Tippecanoe study.
+
+Articles
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+Figure 9. Summary of the Sequoia National Park study. Acoustic activity averages for each site and by season. Note that
+the Buckeye Flats location (a) contains greater acoustic activity, a result of the nearby rapid flowing stream that produced
+considerable geophonic sounds. The inset (b) graphs the same data but with Buckeye Flats removed. These values (b)
+reflect mostly biophony. Sycamore Creek contained the greatest acoustic activity of these three. The fall contains the
+greatest activity although there was no consistent pattern across sites. Photos of each landscape are provided in (c).
+214 BioScience • March 2011 / Vol. 61 No. 3	
+
+www.biosciencemag.org
+
+Articles
+
+Acknowledgments
+This article emerged from two symposia held at the US
+International Association of Landscape Ecology (IALE)
+meetings, one in 2009 in Snowbird, Utah, and the second
+in 2010 in Athens, Georgia. Funding for the Tippecanoe
+Soundscape Study was obtained by a grant from the Lilly
+Foundation for the establishment of a Center for the
+Environment at Purdue. Development of acoustic metrics
+for the Tippecanoe Rhythms of Nature Study was made
+possible from a National Science Foundation III-XT grant to
+BP. Funds to support LV, BN, and SD were provided by the
+Department of Forestry and Natural Resources at Purdue
+University, and travel funds for LV and BN to attend the US
+IALE meetings in 2009 and 2008 respectively, were provided
+by the NASA Michigan State University US IALE travel fund.
+The authors greatly acknowledge the input on an earlier version of this manuscript by Barny Dunning, Lori Ivans, Kerry
+Rabenold, Jeff Holland, Jeff Dukes, Jim Plourde, Stuart
+Bolton, Kimberly Robinson, Camille Washington-Ottombre,
+www.biosciencemag.org 	
+
+Alex Pijanowski, Burak Pekin, and Christian Perry. Jarrod
+Doucette assisted with the graphics.
+References cited
+Acevedo MA, Villanueva-Rivera LJ. 2006. Using automated digital recording
+systems as effective tools for the monitoring of birds and amphibians.
+Wildlife Society Bulletin 34: 211–214.
+Ahola M, Laaksonen T, Sippola K, Eeva T, Rainio K, Lehikoinen E. 2004.
+Variation in climate warming along the migration route uncouples
+arrival and breeding dates. Global Change Biology 10: 1610–1617.
+Barber JR, Crooks KR, Fristrup KM. 2010. The costs of chronic noise
+exposure for terrestrial organisms. Trends in Ecology and Evolution
+25: 180–189.
+Beebee TJC. 2002. Amphibian breeding and climate. Nature 374: 219–220.
+Bennet-Clark HC. 1998. Size and scale effects as constraints in insect sound
+communication. Philosophical Transactions of the Royal Society B 353:
+407–419.
+Brown CH, Gomez R, Waser PM. 1995. Old world monkey vocalizations:
+Adaptation to the local habitat? Animal Behaviour 50: 945–961.
+Brown JL, Shou-Hsien L, Bhagabati N. 1999. Long-term trend toward
+earlier breeding in an American bird: A response to global warming?
+Proceedings of the National Academy of Sciences 96: 5565–5569.
+
+March 2011 / Vol. 61 No. 3 • BioScience 215
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+Figure 10. Soundscape maps for the Tuscany bird acoustic study. Twenty recorders were placed in a 4 3 5 grid with
+100-meter spacing and 180 minutes of recordings made. An acoustic complexity index (ACI) was calculated for each
+point and then interpolation software used to create a surface similar to an ecotope; we call these “soundtopes.” See
+supplementary material online (dx.doi.org/10.1525/bio.2011.61.3.6) for details on how to calculate ACI.
+
+Articles
+
+216 BioScience • March 2011 / Vol. 61 No. 3	
+
+Miller NP. 2008. US national parks and management of park soundscapes:
+A review. Applied Acoustics 69: 77–92.
+Morton ES. 1975. Ecological sources of selection on avian sounds. American
+Naturalist 109: 17–34.
+National Parks Overflights Act. 1987. 16 USC 1-1a. U.S. Public Law 100-91.
+[NPS] National Park Service. 2006. National Park Service Management
+Policies. NPS.
+Porter J, et al. 2005. Wireless sensor networks for ecology. BioScience 55:
+561–572.
+Rolston H. 1988. Environmental Ethics: Duties to and Values in the Natural
+World. Temple University Press.
+Ryan MJ, Brenowitz EA. 1985. The role of body size, phylogeny, and ambient
+noise in the evolution of bird song. American Naturalist 126: 87–100.
+Saunders AA. 1947. The seasons of bird song: The beginning of song in
+spring. The Auk 64: 97–107.
+Schafer RM. 1977. Tuning of the World. Knopf.
+Slabbekoorn H, Peet M. 2003. Birds sing at higher pitch in urban noise.
+Nature 424: 267.
+Southworth M. 1969. The sonic environment of cities. Environment and
+Behavior 1: 49–70.
+Staicer CA, Spector DA, Horn AG. 1996. The dawn chorus and other diel
+patterns in acoustic signaling. Pages 426–453 in Kroodsma DE, Miller
+EH, eds. Ecology and Evolution of Acoustic Communication in Birds.
+Cornell University Press.
+Sueur J, Pavoine S, Hamerlynck O, Duvail S. 2008. Rapid acoustic survey for
+biodiversity appraisal. PLoS ONE 3: e4065.
+Trifa VM, Kirschel ANG, Taylor CE, Vallejo EE. 2008. Automated species
+recognition of antbirds in a Mexican rainforest using hidden Markov
+models. Journal of the Acoustical Society of America 123: 2424–2431.
+Truax B. 1999. Handbook of Acoustic Ecology. 2nd ed. (CD-ROM). Cambridge Street.
+Turner MG. 1989. Landscape ecology: the effect of pattern on process.
+Annual Review of Ecology and Systematics 20: 171–197.
+Turner MG, Gardner RH, O’Neill RV. 2001. Landscape Ecology in Theory
+and Practice: Pattern and Process. Springer.
+Urban DL, O’Neill RV, Shugart HH. 1987. Landscape ecology. BioScience
+37: 119–127.
+Vitousek PM, Mooney HA, Lubchenco J, Melillo JM. 1997. Human domination of Earth’s ecosystems. Science 277: 494–499.
+Walker TJ. 1962. Factors responsible for intraspecific variation in the calling
+songs of crickets. Evolution 16: 407–428.
+Wiens JA, Milne BT. 1989. Scaling of ‘landscapes’ in landscape ecology, or, landscape ecology from a beetle’s perspective. Landscape Ecology 3: 87–96.
+Williams KS, Simon C. 1995. The ecology, behavior and evolution of periodical cicadas. Annual Review of Entomology 40: 269–295.
+Wilson EO. 1999. The Diversity of Life. W. W. Norton.
+Wood WE, Yezerinac SM. 2006. Song sparrow (Melospiza melodia) song
+varies with urban noise. The Auk 123: 650–659.
+Wrightson K. 2000. An introduction to acoustic ecology. Soundscape: The
+Journal of Acoustic Ecology 1: 10–13.
+
+Bryan C. Pijanowski (bpijanow@purdue.edu), Luis J. Villanueva-Rivera, Sarah
+L. Dumyahn, and Brian M. Napoletano are with the Human-Environment
+Modeling and Analysis Laboratory, Department of Forestry and Natural
+Resources, at Purdue University in West Lafayette, Indiana. Almo Farina and
+Nadia Pieretti are with the Department of Mathematics, Physics and Informatics at Urbino University in Italy. Bernie L. Krause is with Wild Sanctuary
+Inc., in Glen Ellen, California. Stuart H. Gage is with the Department of
+Entomology at Michigan State University in East Lansing, Michigan.
+
+www.biosciencemag.org
+
+Downloaded from http://bioscience.oxfordjournals.org/ at FMRP/USP/BIBLIOTECA CENTRAL on April 24, 2014
+
+Brumm H. 2004. The impact of environmental noise on song amplitude on
+a territorial bird. Journal of Animal Ecology 73: 434–440.
+Carson R. 1962. Silent Spring. Houghton Mifflin.
+Chapin FS, et al. 2000. Consequences of changing biodiversity. Nature 405:
+234–242.
+Currie DJ. 1991. Energy and large-scale patterns of animal and plant species
+richness. American Naturalist 137: 27–49.
+Daniel JC, Blumstein DT. 1998. A test of the acoustic adaptation hypothesis
+in four species of marmots. Animal Behavior 56: 1517–1528.
+Dooling RJ, Brown SD, Klump GM, Okanoya K. 1992. Auditory perception of conspecific and heterospecific vocalizations in birds:
+Evidence for special processes. Journal of Comparative Psychology
+106: 20–28.
+Farina A. 2006. Principles and Methods in Landscape Ecology.
+Springer.
+Farina A, Belgrano A. 2006. The eco-field hypothesis: Toward a cognitive
+landscape. Landscape Ecology 21: 5–17.
+Ficken RW, Ficken MS, Hailman JP. 1974. Temporal pattern shifts to avoid
+acoustic interference in singing birds. Science 183: 762–763.
+Fisher JA. 1998. What the hills are alive with: In defense of the sounds of
+nature. Journal of Aesthetics and Art Criticism 56: 167–179.
+Fletcher N. 2007. Animal bioacoustics. Pages 785–804 in Rossing TD, ed.
+Handbook of Acoustics. Springer.
+Forman RTT, Godron M. 1981. Patches and structural components for a
+landscape ecology. BioScience 31: 733–740.
+Forrest TG. 1994. From sender to receiver: Propagation and environmental
+effects on acoustic signals. American Zoologist 34: 644–654.
+Fuller RA, Warren PH, Gaston KJ. 2007. Daytime noise predicts nocturnal
+singing in urban robins. Biological Letters 3: 368–370.
+Gerhardt HC. 1994. The evolution of vocalization in frogs and toads.
+Annual Review of Ecology and Systematics 25: 293–324.
+Hartmann WM. 1997. Signals, Sound and Sensation. American Institute
+of Physics.
+Hickling R, Brown RL. 2000. Analysis of acoustic communication in ants.
+Journal of the Acoustical Society of America 108: 1920–1929.
+Kacelnik A, Krebs JR. 1982. The dawn chorus in the great tit (Parus major):
+Proximate and ultimate causes. Behaviour 83: 287–309.
+Keller M, Schimel DS, Hargrove WW, Hoffman FM. 2008. A continental
+strategy for the National Ecological Observatory Network. Frontiers in
+Ecology and the Environment 6: 282–284.
+Krause B. 1987. Bioacoustics, habitat ambience in ecological balance. Whole
+Earth Review 57: 14–18.
+Kroodsma D. 2005. The Singing Life of Birds: The Art and Science of Listening to Birdsong. Houghton Mifflin Harcourt.
+Lambin EF, Giest HJ. 2006. Land-use and Land-cover Change: Local
+Processes and Global Impacts. Springer.
+Liu J, et al. 2007. Complexity of coupled human and natural systems. Science 317: 1513–1516.
+Louv R. 2008. Last Child in the Woods: Saving our Children from Naturedeficit Disorder. Algonquin Books.
+[MA] Millennium Ecosystem Assessment. 2005. Ecosystems and Human
+Well-being: Synthesis. Island Press.
+MacArthur RH, MacArthur JW. 1961. On bird species diversity. Ecology
+42: 594–598.
+Marten K, Quine D, Marler P. 1977. Sound-transmission and its significance
+for animal vocalization, II: Tropical forest habitats. Behavioral Ecology
+and Sociobiology 2: 291–302.
+McComb K, Reby D. 2005. Vocal communication networks in large terrestrial mammals. Pages 372–389 in McGregor P, ed. Animal Communication Networks. Cambridge University Press.
+
+

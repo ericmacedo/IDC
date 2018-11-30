@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 # Author: Ehsan Sherkat
 import sys
-import cgi, cgitb
+import cgi, cgitb 
 import json
 import os
 from os.path import basename
@@ -11,7 +11,7 @@ cgitb.enable()
 form = cgi.FieldStorage()
 
 userDirectory = eval(form.getvalue('userDirectory'))
-
+ 
 try:
 	files = []
 
@@ -26,15 +26,15 @@ try:
 				files.append(fileName+ ".pdf")
 			else:
 				files.append(fileName+ ".txt")
-
-	if len(files) > 0 :
+	
+	if len(files) > 0 :	
 		print "Content-type:application/json\r\n\r\n"
-		print json.dumps({'status':'yes', 'files':files})
-
+		print json.dumps({'status':'yes', 'files':files})	
+	
 	else:
 		print "Content-type:application/json\r\n\r\n"
-		print json.dumps({'status':'no'})
-
+		print json.dumps({'status':'no'})		
+	
 except Exception, e:
 	print "Content-type:application/json\r\n\r\n"
 	print json.dumps({'status':'error', 'except':json.dumps(str(e))})

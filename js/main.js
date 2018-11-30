@@ -27,6 +27,10 @@ var sessionDescription = "";
 var silhouette = 0;
 var TsneSilhouette = 0;
 var tsneResult = new Array();
+var calTsneSil = true;
+var firstRun = true;//if this is the first time the clustering is running.
+var generalViewLoaderThreshold = 0.5;// number of edges that will be shown to the user from the list of extracted edges
+var getGeneralViewGraphThreshold = 0.97;// 0.97, the number of edges to be extracted for the graph view
 
 // var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -40,10 +44,15 @@ var userDirectory = "";
 var userID = "";
 var userU = -1;
 var serverData = new Array();
-var serverClusetrName = [];
+var serverClusterName = [];
 var termClusters = [];
 var docClusters = [];
 var clusterNumber = -1;
+var filterHighlight = {}
+var suggested_clusters_number = "0"// suggested number of clusters
+var confidenceUser = 50; //level of user confidence
+var isClusterDeleted = "false";//check if a cluster is removed
+
 
 /**
  * Load the system and clusters
@@ -53,9 +62,11 @@ function pageLoad() {
   $( "#slider1" ).slider( "disable" );
   $( "#slider2" ).slider( "disable" );
   $( "#slider3" ).slider( "disable" );
+  $( "#slider4" ).slider( "disable" );
   $("#slider1_Textbox").attr("disabled","disabled");
   $("#slider2_Textbox").attr("disabled","disabled");
   $("#slider3_Textbox").attr("disabled","disabled");
+  $("#slider4_Textbox").attr("disabled","disabled");
 
   //promt for the user guide
   // var userGuide = confirm("Would you like to see the userguide page first?");
@@ -74,11 +85,11 @@ function pageLoad() {
     {      
       userID = input;
 
-      fileName = "../"+input+"/out"+input+".Matrix";
-      termsFileName = "../"+input+"/out"+input+".Terms";
-      specFileName = "../"+input+"/out"+input+".Spec";
-      fileListName = "../"+input+"/fileList";
-      userDirectory= "../"+input+"/";
+      fileName = "../users/"+input+"/out"+input+".Matrix";
+      termsFileName = "../users/"+input+"/out"+input+".Terms";
+      specFileName = "../users/"+input+"/out"+input+".Spec";
+      fileListName = "../users/"+input+"/fileList";
+      userDirectory= "../users/"+input+"/";
 
       $("#userName").html("Welcome " + userID + "!");
 
@@ -95,36 +106,29 @@ function pageLoad() {
                 alert("You need to pre-process your collection! Click on 'Upload Document' on the top left hand side!");
               }
               else if (status == "no")
-              {              
+              {
+                //get clustering method
+                getClusteringMethod()
+
                 getListOfSessions("first");
                 if(sessions.length > 0) {
                   loadSessionConfirmed = confirm("You have saved sessions. Do you want to load the latest one?");
 
                   if(loadSessionConfirmed) {
 
-                    var sessionName = sessions[sessions.length - 1].substring(sessions[sessions.length - 1].indexOf("#$")
-                     + 2, sessions[sessions.length - 1].indexOf(".session")).replace("_", ":").replace("_", ":"); 
+                    var sessionName = sessions[sessions.length - 1].substring(sessions[sessions.length - 1].indexOf(" @ ") + 3);
+                    
+                    var date = sessionName.replace(":", " ").replace(":", " ");
+                    
+                    var dates = date.split(" ");
+                    name = dates[2]+dates[1]+dates[0]+dates[3]+dates[4]+dates[5];
 
-                    var name = sessionName.substring(sessionName.indexOf(" @ ") + 3);
-                    var date = sessionName.substring(0, sessionName.indexOf(" @ "));
-                    var sessionValue = name + " @ " + date;
-
-                    loadSession(sessionName);
-                    getListOfSessions(sessionValue);                    
+                    loadSession(name);
+                    getListOfSessions(name);                    
                   }
                 }
                 if (!loadSessionConfirmed) {
-                  input = prompt("Please enter your initial number of clusters","");
-
-                  if ((input != null) && (input.trim() != "") && (IsNumeric(input) != false))
-                  {
-                    clusterNumber = Number(input);
-                    callServer();                                
-                  }
-                  else if ((input != null) && ((input.trim() == "") || (IsNumeric(input) == false)))
-                  {
-                    alert("Your number of clusters is not valid!")
-                  }
+                  getClusterNumbers()
                 } 
               } 
             },
@@ -139,6 +143,128 @@ function pageLoad() {
       alert("Your userID is not valid!")
     }
   }  
+}
+
+/**
+ * Get clustering method
+ */
+function getClusteringMethod() {
+    $.ajax({
+    type: "POST",
+    url: "./cgi-bin/getClusteringMethod.py",
+    data: { userDirectory:JSON.stringify(userDirectory)}, 
+    async: false,              
+    success: function( msg ) { 
+      var status = msg['status'];
+
+      if (status == "yes"){
+        var clusteringMethod = msg['clusteringMethod']; 
+
+        if (clusteringMethod == "LDC") {
+          $( "#slider0" ).slider( "disable" );
+          $("#Clustering_algo_select_main").val("LDC"); 
+          $("#slider0_Textbox").attr("disabled","disabled");         
+        }
+        else if (clusteringMethod == "iK-means") {
+          $( "#slider0" ).slider( "enable" );
+          $("#Clustering_algo_select_main").val("iK-means");
+          $("#slider0_Textbox").removeAttr("disabled");
+        }        
+      }
+      if (status == "error"){
+        var except = msg['except'];         
+        alert(except);       
+      }  
+    },
+    error: function(msg){            
+      alert("Error1 in getting clustering method name!");
+    }      
+  });
+}
+
+/**
+ * Get the number of clusters from the user and also suggest the number of clusters to the user.
+ */
+function getClusterNumbers() {
+  $.ajax({
+    type: "POST",
+    url: "./cgi-bin/getClustersNumber.py",
+    data: { userDirectory:JSON.stringify(userDirectory)}, 
+    async: false,              
+    success: function( msg ) { 
+      var status = msg['status'];
+
+      if (status == "yes"){
+        var number = eval(msg['number']); 
+        suggested_clusters_number = number
+        if(suggested_clusters_number != "0") {
+          input = prompt("Please enter your initial number of clusters. \nSuggested number of clusters are " + suggested_clusters_number,"");
+        }
+        else {
+          input = prompt("Please enter your initial number of clusters","");
+        }
+
+        if ((input != null) && (input.trim() != "") && (IsNumeric(input) != false))
+        {
+          clusterNumber = Number(input);
+          callServer();                                
+        }
+        else if ((input != null) && ((input.trim() == "") || (IsNumeric(input) == false)))
+        {
+          alert("Your number of clusters is not valid!")
+        }
+      }
+      if (status == "error"){
+        var except = msg['except'];         
+        alert(except);
+        suggested_clusters_number = "0";
+        
+        input = prompt("Please enter your initial number of clusters","");
+        
+
+        if ((input != null) && (input.trim() != "") && (IsNumeric(input) != false))
+        {
+          clusterNumber = Number(input);
+          callServer();                                
+        }
+        else if ((input != null) && ((input.trim() == "") || (IsNumeric(input) == false)))
+        {
+          alert("Your number of clusters is not valid!")
+        }          
+      }
+      else if (status == "no") {
+        suggested_clusters_number = "0";
+        input = prompt("Please enter your initial number of clusters","");
+        
+
+        if ((input != null) && (input.trim() != "") && (IsNumeric(input) != false))
+        {
+          clusterNumber = Number(input);
+          callServer();                                
+        }
+        else if ((input != null) && ((input.trim() == "") || (IsNumeric(input) == false)))
+        {
+          alert("Your number of clusters is not valid!")
+        }          
+      }   
+    },
+    error: function(msg){            
+      alert("Error1 in getting number of clusters!");
+      suggested_clusters_number = "0";
+      input = prompt("Please enter your initial number of clusters","");
+        
+
+        if ((input != null) && (input.trim() != "") && (IsNumeric(input) != false))
+        {
+          clusterNumber = Number(input);
+          callServer();                                
+        }
+        else if ((input != null) && ((input.trim() == "") || (IsNumeric(input) == false)))
+        {
+          alert("Your number of clusters is not valid!")
+        }          
+    }
+  });
 }
 
 /**
@@ -176,47 +302,74 @@ function callServer(){
     $("body").css("cursor", "wait");
     //remove zip files
     removeZip();
+    isClusterDeleted = "false";
 
     var date01 = new Date();
-    var n01 = date01.getTime(); 
+    var n01 = date01.getTime();
+
+    //get confidence level
+    confidenceUser = $("#slider0_Textbox").val()
+
+    //get clustering method name
+    set_url = "./cgi-bin/main.py"
+    CL_Method = $('#Clustering_algo_select_main').val()
+    if (CL_Method == 'LDC') {
+      set_url = "./cgi-bin/mainH.py";
+    }
+    else if (CL_Method == "iK-means") {          
+      set_url = "./cgi-bin/mainE.py";
+    }   
 
     $.ajax({
-        url: "./cgi-bin/main.py",
+        url: set_url,
         type: "POST",
         cache: false,
         traditional: true,
-        data: {clusterNumber : clusterNumber, fileName:fileName, specFileName: specFileName, fileListName:fileListName, 
-          termsFileName: termsFileName, userU:userU, userDirectory:userDirectory, serverData:JSON.stringify(serverData), 
-          serverClusetrName:JSON.stringify(serverClusetrName)},
+        data: {clusterNumber:clusterNumber, fileName:fileName, specFileName:specFileName, fileListName:fileListName, 
+          termsFileName: termsFileName, userU:userU, userDirectory:userDirectory, serverData:JSON.stringify(serverData), userID:JSON.stringify(userID),
+          serverClusterName:JSON.stringify(serverClusterName), confidenceUser:JSON.stringify(confidenceUser)},
 
         success: function (msg) {   
-            $("body").css("cursor", "auto"); 
+            $("body").css("cursor", "auto");
 
             var date02 = new Date();
             var n02 = date02.getTime();  
             var time = (n02-n01)/1000;
             console.log("Time to clustering: " + time);      
 
-            clusterKeytermsOriginal = eval(msg['termClusters']);
-            clusterDocs = eval(msg['docClusters']);
-            silhouette = eval(msg['silhouette']);
-            
-            if(silhouette == null) {
-              silhouette = "Error!"
-            }
-            else {
-              silhouette = silhouette.toFixed(4);
+            var status = msg['status'];
+
+            if (status == "test") {//for testing the code
+               var testMSG = msg['testMSG']
+               alert(testMSG)
+               document.body.style.cursor = "auto";
             }
 
-            $("#silhouette").append("Silhouette: " + silhouette);
-
-            if ((clusterKeytermsOriginal == null) || (clusterDocs == null) || (clusterDocs[0].length == 2) || (clusterDocs[1].length == 2))
+            if (status == "error")
             {
-                alert("Internal server error in clustering your data collection! Please re-try with a different number of clusters.");
+                // alert("Internal server error in clustering your data collection! Please re-try with a different number of clusters.");
+                var except = msg['except'];         
+                alert(except);  
                 document.body.style.cursor = "auto";
             }
-            else
+            if (status == "success")
             {  
+                clusterKeytermsOriginal = eval(msg['termClusters']);
+                clusterDocs = eval(msg['documentClusters']);
+                silhouette = eval(msg['silhouette']);     
+
+                if(firstRun == true) {
+                  getTsne(); // t-sne server side fast version       
+                }
+                
+                if(silhouette == null) {
+                  silhouette = "Error!"
+                }
+                else {
+                  silhouette = silhouette.toFixed(4);
+                }
+
+                $("#silhouette").append("Silhouette: " + silhouette);
                 //get the cluster info from the server
                 //for cluster names and words (top 5)
                 clusterWords = getClusterWords();
@@ -224,8 +377,8 @@ function callServer(){
                 // create request object
                 var asyncRequest = new XMLHttpRequest();
 
-                //for documet cluster data
-                asyncRequest.open( 'POST', "./"+userID+"/documentMembs", false );
+                //for document cluster data
+                asyncRequest.open( 'POST', "./users/"+userID+"/documentMembers", false );
                 asyncRequest.send(); // send the request                      
                 documentClusterData = d3.csv.parse(asyncRequest.responseText);
                 documentClusterDataString = asyncRequest.responseText;
@@ -234,9 +387,9 @@ function callServer(){
                 clusterDocuments = getClusterDocuments();
 
                 //for term cluster data
-                asyncRequest.open( 'POST', "./"+userID+"/termMembs", false );
+                asyncRequest.open( 'POST', "./users/"+userID+"/termMembers", false );
                 asyncRequest.send(); // send the request                      
-                termClusterData = d3.csv.parse(asyncRequest.responseText);
+                termClusterData = d3.csv.parse(asyncRequest.responseText);                
                 termClusterDataString = asyncRequest.responseText; 
 
                 //for the cloud terms of cluster      
@@ -246,10 +399,12 @@ function callServer(){
                 clusterKeyTerms = getClusterKeyTerms();                                      
 
                 //for list of all terms of the collocation 
-                asyncRequest.open( 'POST', "./"+userID+"/" + "out" + userID + ".Terms", false );
-                asyncRequest.send(); // send the request
-                // allWords = d3.csv.parse(asyncRequest.responseText);
-                allWords = asyncRequest.responseText.split("\n"); // .split("\r\n")                
+                if(firstRun == true) {
+                  asyncRequest.open( 'POST', "./users/"+userID+"/" + "out" + userID + ".Terms", false );
+                  asyncRequest.send(); // send the request
+                  // allWords = d3.csv.parse(asyncRequest.responseText);
+                  allWords = asyncRequest.responseText.split("\n"); // .split("\r\n")    
+                }            
 
                 //load clusters
                 for (var i = 0; i < clusterWords.length; i++) { 
@@ -267,31 +422,44 @@ function callServer(){
                   }
                 }
 
-                //get the list of documents name
-                asyncRequest.open( 'POST', "./"+userID+"/fileList", false );
-                asyncRequest.send(); // send the request
-                documentsNameString =  asyncRequest.responseText;
-                documentsName = documentsNameString.split("\n"); // .split("\r\n")
+                if(firstRun == true) {
+                  //get and set perpelxity slider
+                  asyncRequest.open( 'POST', "./users/"+userID+"/perplexity", false );
+                  asyncRequest.send(); // send the request
+                  perplexityInit =  asyncRequest.responseText;
+                  $(function() {
+                    $("#slider4_Textbox").val(perplexityInit);
+                    $("#slider4_Textbox").click(function() { $(this).select(); } );                      
+                  });
+                  // $("#slider4").slider('value',parseInt(perplexityInit));                   
+                  
 
-                //get document-document similarity matrix
-                asyncRequest.open( 'POST', "./"+userID+"/documentDistance", false );
-                asyncRequest.send(); // send the request
-                documentDocumentSimilarityString = asyncRequest.responseText;
-                var temp = documentDocumentSimilarityString.split("\n"); // .split("\r\n")
-                for (var i = 0; i < temp.length; i++) {
-                  if(temp[i].length > 0 ) {
-                    documentDocumentSimilarity[i] = temp[i].split(",");
+                  //get the list of documents name
+                  asyncRequest.open( 'POST', "./users/"+userID+"/fileList", false );
+                  asyncRequest.send(); // send the request
+                  documentsNameString =  asyncRequest.responseText;
+                  documentsName = documentsNameString.split("\n"); // .split("\r\n")
+
+                  //get document-document similarity matrix
+                  asyncRequest.open( 'POST', "./users/"+userID+"/documentDistance", false );
+                  asyncRequest.send(); // send the request
+                  documentDocumentSimilarityString = asyncRequest.responseText;
+                  var temp = documentDocumentSimilarityString.split("\n"); // .split("\r\n")
+                  for (var i = 0; i < temp.length; i++) {
+                    if(temp[i].length > 0 ) {
+                      documentDocumentSimilarity[i] = temp[i].split(",");
+                    }
                   }
-                }
 
-                //get term-document matrix
-                asyncRequest.open( 'POST', "./"+userID+"/" + "out" + userID + ".Matrix", false );
-                asyncRequest.send(); // send the request
-                termDocumentSimilarityString = asyncRequest.responseText; 
-                var temp = termDocumentSimilarityString.split("\n");// .split("\r\n")
-                for (var i = 0; i < temp.length; i++) {
-                  if(temp[i].length > 0 ) {
-                    termDocumentSimilarity[i] = temp[i].split(",");
+                  //get term-document matrix
+                  asyncRequest.open( 'POST', "./users/"+userID+"/" + "out" + userID + ".Matrix", false );
+                  asyncRequest.send(); // send the request
+                  termDocumentSimilarityString = asyncRequest.responseText; 
+                  var temp = termDocumentSimilarityString.split("\n");// .split("\r\n")
+                  for (var i = 0; i < temp.length; i++) {
+                    if(temp[i].length > 0 ) {
+                      termDocumentSimilarity[i] = temp[i].split(",");
+                    }
                   }
                 }
 
@@ -304,13 +472,13 @@ function callServer(){
                 var n2 = date2.getTime();
 
                 // get general view graph
-                generalViewGraph = getGeneralViewGraph(0.97);
+                generalViewGraph = getGeneralViewGraph(getGeneralViewGraphThreshold); //0.97
 
                 var date3 = new Date();
                 var n3 = date3.getTime();
 
                 //load General View
-                generalViewLoader(0.70);
+                generalViewLoader(generalViewLoaderThreshold);
 
                 var date4 = new Date();
                 var n4 = date4.getTime();  
@@ -326,12 +494,19 @@ function callServer(){
                 $( "#slider1" ).slider( "enable" );
                 $( "#slider2" ).slider( "enable" );
                 $( "#slider3" ).slider( "enable" );
+                $( "#slider4" ).slider( "enable" );
                 $("#slider1_Textbox").removeAttr("disabled");
                 $("#slider2_Textbox").removeAttr("disabled");
                 $("#slider3_Textbox").removeAttr("disabled");
+                $("#slider4_Textbox").removeAttr("disabled");
 
-                //selecte the first session (empty one)
+                //select the first session (empty one)
                 getListOfSessions("first");
+
+                //get list of filters
+                if(firstRun == true) {
+                  getListOfFilters();
+                }
 
                  //change the mouse icon
                 document.body.style.cursor = "auto";               
@@ -343,6 +518,10 @@ function callServer(){
                 console.log("Other running time: " + time2); 
                 time = (n03-n01)/1000;
                 console.log("Total running time: " + time);
+
+                $('#button4').prop('disabled', false);
+
+                firstRun = false;
             }
 
         },
@@ -355,12 +534,64 @@ function callServer(){
 }
 
 /**
+ * Get list of filters based on the file name
+ * There are two set of filters.
+ * Filters are in the name of files and seperated by "_"
+ */
+function getListOfFilters() {
+  var filter1Dict = {}
+  var filter2Dict = {}
+
+  for (var i = 0; i < documentsName.length; i++) {
+    if (documentsName[i].includes('_')) {
+      first = documentsName[i].substring(0, documentsName[i].indexOf('_'))
+      filter1Dict[first] = first
+      second = documentsName[i].substring(documentsName[i].indexOf('_')+1)
+      if (second.includes('_')) {
+        second = second.substring(0, second.indexOf('_'))        
+      }
+      if (second.includes('.txt')) {
+        second = second.substring(0, second.indexOf('.txt'))   
+      }
+      filter2Dict[second] = second      
+    }    
+  }
+
+  //add filter1 to listbox
+  var filter1List = []
+  for (var filter1 in filter1Dict) {
+    filter1List.push(filter1)    
+  }
+  filter1List.sort(function (a, b) {//case insensitive
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+    })
+  for (var i in filter1List) {
+    filter1 = filter1List[i]
+    $("#filter1_select").append("<option class=\"d\" value=\""+filter1+"\" title=\""+ filter1 +"\">"+filter1+"</option>"); 
+  }
+
+  //add filter2 to listbox
+  var filter2List = []
+  for (var filter2 in filter2Dict) {
+    filter2List.push(filter2)
+  }
+  filter2List.sort(function (a, b) {//case insensitive
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  })
+  for (var i in filter2List) {
+    filter2 = filter2List[i]
+    $("#filter2_select").append("<option class=\"d\" value=\""+filter2+"\" title=\""+ filter2 +"\">"+filter2+"</option>"); 
+  }
+
+}
+
+/**
  * Open Upload Page.
  */
 function openUploadPage()
 {
     saveLog("openUploadPage");
-    window.open("./upload.php",'_blank');
+    window.open("./upload.html",'_blank');
 }
 
 /**
@@ -374,7 +605,27 @@ function openHelpPage()
 
 /**
  * Convert the input data to appropriate format.
- * @return the cloud of the cluster (top 30)
+ * @return the font size of term
+ */
+function termFontSize(termValue) {
+  if(termValue >= 80) {
+    return 6
+  } else if(termValue >= 60 && termValue < 80) {
+    return 5
+  } else if(termValue < 60) {
+    return 4
+  }
+  // else if(termValue >= 40 && termValue < 60) {
+  //   return 3
+  // }
+  //  else if(termValue < 40) {
+  //   return 2
+  // }
+}
+
+/**
+ * Convert the input data to appropriate format.
+ * @return the cloud of the cluster (top 20)
  */
 function getClusterCloud() {
   saveLog("getClusterCloud");
@@ -383,17 +634,33 @@ function getClusterCloud() {
     for (var i = 0; i < clusterKeytermsOriginal.length; i++) {
 
     var temp = eval(clusterKeytermsOriginal[i]);
-    tempClusterCloud += '{"cluster":"cluster' + i + '", "cloud": "'
+    if(serverClusterName.length > 0) {
+      tempClusterCloud += '{"cluster":"' + serverClusterName[i] + '", "cloud": "'
+    } else {
+      tempClusterCloud += '{"cluster":"cluster' + i + '", "cloud": "'
+    }
 
     for (var j = 0; j < temp.length; j++) {
       
       if(j ==0) {
-        tempClusterCloud += temp[j] + '|' + Math.floor(getValueOfTerm("cluster"+i, temp[j])/10);
+        if(serverClusterName.length > 0) {
+          tempClusterCloud += temp[j] + '|' + termFontSize(Math.floor(getValueOfTerm(serverClusterName[i], temp[j])));
+        }
+        else {
+          tempClusterCloud += temp[j] + '|' + termFontSize(Math.floor(getValueOfTerm("cluster"+i, temp[j])));
+        }
+        
       } else {
-        tempClusterCloud += '|' + temp[j] + '|' + Math.floor(getValueOfTerm("cluster"+i, temp[j])/10);
+        if(serverClusterName.length > 0) {
+          tempClusterCloud += '|' + temp[j] + '|' + termFontSize(Math.floor(getValueOfTerm(serverClusterName[i], temp[j])));
+        }
+        else {
+          tempClusterCloud += '|' + temp[j] + '|' + termFontSize(Math.floor(getValueOfTerm("cluster"+i, temp[j])));
+        }
+        
       }  
 
-      if(j == 30) {//only top 30
+      if(j == 20) {//only top 20
         break;
       }
     }
@@ -422,7 +689,12 @@ function getClusterDocuments() {
     var temp = eval(clusterDocs[i]);
     sortDocumentByScore(temp, "cluster"+i);//sort documents by score
 
-    tempClusterDocuments += '{"cluster":"cluster' + i + '", "docs": ['
+    if(serverClusterName.length > 0) {
+      tempClusterDocuments += '{"cluster":"' + serverClusterName[i] + '", "docs": ['
+    }
+    else {
+      tempClusterDocuments += '{"cluster":"cluster' + i + '", "docs": ['
+    }
 
     for (var j = 0; j < temp.length; j++) {
       
@@ -484,11 +756,23 @@ function getClusterKeyTerms() {
   for (var i = 0; i < clusterKeytermsOriginal.length; i++) {
 
     var temp = eval(clusterKeytermsOriginal[i]);
-    tempClusterKeyTerms += '{"cluster":"cluster' + i + '", "words": ['
+    if(serverClusterName.length > 0) {
+      tempClusterKeyTerms += '{"cluster":"' + serverClusterName[i] + '", "words": ['
+    }
+    else {
+      tempClusterKeyTerms += '{"cluster":"cluster' + i + '", "words": ['
+    }
+    
 
     for (var j = 0; j < temp.length; j++) {
+
+      if(serverClusterName.length > 0) {
+        tempClusterKeyTerms += '{"word":"' + temp[j] + '", "v1":'+getValueOfTerm(serverClusterName[i], temp[j])+'}';
+      }
+      else {
+        tempClusterKeyTerms += '{"word":"' + temp[j] + '", "v1":'+getValueOfTerm("cluster"+i, temp[j])+'}';
+      }     
       
-      tempClusterKeyTerms += '{"word":"' + temp[j] + '", "v1":'+getValueOfTerm("cluster"+i, temp[j])+'}';
       
       if( (j+1) < temp.length) {
         tempClusterKeyTerms += ',';
@@ -537,7 +821,14 @@ function getClusterWords() {
   for (var i = 0; i < clusterKeytermsOriginal.length; i++) {
 
     var temp = eval(clusterKeytermsOriginal[i]);
-    tempClusterWords += '{"cluster":"cluster' + i + '", "words": ['
+
+    if(serverClusterName.length > 0) {
+      tempClusterWords += '{"cluster":"' + serverClusterName[i] + '", "words": ['
+    }
+    else {
+      tempClusterWords += '{"cluster":"cluster' + i + '", "words": ['
+    }
+    
 
     for (var j = 0; j < temp.length; j++) {
       
@@ -1464,6 +1755,26 @@ function checkFileExists(fileName) {
 }
 
 /**
+ * Get the name of clusters
+ */
+function getClustersName() {
+  var clusters = document.getElementsByClassName("cluster");
+  
+  var counter = 0;
+
+  for (var i = 0; i < clusters.length; i++) {
+    var clusterName = $(clusters[i]).attr('id');
+    var terms = $(document.getElementById(clusterName).getElementsByClassName("sortable")).children();
+
+    if(terms.length > 0) {
+      serverClusterName[counter] = clusterName;      
+      counter++;
+    }              
+  }
+
+}
+
+/**
  * Download the selected cluster
  * @param clusterName = cluster name
  */
@@ -1475,29 +1786,57 @@ function downloadCluster(clusterName) {
  $("body").css("cursor", "wait");
 
   //get the original cluster name
-  var originalName = "Cluster"+(parseInt($("#" + clusterName).index()) + 1 );
+   var originalName = "Cluster"+(parseInt($("#" + clusterName).index()));
+
 
   //check if the zip file exists
-  if(checkFileExists(originalName)) {
+  if(isClusterDeleted == "true") {
     $("body").css("cursor", "auto");
-    window.open( "./"+userID+"/" + originalName + ".zip");
+    alert("You just removed at least one cluster. You need to recluster collection before downloading.")
   }
-  else if(checkFileExists("Cluster1")) {
+  else if(checkFileExists(clusterName)) { // originalName
     $("body").css("cursor", "auto");
-    alert("This is a new cluster, you need to push 'Cluster' button first then you can download this cluster.");
-  } 
+    // window.open( "./users/"+userID+"/" + originalName + ".zip");
+    window.open( "./users/"+userID+"/" + clusterName + ".zip");
+  }
+  // else if(checkFileExists("Cluster1")) {
+  //   $("body").css("cursor", "auto");
+  //   alert("This is a new cluster, you need to push 'Cluster' button first then you can download this cluster.");
+  // } 
   else {
+    getClustersName()
+    
     //create the zip file of cluster
     alert("Please be patient while the ZIP file is creating!");
     $.ajax({
       url: "./cgi-bin/documentClusters.py",
       type: "POST",
-      async: false,
-      cache: false,
-      traditional: true,
-      data: {userDirectory:userDirectory},
+      async: true,
+      data: {userDirectory:JSON.stringify(userDirectory), serverClusterName:JSON.stringify(serverClusterName)},
             success: function (msg) {
               $("body").css("cursor", "auto");
+
+              var status = msg['status'];
+
+              if (status == "yes") {
+                var message = msg['message'];
+
+                if(checkFileExists(clusterName)) { // originalName
+
+                  $("body").css("cursor", "auto");
+                  // window.open( "./users/"+userID+"/" + originalName + ".zip");
+                  window.open( "./users/"+userID+"/" + clusterName + ".zip");
+                }
+                else {
+                  $("body").css("cursor", "auto");
+                  // alert("This is a new cluster, you need to push 'Cluster' button first then you can download this cluster.");
+                  alert("Error in creating zip file!")
+                }
+              }      
+              if (status == "error") {
+                var message = msg['except'];
+                alert(message);
+              }
       },
       error: function(msg){
           $("body").css("cursor", "auto");
@@ -1505,15 +1844,7 @@ function downloadCluster(clusterName) {
           $("body").css("cursor", "auto");        
       }
     });
-
-    if(checkFileExists(originalName)) {
-      $("body").css("cursor", "auto");
-      window.open( "./"+userID+"/" + originalName + ".zip");
-    }
-    else {
-      $("body").css("cursor", "auto");
-      alert("This is a new cluster, you need to push 'Cluster' button first then you can download this cluster.");
-    }
+    
   }  
 }
 
@@ -1548,11 +1879,22 @@ $(function(){
  */
 function showDocumentPDF(documentName) {
 
-  saveLog("showDocumentPDF");
+  saveLog("showDocumentPDF");  
 
   if(documentName != "") {
-    documentName = documentName.replace(".txt", ".pdf");
-    window.open( "./"+userID+"/" + documentName);
+    var pdfFile = documentName.substring(0, documentName.length - 4) + ".pdf";
+    var txtFile = documentName.substring(0, documentName.length - 4) + ".txt";
+
+    $.ajax({
+      url: "./users/"+userID+"/" + pdfFile, 
+      success: function(data){
+        window.open( "./users/"+userID+"/" + pdfFile);
+      },
+      error: function(data){
+        window.open( "./users/"+userID+"/" + txtFile);
+      },
+    })   
+    
   }
 
 }
@@ -1569,6 +1911,8 @@ function clusterDelete(clusterName) {
 
     if(confirm("Are you sure about deleting \"" + clusterName + "\"")) {
       $("body").css("cursor", "wait");
+
+      isClusterDeleted = "true";
 
       var selectedCluster = getSelectedClusterID(); 
 
@@ -1641,9 +1985,11 @@ function removeClusterInGraph(clusterName) {
     $( "#slider1" ).slider( "disable" );
     $( "#slider2" ).slider( "disable" );
     $( "#slider3" ).slider( "disable" );
+    $( "#slider4" ).slider( "disable" );
     $("#slider1_Textbox").attr("disabled","disabled");
     $("#slider2_Textbox").attr("disabled","disabled");
     $("#slider3_Textbox").attr("disabled","disabled");
+    $("#slider4_Textbox").attr("disabled","disabled");
     $("#span2").text("");
     $("#span4").text("");
   }
@@ -1662,7 +2008,7 @@ function removeClusterInGraph(clusterName) {
 
     //update the generalViewGraph
       //get general view graph
-      generalViewGraph = getGeneralViewGraph(0.97);
+      generalViewGraph = getGeneralViewGraph(getGeneralViewGraphThreshold);
 
       //load General View
       var threshold = $("#slider1").slider("value") / 100;      
@@ -1691,6 +2037,7 @@ function containsCluster(list, clusterName) {
   return result;
 }
 
+
 /**
  * Renaming a cluster
  * @param oldName = the name of selected cluster
@@ -1703,6 +2050,8 @@ function clusterRename(oldName) {
   if(clusterName != null) {
 
     if(nameIsValid(clusterName)) {
+
+          removeZip();
 
          if(!nameExists(clusterName)) { // check if the name exists or not
       
@@ -2003,9 +2352,13 @@ $(function(){
 
             if(key == "Add") {
               addCluster();
-            }                                
+            }   
+            if(key == "Download") {              
+              downloadCluster("collection");
+            }                             
         },
         items: {
+            "Download": {name: "Download", icon: "edit"},
             "Add": {name: "Add Cluster", icon: "edit"}
         }
     }); 
@@ -2648,7 +3001,7 @@ function getDocumentContent(docName) {
   var asyncRequest = new XMLHttpRequest(); 
 
   //for documet cluster data
-  asyncRequest.open( 'POST', "./"+userID+"/"+docName, false );
+  asyncRequest.open( 'POST', "./users/"+userID+"/"+docName, false );
   asyncRequest.send(); // send the request
   content = asyncRequest.responseText;
 
@@ -2904,7 +3257,7 @@ function loadTermCloud(elementID) {
 
         var words = json[i].cloud.split("|");
         var x = document.getElementById("cloudColor");
-        var title = "Term Cloud (selected cluster)";
+        var title = "Term Cloud View (selected cluster)";
         wordCloud(wordText(words), sizeOfText(words), "panel8_2", "panel8", x.checked, title);
       }
    }  
@@ -3099,20 +3452,22 @@ function selectTermContent(term) {
 
     if($(words[i]).text() == term) { //if the term exists      
 
-      //select the word in cluster term list      
+      //select the word in cluster term list
       $(words[i]).addClass("ui-selected");
 
       //show the paralel cordinator of the term
-      var words = new Array(1);
+      var wordsTemp = new Array(1);
       var colors = {};
-      words[0] = term;
-      colors[words[0]] = "#767676";
-      paralelCordinator(termClusterData, "#panel7", words, "#TermClusterView", colors);
-
-      //highlight documents that have this term, inside general view graph
-      highlightDocuments(words);
+      wordsTemp[0] = term;
+      colors[wordsTemp[0]] = "#767676";
+      paralelCordinator(termClusterData, "#panel7", wordsTemp, "#TermClusterView", colors);
     }
   }
+
+   //highlight documents that have this term, inside general view graph 
+    var temp = new Array(1);   
+    temp[0] = term;    
+    highlightDocuments(temp);    
  }
 
 /*
@@ -3150,7 +3505,7 @@ function enableDrag() {
 function MindMapClicked() {
 
   if(userID != "") {
-    window.open("./" + userID + "/docClusters.mm");
+    window.open("./users/" + userID + "/docClusters.mm");
   }
 
 }
@@ -3160,42 +3515,86 @@ function MindMapClicked() {
  */
 function SendData2Server()
 {
-    //save session before
-    sessionDescription = "This session was saved automatically before reclustering.";
-    callSaveSession("AutoSave");
+    $('#button4').prop('disabled', true);    
 
     clusterNumber = document.getElementsByClassName("cluster").length;
 
     if (clusterNumber < 2)
     {
         userU = -1;
-        alert("Your desired number of clusters should be at least 2!")
+        alert("Your desired number of clusters should be at least 2!");
+        $('#button4').prop('disabled', false);
     }
     else
     {
         userU = +1;
         serverData = new Array();
-
-        var confirmed = confirm("Your desired number of clusters is "+clusterNumber);
-        if (confirmed)
-        {
-
+        var empty = 0;
+        var counter = 0;        
+        
           var clusters = document.getElementsByClassName("cluster");
 
           for (var i = 0; i < clusters.length; i++) {
             var clusterName = $(clusters[i]).attr('id');
             var terms = $(document.getElementById(clusterName).getElementsByClassName("sortable")).children();
 
-            serverClusetrName[i] = clusterName;
-            serverData[i] = new Array();
-            for (var j = 0; j < terms.length; j++) {
-              serverData[i][j] = $(terms[j]).text();
-            }            
+            if(terms.length > 0) {
+              serverClusterName[counter] = clusterName;
+              serverData[counter] = new Array();
+              for (var j = 0; j < terms.length; j++) {
+                serverData[counter][j] = $(terms[j]).text();
+              }
+              counter++;
+            }
+            else {
+              empty++;
+            }             
           }
 
-          clearScreen();
-          callServer();          
-        }
+          if(empty > 0) {
+            clusterNumber = clusterNumber - empty;
+
+            if(clusterNumber < 2) {
+              alert("There were " + empty + " empty clusters. We do not consider them! Your desired number of non empty clusters should be at least 2!");
+              $('#button4').prop('disabled', false);
+            }
+            else {
+              var confirmed = confirm("There were " + empty + " empty clusters. We do not consider them! Your desired number of clusters is "+clusterNumber);
+
+              if (confirmed) {                
+                
+                if(document.getElementById("auto_save_session").checked == true) {
+                //save session before
+                sessionDescription = "This session was saved automatically before reclustering.";
+                callSaveSession("AutoSave");
+              }
+
+                clearScreen();
+                callServer();
+              }
+              else {
+                $('#button4').prop('disabled', false);
+              }
+            }
+            
+          }
+          else {
+            var confirmed = confirm("Your desired number of clusters is "+clusterNumber);
+
+            if (confirmed) {       
+              if(document.getElementById("auto_save_session").checked == true) {
+                  //save session before
+                  sessionDescription = "This session was saved automatically before reclustering.";
+                  callSaveSession("AutoSave");
+              }
+
+              clearScreen();
+              callServer();
+            }
+            else {
+              $('#button4').prop('disabled', false);
+            }
+          }
     }
 }
 
@@ -3204,8 +3603,10 @@ function SendData2Server()
  */
 function clearScreen() {
 
+  calTsneSil = true;
+
   //clear previous data
-  tsneResult = new Array();
+  // tsneResult = new Array();
 
   $("#forceSilhouette_label").html("");
 
@@ -3217,7 +3618,7 @@ function clearScreen() {
   termClusterDataString = "";//the string of the term cluster data (for changing it later)
   documentClusterData = "";//the document cluster data
   documentClusterDataString = "";//the string of the documnet cluster data (for changing it later)
-  allWords = "";//all words
+  // allWords = "";//all words
 
   $("#panel4_1").html("");
   $("#doc_content").html("");
@@ -3234,9 +3635,11 @@ function clearScreen() {
   $( "#slider1" ).slider( "disable" );
   $( "#slider2" ).slider( "disable" );
   $( "#slider3" ).slider( "disable" );
+  $( "#slider4" ).slider( "disable" );
   $("#slider1_Textbox").attr("disabled","disabled");
   $("#slider2_Textbox").attr("disabled","disabled");
   $("#slider3_Textbox").attr("disabled","disabled");
+  $("#slider4_Textbox").attr("disabled","disabled");
 
   $.jstree.destroy();//clear tree view
 
@@ -3257,11 +3660,11 @@ function showMyCloud() {
 
     var wordsTemp = "";
     for (var j = 0; j < terms.length; j++) {
-
+      // console.log(getValueOfTerm(selectedCluster, $(terms[j]).text()))
       if(j == 0 ) {
-        wordsTemp += $(terms[j]).text() + "|" + Math.floor(getValueOfTerm(selectedCluster, $(terms[j]).text())/10)//Math.floor(1*Math.log(getValueOfTerm(selectedCluster, $(terms[j]).text()))); 
+        wordsTemp += $(terms[j]).text() + "|" + termFontSize(Math.floor(getValueOfTerm(selectedCluster, $(terms[j]).text())))//Math.floor(1*Math.log(getValueOfTerm(selectedCluster, $(terms[j]).text()))); 
       } else {
-        wordsTemp += "|" + $(terms[j]).text() + "|" + Math.floor(getValueOfTerm(selectedCluster, $(terms[j]).text())/10)//Math.floor(1*Math.log(getValueOfTerm(selectedCluster, $(terms[j]).text())));
+        wordsTemp += "|" + $(terms[j]).text() + "|" + termFontSize(Math.floor(getValueOfTerm(selectedCluster, $(terms[j]).text())))//Math.floor(1*Math.log(getValueOfTerm(selectedCluster, $(terms[j]).text())));
       }
     }
 
@@ -3271,7 +3674,7 @@ function showMyCloud() {
     if(wordsTemp != "") {
       var words = wordsTemp.split("|");
       var x = document.getElementById("cloudColor");
-      var title = "Term Cloud (User Terms)";
+      var title = "Term Cloud View (User Terms)";
       wordCloud(wordText(words), sizeOfText(words), "panel8_2", "panel8", x.checked, title);
     }
   }  
@@ -3338,21 +3741,29 @@ function callSaveSession(sessionName) {
     currentdate = twoDigitNumber(currentdate.getDate()) + " " + 
       twoDigitNumber(currentdate.getMonth() + 1) + " " + 
       currentdate.getFullYear() + " " + 
-      twoDigitNumber(currentdate.getHours()) + "_" + 
-      twoDigitNumber(currentdate.getMinutes()) + "_" + 
+      twoDigitNumber(currentdate.getHours()) + ":" + 
+      twoDigitNumber(currentdate.getMinutes()) + ":" + 
       twoDigitNumber(currentdate.getSeconds());
+    
+    var fileName = sessionName + " @ " + currentdate.replace("_", ":").replace("_", ":");
 
-    var fileName = userID + "#$" + currentdate + " @ " + sessionName;
-    var sessionValue = sessionName + " @ " + currentdate; 
+    var name = currentdate;
+    name = name.replace("_", " ").replace("_", " ");
+    name = name.replace(":", " ").replace(":", " ");
+    var dates = name.split(" ");
+    name = dates[2]+dates[1]+dates[0]+dates[3]+dates[4]+dates[5];
 
     //get the new list of cluster words
     clusterWords = getNewClusterWords();
+
+    // console.log(clusterKeyTerms);
 
     $.ajax({
     type: "POST",
     url: "./cgi-bin/SessionSave.py",
     async: true,
     data: { fileName:JSON.stringify(fileName),
+            name:JSON.stringify(name),
             userDirectory:JSON.stringify(userDirectory),
             clusterWords:JSON.stringify(clusterWords),
             clusterKeyTerms:JSON.stringify(clusterKeyTerms),
@@ -3365,9 +3776,9 @@ function callSaveSession(sessionName) {
             gravity:JSON.stringify(gravity),
             linkDistance:JSON.stringify(linkDistance),
             cosineDistance:JSON.stringify($("#slider1").slider("value") / 100),
-            documentsName:JSON.stringify(documentsNameString),
-            documentDocumentSimilarity:JSON.stringify(documentDocumentSimilarityString),
-            termDocumentSimilarity:JSON.stringify(termDocumentSimilarityString),
+            // documentsName:JSON.stringify(documentsNameString),
+            // documentDocumentSimilarity:JSON.stringify(documentDocumentSimilarityString),
+            // termDocumentSimilarity:JSON.stringify(termDocumentSimilarityString),
             sessionDescription:JSON.stringify(sessionDescription),
             silhouette:JSON.stringify(silhouette),
             documentClusterDataString:JSON.stringify(documentClusterDataString)},                
@@ -3380,7 +3791,7 @@ function callSaveSession(sessionName) {
         alert("Session saved successfully.");
 
         //select the latest session
-        sessionValue = sessionValue.replace("_", ":").replace("_", ":");
+        sessionValue = fileName;        
         getListOfSessions("first");
       }
       if (status == "no") {
@@ -3478,10 +3889,7 @@ function deleteSession() {
 
         if(confirmed) {
 
-          var date = sessionName.substring(sessionName.indexOf(" @ ") + 3).replace("_", ":").replace("_", ":");
-          var name = sessionName.substring(0, sessionName.indexOf(" @ "));          
-          sessionName = userID + "#$" + date + " @ " + name + ".session";
-          sessionName = sessionName.replace(":", "_").replace(":", "_");
+          sessionName = sessionName + ".session";
 
           $.ajax({
           type: "POST",
@@ -3519,7 +3927,7 @@ function deleteSession() {
  * On page close.
  */
 function pageClose() {
-  return "Did you saved your session?";
+  return "Did you save your session?";
 }
 
 /*
@@ -3568,20 +3976,22 @@ function refreshSessionListBox(sessionIndex) {
   $("#session_select").html("");
   $("#session_select").append("<option value=\"first\" disabled selected>Select Session</option>"); 
 
-  for (var j = 0; j < sessions.length; j++) {
-    var name = sessions[j].substring(sessions[j].indexOf(" @ ") + 3, sessions[j].indexOf(".session"));
-    var date = sessions[j].substring(sessions[j].indexOf("#$") + 2, sessions[j].indexOf(" @ ")).replace("_", ":").replace("_", ":");
-
+  for (var j = 0; j < sessions.length; j++) { 
     var number = "";
-    if(j < 10) {
+    if(j < 9) {
       number = "0" + (j+1) + ") ";
     }
     else {
       number = (j+1) + ") ";
     }
 
-    var finalName = name + " @ " + date;
-    $("#session_select").append("<option class=\"d\" value=\""+finalName+"\" title=\""+ sessionsDescription[j] +"\">"+ number + finalName+"</option>");   
+    var value = sessions[j].substring(sessions[j].indexOf(" @ ") + 3);
+    value = value.replace(":", " ").replace(":", " ");
+
+    var dates = value.split(" ");
+    var name = dates[2]+dates[1]+dates[0]+dates[3]+dates[4]+dates[5];
+
+    $("#session_select").append("<option class=\"d\" value=\""+name+"\" title=\""+ sessionsDescription[j] +"\">"+ number + sessions[j]+"</option>");   
   }
 
   $("#session_select option[value='"+sessionIndex+"']").attr("selected", true);
@@ -3603,9 +4013,7 @@ function loadSession(sessionName) {
   //remove zip files
   removeZip();
 
-  sessionName = sessionName.replace(":", "_").replace(":", "_");
-
-  sessionName = userID + "#$" + sessionName + ".session";
+  sessionName = sessionName + ".session";
 
   $.ajax({
         type: "POST",
@@ -3631,6 +4039,9 @@ function loadSession(sessionName) {
               
               //load session data;
               var data = JSON.parse(msg['data']);
+              if(firstRun == true) {
+                getTsne(); // t-sne server side fast version
+              }              
 
               clusterWords = data.clusterWords;//the name and the key terms of clusters
               clusterKeyTerms = data.clusterKeyTerms;//the key terms of clusters are here
@@ -3652,10 +4063,12 @@ function loadSession(sessionName) {
               //for list of all terms of the collection
               // create request object
               var asyncRequest = new XMLHttpRequest();
-              asyncRequest.open( 'POST', "./"+userID+"/" + "out" + userID + ".Terms", false );
-              asyncRequest.send(); // send the request
-              // allWords = d3.csv.parse(asyncRequest.responseText);
-              allWords = asyncRequest.responseText.split("\n"); // .split("\r\n")
+              if(firstRun == true) {
+                asyncRequest.open( 'POST', "./users/"+userID+"/" + "out" + userID + ".Terms", false );
+                asyncRequest.send(); // send the request
+                // allWords = d3.csv.parse(asyncRequest.responseText);
+                allWords = asyncRequest.responseText.split("\n"); // .split("\r\n")
+              }
 
             //load clusters
             for (var i = 0; i < clusterWords.length; i++) { 
@@ -3673,30 +4086,60 @@ function loadSession(sessionName) {
               }
             }
 
-              //get the list of documents name
-                documentsNameString =  data.documentsName;
-                documentsName = documentsNameString.split("\n"); // .split("\r\n")
+              // //get the list of documents name
+              //   documentsNameString =  data.documentsName;
+              //   documentsName = documentsNameString.split("\n"); // .split("\r\n")
 
-                //get document-document similarity matrix
-                documentDocumentSimilarityString = data.documentDocumentSimilarity
-                var temp = documentDocumentSimilarityString.split("\n"); // .split("\r\n")
-                for (var i = 0; i < temp.length; i++) {
-                  if(temp[i].length > 0 ) {
-                    documentDocumentSimilarity[i] = temp[i].split(",");
+                if(firstRun == true) {
+                  //get the list of documents name
+                  asyncRequest.open( 'POST', "./users/"+userID+"/fileList", false );
+                  asyncRequest.send(); // send the request
+                  documentsNameString =  asyncRequest.responseText;
+                  documentsName = documentsNameString.split("\n"); // .split("\r\n")
+
+                  //get document-document similarity matrix
+                  asyncRequest.open( 'POST', "./users/"+userID+"/documentDistance", false );
+                  asyncRequest.send(); // send the request
+                  documentDocumentSimilarityString = asyncRequest.responseText;
+                  var temp = documentDocumentSimilarityString.split("\n"); // .split("\r\n")
+                  for (var i = 0; i < temp.length; i++) {
+                    if(temp[i].length > 0 ) {
+                      documentDocumentSimilarity[i] = temp[i].split(",");
+                    }
+                  }
+
+                  //get term-document matrix
+                  asyncRequest.open( 'POST', "./users/"+userID+"/" + "out" + userID + ".Matrix", false );
+                  asyncRequest.send(); // send the request
+                  termDocumentSimilarityString = asyncRequest.responseText; 
+                  var temp = termDocumentSimilarityString.split("\n");// .split("\r\n")
+                  for (var i = 0; i < temp.length; i++) {
+                    if(temp[i].length > 0 ) {
+                      termDocumentSimilarity[i] = temp[i].split(",");
+                    }
                   }
                 }
 
-                 //get term-document matrix                
-                termDocumentSimilarityString = data.termDocumentSimilarity;
-                var temp = termDocumentSimilarityString.split("\n");// .split("\r\n")
-                for (var i = 0; i < temp.length; i++) {
-                  if(temp[i].length > 0 ) {
-                    termDocumentSimilarity[i] = temp[i].split(",");
-                  }
-                }
+                // //get document-document similarity matrix
+                // documentDocumentSimilarityString = data.documentDocumentSimilarity
+                // var temp = documentDocumentSimilarityString.split("\n"); // .split("\r\n")
+                // for (var i = 0; i < temp.length; i++) {
+                //   if(temp[i].length > 0 ) {
+                //     documentDocumentSimilarity[i] = temp[i].split(",");
+                //   }
+                // }
+
+                //  //get term-document matrix                
+                // termDocumentSimilarityString = data.termDocumentSimilarity;
+                // var temp = termDocumentSimilarityString.split("\n");// .split("\r\n")
+                // for (var i = 0; i < temp.length; i++) {
+                //   if(temp[i].length > 0 ) {
+                //     termDocumentSimilarity[i] = temp[i].split(",");
+                //   }
+                // }
 
             //get general view graph
-            generalViewGraph = getGeneralViewGraph(0.97);
+            generalViewGraph = getGeneralViewGraph(getGeneralViewGraphThreshold);
 
             //load General View
             generalViewLoader(cosineDistance);
@@ -3718,14 +4161,18 @@ function loadSession(sessionName) {
             $( "#slider1" ).slider( "enable" );
             $( "#slider2" ).slider( "enable" );
             $( "#slider3" ).slider( "enable" );
+            $( "#slider4" ).slider( "enable" );
             $("#slider1_Textbox").removeAttr("disabled");
             $("#slider2_Textbox").removeAttr("disabled");
             $("#slider3_Textbox").removeAttr("disabled");
+            $("#slider4_Textbox").removeAttr("disabled");
 
             //show silhouette
             $("#silhouette").append("Silhouette: " + silhouette);
 
             $("body").css("cursor", "auto");
+
+            firstRun = false
           }
       },
       error: function(msg){   
@@ -3765,7 +4212,7 @@ var linkedByIndex = new Array();
 var linkedByIndex2 = new Array();
 var gravity = 0.3;
 var linkDistance = 20;
-var highlight_trans = 0.25;
+var highlight_trans = 0.20;
 
 /*
  * load general view
@@ -3925,6 +4372,7 @@ function load_Force(threshold) {
           link.style("opacity", 1);
         }  
         if (highlight_node == null) exit_highlight();
+        applyFilter()
     })
     .on("contextmenu", function (d, i) {
             d3.event.preventDefault();
@@ -4331,7 +4779,7 @@ function loadT_SNE(threshold) {
     .on("dragstart", dragstart);
 
   node = force.nodes();
-  link - force.links();
+  link = force.links();
 
   link = g.append('g').selectAll(".link"),
   node = g.append('g').selectAll(".node");
@@ -4339,7 +4787,8 @@ function loadT_SNE(threshold) {
   // d3.json("data/json5.json", function(error, json) {
   //  if (error) throw error;
 
-    //filter links by threshold
+//    linkData = generalViewGraph.links;
+//    filter links by threshold
     var linkData = generalViewGraph.links.filter(function(n) {        
         if(n.v <= threshold) {
           return n;
@@ -4427,6 +4876,7 @@ function loadT_SNE(threshold) {
           link2.style("opacity", 1);
         }  
         if (highlight_node == null) exit_highlight();
+        applyFilter()
     })
     .on("contextmenu", function (d, i) {        
             d3.event.preventDefault();
@@ -4676,23 +5126,42 @@ function getDocumentTermsSorted(documentName) {
     }    
   }
 
-  //sort the terms by score
-  for (var i = 0; i < termsScore.length; i++) {
-    for (var j = i; j < termsScore.length; j++) {
-      if(termsScore[j] > termsScore[i]) {
+  //get top k terms by score (selection algorithm O(kn))
+  for (var k = 0; k < 5; k++) {
+    max_index = k
+    for (var i = k+1; i < termsScore.length; i++) {
+      if(termsScore[i] > termsScore[max_index]) {
         var temp = termsScore[i];
-        termsScore[i] = termsScore[j];
-        termsScore[j] = temp;
+        termsScore[i] = termsScore[max_index];
+        termsScore[max_index] = temp;
 
         temp = terms[i];
-        terms[i] = terms[j];
-        terms[j] = temp;
+        terms[i] = terms[max_index];
+        terms[max_index] = temp;
       }
     }
-  }
+  };
+
+  //sort the terms by score (slow sorting function)
+  // for (var i = 0; i < termsScore.length; i++) {
+  //   for (var j = i; j < termsScore.length; j++) {
+  //     if(termsScore[j] > termsScore[i]) {
+  //       var temp = termsScore[i];
+  //       termsScore[i] = termsScore[j];
+  //       termsScore[j] = temp;
+
+  //       temp = terms[i];
+  //       terms[i] = terms[j];
+  //       terms[j] = temp;
+  //     }
+  //   }
+  // }
 
   var finalTerms = new Array(terms.length);
   for (var i = 0; i < terms.length; i++) {
+       if(i == 5) {       //show top 5 terms
+        break;
+      }
     finalTerms[i] = new Array(2);
     finalTerms[i][0] = terms[i];
     finalTerms[i][1] = termsScore[i];
@@ -4732,6 +5201,39 @@ function loadDocInCluster(documentName, clusterName) {
 }
 
 /*
+ * Get tsne
+ */
+function getTsne() {
+
+  var date1 = new Date();
+  var n1 = date1.getTime();
+
+  var asyncRequest = new XMLHttpRequest();
+
+  asyncRequest.open( 'POST', "./users/"+userID+"/tsne", false );
+  asyncRequest.send(); // send the request
+  var coordinates = new Array();
+  coordinates = asyncRequest.responseText.split("\n");
+
+  var tsneResult1 = new Array();
+
+  for (var i = 0; i < coordinates.length; i++) {
+    if(coordinates[i].length > 1) {
+       var temp = coordinates[i].split("\t");
+      tsneResult[i] = new Array();
+      tsneResult[i][0] = parseFloat(temp[0]); 
+      tsneResult[i][1] = parseFloat(temp[1]);
+    }
+   
+  }
+
+  var date2 = new Date();
+  var n2 = date2.getTime();  
+  var time = (n2-n1)/1000;
+  console.log("Time to read T-SNE file: " + time);
+}
+
+/*
  * Get general view graph
  * @param similarityThreshold = the similarity threshold
  * @return generalViewGraph = the general view graph
@@ -4741,29 +5243,27 @@ function getGeneralViewGraph(similarityThreshold) {
   var scale_width = $("#general_view1").width() / 11;
   var scale_height = $("#general_view1").height() / 11;
 
-  var date1 = new Date();
-  var n1 = date1.getTime();
-
-  var tsneSilhouetteState = false;
+  // var date1 = new Date();
+  // var n1 = date1.getTime();  
   
-  //run t-sne
-  if(tsneResult.length < 1) {
-    tsneSilhouetteState = true;
-    var opt = {epsilon: 10}; // epsilon is learning rate (10 = default)
-    var tsne = new tsnejs.tSNE(opt); // create a tSNE instance
-    tsne.initDataDist(documentDocumentSimilarity);
+  //run t-sne (java script version)
+  // if(tsneResult.length < 1) {
+  //   tsneSilhouetteState = true;
+  //   var opt = {epsilon: 10}; // epsilon is learning rate (10 = default)
+  //   var tsne = new tsnejs.tSNE(opt); // create a tSNE instance
+  //   tsne.initDataDist(documentDocumentSimilarity);
 
-    for(var k = 0; k < 300; k++) {
-      tsne.step(); // every time you call this, solution gets better
-    }
+  //   for(var k = 0; k < 300; k++) {
+  //     tsne.step(); // every time you call this, solution gets better
+  //   }
 
-    tsneResult = tsne.getSolution(); // Y is an array of 2-D points that you can plot
-  }
+  //   tsneResult = tsne.getSolution(); // Y is an array of 2-D points that you can plot
+  // }
 
   var date2 = new Date();
   var n2 = date2.getTime();  
-  var time = (n2-n1)/1000;
-  console.log("Time to run T-SNE: " + time);
+  // var time = (n2-n1)/1000;
+  // console.log("Time to run T-SNE: " + time);
 
   var tsneLables = new Array();
 
@@ -4779,6 +5279,12 @@ function getGeneralViewGraph(similarityThreshold) {
       documentNewIndex[i] = index;
       
       var documentClustersName = getDocumentClustersName(documentsName[i]);
+      // tempGeneralViewGraph += "{\"x\": " + (tsneResult[i][0] + scale_width * 5)
+      //                       + ", \"y\": " + (tsneResult[i][1] + scale_height * 5)
+      //                       + ", \"fixed\":false"
+      //                       + ", \"na\":\"" + documentsName[i]                            
+      //                       + "\", \"cl\":\"" + documentClustersName 
+      //                       + "\", \"co\":\"";
       tempGeneralViewGraph += "{\"x\": " + (tsneResult[i][0] + scale_width) * 6
                             + ", \"y\": " + (tsneResult[i][1] + scale_height) * 6
                             + ", \"fixed\":false"
@@ -4797,10 +5303,11 @@ function getGeneralViewGraph(similarityThreshold) {
     }    
   };
 
-  //get tsne avg silhouette
-  if(tsneSilhouetteState) 
+  //get tsne average silhouette
+  if(calTsneSil) 
   {   
     getTsneSilhouette(tsneResult, tsneLables);
+    calTsneSil = false;
   }
 
   //remove the last comma
@@ -4865,7 +5372,7 @@ function getTsneSilhouette(tsneResult, tsneLables) {
         TsneSilhouette = TsneSilhouette.toFixed(4);
 
         //show the tsne Silhouette
-        $("#TsneSilhouette_label").html( "T-SNE Silhouette: " + TsneSilhouette);
+        $("#TsneSilhouette_label").html( "t-SNE Silhouette: " + TsneSilhouette);
       }
       if (status == "no") {
         alert("Error1 in getting Tsne Silhouette!");
@@ -4907,7 +5414,7 @@ function exportGraphToVNAformat(similarityThreshold) {
 
       if (status == "yes") {
         //open the link of VNA in new Tab
-        window.open("./" + userID + "/vna",'_blank');
+        window.open("./users/" + userID + "/vna",'_blank');
       }
       if (status == "no") {
         alert("Error1 in getting graph VNA!");
@@ -5208,17 +5715,18 @@ function showDocumentCloud(documentName) {
   //get sorted list of top terms of the document
   var terms = getDocumentTermsSorted(documentName);
 
-  //get top 30 terms
+  //get top 20 terms
   var wordsTemp = "";
-  for (var i = 0; i < terms.length; i++) {
+
+  for (var i = 0; i < 5; i++) {//terms.length
     if(i == 0 ) {
-        wordsTemp += terms[i][0] + "|" + Math.floor(terms[i][1]*15); 
+        wordsTemp += terms[i][0] + "|" + termFontSize(Math.floor(terms[i][1])); 
       } 
     else {
-        wordsTemp += "|" + terms[i][0] + "|" + Math.floor(terms[i][1]*15);
+        wordsTemp += "|" + terms[i][0] + "|" + termFontSize(Math.floor(terms[i][1]));
       }
 
-    if(i >= 29) {
+    if(i >= 20) {
       break;
     }
   }
@@ -5229,7 +5737,7 @@ function showDocumentCloud(documentName) {
   if(wordsTemp != "") {
     var words = wordsTemp.split("|");
     var x = document.getElementById("cloudColor");
-    var title = "Term Cloud (Selected Document)";
+    var title = "Term Cloud View (Selected Document)";
     wordCloud(wordText(words), sizeOfText(words), "panel8_2", "panel8", x.checked, title);
   }
 
@@ -5310,17 +5818,17 @@ function showSelectedDocumentsCloud() {
 
   aggregatedTermsSorted.sort(function(a, b) {return b[1] - a[1]}); 
   
-  //get top 30 terms
+  //get top 20 terms
   var wordsTemp = "";
   for (var i = 0; i < aggregatedTermsSorted.length; i++) {
     if(i == 0 ) {
-        wordsTemp += aggregatedTermsSorted[i][0] + "|" + Math.floor(aggregatedTermsSorted[i][1]*30); 
+        wordsTemp += aggregatedTermsSorted[i][0] + "|" + termFontSize(Math.floor(aggregatedTermsSorted[i][1])); 
       } 
     else {
-        wordsTemp += "|" + aggregatedTermsSorted[i][0] + "|" + Math.floor(aggregatedTermsSorted[i][1]*30);
+        wordsTemp += "|" + aggregatedTermsSorted[i][0] + "|" + termFontSize(Math.floor(aggregatedTermsSorted[i][1]));
       }
 
-    if(i >= 29) {
+    if(i >= 20) {
       break;
     }
   }
@@ -5332,7 +5840,7 @@ function showSelectedDocumentsCloud() {
   if(wordsTemp != "") {
     var words = wordsTemp.split("|");
     var x = document.getElementById("cloudColor");
-    var title = "Term Cloud (Selected Nodes)";
+    var title = "Term Cloud View (Selected Nodes)";
     wordCloud(wordText(words), sizeOfText(words), "panel8_2", "panel8", x.checked, title);
   }
 }
@@ -5506,6 +6014,115 @@ function getForceSilhouette(forceResult, forceLables) {
     },
     error: function(msg){            
        alert("Error3 in getting Force Silhouette!");
+    }
+  });
+}
+
+/*
+ * Apply filter on Graph View 
+ */
+function applyFilter() {
+  filter1 = document.getElementById('filter1_select').value
+  filter2 = document.getElementById('filter2_select').value
+
+  node.style("opacity", function(o) {
+    filterHighlight[o.na] = false
+    if (o.na.includes('_')) {
+      first = o.na.substring(0, o.na.indexOf('_'))
+      second = o.na.substring(o.na.indexOf('_')+1)
+      if (second.includes('_')) {
+        second = second.substring(0, second.indexOf('_'))        
+      }
+      if (second.includes('.txt')) {
+        second = second.substring(0, second.indexOf('.txt'))   
+      }
+    }
+
+    if(filter1 != '' && filter2 != '') {
+      if (first == filter1 && second == filter2) {
+        filterHighlight[o.na] = true
+        return 1
+      }
+    }
+    if(filter1 != '' && filter2 == '') {
+      if (first == filter1) {
+        filterHighlight[o.na] = true
+        return 1
+      }      
+    }
+    if(filter1 == '' && filter2 != '') {
+      if (second == filter2) {
+        filterHighlight[o.na] = true
+        return 1
+      }      
+    }
+    if(filter1 == '' && filter2 == '') {
+      filterHighlight[o.na] = true
+      return 1
+    }
+    return highlight_trans
+  });
+      
+  link.style("opacity", function(o) {    
+      return filterHighlight[o.source.na] && filterHighlight[o.target.na] ? 1 : 0;
+  });
+
+  node2.style("opacity", function(o) {
+    return filterHighlight[o.na] ? 1 : highlight_trans;
+  });
+
+  link2.style("opacity", function(o) {    
+      return filterHighlight[o.source.na] && filterHighlight[o.target.na] ? 1 : 0;
+  });
+}
+
+/*
+ * Change t-SNE Perplexity 
+ */
+function changePerplexity() {
+  //check if the graph is loaded
+  if($("#general_view1 svg").length <= 0) {
+    return null;
+  }
+
+  //get the perplexity amount
+  perplexityNew = $("#slider4_Textbox").val();
+
+  document.body.style.cursor = "progress";
+  $("#general_view1").html("");
+
+  //run t-sne
+  $.ajax({
+    type: "POST",
+    url: "./cgi-bin/runTsne.py",
+    traditional: true,
+    data: { userDirectory:JSON.stringify(userDirectory), perplexityNew:JSON.stringify(perplexityNew), userID:JSON.stringify(userID)}, 
+    async: false,              
+    success: function( msg ) {
+
+      var status = msg['status'];
+
+      if (status == "error"){
+        var except = msg['except'];         
+        alert(except);   
+        document.body.style.cursor = "auto";         
+      }
+      else if (status == "success") {
+        //get new t-sne
+        getTsne();
+
+        // get general view graph
+        generalViewGraph = getGeneralViewGraph(getGeneralViewGraphThreshold); 
+
+        //load General View
+        generalViewLoader(generalViewLoaderThreshold);
+
+        document.body.style.cursor = "auto";
+      }   
+    },
+    error: function(msg){     
+      alert("Error in running t-sne!");
+      document.body.style.cursor = "auto";
     }
   });
 }

@@ -1,0 +1,818 @@
+Landscape Ecol
+DOI 10.1007/s10980-011-9636-9
+
+RESEARCH ARTICLE
+
+A primer of acoustic analysis for landscape ecologists
+Luis J. Villanueva-Rivera • Bryan C. Pijanowski
+Jarrod Doucette • Burak Pekin
+
+•
+
+Received: 14 February 2011 / Accepted: 4 July 2011
+Ó Springer Science+Business Media B.V. 2011
+
+Abstract In this paper we present an introduction to
+the physical characteristics of sound, basic recording
+principles as well as several ways to analyze digital
+sound files using spectrogram analysis. This paper is
+designed to be a ‘‘primer’’ which we hope will
+encourage landscape ecologists to study soundscapes.
+This primer uses data from a long-term study that are
+analyzed using common software tools. The paper
+presents these analyses as exercises. Spectrogram
+analyses are presented here introducing indices familiar to ecologists (e.g., Shannon’s diversity, evenness,
+dominance) and GIS experts (patch analysis). A
+supplemental online tutorial provides detailed instructions with step by step directions for these exercises.
+We discuss specific terms when working with digital
+sound analysis, comment on the state of the art in
+acoustic analysis and present recommendations for
+future research.
+Keywords Soundscapes  Acoustic analysis 
+Spectrograms  Entropy  Evenness  Sound patches
+
+Electronic supplementary material The online version of
+this article (doi:10.1007/s10980-011-9636-9) contains
+supplementary material, which is available to authorized users.
+L. J. Villanueva-Rivera (&)  B. C. Pijanowski 
+J. Doucette  B. Pekin
+Department of Forestry and Natural Resources, Purdue
+University, West Lafayette, IN 47907, USA
+e-mail: lvillanu@purdue.edu
+
+Introduction
+Microphones are the universal data collection instruments of bioacousticians (e.g., Marler and Slabbekoorn 2004; Sueur et al. 2008b) and will likely become
+the key data collection instrument for soundscape
+ecologists (e.g., Qi et al. 2008; Pijanowski et al.
+2011a, b; Farina et al. 2011). Sound recording
+technology has advanced greatly in recent years
+mostly due to the commercial success of digital audio
+technology making it possible to record at multiple
+sites and long term (Brandes 2005), which is
+unprecedented. New tools and approaches to analyzing long-term data will be necessary as we move
+forward to address the myriad of questions related to
+the ecological significance of soundscape dynamics.
+Because soundscape ecology is new, most landscape ecologists are not familiar with recording and
+analyzing acoustic data. In addition, the field of
+bioacoustics (cf. Fletcher 2007) are not likely to be
+fully aware of the approaches utilized by landscape
+ecologists (Turner et al. 2001; Farina 2006)—that is,
+our strong spatial perspective and the emphasis on the
+interplay of pattern and process. The purpose of this
+paper is to present a primer on sound and acoustic
+analysis so that landscape ecologists are aware of
+major concepts and principles of bioacoustics. Likewise, we present example acoustic analyses using the
+spatial toolkit of geographic information systems
+(GIS) showing at least one way that bioacoustics may
+benefit from a landscape ecology approach. We
+
+123
+
+Landscape Ecol
+
+present these analyses in a novel format, as separate
+‘‘exercises’’, in an attempt to have this paper serve as
+an entry point into acoustics for landscape ecologists.
+Readers of this paper can download these data and
+tools and then follow step by step instructions in an
+online tutorial that supplements these exercises.
+Although they are not comprehensive, the exercises
+contained herein should provide a sufficient introduction to soundscape ecology to allow landscape
+ecologists to begin asking interesting questions about
+the soundscape. We conclude with a short discussion
+on further references that the learning soundscape
+ecologist can consult.
+
+What is sound?
+A simple sound emitted as a pure tone (Fig. 1)
+illustrates the features of an idealized sinusoidal wave
+signal as it travels over time. The length between the
+peaks of a wave is the wavelength (usually designated
+as k), and the size of the wave its peak amplitude.
+Frequency (f) of the simple sound wave, measured as
+the number of waveform repetitions per unit time,
+usually expressed per second or Hertz (Hz), is
+derived from the wavelength and the speed of sound
+(m) in the medium (air = 343 m/s) as f = m/k.
+Intensity is expressed in decibels (or dB) in base
+10 units (log), which is a convenient form as human
+ears can distinguish a billion-fold in intensity of
+sound (Everest and Pholmann 2009). The dB scale is
+expressed relative to a reference intensity, usually
+assigning a value of 0 to the minimum that a human
+can hear. Some example sounds and corresponding
+dB levels that they produce are (from Everest and
+Pholmann 2009): leaves rustling (20 dB), human
+conversation (60 dB), heavy traffic (80 dB), jet
+(160 dB), and Saturn rocket (190 dB). The amplitude
+
+of the sound wave decreases with the square of the
+distance from the source (Fig. 2).
+Attenuation of sound waves is dependent on
+features in the landscape (e.g., buildings, trees) as
+well as their frequency. Sound waves at higher
+frequencies are absorbed more by leaves and other
+structures, whereas lower-frequency signals tend to
+be deflected around such obstacles. This limits the
+distance that higher-frequency signals can travel
+relative to lower-frequency signals. Experiments in
+forests have found that low frequency sounds are
+attenuated less and can therefore travel farther
+(Marten and Marler 1977; Marten et al. 1977).
+Once a sound signal travels and is received, other
+factors may determine the accuracy and interpretation
+of the signal. The tympanum in animals has to be
+sensitive enough to detect the signal from the small
+random variations in pressure of the medium. The
+sensor has a range of acoustic frequencies it can
+detect, which is determined by the structure of the ear
+and therefore by the evolution of the organism
+(Greenfield 1994). Although the brain is extremely
+adept at separating overlapping signals, multiple
+sound signals can occasionally interfere with one
+another. Once the sound is detected, the brain
+processes the signals received. At this stage, specific
+signals may be rejected in favor of others (Henry and
+Lucas 2010) or some additional processing may take
+place to interpret the sound signal into its information
+contents (Keller and Hahnloser 2009). For humans,
+sound frequencies are perceived by the ear as
+‘‘pitch’’. Frequencies and pitch are not the same but
+are considered analogous (Everest and Pholmann
+2009).
+In reality, sounds in a landscape are often
+complex. Multiple sources located in different places
+in the landscape emit sounds at different times and
+intensities (Fig. 3). Here, several objects that produce
+
+Fig. 1 A basic representation of a sound wave and the measurements taken to describe it. In this example, there are two waves
+represented by the lines of different color. Both waves have the same wavelength but different amplitude
+
+123
+
+Landscape Ecol
+Fig. 2 Representation of a
+simple soundscape with
+three sound sources.
+Depending on the distance
+at which that each sound
+can be detected will affect
+which sensors, represented
+as numbered microphones,
+will record
+
+Fig. 3 Spectrogram showing 10 equal spaced frequency bands. Chorusing frogs in Band #4 dominate this recording as do toads in
+Band #2. Harmonic sounds produced by the chorusing frogs appear in Band #5 and then again in Band #7
+
+sounds, a road, a bird and a stream, are scattered
+across the landscape, creating multiple sounds at
+different frequencies. The color shades of the sound
+waves represent the intensity of sound at that distance
+with darker (i.e., louder) sounds closer to the sound
+source. Using the terminology of soundscape ecology, the three main sources of sound (biophony,
+geophony and anthrophony) are present in this
+soundscape. Sensor #1 would record only anthrophony, sensor #2 would record sounds from the stream
+and road (a mixture of geophony and anthrophony),
+
+whereas sensor #3 would record the stream (faintly)
+and bird (hence both biophony and geophony).
+
+How is sound recorded?
+Although sound can be recorded in analog or digital
+formats, digital recorders have largely replaced analog
+recorders. A digital recorder stores discrete samples of
+the signal detected at the microphone at thousands of
+times per second. To properly record a signal requires
+
+123
+
+Landscape Ecol
+
+at least a full cycle of the wave, which limits the
+maximum acoustic frequency recorded to half of the
+sampling rate, referred to as the Nyquist frequency. If
+the sound of interest has an acoustic frequency of
+11 kHz, the sampling rate needs to be 22 kHz or
+greater to detect the high and low peaks of that wave.
+Since human hearing is limited to a maximum of
+approximately 20 kHz, most commercial equipment
+samples the sound at 44.1 kHz, for a Nyquist frequency of 22.05 kHz. Digital systems usually display
+amplitude as decibels relative to full scale (dBFS),
+where dBFS of 0 is the maximum amplitude in the
+digital file while amplitude levels less than the
+maximum are displayed as negative values.
+Digital sound collections may require large storage
+facilities. As a general guideline, a sound file stored
+with CD quality (16 bit, 2 channels, at a sampling rate
+of 44.1 kHz) requires approximately 10 MB per
+minute of audio. Although compression of the sound
+file using algorithms like MP3 can reduce the disk
+space needed, these algorithms remove sounds
+humans cannot hear, therefore modifying the signal
+recorded and causing information to be lost. Some
+signals that are removed may be detected by other
+animals and the compression would be eliminating it
+from the file. For these reasons, sound recorded for
+analysis should be recorded in uncompressed formats,
+like Microsoft Wave (.wav), or lossless compression
+formats such as Free Lossless Audio Codec (.flac).
+The type of microphone used will determine the
+quality, directionality, and frequency range of the
+recordings. Microphones detect subtle changes in air
+pressure, so more sensitive microphones will be able
+to detect fainter sounds. The design of the microphone determines whether it detects sound waves
+from all directions, omni-directional, or from a
+specific direction, referred to as shotgun microphones. All microphones have frequency–response
+curves that illustrate their sensitivity to particular
+ranges of frequencies. Common ranges are from 20 or
+60 Hz at the lower end to 15 or 20 kHz at the upper
+frequencies. A pair of microphones can be used at the
+same time to provide a stereo recording that mimics
+human perception.
+Sound data are stored as information expressed as
+a wave. To convert the sound data to a more useful
+format, a Fourier Transform (FT) is applied to the
+wave. Details of how FTs work is beyond the scope
+of this paper (cf. Hartmann 1997), but in general
+
+123
+
+terms, the FT converts the wave signal to amplitude
+levels per frequency. These data, in turn, are used to
+obtain a plot of energy by frequency by time, called a
+spectrogram (Fig. 4). In a spectrogram time is
+displayed in the x-axis, frequency in the y-axis and
+energy (i.e., amplitude) on the z-axis, the latter
+usually represented as color intensity or shade. The
+spectrogram allows the researcher to have an overview of the sound intensities present in the file as a
+single figure. Frequency-amplitude plots are another
+common way researchers visualize sound files.
+A number of excellent references provide in depth
+information about the physical properties of sound
+(Hartmann 1997; Truax 2001; Everest and Pholmann
+2009), natural soundscape recording principles (Hopp
+et al. 1998; Krause 2002), acoustic data analysis (Charif
+et al. 2006; Sueur et al. 2008a, b), and the biological
+basis of sound production and hearing (Bradbury and
+Vehrencamp 1998; Ryan 2001; Gerhardt and Huber
+2002; Marler and Slabbekoorn 2004; Kroodsma 2005;
+Fletcher 2007). Truax’s (1999) Handbook for Acoustic
+Ecology contains an exhaustive list of acoustic communication and acoustic ecology technical terms that are
+excellent references for the new acoustician.
+
+Sound analysis exercises
+We use data from a long-term monitoring study being
+conducted west of the Purdue Campus in Tippecanoe
+County, Indiana to illustrate a few ways to analyze
+acoustic data for soundscape studies. For our Tippecanoe Soundscape Study, we deployed eight acoustic
+sensors in different habitats. One was located in a
+mature oak-hickory forest (Ross Reserve). Another
+was placed in a secondary forest (Martell Forest) of
+20–30 year old hardwoods. The third sensor was
+located in a secondary forest stand approximately
+5 m from the edge of a 3-ha wetland (called the
+Purdue Wildlife Area). Acoustic sensors were also
+placed in an abandoned orchard (called the FNR
+Farm) and a 5 ha forest stand (McCormick Woods)
+surrounded by apartment complexes. Two sensors
+were located in agricultural fields, one next to a corn
+crop (called Ag1) and the other along a soybean field
+(referred to here as Ag2). An eighth acoustic sensor
+was placed on the Purdue campus near a busy road
+intersection later in the year. All recorders were set to
+record for 15 min starting at the top of each hour
+
+Landscape Ecol
+Fig. 4 Spectrograms of
+a example sound file #1,
+recorded at a forested
+wetland (Purdue Wildlife
+Area) at 01:00; b example
+sound file #2, recorded next
+to a major street at the
+Purdue University Campus
+at 22:00; and c example
+sound file #3, recorded at a
+forested plot (McCormick
+Woods) next to an urban
+area at 11:00
+
+123
+
+Landscape Ecol
+
+generating 24 fifteen-minute recordings per day at
+each site. We use data from a 1-week period, May 14,
+2008 through May 20, 2008, for all sensors except
+urban, to demonstrate how metrics are sensitive to
+habitat type and time of day. All recordings were
+collected in stereo, although most analyses used only
+one channel, using a sampling rate of 44.1 kHz.
+Three exercises are presented here that are
+designed to introduce ecologists to recording and
+acoustic data processing. The first exercise is a
+listening exercise where several recordings from our
+Tippecanoe Soundscape Study are presented and
+described using soundscape terminology and using
+the software packages Raven Lite (Charif et al. 2006)
+and Audacity (Audacity Development Team 2010).
+Raven is used by many bioacousticians to analyze
+single, or a small set, of recordings. Our second
+exercise focuses on spectrogram analysis using the R
+package Seewave (Sueur et al. 2008a). Finally, we
+show how a spectrogram can be discretized in
+vertical and horizontal directions to identify patches
+of sound that could represent unique signals with
+ArcGIS (ESRI 2010), tools traditionally used for
+spatial analysis. A supplement to these exercises,
+showing how to run the scripts, software and analyze
+these sound files can be found at: http://ltm.
+agriculture.purdue.edu/soundscapes/primer/.
+Exercise 1. Listening to the soundscape
+The sound file #1 was recorded during a rainy night at
+01:00 in the Purdue Wildlife Area on May 14, 2008
+(Fig. 4a). This rain represents one form of geophony
+(geo-physical sounds; Pijanowski et al. 2011a, b).
+Several species of frogs are the main contributors to
+this location’s biophony (biological sounds). The
+recording starts with a chorus of Gray Treefrogs
+(Hyla versicolor), some Spring Peepers (Pseudacris
+crucifer) and a light rain. The Gray Treefrogs call
+around 2 kHz, while the Spring Peepers make a call
+that sounds like a whistle at around 3 kHz; both are
+typical soundmarks of a temperate pond. After
+approximately 40 s, loud thunder, another example
+of geophony, can be heard and the rain intensifies.
+Later in the file, the rain subsides while the frogs
+continue to call. At 4:18, a single faint ‘‘chuck’’ from
+a Bullfrog (Rana catesbeiana) is heard.
+An urban soundscape (Fig. 4b, sound file #2) can
+contain many types of sounds, but this one is
+
+123
+
+dominated by anthrophony (human sounds). This
+recording was made at 22:00 in the fall (October 10,
+2008). During the entire recording, crickets stridulate
+between 3.9 and 4.4 kHz. After a few seconds, the
+bells of the Purdue Tower can be heard in the
+background playing several collegiate songs. The
+sound of the bells, an example of a keynote (Truax
+1999) for this landscape, can be observed as discrete
+signals in the spectrogram that alternate their frequency. Each signal at particular frequencies corresponds to a different bell. Several cars and buses pass
+by—sounds produced include those from tire-pavement friction, air brakes, and music emitted from
+vehicles. Note that the sounds from the vehicles
+occupy a wide range of frequencies, particularly
+compared to the small range of the sounds emitted by
+the Purdue Tower bells.
+Sound file #3 (Fig. 4c) was recorded on a summer
+day inside a forested plot near the Purdue University
+campus, on June 14, 2008; it has a mixture of animal
+and human sounds. During the duration of the sound,
+several species of birds are calling. A Red-eyed Vireo
+(Vireo olivaceus) sings constantly throughout the
+recording, occasional Red-winged Blackbirds (Agelaius phoeniceus) make a trill and squawk sound, and
+Eastern Chipmunks (Tamias striatus) emit their
+characteristic ‘‘chip’’ at the end of the recording.
+After time mark 1:30, a siren from an emergency
+vehicle can be heard for about 2 min. The sound of a
+siren on the spectrogram appears as frequencies
+alternating up and down, an example of frequency
+modulation created by a human object.
+The accompanying hands-on tutorial to this exercise contains step-by-step instructions for how to
+obtain these files, load a sound file into Raven Lite or
+listen to these recordings online at the Purdue
+Soundscape Studies website. The skill level required
+to complete this exercise is elementary (e.g., requires
+very little expertise to understand the structure of
+acoustic files and run the computer software).
+Exercise 2. Frequency band analysis
+Seewave and associated packages are R software tools
+developed for sound analysis. In this example, we use
+Seewave to compute an index of frequency band
+diversity, evenness and dominance. An associated
+package, TuneR (Ligges 2009), is used to load a sound
+file in wav format as an object. Seewave can also save
+
+Landscape Ecol
+
+the data of the spectrogram as a numeric matrix with
+amplitude values by setting the value of plot in the
+function spectro() to false—saving the values as a
+matrix. We use this output matrix to calculate an
+acoustic diversity index using the script (soundscape_band_diversity.R) posted on the web site.
+To demonstrate the value of this approach and
+tool, we use two sound files that were recorded in the
+Purdue Wildlife Area on 20 April 2008. The first
+sound file was recorded at night, at 00:00 (Fig. 5a),
+and the other one during the morning, at 07:00
+(Fig. 5b). The night sound is dominated by frogs in
+the 1.3–3.8 kHz range while the sounds in the
+morning are from birds singing from approximately
+0.2 to almost 8.0 kHz. Just by visually comparing the
+spectrograms of these sound files, we can see that
+there is a larger diversity of sounds in the morning
+than in the night. When we look at the distribution of
+the proportion of signals in each band in both sound
+files (Fig. 5c) the differences between the files are
+evident. The night recording has most of the signal in
+the bands corresponding to 1–4 kHz, while the signal
+for the morning has strong components from the 0 Hz
+up to the 6 kHz bands. The proportion of sound
+occurring in each frequency band can then be used to
+calculate a variety of metrics synonymous with those
+used in studies of species biodiversity. Allowing each
+band to represent a specific ‘‘species’’, the occupancy
+(i.e., the proportion of that band with sound) of each
+frequency band can be used to calculate Shannon’s
+Index for a recording as:
+H0 ¼
+
+S
+X
+
+pi ln pi
+
+ð1Þ
+
+i¼1
+
+where pi is the fraction of sound in each ith frequency
+band in s number of frequency bands.
+Species evenness can be calculated in a variety of
+ways by ecologists. We used the Gini() function of
+the R package Ineq (Zeileis 2009) to calculate the
+Gini coefficient with occupancy at each frequency
+band as inputs per recording. We also calculate
+frequency band dominance by determining the
+frequency band that has the greatest occupancy per
+recording. Acoustic diversity (using Shannon’s
+index), evenness and dominance can be compared
+between sites and over different time periods.
+We calculated average values of acoustic diversity
+for each site for the week as well as averages for each
+
+hour of the day from the weekly recordings at the six
+sites. Acoustic diversity for Martell and Wildlife sites
+are greatest, followed by Ross and McCormick. FNR
+Farm, Ag1 and Ag2 contain the least amount of
+acoustic diversity (Fig. 6). The average acoustic
+diversity by time of day shows that Martell, Ross,
+FNR Farm, Wildlife and McCormick have high
+diversity values during the morning and evening time
+periods, coinciding with the dawn and dusk chorus.
+Nearly all of these sites also have a period prior to the
+dawn chorus that appears to exhibit a ‘‘rest’’ after a
+relatively diverse array of sounds occurring at night.
+The diversity of sounds during the evening is as great
+as those during the dawn chorus. The two agricultural
+sites reflect a ‘‘flat lining’’ of acoustic diversity
+throughout the day and night with almost no dawn
+and dusk chorus peaks in acoustic diversity occurring
+at either of these sites.
+The weekly average Gini coefficient values
+(Fig. 7) are greatest for the two agricultural sites
+and the FNR Farm site, reflecting less evenness
+across frequency bands. The greatest weekly average
+evenness occurred at the Martell site. Gini coefficient
+weekly averages by hour are greatest for the agricultural sites with very little variation across the day and
+night. Evenness changed greatly over the day at the
+Martell and Wildlife sites with the most evenness
+occurring during the dawn and dusk chorus periods.
+The proportion that each frequency band was
+dominant in each recording is illustrated in Fig. 8.
+Note that the lowest frequency band dominated
+nearly all recordings; this frequency band was
+removed from the analysis to assess the variation in
+the other bands. For the remaining frequency bands,
+band 2 (1–2 kHz) was the most common frequency
+band in all sites. The forested sites (Ross, FNR Farm,
+and McCormick) had times where band 3 was
+common, being dominant about 20% of the time.
+Wildlife had band 4 dominate 28% of the time, likely
+due to the numerous amphibians that were located
+there. In both agricultural sites, band 2 dominated
+nearly all of the recording periods, as much as 97% of
+all recordings in Ag1.
+In short, the Seewave tool can be used to subset a
+sound file into frequency bands which can then be
+used as inputs to traditional ecological metrics of
+biodiversity. The metrics plotted over space and over
+time (some plotted with ggplot2 by Wickham (2009))
+provide a useful means to understand the patterns of
+
+123
+
+Landscape Ecol
+Fig. 5 Spectrograms of
+two sound files recorded at
+a forested wetland at two
+times: a recorded at 00:00,
+b recorded at 07:00 and
+c proportion of each
+frequency range band with a
+signal above a -50 dBFS
+threshold for the night
+(filled bars) and day (empty
+bars) recordings
+
+sound in landscapes. Users familiar with R could
+modify inputs to examine more frequency bands or
+use the frequency bands as inputs to other metrics.
+The tutorial that accompanies this exercise provides step-by-step instructions for downloading and
+
+123
+
+installing R and the associated packages used here
+(Seewave, TuneR and Ineq), executing the scripts,
+understand the data format and import data into MS
+Excel. It explains the calculation of the Gini coefficient in more detail. We believe that readers familiar
+
+Landscape Ecol
+Fig. 6 Boxplot of
+a diversity values by site
+and b hourly averages.
+Values were calculated over
+a 7 day period in May 2008
+
+with R or command line environment will be able to
+complete this exercise. Notes are provided that
+describe how a user can process a large number of
+files. The skill level required is moderate and
+considered advanced for those interested in processing a large number of files.
+Exercise 3. Spectrograms as raster files
+Seewave allows users to easily export that spectrogram as a raster file for analysis in a GIS. The
+resultant raster map allows users to treat specific
+signals as patches in a landscape. Patch and landscape
+statistics may help in quantifying the diversity of
+
+sounds and their relationships in a way that is more
+intuitive for landscape ecologists. The accompanying
+tutorial explains in detail how to extract a spectrogram from a sound file using Seewave and analyze it
+with ArcGIS. Briefly, patch metrics (e.g., size,
+perimeter) are generated and summary statistics
+(e.g., mean, standard deviation) reported for an entire
+recording.
+Summary statistics for the signal patches are
+plotted by site and time of day for the weeklong
+recordings at seven sites in Fig. 9a. Note that the
+number of signals is greatest in the morning
+(07:00–08:00) and evening (21:00 and 22:00), corresponding to the dawn and dusk chorus, respectively.
+
+123
+
+Landscape Ecol
+Fig. 7 Boxplot of a band
+evenness (i.e., Gini
+coefficient) calculated over
+a 7 day period in May 2008
+by site; b average by time of
+day. Values close to 1.0
+reflect perfect inequality
+(sounds occur mostly in one
+band) and values close to
+0.0 reflect perfect equality
+(sounds occur equally
+across all bands)
+
+Fig. 8 Frequency band
+dominance for bands 2
+through 10. The percentage
+of time that each band
+dominated in a 15 min
+recording over the week of
+recordings
+
+123
+
+Landscape Ecol
+
+The fewest number of signals occur during the day
+for the forested sites. There are very few signals at the
+two agricultural sites, where sounds are limited to
+wind and rain (geophony) and some occasional traffic
+(anthrophony).
+The size of signals present in these sound raster
+maps differed greatly (Fig. 9b); both agricultural sites
+have very large sound patches, probably as a result of
+constant wind and traffic noise from the rural roads
+near the sites. Non-agricultural sites do not exhibit a
+temporal pattern to the patch size although it is
+slightly larger in the morning for some sites. When
+size distribution is examined across sites (Fig. 9c), all
+sites have about 15% of the sound patches are 4
+pixels. Signals of size 5–9 pixels make up about 40%
+of all signals, another 40% of the signals are 10–49
+pixels and less than 5% of patches are greater than 50
+pixels. Patches larger than 10,000 pixels are rare,
+which makes sense since few real signals can have
+such a large footprint, either by duration or by
+acoustic frequency.
+The tutorial describes how to run Python scripts and
+examine the output in a spreadsheet. Users familiar
+with data formats common to GIS and running scripts
+in ArcGIS can modify the scripts to create custom
+applications. This exercise requires some advanced
+knowledge although step-by-step instructions are
+provided for the novice ArcGIS Python user. Suggestions for further reading about these advanced tools are
+contained in this tutorial as well.
+
+Discussion
+We have presented an overview of sound and how
+ecologists can work with soundscape data from the
+field. Instead of limiting sound research to particular
+questions at the species level, we can study the
+soundscape at the landscape scale. Several tools
+familiar to many landscape ecologists (e.g., R and
+GIS) have been used and the exercises presented
+range from basic (listening to soundscape recordings)
+to advanced (running Python scripts in ArcGIS).
+The best way to start studying the soundscape is to
+become acquainted with the sounds present in it and
+their spatial and temporal patterns. A purely descriptive approach will yield an interesting depth to any
+soundscape. Quiet soundscapes can have a constant
+component from the wind and leaves rustling. Urban
+
+soundscapes, usually described plainly as noisy, can
+have an overwhelming diversity of sounds and
+sources as demonstrated by exercise 1. Forested
+areas with a high diversity or occupancy of species
+will have a great variety of sounds, both from their
+vocalizations and their movements than those utilized
+by humans as demonstrated by the greater number of
+sound patches in forested versus agricultural plots in
+exercise 3.
+A simple measure of the sound diversity in a
+spectrogram summarizes the complex acoustical data
+in an effective way. Sueur et al. (2008a) developed a
+similar diversity index within Seewave that uses a
+different algorithm but is similar conceptually (it was
+not used here due to the very complex nature of its
+calculation). In exercise 2, we used a measurement of
+the diversity of signals according to their frequency
+in a single sound file to obtain statistics for that sound
+file that can be compared to others. This approach can
+yield objective comparisons between sites (e.g. across
+a human disturbance gradient) or across time (e.g. the
+sound patterns across seasons). For example, the band
+analysis and diversity metrics utilized in our analysis
+showed that the soundscape is less diverse in the
+evening compared to the morning.
+Future soundscape ecology research should focus
+on the spatial–temporal patterns of sound from
+different sources. However, for this to be accomplished, signals in soundscape recordings need to be
+extracted with signal classifiers into major sources
+like biophony, geophony and anthrophony. Our
+analyses here examined spectrograms with all sounds
+present.
+Signal classifiers vary in the way they work, but in
+general, the classifiers are trained to recognize
+particular signals. This is often accomplished by first
+selecting a sample of sounds which are labeled by the
+researcher. An algorithm is then employed that uses
+features of the sound within the class. Then, once it
+has learned to identify these sounds, the classifier
+identifies the signals in the rest of the recording. Many
+bioacousticians have successfully used statistical (i.e.,
+hidden Markov models) and machine learning (e.g.,
+neural networks, support vector machines) approaches
+to identify sounds (Acevedo et al. 2009; Kasten et al.
+2010). Same-source signals could then be recombined
+to create partial spectrograms, one each for biophony,
+geophony, and anthrophony. Metrics (e.g. entropy) of
+these partial spectrograms could be compared across
+
+123
+
+Landscape Ecol
+Fig. 9 Signals extracted
+from sound files recorded
+over a 7 day period in May
+2008 by site: a number of
+signals per hour; b average
+size of signals per hour;
+c distribution of signal size
+
+123
+
+Landscape Ecol
+
+different landscapes, possibly varying in the human
+disturbance, and over a variety of time frames (hours,
+days, months, seasons, years), as we did here.
+Other approaches to studying soundscapes are
+presented in this special issue. The ACI metric of
+Farina et al. (2011) uses a complex signal extraction
+approach to analyzing a sound recording. Studies that
+compare different levels of noise and their impact on
+the behavior, physiology and reproductive success of
+animals are conducted across human disturbance
+gradients (Francis et al. 2011). Future work needs to
+focus on comparing different methods with an
+assessment of how they differ across space and time.
+Acknowledgments Development of acoustic metrics for the
+Tippecanoe Soundscape Study was made possible from a
+National Science Foundation III-XT grant to BCP. Funding for
+sensors used in the Tippecanoe Soundscape Study was
+obtained by a grant from the Lilly Foundation to Purdue.
+Funding to support JD came from the Department of Forestry
+and Natural Resources. The authors greatly acknowledge the
+input on an earlier version of this manuscript by Brian
+Napoletano. Jim Plourde assisted in data collection for the
+Tippecanoe Soundscape Study.
+
+References
+Acevedo MA, Corrada-Bravo CJ, Corrada-Bravo H, Villanueva-Rivera LJ, Aide TM (2009) Automated classification
+of bird and amphibian calls using machine learning: a
+comparison of methods. Ecol Inform 4:206–214
+Audacity Development Team (2010) Audacity. http://audacity.
+sourceforge.net
+Bradbury JW, Vehrencamp SL (1998) Principles of animal
+communication. Sinauer Associates Inc, Sunderland
+Brandes TS (2005) Acoustic monitoring protocol. Conservation International, Washington, DC. Tropical Ecology
+Assessment and Monitoring (TEAM) initiative set of
+biodiversity monitoring protocols. http://www.teamnet
+work.org (navigate to ‘‘Protocols’’)
+Charif RA, Ponirakis DW, Krein TP (2006) Raven Lite 1.0
+user’s guide. Cornell Laboratory of Ornithology, Ithaca
+ESRI (2010) ArcGIS 10.0. ESRI, Redlands
+Everest FA, Pholmann KC (2009) Master handbook of acoustics, 5th edn. McGraw-Hill Companies Inc, New York
+Farina A (2006) Principles and methods in landscape ecology.
+Springer, Dordrecht
+Farina A, Lattanzi E, Malasi R, Pieretti N, Piccioli L (2011)
+Avian soundscapes and cognitive landscapes: theory,
+application and ecological perspectives. Landscape Ecol.
+doi:10.1007/s10980-011-9617-z
+Fletcher N (2007) Animal bioacoustics: chapter 17. In: Rossing
+TD (ed) Springer handbook of acoustics. Springer, New
+York
+
+Francis CD, Paritsis J, Ortega CP, Cruz A (2011) Landscape
+patterns of avian habitat use and nesting success resulting
+from chronic gas well compressor noise in NW New
+Mexico, USA. Landscape Ecol. doi:10.1007/s10980-0119609-z
+Gerhardt HC, Huber F (2002) Acoustic communication in
+insects and anurans. Chicago University Press, Chicago
+Greenfield MD (1994) Cooperation and conflict in the evolution of signal interactions. Annu Rev Ecol Syst 25:97–126
+Hartmann WM (1997) Signals, sound and sensation. AIP series
+in modern acoustics and signal processing. Springer, New
+York
+Henry KS, Lucas JR (2010) Auditory sensitivity and the frequency selectivity of auditory filters in the Carolina
+chickadee Poecile carolinensis. Anim Behav 80(3):
+497–507
+Hopp SL, Owren MJ, Evans CS (1998) Animal acoustic
+communication: sound analysis and research methods.
+Springer-Verlag, New York, p 421
+Kasten EP, McKinley PK, Gage SH (2010) Ensemble extraction for classification and detection of bird species. Ecol
+Inform 5(3):153–166
+Keller GB, Hahnloser RHR (2009) Neural processing of
+auditory feedback during vocal practice in a songbird.
+Nature 457(8):187–191
+Krause B (2002) Wild soundscapes: discovering the voice of
+the natural world. Wilderness Press, Berkeley, p 208
+Kroodsma DE (2005) The singing life of birds. Houghton
+Mifflin Company, Boston
+Ligges U (2009) TuneR: analysis of music. http://r-forge.rproject.org/projects/tuner/
+Marler PR, Slabbekoorn H (2004) Nature’s music: the science
+of birdsong. Academic Press, San Diego
+Marten K, Marler P (1977) Sound transmission and its significance for animal vocalization: I. Temperate habitats.
+Behav Ecol Sociobiol 2:271–290
+Marten K, Quine D, Marler P (1977) Sound transmission and
+its significance for animal vocalization: II. Tropical forest
+habitats. Behav Ecol Sociobiol 2:291–302
+Pijanowski BC, Villanueva-Rivera LJ, Dumyahn S, Farina A,
+Krause B, Napoletano BM, Gage SH, Pieretti N (2011a)
+Soundscape ecology: the science of sound in the landscape. Bioscience 61:203–216
+Pijanowski BC, Farina A, Krause B, Dumyahn S, Gage SH
+(2011b) What is soundscape ecology? Landscape Ecol.
+doi:10.1007/s10980-011-9600-8
+Qi J, Gage SH, Joo W, Napoletano BN, Biswas S (2008)
+Soundscape characteristics of an environment: a new
+ecological indicator of ecosystem health. In: Ji W (ed)
+Wetland and water resource modeling and assessment.
+CRC Press, New York, pp 201–211
+Ryan MJ (2001) Anuran communication. Smithsonian Institution Press, Washington DC
+Sueur J, Aubin T, Simonis C (2008a) Seewave: a free modular
+tool for sound analysis and synthesis. Bioacoustics 18:
+213–226
+Sueur J, Pavoine S, Hamerlynck O, Duvail S (2008b) Rapid
+acoustic survey for biodiversity appraisal. PLoS One
+3:e4065
+Truax B (1999) Handbook for acoustic ecology. Cambridge
+Street Publishing, Canada
+
+123
+
+Landscape Ecol
+Truax B (2001) Acoustic communication. Praeger, New York
+Turner MG, Gardner RH, O’Neill RV (2001) Landscape
+ecology in theory and practice: pattern and process.
+Springer Press, New York
+
+123
+
+Wickham H (2009) ggplot2: Elegant Graphics for Data Analysis. Springer, New York
+Zeileis A (2009) Ineq: measuring inequality, concentration, and
+poverty. http://CRAN.R-project.org/package=ineq
+
+

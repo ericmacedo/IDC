@@ -1,0 +1,2970 @@
+Ecological Informatics 21 (2014) 120–132
+
+Contents lists available at ScienceDirect
+
+Ecological Informatics
+journal homepage: www.elsevier.com/locate/ecolinf
+
+Sonic environment and vegetation structure: A methodological approach
+for a soundscape analysis of a Mediterranean maqui
+Almo Farina ⁎, Nadia Pieretti
+Department of Basic Sciences and Foundations, “E. Mattei” Campus, Urbino University, Italy
+
+a r t i c l e
+
+i n f o
+
+Article history:
+Received 5 June 2013
+Received in revised form 3 October 2013
+Accepted 29 October 2013
+Available online 10 November 2013
+Keywords:
+Soundscape ecology
+Acoustic Complexity Index
+Birds
+Mediterranean maqui
+Sonotopes
+Soundtopes
+
+a b s t r a c t
+Herein we present one of the ﬁrst attempts to couple the complexity of vegetation and topographic features with
+the sonic environment to understand the distribution of bird species and individuals in their habitat. To achieve
+this, the sonic features of a bird community were studied during the spring and early summer of 2011 in a Mediterranean maqui located on the western slope of a remote hanging valley that is dominated by Erica arborea,
+Quercus ilex and Arbutus unedo.
+Species composition, height, vertical foliage proﬁle, canopy density and dispersion of vegetation were utilized as
+probable proxies for the sonic patterns. The acoustic activity of birds was collected through the use of a regular
+matrix of 20 audio recorders, spaced 25 m apart, which were placed following the topographic isoclines. The
+sonic complexity of the soundscape was evaluated using the Acoustic Complexity Index (ACI), which is a recently
+developed metric.
+The PCA applied to the vegetation parameters revealed two principal distinguishing factors, which we were able
+to deﬁne as “vegetation density and structure” and “species segregation.” Moreover, the results show that, even
+in the case of sampling sites that are very close together, sonic patterns vary across the season, highlighting the
+great variability of the soundscape and conﬁrming the adequacy of the sampling scale of 25 m adopted in this
+study. The topographic features do not seem to be connected to the sonic environment. The main sonic complexity was found where the vegetation was taller and denser, especially where E. arborea was the dominant species.
+Although this proves that acoustic dynamics can be linked to vegetation structure, even on a small scale, a consistent element of sonic variability cannot be explained by vegetation patterns alone, and a soundtope hypothesis
+must be invoked.
+© 2013 Elsevier B.V. All rights reserved.
+
+1. Introduction
+The recent ﬁeld of soundscape ecology (Farina et al., 2011a;
+Pijanowski et al., 2011a,b; Truax and Barrett, 2011) has revealed new
+perspectives when it comes to investigating the sonic complexity of
+the environment, which is an important component of the quality of
+ecosystems. This has produced a powerful and efﬁcient tool to be used
+for both the short- and long-term monitoring of biological and ecological dynamics (Bardeli et al., 2010; Depraetere et al., 2012).
+The acoustic diversity of biophonies (Krause, 2012, p. 68) has been
+regarded as an indirect estimator with which to evaluate the biodiversity of different habitats (Gasc et al., 2013; Sueur et al., 2008).
+Investigations of the sonic complexity of the environment are
+considered to be useful when it comes to: understanding the relationship between the structure of vegetation and animal dynamics (Pekin
+et al., 2012); evaluating the complexity of animal assemblages (Gasc
+et al., 2013); and investigating the relationship between the structure
+of the landscape and sonic patterns (Bormpoudakis et al., 2013).
+⁎ Corresponding author. Tel.: +39 0722 304301; fax: +39 0722 304275.
+E-mail address: almo.farina@uniurb.it (A. Farina).
+1574-9541/$ – see front matter © 2013 Elsevier B.V. All rights reserved.
+http://dx.doi.org/10.1016/j.ecoinf.2013.10.008
+
+In particular, the biophonic components of the sonic environment
+provide important information about community diversity and the
+dynamics of vocal animals (Krause, 2012), as well as more generally
+about the “health” of ecosystems (Carson, 1962). The acquisition of
+such knowledge is ﬁnally possible today thanks to: the use of autonomous recording systems (Blumstein et al., 2011); a powerful methodology with which to process sonic data (Farina et al., 2012); the
+availability of new sonic indices (Farina et al., 2011b; Sueur et al.,
+2012; Villanueva-Rivera and Pijanowski, 2012); and automatic identiﬁcation algorithms for some groups of species (f.i. Ranjard and Ross,
+2008; Skowronski and Harris, 2006; Somervuo et al., 2006; Trifa et al.,
+2008).
+Despite the great potential of the soundscape approach, there are very
+few studies on terrestrial ecosystems in the literature (f.i. Bormpoudakis
+et al., 2013; Cellis-Murillo et al., 2009; Joo et al., 2011; Mazaris et al., 2009;
+Pieretti and Farina, 2013; Slabbekoorn, 2004). Moreover, uncertainty
+persists with respect to ﬁeld procedures, such as: the selection of types
+and numbers of recording devices or their calibration (but see Mennill
+and Fristrup, 2012); the selection of the spatial and temporal scales
+with which to collect the sonic information according to the habitat investigated (Mennill et al., 2006); and the best indices and software
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+with which to efﬁciently process the sonic data (Farina, 2014, p. 242;
+Gasc, 2012).
+For instance, the choice of one recorder versus an array of recorders is a controversial argument that requires empirical validation, as the few examples of the use of arrays have been used to
+gauge the best spatial localization of individuals (f.i. Blumstein
+et al., 2011; Mennill et al., 2006) and not to intercept sonic patterns
+across a large area.
+Moreover, most of the literature regarding the relationships between vocal animals (in particular birds) is based on aural identiﬁcation
+carried out during ﬁeld surveys. This is an approach that is strongly affected by the skill of the observer and inﬂuenced by the disturbance created by observer intrusion (Bibby et al., 1992, p. 24; Gibbons et al., 1996,
+p. 245).
+The soundscape approach has the advantage of allowing the researcher to collect information that will be permanently stored in a digital medium. Moreover, the data are processed automatically, and the
+aural identiﬁcation can be repeated whenever necessary, reducing the
+likelihood of disagreements between people with different species
+identiﬁcation skills (Hobson et al., 2002). Finally, human disturbance
+is strictly limited to the period of the placement of the recording
+devices.
+Of course, the relationship between vegetation complexity and the
+complexity of the sonic environment has only been investigated infrequently, especially from a bioacoustical perspective. In this context,
+Morton (1975) was one of ﬁrst authors to emphasize the importance
+of vegetation structure on the acoustic adaptation of birds. His approach
+was followed by Marten and Marler (1977), who conﬁrmed the acoustic
+adaptation hypothesis, while Laiolo et al. (2008) discussed the role of
+landscape fragmentation for the maintenance of a differentiated song
+repertoire in the Dupont's Lark (Chersophilus duponti). Later, fragmentation was demonstrated by Briefer et al. (2010) to be an important
+process that inﬂuences the composition of elements in skylark songs, although the number and complexity of these elements seem to be more
+ﬁxed. Krause et al. (2011), meanwhile, have investigated the complexity
+of the sonic patterns in four habitats in the Sequoia National Park (US),
+and Pekin et al. (2012) put the emphasis on the relationship between
+the acoustic diversity and the structure of vegetation by using a LIDAR
+approach.
+There is evidence that vegetation structure affects sound propagation, and the denser the vegetation is, the more the biophonies are
+degraded by reverberation and attenuation by leaves and branches
+(f.i. Embleton, 1963; Padgham, 2004). This produces responses with
+respect to, for instance, the range capacity of territorial birds, as proved
+by Morton et al. (1986) and Morton (1987) with respect to Carolina
+wrens.
+In addition, the topographic characters of the environment are rarely
+considered in terms of the relationship with the sonic environment. For
+instance, Hunter (1989) has observed that singing birds on steep slopes
+are generally oriented towards the up-slope direction, with an evident
+advantage for the diffusion of acoustic waves.
+Recently, the relationship between the structure of the landscape and
+the soundscape patterns has been explained by three different models,
+the ﬁrst of which considers a patterned distribution of acoustic cues or
+sonotopes, deﬁned as the result of the overlapping of the geophonies,
+biophonies and anthrophonies that are coincident with the structure of
+the landscape (Farina, 2014, p 17). A second model assumes that the
+sonotopes are broader than the landscape patterns due to an expected
+active diffusion of sonic cues that go beyond the borders of the vegetation patches. Finally, a third model states that the sonotopes, as described
+in the previous model, have an internal spatial variability due to the behavioral dynamics of vocal animals, where competition and cooperation
+mechanisms produce the spatial repartition of individuals (Farina and
+Pieretti, 2012; Malavasi and Farina, 2013). This further subdivision
+would create soundtopes, deﬁned as a coordinated aggregation of
+biophonic sounds (sensu Farina, 2014, p 19; Farina et al., 2011a) inside
+
+121
+
+each sonotope. Soundtopes represent distinct and emerging sonic aggregations with a great temporal variability.
+In particular, our principal aims were:
+• To test different ﬁeld methodologies for collecting information on
+vegetation structure.
+• To verify the efﬁcacy of: a tight spatial scale while carrying out sonic
+investigations in a Mediterranean maqui characterized by dense
+vegetation in the ﬁrst 3–4 m of the soil; the application of an array design for placing recording devices.
+• To collect the sonic environment characters in general and, in particular, to compare the complexity of the habitats (topography and
+vegetation).
+• To use such results as a basis for a further discussion of the
+sonotope/soundtope hypothesis.
+2. Study area
+The study area (Fig. 1), which is 600 m from the Tyrrhenian Sea and
+stands at an elevation of 300 m, is westerly exposed on the left side of a
+small hanging valley, with slopes characterized by an inclination of
+approximately 26°. It is located close to the small town of Deiva Marina,
+Eastern Liguria, Italy (44°13′27.6″N, 9°30′30.1″E), at the center of a large
+secondary dense sclerophyll forest dominated by small trees and Erica
+arborea, Quercus ilex and Arbutus unedo shrubs. The area, which is well
+away from permanent human settlements and paved roads, is bordered
+by some paths that are utilized by tourists from late spring to early fall,
+and occasionally by hunters in fall and early winter.
+The area, which was partially terraced and cultivated until the early
+1950s, experienced recurrent wild ﬁres (1980s; see also Solans Vila,
+2007) that have interrupted the wood recovery and intervened over
+the course of the process of land abandonment, as testiﬁed by the remnants of old scars along the entire study area.
+As a result of a previous investigation of the soundscape of this area
+based on a recording station operating continuously during 2011
+(Farina et al., 2013), we are aware that the major contribution to the
+sonic environment is represented by bird vocalizations and geophonic
+sources (wind, rain, thunder). Due to the area's remoteness from
+human settlements, the few anthrophonic disturbances are mainly produced by the engines of ﬁshing and tourist boats, military and rescue
+helicopters, and civilian aircraft.
+3. Methods
+Vegetation sampling and sonic recordings were carried out according to a grid of 20 points (4 × 5) regularly spaced at 25 m, covering
+an area of 175 × 125 m.
+In order to test the potential effects of topographic features on
+the sonic environment, it was decided to divide the analysis of the
+matrix into ﬁve “vertical lines” (following the maximum slope)
+and four “horizontal lines” (following isocline lines; Fig. 2).
+3.1. Vegetation sampling
+According to the different sampling techniques proposed for temperate deciduous forests (Blondel and Cuvillier, 1977; Blondel et al.,
+1973; MacArthur and Horn, 1964; MacArthur and MacArthur, 1961)
+and Mediterranean scrubs (Cody and Walter, 1976), we tried to detect
+the complexity of the vegetation by collecting information about the
+following parameters:
+3.1.1. Vegetation height
+The height of the shrubs and trees was assessed by direct measures
+along two perpendicular transects, each of which was: 8 m-long, centered on each recording station, and oriented according to slope
+inclination. The details of the height of the vegetation were collected
+
+122
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+Fig. 1. Location of the study area.
+
+by erecting a metric road every 2 m along the transects and identifying
+each plant species found (see Fig. 2).
+For the successive computations, the heights of the vegetation,
+expressed in meters, were then resumed for each recording point, indicating only the mean height of the species. This revealed which species
+were dominant for the entire area.
+3.1.2. Foliage proﬁle
+A foliage proﬁle was collected every 2 m along a horizontal transect
+of 12 m centered at each recording station. The stations (1, 6, 11, 16 and
+5, 10, 15, 20) located in the extreme vertical lines were sampled only on
+the internal side of the matrix, and so along a transect of 6 m. A woody
+
+board, which was 3.5 cm wide and 4 m tall and painted red and white
+every 20 cm (Fig. 2), was used to estimate the presence of vegetation
+at a distance of approximately b10 cm from the board. This totaled
+212 counts. The parameters were distinct according to the dominant
+plants in three main categories: entire proﬁle [(mean) board cover],
+the lower 2 m [(mean) board cover b 2 m] and the higher 2 m
+[(mean) board cover N2 m].
+3.1.3. Canopy density and dispersion
+The canopy density and dispersion were measured using digital images of vegetation according to the method, partially modiﬁed,
+described by Goodenough and Goodenough (2012). A Coolpix 990
+
+Fig. 2. a) Structure of the recording device array; in brackets, the ordination of vertical and horizontal lines; b) four harm transects utilized to collect information on vegetation structure.
+The measure indicated with an asterisk refers to the length of the transect used to collect information about vegetation height; c) schematic representation of the vertical board used to
+collect information on the vegetation proﬁle.
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+photo camera, pointed vertically and equipped with a Nikkor 8–24 mm
+lens zoom, was utilized to take photos of the vegetation strata at soil
+height (low stratum) and at a height of 140 cm (high stratum; Fig. 3).
+In order to keep the visual angle of the focal lens constant, it was reduced by a factor of 2 × for the shots obtained at soil height. Shots
+were taken in precisely the place where the digital recorders were located, and were repeated six times every 2 m for each of the four cardinal
+directions, totaling 25 images at the low stratum (b140 cm) and 25 at
+the high stratum (N 140 cm) for each recording station. A total of 1000
+images were obtained across the entire study area.
+This method has some advantages, as argued by Goodenough and
+Goodenough (2012), if compared with, for instance, hemispherical
+photography (see for instance Rich, 1990) or other intercept methods
+(f.i. Blondel and Cuvillier, 1977; Blondel et al., 1973; Mueller-Dombois
+and Ellenberg, 1974, p. 84).
+To calculate canopy density and dispersion, monochrome pictures of
+640 × 480 pixels were converted into dark and light pixels (representing
+respectively the canopy and the sky) using the CanopyDig® software
+proposed by Goodenough and Goodenough (2012). The transformation
+of a monochrome image into a false color image (blue = vegetation
+and red = sky) was carried out by choosing between eight images at different threshold values.
+The level of the dispersion of the vegetation was calculated by applying the Morisita index of dispersion (Morisita, 1959, 1962) after
+subdividing each image into 12 sub-images and calculating the number
+of pixels in each of them using the CanopyDig software according to the
+procedure suggested by Goodenough and Goodenough (2012).
+In more detail, the Morisita index of dispersion is calculated according to the following equation:
+0 n
+1
+X 2
+Xi −NC
+B
+B i¼1
+C
+C
+Iδ ¼ nB
+B NðN−1Þ C
+@
+A
+
+where n = the total number of sub-pictures
+Xi
+N
+
+=
+=
+
+the number of the canopy pixels in each sub-picture i
+the total number of canopy pixels in the entire image.
+
+123
+
+This index, which has as its most important property its independence from N, tends to increase with the rise in large gaps in an image.
+The Morisita index of dispersion is a robust measure of spatial distribution that is particularly applied to evaluate the dispersion of plants
+(for an example of the application of this index, see Myers, 1978;
+Nieder et al., 2000).
+3.1.4. Shrub and tree species composition
+Shrub and tree species were annotated during the canopy density
+measurement process and totaled 1000 samplings, of which 500 were
+for the low stratum (b140 cm) and 500 for the high stratum (N140 cm).
+3.2. Methods of recording and processing the sonic environment
+The sonic environment was recorded by using 20 audio recording
+devices (Zoom H4™, Zoom Inc., Japan, System 2.40) during spring and
+early summer 2011 at the following sessions: 22 February; 6,11,19
+and 26 March; 1,8,16,26, and 29 April; 7,13,21, and 28 May; 3,11 and
+18 June; 7 and 19 July. The audio recorders were deployed immediately
+after that the skylight threshold was sufﬁcient to work under the dense
+vegetation cover. For this technical reason, it was not possible to collect
+dawn chorus but just the singing activity of the following hours.
+Due to the unfavorable (rainy or/and windy) weather conditions,
+the data collected on 22 February, 16 and 26 April, 3 and 18 June, and
+19 July were excluded from the analysis, since the biological sounds
+risked being masked by rain or wind noise, which probably caused a signiﬁcant depression in bird acoustic activity or might alter the acoustic
+signature of the community.
+The matrix of recorders was oriented along the slope, with ﬁve recorders being placed in four horizontal lines (Fig 2). This orientation,
+which is coincident with the orientation of the transects utilized to
+check the vegetation, was used later for the interpretation and discussion of the distribution of the sonic patterns and topographic features.
+Sounds were sampled at 44,100 Hz at a resolution of 16 bits and stored
+on 2 GB Secure Digital Cards.
+The sound ﬁles were synchronized by a post-hoc procedure, and all
+of the recordings were 120 minute long. The sound analysis was performed using the Acoustic Complexity Index (ACI) (Pieretti et al., 2011)
+n 
+X
+
+l −l 
+k
+kþ1
+
+ACI ¼
+
+k¼1
+
+n
+X
+
+lk
+
+k¼1
+
+Fig. 3. Representation of the method to collect information on canopy density and dispersion: a) digital camera vertically oriented posed at the soil and at 140 cm from the soil;
+b) examples of a typical black and white picture and false color transformation with a selected threshold of sky resolution.
+
+where Ik and I(k + 1) are two adjacent values of spectral amplitude in a
+single frequency bin.
+The ACI values were obtained by sound data processed by the
+SoundscapeMeter (Farina et al., 2012), which is a plug-in of the
+WaveSurfer software (Sjölander, 2002; Sjölander and Beskow, 2000).
+Frequencies higher than 10 kHz were excluded from the analysis, because they were considered to be not representative of the sonic activity
+of the bird assemblage investigated. An amplitude threshold value
+greater than 3000 was adopted to exclude most of the background
+noise. The sound ﬁles were analyzed at a temporal interval of 1 min, enabling us to obtain 120 sub-ﬁles of one minute each for each recording
+station. The ACI was set at a “clumping” resolution of 1 sec (86 data,
+each at a temporal distance of 0.011 s), totaling 7200 ACI values for
+each 120 minute session and per recording station.
+Once the FFT was settled at 512 points (Hamming windowing, no
+overlap), the ACI was calculated for each of the 116 classes of frequency
+(each of 86.20 Hz) in the selected frequency interval of 0–10 kHz. The
+ACI values were then assigned at an interval of 1 kHz each, creating
+10 ACI categories (Fq: [1, 2 … 10] kHz). It was also decided to further
+split the ACI results into two main groups: 0–1 kHz and 1–10 kHz,
+which corresponded respectively to background noise (light wind,
+
+124
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+sounds of moving foliage, boats, etc.) and biophonic contributions
+(mainly birds).
+Finally, the ACI index for each recording station was used with
+the following temporal scale: ACI total = all daily sessions and frequencies combined; ACI monthly (all frequencies combined) for
+each month = ACIFebruary (1), ACIMarch (4), ACIApril (5), ACIMay (4),
+ACIJune (3), and ACIJuly (2). The numbers in the brackets are the number of recording sessions per month.
+3.3. Statistical analysis
+All of the statistical tests were performed using Statistica v.8.0
+(StatSoft, Inc., Tulsa, OK). A non-parametric approach was used, since
+the variables could not ﬁt into a normal distribution pattern, even
+after logarithmic transformation. The Kruskal–Wallis analysis of variance was used to test the signiﬁcance between multiple independent
+groups for vegetation along the lines and the columns of the grid. The
+same statistical analyses were performed for the ACI results, also
+looking at the differences among days, months and stations.
+The Spearman-rho correlation was used to measure the statistical
+dependence between the parameters of the vegetation and the ACI
+values.
+A Cluster Analysis was performed to classify vegetation data and ACI
+frequencies by categories using the Euclidean distance and the Ward
+method. The Mann–Whitney U Test was then used to compare the signiﬁcant differences between the independent groups highlighted by the
+results of the Cluster Analyses and for comparing vegetation parameters. This test was also used to assess the signiﬁcance of the correlations
+(in terms of ACI values) between the adjacent and the ﬁrst non-adjacent
+recording point in order to verify the appropriateness of the spatial
+scale. This was performed after the exclusion of the March and July sessions to reduce variability due to the migratory habits of some species.
+Finally, the vegetation variables were oriented using a Principal Component Analysis.
+The Surfer9™ (Golden Software, Inc., Golden, Colorado) was
+adopted to create interpolated maps (Kriging method) to give the spatial orientation of the ACI results. Factor 1 resulting from the PCA analysis of the vegetation was also plotted on an interpolation map.
+4. Results
+4.1. Vegetation
+4.1.1. Composition of the vegetation
+Table 1 reports the absolute frequency of the species, revealing that
+E. arborea is the most common followed by Q. ilex and A. unedo.
+Other common species counted were Smilax aspera, Myrtus
+communis, Calycotome spinosa and Pinus pinaster.
+4.1.2. Height of the vegetation
+A. unedo was the tallest species (3.75 ± 0.76 m), followed by Q. ilex
+(3.32 ± 0.94 m) and E. arborea (3.07 ± 0.57 m) (see Table 2 for the
+mean heights found at each sampling station).
+In Table 2 the values obtained by processing all of the 17 variables
+are summarized.
+The height of the vegetation revealed signiﬁcant differences for
+E. arborea (Kruskal–Wallis: H = 11.17, p b .01) and Q. ilex (Kruskal–
+Wallis: H = 8.85, p = .03) when the stations were grouped according
+to the horizontal lines, but not for A. unedo (Kruskal–Wallis: H = 7.39,
+p = .06). The two central lines presented signiﬁcant differences for
+E. arborea (Mann–Whitney: U = 22, p = .008) and A. unedo (Mann–
+Whitney: U = 22, p = .03), but not for Q. ilex (Mann–Whitney:
+U = 29, p = .11). The second line had the maximum difference (signiﬁcant) when compared with the three others: E. arborea (Mann–Whitney:
+U = 1, p.01), A. unedo (Mann–Whitney: U = 10, p b .01), and Q. ilex
+
+(Mann–Whitney: U = 4, p b 01). No signiﬁcant differences were found
+when the heights were compared for the stations along the vertical lines.
+4.1.3. Vertical foliage proﬁle
+A different distribution of foliage proﬁles between the three dominant species was evident in the results (see Fig. 4). In particular, the
+foliage proﬁle of E. arborea had a maximum of around 140 cm, while
+Q. ilex has a quite irregular foliage proﬁle, with maximum values ranging from 40 to 180 cm. The foliage proﬁle of A. unedo, meanwhile, has
+a minimum of 180 cm and then increases to 400 cm.
+The spatial distribution of the foliage proﬁle according to a gradient
+from the downslope to the upslope only had a signiﬁcant difference for
+A. unedo when the horizontal lines are considered (Kruskal–Wallis:
+H = 8.92, p = .03). The second line in particular is signiﬁcantly different from the others (Mann–Whitney: U = 11.5, p = .02). A slope effect
+is not evident for Q. ilex (Mann–Whitney: U = 32.5, p = .67), as is also
+the case for E. arborea (Mann–Whitney: U = 26.5, p = .34).
+4.1.4. Canopy density
+The canopy density presents a signiﬁcant difference between the
+four horizontal lines (high stratum, Mann–Whitney: H = 10.62,
+p b .01; low stratum, Mann–Whitney: H = 11.34, p b .01). No signiﬁcant differences were observed between the ﬁve different vertical
+lines (low stratum, Mann–Whitney H = 1.61, p = .80; high stratum,
+Mann–Whitney: H = 4.58, p = .33).
+The two central rows reveal signiﬁcant differences when compared
+with the ﬁrst and last lines (low stratum, Mann–Whitney: U = 7,
+p b .001; high stratum, Mann–Whitney: U = 8, p b .001). When compared with all of the other lines, horizontal line n. 3 maintains a signiﬁcant difference only for the high (Mann–Whitney: U = 6, p b .005), but
+not for the low, stratum (Mann–Whitney: U = 18, p b .08) of the vegetation. Horizontal line n. 2 also maintains a signiﬁcant difference for
+the low (Mann–Whitney: U = 14, p = .04), but not for the high, stratum (Mann–Whitney: U = 27, p = .35).
+A positive correlation exists between the low stratum of the canopy
+density and the high stratum (Spearman rho: r = 0.81, p b .01).
+4.1.5. Morisita index of heterogeneity
+The Morisita index of the low stratum was signiﬁcant when the two
+central lines are compared with lines 1 and 4 (Mann–Whitney U = 20,
+p = .023), but there are no signiﬁcant differences for the high stratum
+(Mann–Whitney U = 31, p = .159). Line n. 2 shows a signiﬁcant difference for the Morisita high strata (Mann–Whitney U = 10, p b .01),
+but not for the low stratum (Mann–Whitney U = 31, p = .57). Finally,
+line n. 3 is signiﬁcantly different from all of the others for the low strata
+(Mann–Whitney U = 14, p = .04) but not for the high stratum
+(Mann–Whitney U = 29, p = .45). No differences were found when
+the Morisita index was tested with respect to the vertical lines.
+The Morisita index of the low stratum is not signiﬁcantly correlated
+with the high stratum (Spearman-rho r = 0.21, ns).
+4.2. The PC analysis of the vegetation variables
+Two principal factors explained 62.34% of the variance (respectively:
+Factor 1 = 40.89%, Factor 2 = 1.45%) among all of the vegetation variables considered. On the basis of the orientation of the variables (Fig. 5)
+and the position of the recording stations (Fig. 6) on the PCA plot, we
+were able to interpret these two factors respectively as “vegetation
+structure” and “species composition.” Speciﬁcally, the vegetation discriminates according to Factor 1 in terms of canopy height and density,
+with an increase in homogeneity from left to right (Fig. 9a).
+The Cluster Analyses (see Fig. 7) showed that the structure of the
+vegetation can be distinguished into two main groups: the ﬁrst group
+(A) is characterized by more vegetation (tallest plants and highest canopy cover) and the second (B) by less vegetation (shortest plants and
+lowest canopy cover).
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+125
+
+Table 1
+Frequency of main shrub and tree species along the 20 sampling stations (see Methods) below 140 cm (a) and above 140 cm (b), and mean height of the three dominant species (H-Ea:
+Erica arborea; H_Qi: Quercus ilex; H_Au: Arbutus unedo) for each sampling station (SS).
+Nv: absence of vegetation; Ea: Erica arborea; Qi: Quercus ilex; Au: Arbutus unedo; Cs: Calycotome spinosa; Mc: Myrtus communis; Csp: Cistus sp.; Sa: Smilax aspera; Cv: Calluna vulgaris; Lsp:
+Lonicera sp.; Pp: Pinus pinaster; Gsp: Genista sp.; Rsp: Rosa sp.; Bp: Brachypodium pinnatum; Esp: Euphorbia sp.; Dv: dead vegetation.
+Ss
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+Sum
+Sum (a + b)
+
+Nv
+
+Ea
+
+Qi
+
+Au
+
+Cs
+
+Mc
+
+Csp
+
+Sa
+
+Cv
+
+Lsp
+
+Pp
+
+Gsp
+
+Rsp.
+
+Bp
+
+Esp
+
+Dv
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+b
+
+a
+
+a
+
+a
+
+b
+
+0
+3
+15
+7
+12
+1
+0
+3
+1
+0
+1
+3
+6
+0
+1
+2
+0
+1
+0
+0
+56
+
+3
+1
+2
+4
+3
+3
+1
+2
+1
+4
+1
+0
+1
+0
+0
+7
+3
+3
+4
+4
+47
+103
+
+18
+12
+3
+8
+8
+22
+22
+20
+14
+16
+17
+17
+12
+21
+16
+12
+16
+22
+21
+20
+317
+
+22
+18
+13
+12
+11
+3
+9
+16
+5
+7
+13
+6
+11
+13
+12
+5
+9
+3
+14
+15
+217
+534
+
+5
+5
+7
+9
+4
+9
+9
+4
+9
+9
+8
+14
+9
+14
+8
+18
+9
+9
+13
+9
+181
+
+5
+9
+12
+7
+11
+7
+5
+9
+3
+10
+8
+10
+11
+8
+7
+8
+8
+7
+6
+7
+158
+339
+
+2
+7
+2
+3
+3
+16
+9
+9
+7
+12
+4
+4
+3
+9
+9
+3
+8
+16
+11
+8
+145
+
+0
+0
+2
+1
+1
+0
+0
+1
+1
+1
+0
+2
+1
+1
+1
+0
+0
+0
+0
+1
+13
+158
+
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+2
+
+0
+1
+2
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+3
+6
+0
+4
+1
+19
+21
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+1
+0
+0
+0
+0
+1
+0
+0
+0
+3
+
+0
+2
+3
+1
+0
+0
+0
+1
+0
+0
+0
+3
+0
+0
+0
+0
+1
+0
+1
+0
+12
+15
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+0
+0
+0
+1
+0
+0
+1
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+3
+3
+
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+3
+2
+0
+0
+0
+0
+0
+6
+
+0
+2
+1
+0
+0
+3
+6
+0
+2
+0
+4
+5
+5
+6
+9
+0
+0
+3
+0
+0
+46
+52
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+1
+1
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+0
+0
+6
+6
+
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+1
+
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+2
+3
+
+1
+1
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+2
+2
+0
+0
+0
+1
+0
+9
+
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+10
+
+1
+1
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+4
+
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+2
+6
+
+1
+1
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+4
+
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+3
+7
+
+1
+1
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+4
+
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+0
+0
+0
+0
+1
+0
+0
+0
+0
+4
+8
+
+1
+1
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+4
+
+0
+1
+0
+0
+0
+0
+0
+0
+1
+0
+1
+1
+0
+0
+1
+1
+0
+0
+0
+0
+6
+10
+
+7
+5
+1
+0
+0
+2
+1
+1
+0
+0
+0
+0
+1
+0
+5
+0
+0
+2
+0
+3
+28
+
+2
+1
+0
+1
+0
+17
+11
+6
+12
+9
+14
+12
+4
+15
+9
+12
+8
+17
+12
+16
+178
+206
+
+According to Table 1, station n. 10 on the extreme left of the plot
+(Fig. 6) is characterized by very low canopy cover and a low height for
+each species. On the opposite side, station n. 1 is characterized by the
+highest canopy density and by the greatest height for E. arborea,
+A. unedo and Q. ilex.
+Factor 2 probably discriminates for species composition, where
+E. arborea occupies the upper and Q. ilex and A. unedo the lowest positions. Station n. 15, for instance, is characterized only by the presence
+of E. arborea; in contrast, stations n. 18 and n. 3 are characterized by
+
+low numbers of E. arborea and the presence of Q. ilex (station n. 18)
+and A. unedo (station n. 3).
+4.3. Acoustic Complexity Index
+The ACI values detailed for each session and every station are reported in Fig. 8, and the interpolated spatial distribution of the total ACI is set
+out in Fig. 9b. Table 3 contains the ACI values for the frequency categories and months. The spatial distribution of the ACI for every session and
+
+Table 2
+Structure of vegetation along the 20 sampling stations (SS). The stations were labeled (A and B) according to the ﬁrst two PCA factors. A (mean) and B (mean): mean value of each variable
+according to the PCA ordination.
+CD_L: canopy density b140 cm; CD_H: canopy density N140 cm; Iδ_L: Morisita index b140 cm; Iδ_H: Morisita index N140 cm; Height_Au: (mean) Height of Arbutus unedo; Height_Qi:
+(mean) Height of Quercus ilex; Height-Ea: (mean) Height of Erica arborea; Au: (mean) foliage proﬁle of Arbutus unedo; Au_H: (mean) foliage proﬁle of Arbutus unedo b2 m; Au_L: (mean)
+foliage proﬁle of Arbutus unedo N2 m; Qi: (mean) foliage proﬁle of Quercus ilex; Qi_H: (mean) foliage proﬁle of Quercus ilex b2 m; Qi_L: (mean) foliage proﬁle of Quercus ilex N2 m; Ea:
+(mean) foliage proﬁle of Erica arborea; Ea_H: (mean) foliage proﬁle of Erica arborea b2 m; Ea_L: (mean) foliage proﬁle of Erica arborea N2 m; All veg: Ea + Qi + Au.
+SS
+
+CD_L
+
+CD_H
+
+iδ_L
+
+iδ_H
+
+Height_Au
+
+Height_Qi
+
+Height_Ea
+
+Au
+
+Au_H
+
+Au_L
+
+Qi
+
+Qi_H
+
+Qi_L
+
+Ea
+
+Ea_H
+
+Ea_L
+
+All veg
+
+A/B
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+A (mean)
+B (mean)
+
+1973
+1993
+2015
+2023
+1961
+1909
+1962
+1885
+1706
+1831
+1710
+1900
+1796
+1949
+1869
+2003
+2005
+1847
+2080
+2058
+1968
+1857
+
+1949
+1793
+1602
+1880
+1778
+1323
+1555
+708
+825
+594
+1385
+1543
+1009
+1801
+1539
+1926
+1832
+1479
+2013
+1738
+1765
+1137
+
+28.28
+27.58
+26.90
+27.10
+29.20
+27.30
+27.46
+36.41
+30.03
+37.29
+44.42
+42.19
+32.36
+27.55
+30.34
+27.97
+27.35
+36.46
+26.40
+26.33
+29.63
+32.92
+
+30.58
+32.50
+32.79
+34.66
+34.67
+32.32
+38.63
+55.51
+46.17
+66.31
+36.89
+21.70
+62.06
+27.56
+28.87
+33.49
+31.44
+25.13
+27.12
+31.71
+31.55
+43.94
+
+5.04
+4.10
+3.58
+4.00
+3.52
+3.70
+3.83
+2.38
+2.75
+2.19
+4.50
+2.88
+3.14
+4.50
+3.67
+4.06
+4.13
+4.06
+4.77
+4.32
+4.22
+3.07
+
+4.82
+2.89
+2.30
+2.96
+2.35
+2.52
+1.59
+1.88
+1.94
+1.77
+3.22
+2.64
+2.50
+4.09
+3.34
+4.48
+2.54
+2.19
+4.28
+3.70
+3.32
+2.27
+
+4.09
+2.70
+2.40
+2.83
+2.41
+2.18
+2.07
+1.81
+1.87
+1.72
+2.53
+2.35
+2.16
+3.14
+2.56
+3.00
+2.66
+2.29
+3.39
+2.93
+2.87
+2.09
+
+0.29
+1.46
+3.62
+1.77
+1.29
+0
+0.23
+0.46
+0.54
+0.57
+1.57
+0.23
+1.08
+0.77
+0.00
+1.86
+3.38
+2.54
+1.46
+4.24
+2.02
+0.39
+
+0.29
+1.46
+3.00
+1.62
+1.29
+0
+0.23
+0.46
+0.38
+0.14
+1.57
+0.23
+0.38
+0.69
+0.00
+0.86
+3.23
+2.15
+1.46
+4.00
+1.80
+0.23
+
+0
+0
+0.62
+0.15
+0
+0
+0
+0
+0.15
+0.43
+0
+0.00
+0.69
+0.08
+0
+1.00
+0.15
+0.38
+0.00
+0.24
+0.22
+0.16
+
+0.57
+1.38
+2.77
+1.62
+1.86
+1.00
+1.62
+2.38
+1.85
+3.00
+1.71
+1.92
+0.54
+1.31
+0
+2.57
+1.46
+3.54
+3.23
+0.60
+1.89
+1.54
+
+0.57
+0.08
+0.69
+1.08
+0.71
+0.00
+0.15
+0.31
+0.31
+0.00
+0
+0.62
+0.00
+0.38
+0.00
+2.00
+0.54
+1.23
+2.38
+0.08
+0.81
+0.17
+
+0
+1.31
+2.08
+0.54
+1.14
+1.00
+1.46
+2.08
+1.54
+3.00
+1.71
+1.31
+0.54
+0.92
+0
+0.57
+0.92
+2.31
+0.85
+0.52
+1.07
+1.37
+
+6.29
+2.85
+1.92
+4.46
+4.43
+4.43
+3.23
+2.23
+2.54
+2.86
+4.14
+2.69
+3.31
+6.46
+3.00
+2.86
+4.38
+1.69
+4.54
+4.00
+4.00
+3.04
+
+4.86
+1.46
+0.62
+2.38
+2.29
+0.29
+0.08
+0.00
+0.08
+0.57
+0.71
+0
+0.23
+2.46
+0.00
+0.71
+1.15
+0.15
+1.62
+1.56
+1.66
+0.16
+
+1.43
+1.38
+1.31
+2.08
+2.14
+4.14
+3.15
+2.23
+2.46
+2.29
+3.43
+2.69
+3.08
+4.00
+3.00
+2.14
+3.23
+1.54
+2.92
+2.44
+2.34
+2.88
+
+7.14
+5.69
+8.31
+7.85
+7.57
+5.43
+5.08
+5.08
+4.92
+6.43
+7.43
+4.85
+4.92
+8.54
+3.00
+7.29
+9.23
+7.77
+9.23
+8.84
+7.91
+4.96
+
+A
+A
+A
+A
+A
+B
+B
+B
+B
+B
+A
+B
+B
+A
+B
+A
+A
+A
+A
+A
+
+126
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+Fig. 4. Erica arborea, Quercus ilex and Arbutus unedo vertical proﬁles (20 intervals of 20 cm on a height of 4 m) expressed as a %.
+
+for each recording station is available in the Supplementary materials
+(SM1). The acoustic footprint, intended as the distribution of frequencies after the exclusion of the ﬁrst seven bins (602 Hz), which were
+principally attributed to the geophonies and anthrophonies and
+regarded as background noise, is summarized for each station (see Supplementary materials, SM2).
+A Cluster Analysis of how the frequency categories are distributed in
+the different recording stations is represented in Fig. 10, where
+four groups are distinct: the ﬁrst group is represented by background
+noise (Fq: 1 kHz), the second by rare frequencies (Fq: 2 kHz and Fq:
+
+Fig. 5. Ordination of the recording stations according to the ﬁrst two factors of a Principal
+Component Analysis. CD_L: canopy density b140 cm; CD_H: canopy density N140 cm;
+Iδ_L: Morisita index b140 cm; Iδ_H: Morisita index N140 cm; Height-Ea: (mean) height
+of Erica arborea; Height_Qi: (mean) height of Quercus ilex; Height_Au: (mean) height of
+Arbutus unedo; Au: (mean) foliage proﬁle of Arbutus unedo; Au_H: (mean) foliage proﬁle
+of Arbutus unedo b2 m; Au_L: (mean) foliage proﬁle of Arbutus unedo N2 m; Qi: (mean)
+foliage proﬁle of Quercus ilex; Qi_H: (mean) foliage proﬁle of Quercus ilex b2 m; Qi_L:
+(mean) foliage proﬁle of Quercus ilex N2 m; Ea: (mean) foliage proﬁle of Erica arborea;
+Ea_H: (mean) foliage proﬁle of Erica arborea b2 m; Ea_L: (mean) foliage proﬁle of Erica
+arborea N2 m; All veg: Ea + Qi + Au; from 1 to 10 the ACI values of the different categories of frequency of each 1 kHz band; ACI Total: the sum of all ACI values.
+
+10 kHz), the third by intermediate values (Fq: 6 kHz Fq: 7 kHz, Fq:
+8 kHz and Fq: 9 kHz) and the fourth by the highest ACI values
+(Fq: 3 kHz, Fq: 4 kHz and Fq: 5 kHz; mainly attributed to three
+songbirds (Turdus merula, Erithacus rubecula and Leiothrix lutea)
+by one of us, AF, and following a previous investigation, Farina
+et al., 2013).
+The background noise levels (Fq: 1 kHz) varied signiﬁcantly during
+the different sessions (Kruskal–Wallis: H = 119.31, p b .01). In particular, they were generally higher in the ﬁrst half of the season (March and
+April; Kruskal–Wallis: H = 7.69, p = .01), and were differently distributed along the months (lower in March, May and July; Kruskal–Wallis:
+H = 62.46, p b .01). A signiﬁcantly different distribution among the 20
+stations was also observed for this frequency band (Kruskal–Wallis:
+H = 118.26, p b .01), as was also the case when the stations were
+grouped according to the horizontal (Kruskal–Wallis: H = 69.72,
+p b .01) or vertical (Kruskal–Wallis: H = 17.25, p b .01) lines. In particular, the higher two horizontal lines were less “noisy” than the lower
+ones, while along the vertical lines, 1 and 3 were the quietest.
+The ACI values of each of the 10 frequency intervals were signiﬁcantly
+different along the 14 recording sessions (Kruskal–Wallis: H = 134.52,
+p b .01), but were preferentially distributed in the late part of the season
+(Kruskal–Wallis: H = 45.05, p b .01), demonstrating the typical trend of
+a bird breeding community: ascendant from March to May and descendent thereafter (Kruskal–Wallis H = 102.66, p b .01), with a peak of
+singing activity in April, May and June. When looking at the different
+placement of the stations, there was a precise difference between them
+(Kruskal–Wallis: H = 68.53, p b .01), as well as along the horizontal
+(with a very low third line, Kruskal–Wallis: H = 16.69, p b .01) and vertical lines (indicating a high ﬁrst and low second vertical line, Kruskal–
+Wallis: H = 13.29, p b .01).
+When focused on the central breeding months (April, May and June),
+Fq: 1 kHz was signiﬁcantly different because of a very low value in May
+(Kruskal–Wallis: H = 49.05, p b .01), while in the Fq: 2–10 kHz frequency interval, the values were more similar (Kruskal–Wallis:
+H = 7.71, p b .02).
+Both noise (Fq: 1 kHz) and biophony (Fq: 2–10 kHz) levels were
+signiﬁcantly different along the ﬁve months of recordings.
+Along the season, the comparisons between the ACI of the horizontal adjacent stations and the ﬁrst horizontal non-adjacent stations were not signiﬁcant (Mann–Whitney: U = 99.50, p = .41),
+as was also the case between the vertical adjacent stations and the
+ﬁrst vertical non-adjacent stations (Mann–Whitney: U = 39.50,
+p = .17).
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+127
+
+Fig. 6. Distribution of recording stations according to the PCA of the vegetation variables. A and B the two major aggregations according the Cluster Analysis (A: vegetation structure; B:
+species composition).
+
+4.4. ACI and vegetation variables
+The relationship between vegetation variables and the ACI at different aggregation levels is represented in Table 4. When considering the
+sum of all the ACI frequency categories (ACI Total) and the vegetation
+variables, no signiﬁcant correlation is observable. Likewise, no signiﬁcant
+correlation between vegetation variables was found for ACIFq: 1 kHz and
+ACIFq: 2–10 kHz.
+Among the variables used to describe the structure of the vegetation,
+Height_Au was the variable with the most signiﬁcant relationships with
+the ACI aggregations (nine signiﬁcant relationships), followed by Ea
+(ﬁve cases) and Height_Ea (ﬁve cases). Au_L and Qi had no cases that
+were correlated with ACI aggregations.
+Among the 10 categories of ACI_frequencies, the categories that
+were more related to the vegetation resulted ACIFq: 10 kHz (9), followed
+by ACIFq: 9 kHz (6). ACIFq: 8 kHz, ACIFq: 1 kHz, and ACIFq: 4, 5, 6 kHz had no
+signiﬁcant relationships with the vegetation variables. ACIFq: 2, 3, 8 kHz
+had an intermediate number of relationships with the variables (2, 1
+and 3 respectively).
+
+Fig. 7. The sampling stations clustered according to the vegetation variables.
+
+According to the PCA and the two separate groups of vegetation variables (A and B), the ACI tends to be higher in the stations where the
+structure of the vegetation is denser and where there is the presence
+of E. arborea (Group A).
+The ACI values, according the different categories of frequencies,
+were not signiﬁcantly different between A and B. Only ACIFq: 9 kHz
+(Mann–Whitney: U = 22, p b .04) and ACIFq: 10 kHz (Mann–Whitney:
+U = 12, p b .005) revealed a signiﬁcant difference.
+The ACI values of each category of frequencies averaged for all of the
+stations were always higher in Group A but in May, the ACI was similar
+in the two groups (Table 3).
+5. Discussion
+5.1. Methodological aspects
+The ﬁeld procedure to place an array of recording devices has demonstrated great potential when it comes to obtaining synchronized information about the acoustic activity of birds (biophonies) and
+describing the variability of the sonic context assigned to geophonies
+and anthrophonies. The “array method” enables sonic patterns along
+the seasons to be described and relationships with vegetation patterns
+to be ascertained.
+According to the aims of this investigation, the scale at which we
+have conducted the ﬁeld survey (25 m) was conﬁrmed as an adaptable resolution to ascertain both vegetation and sonic complexity.
+Yet this scale is habitat dependent, and has been expanded in other
+studies when we have operated in different conditions. For instance,
+in a young beech woodland (50–60 years old) without low canopy
+vegetation, we chose a scale of 100 m (Farina personal comment,
+Pieretti, 2008, Master's Thesis), while in a mountain ecotone with a
+sparse underground the scale was set at 80 m (Farina personal comment). In fact, in temperate biomes, the density of the vegetation in
+the ﬁrst few meters strongly affects the diffusion of sound, as proved
+by the playback experiments conducted by Naguib et al. (2000) on
+chafﬁnches (Fringilla coelebs).
+The lack of signiﬁcance found in the comparison between the horizontal adjacent stations along the season and the ﬁrst horizontal nonadjacent stations, and between the vertical adjacent stations and the
+
+128
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+Fig. 8. Distribution of ACI values along the season from March to July for each recording station.
+
+ﬁrst vertical non-adjacent stations, conﬁrmed the appropriateness of
+the selected distance for the placement of the recording devices.
+
+5.2. Vegetation patterns
+The vegetation has a complex pattern. This is probably due to: different soil composition and the depth of the soil, with rock outcrops in the
+middle part of the area; and the recent history of repeated ﬁres, which is
+a disturbance that is common to the entire Mediterranean basin
+(Blondel and Aronson, 1999; Grove and Rackham, 2001; Naveh, 1974).
+The intersection of different techniques of vegetation sampling was
+important, conﬁrming that, at least in a Mediterranean maqui, the description of the vegetation patterns must be studied from different angles. In the study area, the maqui looks to be so dense that it would
+not be possible to ﬁnd spatial discontinuities or patterned ecotones.
+When investigated at the high resolution, the apparent homogenous
+structure of the maqui is revealed to have a ﬁne-scale heterogeneity,
+which is also veriﬁed in other Mediterranean contexts (f.i. Sardinia Island by Cody and Walter, 1976). Indeed, after a Cluster Analysis, it is
+possible to clearly distinguish two separate aggregations (indicated as
+A and B, see Fig. 7) that are useful for interpreting sonotope patterns.
+Among the 17 variables utilized to describe the complexity of the
+vegetation, the height and foliage proﬁles were the best predictors of
+acoustic complexity, concurring with the spatial classiﬁcation of the
+sampling stations into groups A and B.
+
+The Morisita index did not contribute as expected to establishing a
+signiﬁcant relationship with the ACI, but until now was mainly
+experimented with in either homogeneous or heterogeneous
+(Goodenough and Goodenough, 2012) adult forests (f.i. Stewart,
+1986), and never in a dense maqui of a few meters in height. Likewise,
+has never been compared with sonic complexity.
+The use of different techniques to sample the vegetation helped to
+deal with the uncertainty of adopting only one methodology in such a
+condition. The moderate slope of the study area created further difﬁculties when it came to measuring the height of the vegetation and using
+indirect methods to evaluate the height of the plants, forcing us to directly measure individual plants per individual plant.
+5.3. Sonic patterns
+The variability of the sonic patterns can be explained only in part by
+the vegetation proxies. The emergence of temporary sonic aggregations
+or soundtopes (sensu Farina et al., 2011a) is probably the result of the
+acoustic interaction of the birds. Soundtopes emerge when the ACI is analyzed daily and monthly, and are proved by the presence of a great variability in the spatial distribution of the different classes of frequencies
+and in the frequency footprint.
+The statistical analysis conducted at different levels of the ACI aggregation (per daily session, month, frequency categories, etc.) proved the
+great spatial and temporal variability of the sonic environment found
+among the stations, despite their closeness (only 25 m).
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+129
+
+Fig. 10. Cluster Analysis of the ACI values according to the different frequency classes.
+
+The similarity in May of the ACI values observed between the two
+groups found by the Cluster Analysis (A and B) could depend on the
+presence of a migratory bird species (Sylvia cantillans) that prefers
+edges and low shrubs and has been observed to display acoustic activity
+(starting in May) in the station classiﬁed by the PCA as B.
+
+5.4. Some caveats
+
+Fig. 9. Spatial representation of Factor 1 resulting from the PCA of the vegetation and
+spatial interpolation of the ACI when all of the sessions are averaged.
+
+A high ACI value can be discussed for a single frequency bin or in
+terms of the entire set of frequencies. In this speciﬁc case, stations
+with a high ACItotal can indicate an even distribution of information
+among the entire set of frequencies. Biologically speaking, this could
+mean the presence of many species (high α diversity sensu Whittaker,
+1972) or complex acoustic patterns. For instance, in the case of a frequency modulated song like in the robin (E. rubecula), the closeness of
+a microphone to a singer allows an acoustic spectrum that is richer in information from a broader range of frequencies to be recorded. This is
+unlike the case with a distant song that is degraded, especially in the
+
+Table 3
+Distribution of the ACI according to the frequency classes and months for each sampling station (SS); labeled A and B according to the PCA factors, and averaged values of the ACI categories
+according to A and B.
+SS
+
+1 kHz
+
+2 kHz
+
+3 kHz
+
+4 kHz
+
+5 kHz
+
+6 kHz
+
+7 kHz
+
+8 kHz
+
+9 kHz
+
+10 kHz
+
+Total
+
+2–10 kHz
+
+March
+
+April
+
+May
+
+June
+
+July
+
+A/B
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+A (mean)
+B (mean)
+
+7763
+8571
+8049
+10,594
+9712
+9009
+9667
+8020
+9088
+8569
+10,738
+10,385
+10,190
+10,037
+10,952
+9927
+10,453
+10,192
+10,683
+10,322
+9753
+9485
+
+97
+55
+60
+71
+64
+131
+99
+99
+88
+43
+120
+29
+227
+267
+80
+115
+125
+160
+158
+219
+126
+99
+
+1523
+696
+533
+578
+691
+1699
+886
+1196
+937
+340
+817
+199
+1031
+1493
+659
+1646
+1479
+1352
+1183
+1805
+1150
+868
+
+5043
+2440
+814
+1097
+1841
+3540
+1252
+2572
+2097
+588
+867
+380
+1212
+1634
+1166
+1867
+1420
+1993
+2713
+3542
+2106
+1601
+
+4549
+1692
+457
+1181
+1514
+2540
+919
+2690
+1786
+343
+612
+309
+1111
+892
+782
+1068
+704
+1346
+2084
+2856
+1580
+1310
+
+1734
+435
+126
+416
+553
+575
+305
+1086
+672
+87
+157
+133
+547
+256
+160
+265
+281
+344
+637
+1078
+523
+446
+
+1253
+293
+55
+195
+375
+355
+223
+167
+279
+52
+101
+46
+102
+108
+73
+139
+188
+156
+335
+726
+327
+162
+
+1551
+273
+64
+246
+555
+334
+201
+75
+331
+88
+125
+49
+46
+142
+107
+159
+148
+161
+398
+725
+379
+154
+
+872
+66
+60
+214
+372
+125
+103
+41
+213
+59
+99
+33
+26
+75
+62
+77
+90
+77
+235
+372
+217
+83
+
+28
+3
+10
+7
+14
+6
+9
+2
+4
+2
+7
+3
+2
+3
+1
+6
+9
+8
+10
+18
+10
+4
+
+24,413
+14,525
+10,229
+14,600
+15,691
+18,315
+13,664
+15,950
+15,495
+10,170
+13,642
+11,567
+14,493
+14,906
+14,043
+15,270
+14,897
+15,789
+18,436
+21,662
+16,172
+14,212
+
+16,650
+5954
+2180
+4005
+5979
+9306
+3997
+7930
+6407
+1602
+2905
+1182
+4303
+4869
+3090
+5343
+4444
+5597
+7753
+11,340
+6418
+4727
+
+14,874
+8390
+6689
+8668
+8658
+10,053
+8151
+6513
+8425
+7850
+9690
+9418
+7751
+9117
+9384
+10,101
+9694
+8357
+9163
+9183
+9382
+8443
+
+26,536
+13,871
+9494
+12,322
+12,067
+15,610
+11,548
+13,057
+9118
+10,154
+10,614
+10,356
+13,349
+13,870
+12,019
+12,410
+10,757
+15,825
+20,681
+23,424
+15,156
+11,901
+
+23,778
+13,402
+8440
+14,119
+16,290
+18,585
+11,862
+21,448
+18,543
+8735
+11,073
+10,086
+13,680
+12,708
+11,471
+13,893
+12,220
+12,718
+16,334
+19,780
+14,563
+14,301
+
+18,563
+13,240
+8193
+12,736
+16,008
+18,182
+14,068
+10,495
+15,016
+6559
+13,583
+9950
+13,078
+13,448
+13,432
+13,388
+15,466
+16,241
+15,811
+17,313
+14,499
+12,597
+
+6526
+7785
+8269
+9063
+7989
+8427
+9440
+7319
+8583
+2819
+9379
+8300
+9558
+10,532
+9704
+10,480
+15,086
+12,169
+11,292
+13,283
+10,154
+8019
+
+A
+A
+A
+A
+A
+B
+B
+B
+B
+B
+A
+B
+B
+A
+B
+A
+A
+A
+A
+A
+
+130
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+Table 4
+Correlation matrix between the vegetation parameters and the ACI values aggregated according the different frequency categories and months. N1: number of signiﬁcant correlations of
+the ACI categories; N2: number of signiﬁcant correlations of the vegetation parameters. Signiﬁcant correlations are reported in bold.
+
+ACI_Fq: 1 kHz
+ACI_Fq: 2 kHz
+ACI_Fq: 3 kHz
+ACI_Fq: 4 kHz
+ACI_Fq: 5 kHz
+ACI_Fq: 6 kHz
+ACI_Fq: 7 kHz
+ACI_Fq: 8 kHz
+ACI_Fq: 9 kHz
+ACI_Fq: 10 kHz
+ACI_Total
+ACI_Fq: 2–10 kHz
+ACI_March
+ACI_April
+ACI_May
+ACI_June
+ACI_July
+N2
+
+CD_L
+
+CD_H Id_L
+
+0.063
+0.026
+0.208
+0.274
+0.224
+0.168
+0.426
+0.427
+0.423
+0.624
+0.292
+0.247
+0.223
+0.359
+0.205
+0.153
+0.242
+1
+
+0.209
+0.084
+0.242
+0.256
+0.162
+0.123
+0.400
+0.478
+0.510
+0.595
+0.319
+0.227
+0.487
+0.402
+0.186
+0.290
+0.302
+4
+
+−0.005
+−0.236
+−0.349
+−0.380
+−0.340
+−0.286
+−0.529
+−0.502
+−0.492
+−0.550
+−0.355
+−0.361
+−0.129
+−0.335
+−0.298
+−0.301
+−0.332
+4
+
+Id_H
+
+Height_Ea Height_Qi Height_Au Au
+
+−0.385
+−0.180
+−0.212
+−0.191
+−0.017
+0.056
+−0.069
+−0.198
+−0.135
+−0.242
+−0.283
+−0.119
+−0.505
+−0.409
+0.035
+−0.367
+−0.427
+1
+
+0.325
+0.238
+0.352
+0.317
+0.211
+0.132
+0.341
+0.451
+0.474
+0.457
+0.379
+0.286
+0.614
+0.522
+0.227
+0.344
+0.362
+5
+
+0.388
+0.272
+0.376
+0.284
+0.185
+0.108
+0.208
+0.320
+0.344
+0.233
+0.347
+0.253
+0.735
+0.504
+0.242
+0.289
+0.326
+2
+
+0.314
+0.483
+0.519
+0.409
+0.251
+0.171
+0.413
+0.501
+0.532
+0.549
+0.406
+0.333
+0.566
+0.588
+0.192
+0.563
+0.476
+9
+
+higher frequencies, by vegetation and atmospheric conditions. This
+effect is well known in the literature (f.i. Padgham, 2004; Slabbekoorn
+et al., 2002).
+
+Au_H
+
+Au_L
+
+Qi
+
+Qi_H
+
+Qi_L
+
+Ea
+
+Ea_H
+
+Ea_L
+
+N1
+
+0.218
+0.257 −0.047 −0.106
+0.081 −0.363 0.261 0.015
+0.429 0
+0.230
+0.249
+0.198 −0.238 −0.027 −0.291 0.357 0.177
+0.496 2
+0.147
+0.160
+0.101 −0.279
+0.055 −0.366 0.324 0.274
+0.236 1
+−0.005
+0.092 −0.224 −0.192
+0.118 −0.295 0.234 0.292 −0.106 0
+−0.050
+0.067 −0.236 −0.219
+0.098 −0.316 0.229 0.268 −0.209 0
+−0.089
+0.053 −0.253 −0.253
+0.089 −0.329 0.246 0.212 −0.127 0
+0.036
+0.167 −0.324 −0.264
+0.161 −0.361 0.451 0.490 −0.122 3
+0.079
+0.168 −0.288 −0.154
+0.242 −0.344 0.473 0.564 −0.156 6
+0.147
+0.243 −0.255 −0.124
+0.303 −0.367 0.588 0.604 −0.044 6
+0.463
+0.541 −0.046
+0.096
+0.513 −0.193 0.333 0.558 −0.275 9
+0.055
+0.163 −0.171 −0.119
+0.310 −0.377 0.351 0.359 −0.080 0
+0.005
+0.111 −0.206 −0.195
+0.142 −0.307 0.281 0.335 −0.121 0
+−0.065 −0.059 −0.247 −0.327
+0.101 −0.563 0.519 0.333
+0.289 7
+0.077
+0.137 −0.148 −0.287
+0.142 −0.487 0.413 0.439 −0.093 4
+−0.074
+0.026 −0.181 −0.228
+0.155 −0.400 0.317 0.289 −0.125 0
+0.014
+0.119 −0.277 −0.275
+0.102 −0.336 0.457 0.339
+0.194 2
+0.435
+0.434
+0.289 −0.105
+0.200 −0.353 0.187 0.076
+0.420 1
+1
+1
+0
+0
+1
+2
+5
+4
+1
+
+time, the presence of soundtopes that are the result of acoustic habits
+is conﬁrmed.
+6. Conclusions
+
+5.5. Relationship between topography and the sonic environment
+The non-signiﬁcant differences between the horizontal and vertical
+stations when every station is compared with the ﬁrst adjacent one, despite the presence of slopes with a steepness of 26°, seems to rule out an
+expected topographic effect with more interactions between species
+and individuals along a horizontal plane, and fewer interactions between individuals and species along the line of maximum slope for
+more sound dispersion.
+5.6. Relationship between vegetation and the sonic environment
+All of the different variables that describe the vegetation were important for depicting the complexity of the vegetation cover, but only
+the Height_Au (height of A. unedo) contributed to explaining nine of
+17 ACI categories, followed by Ea (average foliage proﬁle of E. arborea)
+and Height_Ea (Height of E. arborea) both of which were correlated
+with ﬁve ACI categories.
+The best correlation between the ACI and the vegetation parameters
+was found with the frequency categories 7, 8, 9 and 10. This result can
+be attributed to birds that sing at these frequencies, like, for instance,
+Regulus ignicapillus and S. cantillans (Farina et al., 2013). But this concordance could also be an indicator of the proximity to the microphones
+of species such as E. rubecula and T. merula which, when their song is not
+degraded by distance, exhibit some components of the acoustic performance placed on the highest frequencies. This point is quite important,
+because the ACI cannot discriminate between the species considered
+(see Farina et al., 2012), but can separate the different frequency components of a bird song captured by microphones.
+The structure of the vegetation has two evident patterns: higher
+vegetation on the border of the area and lower vegetation in the center,
+where E. arborea is dominant. This ordination is only partially related to
+the distribution of the sonic frequencies that were heterogeneous in
+space and time, conﬁrming indirectly the presence of different
+sonotopes, and the presence of several soundtopes that are highly variable in space along the season according to the breeding phenologies of
+the different species (see Supplementary materials, SM1). A reasonable
+concordance between the ACI of the entire season and the spatial representation of the Factor 1 can also be seen in Fig. 9. This demonstrates
+how important the structure of vegetation is when it comes to affecting
+the soundscape, structuring well recognizable sonotopes. At the same
+
+The different methods of vegetation sampling have demonstrated
+their capacity to explain some of the sonic environment characteristics.
+In particular, the use of vegetation height and the vertical foliage proﬁle
+seem to be two of the best proxies for matching bird biophonies, as previously outlined in a pioneering piece of work by MacArthur and
+MacArthur (1961).
+The ACI has demonstrated great operational ﬂexibility when it
+comes to adapting the index to the sonic context, for instance in terms
+of background noise removal and its capacity to describe the ﬁne structure of the sonic environment, analyzing every frequency at a particular
+time.
+The ACI application requires a change in the ecological paradigms,
+which were until now based on the matching between individual species and environmental variables. The ACI approach considers not only
+the species, but also the acoustic information that species collectively
+produce during their activity, allowing a more informative dimension
+of living habits to be explored. This enables important components of
+behavioral habits that would otherwise be neglected by different approaches to be examined. It has been proved how informative the
+acoustic signals uttered by species may be for communicating their
+physical condition (Gil and Gahr, 2002) or their relationship with the
+climate (Snell-Rood, 2012) and weather (Moller, 2010).
+The displacement of several microphones resolves the uncertainty
+about the number of species present in an area and their distribution.
+In spite of an intensive effort to sample vegetation and the sonic environment, uncertainty emerges from this analysis about the relationship between vegetation and birds' biophonies if we do not adopt the
+sonotope/soundtope model. Although other communication models
+could be invoked to explain the sonic complexity observed (f.i.
+Heterospeciﬁc attraction and competition, Mönkkönen et al., 1990, or
+the Network models, Burt and Vehrencamp, 2005; Naguib, 2005, to
+mention just a few), this model allows us to: explain the partial correlation between vegetation and acoustic patterns that create distinct
+sonotopes, and attribute the residual variability to the intrinsic dynamics of birds during the breeding period (soundtope patterns). In fact, the
+variability that emerges when sessions are confronted with each other,
+and cannot be explained by vegetation patterns, may represent the dynamic connected to the “soundtope.” This seems to be one of the most
+relevant conclusions that we can reach from this investigation. This
+result is an important starting point for the application of the automated
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+sampling of acoustic diversity technique, and indicates that every
+environment requires a speciﬁc spatial resolution to sample sonic
+components.
+In conclusion, soundscape ecology is an innovative approach to
+studying the sonic complexity of the environment at different spatial
+and temporal scales. Although under experimentation, appropriate
+ﬁeld methods for collecting geophonic, biophonic and anthrophonic
+sources, and efﬁcient metrics to process the huge quantity of acoustic
+data, provide a great opportunity to investigate the contribution of
+sonic processes to environmental complexity.
+Supplementary data to this article can be found online at http://dx.
+doi.org/10.1016/j.ecoinf.2013.10.008.
+
+References
+Bardeli, R., Wolff, D., Kurth, F., Koch, M., Tauchert, K.H., Frommolt, K.H., 2010. Detecting
+bird sounds in a complex acoustic environment and application to bioacoustic monitoring. Pattern Recogn. Lett. 31, 1524–1534.
+Bibby, C.J., Burgess, N.D., Hill, D.A., 1992. Bird census techniques. British Trust for Ornithology and the Royal Society for the Protection of Birds. Academic Press Limited, London.
+Blondel, J., Aronson, J., 1999. Biology and Wildlife of the Mediterranean Region. Oxford
+University Press, Oxford, UK.
+Blondel, J., Cuvillier, R., 1977. Une méthode simple et rapide pour décrire les habitats
+d'oiseaux: le stratiscope. Oikos 29, 326–331.
+Blondel, J., Ferry, C., Frochot, B., 1973. Avifaune et végétation. Essai d'analyse de la
+diversité. Alauda XLI (1/2), 63–84.
+Blumstein, D.T., Mennill, D.J., Clemins, P., Girod, L., Yao, K., Patricelli, G., Deppe, J.L.,
+Krakauer, A.H., Clark, C., Cortopassi, K.A., Hanser, S.F., McCowan, B., Ali, A.M.,
+Kirschel, A.N.G., 2011. Acoustic monitoring in terrestrial environments using microphone arrays: applications, technological considerations and prospectus. J. Appl.
+Ecol. 48, 758–767.
+Bormpoudakis, D., Sueur, J., Pantis, J.D., 2013. Spatial heterogeneity of ambient sound at
+the habitat type level: ecological implications and applications. Landsc. Ecol. 28,
+495–506.
+Briefer, E., Oiejuk, T.S., Rybak, F., Aubin, T., 2010. Are bird song complexity and song sharing shaped by habitat structure? An information theory and statistical approach.
+J. Theor. Biol. 262, 151–164.
+Burt, J.M., Vehrencamp, S.L., 2005. Dawn chorus as an interactive communication network. In: McGregor, P.K. (Ed.), Animal Communication Networks. Cambridge University Press, Cambridge, pp. 320–343.
+Carson, R., 1962. Silent spring. First Mariner Books.Houghton Mifﬂin Company, New York.
+Cellis-Murillo, A., Deppe, J.L., Allen, M.F., 2009. Using soundscape recording to estimate
+bird species abundance, richness, and composition. J. Field Ornithol. 80 (1), 64–78.
+Cody, M., Walter, H., 1976. Habitat selection and interspeciﬁc interactions among Mediterranean sylviid warblers. Oikos 27 (2), 210–238.
+Depraetere, M., Pavoine, S., Jiguet, F., Gasc, A., Duvail, S., Sueur, J., 2012. Monitoring animal
+diversity using acoustic indices: implementation in a temperate woodland. Ecol.
+Indic. 13, 46–54.
+Embleton, T.F.W., 1963. Sound propagation in homogeneous deciduous and evergreen
+woods. J. Acoust. Soc. Am. 35, 1119–1125.
+Farina, A., 2014. Soundscape Ecology: Principles, Patterns, Methods and Applications.
+Springer, Dordrecht, NL.
+Farina, A., Pieretti, N., 2012. The soundscape ecology: a new frontier of landscape research
+and its application to islands and coastal systems. J. Mar. Isl. Cult. 1, 21–26.
+Farina, A., Lattanzi, E., Malavasi, R., Pieretti, N., Piccioli, L., 2011a. Avian soundscapes and
+cognitive landscapes: theory, application and ecological perspectives. Landsc. Ecol.
+26, 1257–1267.
+Farina, A., Pieretti, N., Piccioli, L., 2011b. The soundscape methodology for long-term bird
+monitoring: a Mediterranean Europe case-study. Ecol. Inform. 6, 354–363.
+Farina, A., Lattanzi, E., Piccioli, L., Pieretti, N., 2012. The SoundscapeMeter User Manual.
+www.disbef.uniurb.it.
+Farina, A., Pieretti, N., Morganti, N., 2013. Acoustic patterns of an invasive species: the
+Red-billed Leiothrix (Leiothrix lutea Scopoli 1786) in a Mediterranean shrubland. Bioacoustics 22, 175–194.
+Gasc, A., 2012. Analyse et suivi de la biodiversite animale par des techniques novatrice de
+bioacoustique. (Doctoral Thesis) Museum National d'Histoire Naturelle, Paris.
+Gasc, A., Sueur, J., Jiguet, F., Devictor, V., Grandcolas, P., Burrow, C., Depraetere, M.,
+Pavoine, S., 2013. Assessing biodiversity with sound: do acoustic diversity indices reﬂect phylogenetic and functional diversities of bird communities? Ecol. Indic. 25,
+279–287.
+Gibbons, D.W., Hill, D., Sutherlands, W.J., 1996. Birds. In: Sutherland, W.J. (Ed.), Ecological
+Census Techniques. A Handbook. Cambridge University Press, Cambridge,
+pp. 227–259.
+Gil, D., Gahr, M., 2002. The honesty of bird song: multiple constraints for multiple traits.
+Trends Ecol. Evol. 17, 133–141.
+Goodenough, A.E., Goodenough, A.S., 2012. Development of a rapid and precise method of
+digital image analysis to quantify canopy density and structural complexity. International Scholarly Research Network ISRN Ecology. http://dx.doi.org/10.5402/2012/
+619842.
+Grove, A.T., Rackham, O., 2001. The nature of Mediterranean Europe: an ecological history. Yale University Press, New Haven.
+
+131
+
+Hobson, K.A., Rempel, R.S., Greenwood, H., Turnbull, B., Van Wilgenburg, S., 2002. Acoustic
+surveys of birds using electronic recordings: new potential from an omni-directional
+microphone system. Wildl. Soc. Bull. 30, 709–720.
+Hunter Jr., M.L., 1989. Himalayan birds face uphill while singing. Auk 106, 728–729.
+Joo, W., Gage, S.H., Kasten, E.P., 2011. Analysis and interpretation of variability in
+soundscapes along an urban–rural gradient. Landsc. Urban Plan. 103, 259–276.
+Krause, B., 2012. The Great Animal Orchestra. Little, Brown and Company, New York.
+Krause, B., Gage, S.H., Joo, W., 2011. Measuring and interpreting the temporal variability
+in the soundscape at four places in Sequoia National Park. Landsc. Ecol. 26,
+1247–1256.
+Laiolo, P., Vögeli, M., Serrano, D., Tella, J.L., 2008. Song diversity predicts the viability of
+fragmented bird populations. PLoS ONE 3, e1822.
+MacArthur, R.H., Horn, H.S., 1964. Foliage proﬁle by vertical measurements. Ecology 50,
+802–804.
+MacArthur, R.H., MacArthur, J.W., 1961. On bird species diversity. Ecology 42 (3),
+594–598.
+Malavasi, R., Farina, A., 2013. Neighbours' talk: interspeciﬁc choruses among songbirds.
+Bioacoustics 22, 33–48.
+Marten, K., Marler, P., 1977. Sound transmission and its signiﬁcance for animal vocalization. Behav. Ecol. Sociobiol. 2, 271–290.
+Mazaris, A.D., Kallimanis, A.S., Chatzigianidis, G., Papadimitriou, K., Pantis, J.D., 2009. Spatiotemporal analysis of an acoustic environment: interactions between landscape
+features and sound. Landsc. Ecol. 24, 817–831.
+Mennill, D.J., Fristrup, K.M., 2012. Obtaining calibrated sound pressure levels for consumer digital audio recordered. Appl. Acoust. 73, 1138–1145.
+Mennill, D.J., Burt, J.M., Fristrup, K.M., Vahrencamp, S.L., 2006. Accuracy of an acoustic location system for monitoring the position of duetting songbirds in tropical forest.
+J. Acoust. Soc. Am. 119, 2832–2839.
+Moller, A.P., 2010. When climate change affects where bird sing. Behav. Ecol. 22, 212–217.
+Mönkkönen, M., Helle, P., Soppela, K., 1990. Numerical and behavioral responses of migrant passerines to experimental manipulation of resident tits (Parus spp.):
+heterospeciﬁc attraction in northern breeding bird communities? Oecologia 85,
+218–225.
+Morisita, M., 1959. Measuring of the dispersion of individuals and analysis of the distributional patterns. Mem. Fac. Sci. Kyushu Univ. Ser. E (Biol.) 2, 215–235.
+Morisita, M., 1962. Id-Index, a measure of dispersion of individuals. Res. Popul. Ecol. IV,
+1–7.
+Morton, E.S., 1975. Ecological sources of selection on avian sounds. Am. Nat. 109, 17–34.
+Morton, E.S., 1987. The effects of distance and isolation on song-type sharing in the Carolina wren. Wilson Bull. 99, 601–610.
+Morton, E.S., Gish, S.L., van der Voort, M., 1986. On the learning of degraded and ungraded
+songs in the Carolina wren. Anim. Behav. 34, 815–820.
+Mueller-Dombois, D., Ellenberg, H., 1974. Aims and Methods of Vegetation Ecology. John
+Wiley & Sons, New York.
+Myers, J.H., 1978. Selecting a measure of dispersion. Environ. Entomol. 7, 619–621.
+Naguib, M., 2005. Singing Interactions in Songbirds: Implications for Social Relations and
+Territorial Settlement. In: McGregor, P.K. (Ed.), Cambridge University Press,
+pp. 300–319.
+Naguib, M., Klump, G.M., Hillmann, E., Griessmann, B., Teige, T., 2000. Assessment of auditory distance in a territorial songbird: accurate feat or rule of thumb? Anim.
+Behav. 59, 715–721.
+Naveh, Z., 1974. Effect of ﬁre in the Mediterranean region. In: Kozlowski, T.T., Ahlgren, C.E.
+(Eds.), Fire and ecosystems. Academic press, New York, pp. 401–434.
+Nieder, J., Engwald, S., Klawun, M., Berthlott, W., 2000. Spatial distribution of vascular epiphytes (including Hemiepiphytes) in a lowland Amazonian rain forest (Surumoni
+Crane Plot) of Southern Venezuela. Biotropica 32, 385–396.
+Padgham, M., 2004. Reverberation and frequency attenuation in forests — implications for
+acoustic communication in animals. J. Acoust. Soc. Am. 115, 402–410.
+Pekin, B.K., Jung, J., Villanueva-Rivera, L.J., Pijanowski, B.C., Ahumada, J.A., 2012. Modeling
+acoustic diversity using soundscape recordings and LIDAR-derived metrics of vertical
+forest structure in a neotropical rainforest. Landsc. Ecol. 27, 1513–1522.
+Pieretti, N., 2008. Sviluppo di metodologie per l'analisi del paesaggio sonoro: il caso studio
+di Cerreto Laghi. (Master thesis) University of Urbino, Italy 90.
+Pieretti, N., Farina, A., 2013. Application of a recently introduced index for acoustic
+complexity to an avian soundscape with trafﬁc noise. J. Acoust. Soc. Am. 134
+(1), 891–900.
+Pieretti, N., Farina, A., Morri, D., 2011. A new methodology to infer the singing activity of
+an avian community: the Acoustic Complexity Index (ACI). Ecol. Indic. 11, 868–873.
+Pijanowski, B.C., Villanueva-Rivera, L.J., Dumyahn, S.L., Farina, A., Krause, B., Napoletano,
+B.M., Gage, S.H., Pieretti, N., 2011a. Soundscape ecology: the science of sound in the
+landscape. Bioscience 61, 203–216.
+Pijanowski, B.C., Farina, A., Dumyahn, S.L., Krause, B.L., Gage, S.H., 2011b. What is soundscape ecology? Landsc. Ecol. 26, 1213–1232.
+Ranjard, L., Ross, H.A., 2008. Unsupervised birds song syllable classiﬁcation using evolving
+neural networks. J. Acoust. Soc. Am. 123, 4358–4368.
+Rich, P.M., 1990. Characterizing plant canopies with hemispherical photographs. Remote
+Sens. Rev. 5, 13–29.
+Sjölander, K., 2002. Recent developments regarding the WaveSurfer speech tool. TMHQPSR, 44, pp. 53–56.
+Sjölander, K., Beskow, J., 2000. WaveSurfer — an open source speech tool. Proceedings of
+the ICSLP 2000, IV, pp. 464–467.
+Skowronski, M.D., Harris, J.G., 2006. Acoustic detection and classiﬁcation of
+microchiroptera using machine learning: lessons learned from automatic speech recognition. J. Acoust. Soc. Am. 119, 1817–1833.
+Slabbekoorn, H., 2004. Habitat-dependent ambient noise: consistent spectral proﬁles in
+two African forest types. J. Acoust. Soc. Am. 116 (6), 3727–3733.
+
+132
+
+A. Farina, N. Pieretti / Ecological Informatics 21 (2014) 120–132
+
+Slabbekoorn, H., Ellers, J., Smith, T.B., 2002. Birdsong and sound transmission: the beneﬁts
+of reverberations. Condor 104, 564–573.
+Snell-Rood, E., 2012. The effect of climate on acoustic signals: does atmospheric sound absorption matter for bird song and bat echolocation? J. Acoust. Soc. Am. 131, 1650–1658.
+Solans Vila, J.P., 2007. Monitoring post-ﬁre vegetation cover regeneration in the European
+Mediterranean basin by means of remote sensing. (PhD thesis) Cranﬁeld University 228.
+Somervuo, P., Harma, A., Fagerlund, S., 2006. Parametric representations of bird sounds
+for automatic species recognition. IEEE Trans. Audio Speech Lang. Process. 14,
+2252–2263.
+Stewart, G.H., 1986. Forest development in canopy openings in old-growth Pseudotsuga
+forests of the western Cascade Oregon Range, Oregon. Can. J. For. Res. 16, 558–568.
+Sueur, J., Pavoine, S., Amerlynck, O., Duvail, S., 2008. Rapid acoustic survey for biodiversity
+appraisal. PLoS ONE 3, e4065.
+
+Sueur, J., Gasc, A., Grandcolas, P., Pavoine, S., 2012. Global estimation of animal diversity
+using automatic acoustic sensors. In: Le Galliard, J.F., Guarini, J.M., Gaill, F. (Eds.), Sensors for ecology: towards integrated knowledge of ecosystems. CNRS Editions,
+pp. 101–119.
+Trifa, V.M., Kirshel, A.N.G., Taylor, C.E., 2008. Automated species recognition of antbirds in
+a Mexican rainforest using hidden Markov models. J. Acoust. Soc. Am. 123 (4),
+2424–2431.
+Truax, B., Barrett, G.W., 2011. Soundscape in a context of acoustic and landscape ecology.
+Landsc. Ecol. 26, 1201–1207.
+Villanueva-Rivera, L.J., Pijanowski, B.C., 2012. Pumilio: a web-based management system
+for ecological recordings. Bull. Ecol. Soc. Am. 71–81.
+Whittaker, R., 1972. Evolution and measurement of species diversity. Taxon 21 (2/3),
+213–251.
+
+

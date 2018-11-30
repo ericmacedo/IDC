@@ -1,25 +1,26 @@
-#!/usr/bin/python
+#!/home/eric/python/bin/python
 # Author: Eric Cabral
-import sys
+
+import sys, logging
 import copy
 import cgi, cgitb
 import json
 import os
 from fnmatch import fnmatch
-import matplotlib.pyplot as plt
-from matplotlib import colors as mcolors
-from __future__ import print_function
 
-cgitb.enable()
-
-form = cgi.FieldStorage()
-
-userDirectory = eval(form.getvalue('userDirectory'))
+logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
 try:
+    cgitb.enable()
+    form = cgi.FieldStorage()
+
+    userDirectory = eval(form.getvalue('userDirectory'))
+    #userDirectory = "../users/eric/"
+    fileList = os.listdir(userDirectory)
+
     sessionId = clusterId = fractionId = documentId = transitionId = 0
 
-    colors = [mcolors.to_hex(i) for i in plt.get_cmap("tab20").colors]
+    colors = ['#1f77b4', '#aec7e8', '#ff7f0e', '#ffbb78', '#2ca02c', '#98df8a', '#d62728', '#ff9896', '#9467bd', '#c5b0d5', '#8c564b', '#c49c94', '#e377c2', '#f7b6d2', '#7f7f7f', '#c7c7c7', '#bcbd22', '#dbdb8d', '#17becf', '#9edae5']
 
     session_dict = dict()
     cluster_dict = dict()
@@ -28,7 +29,8 @@ try:
     document_dict = dict()
 
     fileList = os.listdir(userDirectory)
-    fileList.sort();
+    fileList.sort()
+
 
     for file in fileList:
         if file.endswith('.session'):
@@ -109,29 +111,28 @@ try:
         if(len(doc["fractionIds"]) == 1):
             continue
 
-        searching = False
         fractions_copy = copy.deepcopy(doc["fractionIds"])
-        i = 0
-        while(i < session_n):
-            if(doc["sessions"][i]):
-                if(searching):
-                    transition = "{0} {1}".format(fractions_copy.pop(0), fractions_copy[0])
-                    fractions = transition.split(" ")
 
-                    if(transition in transition_dict):
-                        transition_dict[transition]["number"] += 1
-                    else:
-                        transitionId += 1
-                        transition_dict[transition] = dict({
-                            "id": transitionId,
-                            "from": int(fractions[0]),
-                            "to": int(fractions[1]),
-                            "number": 1,
-                            "leftOffset": 0,
-                            "rightOffset": 0
-                        })
-                searching = not searching
-            i += 1
+        for i in range(session_n - 1):
+            if(doc["sessions"][i]):
+                transition = "{0} {1}".format(fractions_copy.pop(0), fractions_copy[0])
+                fractions = transition.split(" ")
+
+                logging.debug(transition)
+
+                if(transition in transition_dict):
+                    transition_dict[transition]["number"] += 1
+                else:
+                    transitionId += 1
+                    transition_dict[transition] = dict({
+                        "id": transitionId,
+                        "from": int(fractions[0]),
+                        "to": int(fractions[1]),
+                        "number": 1,
+                        "leftOffset": 0,
+                        "rightOffset": 0
+                    })
+
 
     response = dict({
         "status":"yes",
@@ -142,14 +143,15 @@ try:
         "transitions": list(transition_dict.values())
     })
 
-    if len(session_n) > 0 :
+    if session_n > 0 :
         print("Content-type:application/json\r\n\r\n")
         print(json.dumps(response))
 
     else:
         print("Content-type:application/json\r\n\r\n")
         print(json.dumps({'status':'no'}))
-
-except:
-    print("Content-type:application/json\r\n\r\n")
-    print(json.dumps({'status':'error'}))
+except Exception as e:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print "Content-type:application/json\r\n\r\n"
+    print json.dumps({'status':'error', 'except':json.dumps(str(e) + " Error line:" + str(exc_tb.tb_lineno) + " Error type:" + str(exc_type) + " File name:" + fname)})

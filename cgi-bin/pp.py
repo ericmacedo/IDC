@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 
 import sys
-import cgi, cgitb
+import cgi, cgitb 
 import json
 
 cgitb.enable()

@@ -1,0 +1,1737 @@
+Landscape Ecol (2011) 26:1327–1344
+DOI 10.1007/s10980-011-9635-x
+
+RESEARCH ARTICLE
+
+Soundscape conservation
+Sarah L. Dumyahn • Bryan C. Pijanowski
+
+Received: 11 January 2011 / Accepted: 4 July 2011 / Published online: 19 July 2011
+ Springer Science+Business Media B.V. 2011
+
+Abstract We argue that soundscapes possess both
+ecological and social value and that they should be
+considered natural resources worthy of management
+and conservation. In this paper we bring together
+diverse bodies of literature that identify the human
+and ecological benefits provided by soundscapes.
+Sense of place, cultural significance, interactions with
+landscape perceptions, and wildlife wellbeing are a
+few of the values ascribed to soundscapes. The values
+and benefits of soundscapes are motivation to
+advance soundscape conservation and management.
+Given that soundscape conservation is new, we
+present a summary of conservation principles that
+need to be considered in soundscape conservation
+planning. These include the need to set goals, identify
+targets, assess condition, identify and manage threats,
+and conduct monitoring of the soundscape. We also
+argue that soundscape conservation needs to consider
+the soundscape within the larger mosaic of the
+landscape that is occupied by humans—a perspective
+provided by landscape ecology. We describe several
+different kinds of soundscapes that need to be
+conserved, such as natural quiet, sensitive, threatened, and unique soundscapes, and the ways that
+conservation planning can protect these for the future.
+
+S. L. Dumyahn (&)  B. C. Pijanowski
+Department of Forestry and Natural Resources, Purdue
+University, 195 Marsteller Street, West Lafayette,
+IN 47907, USA
+e-mail: slharvey@purdue.edu
+
+Keywords Soundscapes  Conservation 
+Aesthetics  Values  Noise  Landscapes
+
+Introduction
+Human domination of natural habitats has resulted in
+the loss of biodiversity (Vitousek et al. 1997; Chapin
+et al. 2000; Perrings et al. 2010; Rands et al. 2010).
+The loss of species is so significant that some have
+concluded that we are experiencing the sixth extinction event (Pimm et al. 1995; Wilson 1999). In the
+recent past, biodiversity conservation has become not
+only a new discipline, but also a global priority and
+research agenda item (Soulé 1985; UNEP 1992;
+Sutherland et al. 2009). With the loss of habitat and
+biodiversity, areas lose their natural sounds (Wrightson 2000; Pijanowski et al. 2011a). Natural sounds
+have been referred to as an endangered resource as
+the ability to experience them becomes increasingly
+rare (Jensen and Thompson 2004).
+In addition to the world losing natural sounds, our
+planet is gaining in the temporal and spatial reach of
+human-generated sounds (Schafer 1994). Humangenerated sounds can include motorized transportation, such as global air travel, sounds from industrial
+and domestic machines, road noise due to friction, the
+sounding of bells, sirens, alarms, and human voices.
+Sometimes these sounds are subjectively deemed
+noise by a listener (Truax 1999). The ever expanding
+
+123
+
+1328
+
+transportation systems for aircraft, railways, and
+highways contribute to some of the most ubiquitous
+sources of noise (Miller 2002). Human-generated
+sounds continue to spread to even remote, natural
+areas (Berglund et al. 1999; Wrightson 2000). While
+most attention has been on regulating individual
+sources of noise, such as those from airports, little
+attention has been given to conserving the natural
+acoustic environment, or natural soundscape, and its
+positive associated values.
+Some researchers (i.e. Schafer 1994; Krause 2002)
+and natural resource agencies (i.e. National Park
+Service 2006) have begun to recognize soundscapes
+as resources. By treating soundscapes as resources, a
+new approach for conservation and management can
+be developed; one that is fundamentally different
+from incrementally regulating noise sources. In order
+to create a rationale for soundscape conservation, the
+associated values of this resource need to be clearly
+identified and linked in meaningful ways within the
+larger social-ecological system. Understanding
+soundscape values strengthens the motivation and
+justification for conservation and management
+actions. It has been recognized that conservation
+needs to be guided by a set of principles, a common
+vocabulary, and a classification system that allows
+managers and scientists to set goals and determine
+how management practices alter outcomes (e.g.,
+Soulé 1985; Groom et al. 2006). Advancing soundscape conservation will require a similar set of
+guidelines organized around a classification system
+that identifies high priority soundscapes.
+The purpose of this paper is to present an argument
+that soundscapes are natural resources worthy of
+conservation. First, we define soundscapes as natural
+resources. Second, we posit that soundscapes possess
+certain values, socially and ecologically, and therefore need to be conserved. Third, we provide a
+framework for soundscape conservation derived from
+principles of landscape ecology (e.g., Wiens 2009)
+and conservation biology (e.g., Groom et al. 2006).
+
+Defining soundscapes as natural resources
+The soundscape concept was formalized in the 1970s
+by R. Murray Schafer, a composer and researcher
+interested in the acoustic environment. He defined
+soundscapes as ‘‘any acoustic field of study’’
+
+123
+
+Landscape Ecol (2011) 26:1327–1344
+
+including the acoustic elements of actual environments or more abstract environments such as musical
+compositions (Schafer 1994, p. 7). Schafer founded
+the multidisciplinary study of acoustic ecology.
+Acoustic ecology emphasizes the human system:
+human perceptions and the value of listening. Truax
+(1999), a colleague of Schafer’s, defines acoustic
+ecology as the study of the effects of the relationship
+between humans and the soundscape emphasizing
+individual responses and perceptions. Three soundscape features and the way we perceive them were
+categorized by Schafer (1994): keynote sounds,
+sound signals, and soundmarks. Keynote sounds are
+the background tones of an environment that are
+directly influenced by geography and climate including wind, water, animals, vegetation, and geological
+features. These sounds are not listened to consciously, but may deeply imprint on a person’s sense
+of place. Sound signals, in contrast to keynotes, are
+listened to consciously, since typically they convey
+information or warnings (e.g., train whistles, car
+horns, or ambulance sirens). Soundmarks, like landmarks, are sounds unique to specific locations.
+Unique soundscapes can then be defined as soundscape patterns that allow places to be differentiated
+(O’Connor 2008).
+Through our perceptions of and interactions with
+soundscapes, humans construct meaning and understanding of their surroundings (Truax 1999). Thompson (2002) described the relationship between the
+soundscape resource and the human listener as a
+cultural construction. As Thompson (2002) eludes,
+humans derive different benefits from soundscapes
+based on their personal frame of reference, from more
+analytical to emphasizing the aesthetic, and the
+interactions with the surrounding environment. Some
+of the socially important values that are ascribed to
+soundscapes include creating a sense of place,
+providing cultural and historical heritage values,
+interacting with landscape perceptions, and connecting humans to the nature. Additionally, how humans
+perceive environmental quality based soundscapes
+raises important resource considerations (Sonyerd
+2004). Since humans utilize soundscapes for different
+cultural and social benefits or services, they represent
+a resource (Kraft 2007).
+Soundscapes also are an ecological resource. While
+identified and recognized by humans, soundscapes are
+utilized by a variety of wildlife species. Krause (2002)
+
+Landscape Ecol (2011) 26:1327–1344
+
+contributed to the definition of soundscapes referring
+to them as all of sounds present in an environment at a
+given time. Krause grouped sounds into three categories: biophony (sounds from non-human organisms),
+geophony (geophysical sounds) and anthrophony
+(human-generated sounds). In his Acoustic Niche
+Hypothesis, Krause (1987) posited that soundscapes
+can provide available acoustic niches for vocalizing
+species and that stable and healthy ecosystems exhibit
+soundscapes with complex and discriminate use of
+frequency and temporal acoustic niches. If the soundscape is composed of anthrophony, such as low
+frequency motorized sounds, the previously available
+niches may be filled masking species vocalizations or
+other sounds important for species survival (Barber
+et al. 2010). By vocalizing species communication
+filling a niche, these natural sounds in the landscape
+essentially represent a functional component of an
+ecosystem (in sensu Chapin et al. 1997; Hooper et al.
+2005). Alteration of either species composition and/or
+the soundscape through modification of the acoustic
+properties could impact the functioning of ecosystems.
+Thus, management of soundscapes needs to consider
+specific sounds, as well as all sounds collectively.
+Some government agencies have identified that
+sounds should be managed. Internationally, the
+European Commission adopted a directive on the
+assessment and management of noise (European
+Union 2002; King et al. 2011). The policy objectives
+include assessing noise conditions in urban areas, as
+well as ‘‘open country’’ or other noise sensitive areas
+to preserve quiet areas (European Union 2002). The
+U.S. National Park Service (NPS) identifies soundscapes as a resource and considers all of the natural
+sounds within parks and their interactions to encompass the natural soundscape (NPS 2006). NPS
+management policies address the protection and
+management of soundscapes, similar to other park
+natural resources, stating, ‘‘the Service will restore to
+the natural condition wherever possible those park
+soundscapes that have become degraded by unnatural
+sounds (noise), and will protect natural soundscapes
+from unacceptable impacts’’ (2006, p. 56). Recognizing the interactions between soundscapes and
+landscapes is important for site-specific conservation
+activities. Indeed, parks and protected areas illustrate
+this concept well, since park soundscapes are
+expected to reflect the wildlife, geophysical features,
+or other elements being protected (Mace et al. 1999).
+
+1329
+
+Pijanowski et al. (2011b, this issue) further
+elaborated on the connection between sounds and
+landscapes by defining soundscape ecology as all
+‘‘biological, geophysical, and anthropogenic sounds
+that emanate from a landscape and which vary over
+space and time reflecting important ecosystem processes and human activities.’’ This definition identifies soundscapes as an audible reflection of the
+landscape and indicates the social and ecological
+significance of this resource. We build on the
+importance of this resource within the context of
+associated values.
+
+Understanding soundscape values
+The motivation for natural resource conservation and
+caring has been linked to the values associated with
+the resources (Rolston 1988; Harmon and Putney
+2003; Sagoff 2004). For this paper, value is defined as
+‘‘that which has worth: something of merit, something estimable- whether or not such worth is
+assigned or recognized by people’’ (Harmon 2003,
+p. 13). Natural resource values have been described
+also as benefits (Steins and Edwards 1999) and
+ecosystem services (MEA 2005). The environmental
+philosopher Holmes Rolston III states that objective
+values within nature are ‘‘discovered, not generated
+by the valuer’’ (1988, p. 116). Discovered values
+within nature are referred to as intrinsic values. Once
+discovered, intrinsic values can be appreciated by
+people thereby gaining instrumental value, or that
+which serves a purpose. Instrumental values can be
+tangible providing a product or economic benefit.
+Other instrumental values are intangible. Several
+types of intangible values have been identified for
+natural resources including: recreational, cultural,
+spiritual, therapeutic, identity or sense of place,
+existence and bequest values, research and monitoring, educational, and artistic (Harmon 2003). In this
+paper we review many of these same values as they
+are applied to natural soundscapes.
+Soundscape ecology as an emerging science recognizes the importance of understanding interactions
+and feedbacks between humans and soundscapes
+(Pijanowski et al. 2011b, this issue). Evidenced in
+the conceptual diagram of soundscape processes, the
+soundscape is linked to features of the natural environment, such as biodiversity and landforms, and
+
+123
+
+1330
+
+human systems (Fig. 1). Utilizing a social-ecological
+context the importance and value of soundscapes for
+both humans and wildlife can be considered. We
+recognize that how wildlife and humans perceive and
+respond to sounds will vary. Similarly, individual
+human perceptions and responses to sounds also are
+not universal. With this in mind, we acknowledge that
+different social and ecological research approaches are
+necessary to understand these dynamics.
+Landscapes and soundscapes can be directly
+perceived by humans and wildlife. Soundscapes are
+perceived with our sense of hearing, whereas landscapes are perceived visually or through our other
+senses. Being in this ‘‘perceptible realm,’’ soundscapes are a direct connection between humans and
+natural systems (Gobster et al. 2007). In Fig. 2 we
+demonstrate the process of human perceptions of
+soundscape patterns and resulting values and potential behaviors. Humans are able to perceive, evaluate
+the experience, form attitudes, and strengthen or
+create values from the soundscapes that they experience. These values can influence the form of human
+behaviors in regards to soundscapes (Fig. 2; see
+Ajzen 1991 for more on behavior theory). An
+individual’s behaviors are also influenced by many
+other factors, such as knowledge and education
+(Rogers 2003). By understanding soundscape values
+and providing information and educational opportunities, it is possible to have individuals change their
+behavior toward this resource (Harmon 2003).
+Soundscape conservation measures and management
+are more likely with a shared understanding of the
+multitude of soundscape values.
+We present the following values associated with
+soundscape quality in this paper: human health and
+wellbeing, wildlife impacts, sense of place, landscape
+interactions, and ecological integrity values
+(Table 1).
+
+Fig. 1 Soundscape system emphasizing the main sources of
+sound (modified from Pijanowski et al. 2011b)
+
+123
+
+Landscape Ecol (2011) 26:1327–1344
+
+Human and wildlife wellbeing
+In soundscapes degraded by noise pollution, the
+benefits of healthy soundscapes for human and
+wildlife wellbeing become readily apparent. A large
+body of literature documents the effects of noise
+exposure on human physical and mental health
+(Staples 1996; Passchier-Vermeer and Passchier
+2000). Auditory health research has established clear
+relationships between decibel level exposure and
+associated hearing loss (Passchier-Vermeer and Passchier 2000). Other health effects from chronic noise
+exposure have been found to include stress, annoyance, cardiovascular effects in adults, sleep disturbance, and decreased task performance (Evans et al.
+1995; Bronzaft et al. 1998; Stansfeld and Matheson
+2003). Children exposed to chronic noise have a
+higher likelihood of reading deficits and declines in
+other academic tasks (Evans and Maxwell 1997;
+Haines et al. 2002). Quality of life impacts for people
+in noisy areas has been assessed by researchers, as
+well (Staples 1996; Bowles and Schulte-Fortkamp
+2008). Noise detracts from human wellbeing and
+other values, such as peace and tranquility (Sonyerd
+2004; Pheasant et al. 2010). There is strong evidence
+that human health and wellbeing are impaired when
+exposed to degraded soundscapes raising issues of
+rights to access a healthy acoustic environment
+(Berglund et al. 1999; Brainard et al. 2004).
+Degraded soundscapes have been found to negatively affect some species of wildlife, as well.
+Motorized transportation noise has been found to
+mask, or limit the perception, of acoustic signals
+(Slabbekoorn and Ripmeester 2008). Acoustic masking has many important implications for wildlife,
+such as prey location, predator avoidance and interspecies communication (Barber et al. 2010). Species
+have responded in various ways to urban noise, such
+as abandoning the area and making vocal adjustments
+by shifting amplitude or frequency of their songs
+(Patricelli and Blickley 2006; Slabbekoorn and
+Ripmeester 2008). One study found that robins
+changed their singing time to evenings when the city
+was quieter (Fuller et al. 2007). Additionally, noisier
+areas irrespective of habitat quality have been found
+to have reduced bird density and diversity (Reinjen
+et al. 1997; Stone 2000). Anthrophony in the
+soundscape can also decrease the listening area for
+species interfering with communication and predator
+
+Landscape Ecol (2011) 26:1327–1344
+
+1331
+
+Natural Systems
+
+Soundscape Patterns
+Landscape Patterns
+
+(Audible & Visual)
+
+Behaviors
+Research
+Management
+Land Use Change
+Type of Recreation
+
+Perceived
+Characteristics
+
+Human Systems
+
+Values
+Knowledge
+Socio-Cultural System
+
+Aesthetic Experience
+Attitude Formation
+
+Fig. 2 The connections between perceived soundscapes, their associated values, and human behaviors (after Gobster et al. 2007)
+Table 1 Soundscape values and derived benefits of quality soundscapes
+Soundscape values
+
+Associated benefits from soundscapes
+
+Human wellbeing
+
+Improved human health and welfare, reduced stress, improved quality of life, and equitable access to quality
+soundscapes
+
+Wildlife wellbeing
+
+Ability to hear predators, improved prey detection, improved vocalizing species communication, decreased
+stress, reduced need for vocalization modifications
+
+Sense of place
+
+Cultural, historical, and natural locations convey unique sounds that meaningfully connect humans to that place
+
+Landscape
+interactions
+
+Human expectations of the visual surroundings match the soundscape, increased aesthetic appreciation and
+evaluation of place and experience
+
+Ecological
+integrity
+
+Using soundscapes to monitor ecosystem function and sustainability, using biophony as an indicator of
+biodiversity, using soundscape recordings to research effects of land use change
+
+detection (Barber et al. 2010). Francis et al. (2011)
+found that habitat occupancy and nest predation was
+reduced in the gray flycatcher in areas containing
+noisy gas well compressors. While the impacts of
+noise are not the same for all species, the research
+thus far indicates that soundscape quality is an
+important consideration for wildlife conservation
+and management.
+Soundscapes and sense of place
+Soundscapes have been referred to as an element of
+sense of place (Schafer 1994; Fisher 1999). Sense of
+place is defined as a collection of symbols, values,
+feelings and meanings ascribed to a specific place
+(Williams and Stewart 1998). Some researchers have
+proposed that the construction of sense of place is
+
+developed from place specific attributes emphasizing
+the physical landscape features (Stedman 2003). In
+recognition that the visual environment is not the
+only thing influencing sense of place, others have
+claimed soundscapes are an acoustic manifestation of
+place (Fisher 1998). Fisher (1998) stated, ‘‘many
+sounds of nature, e.g., the sounds of oceans or rivers
+or the forest canopy or weather events vary significantly from place to place, from time to time, and
+with each instance’’ (p. 168). Schafer recognized the
+relationship between soundscapes and sense of place
+stating, ‘‘every natural soundscape has its own
+unique tones and often these are so original as to
+constitute soundmarks’’ (1994, p. 26). Even our
+home environment has sounds that we perceive to
+create an acoustic sense of place (Westerkamp
+2002).
+
+123
+
+1332
+
+The human perception and emotional response to
+an area are based on sensory inputs so both visual
+(landscapes) and auditory (soundscapes) among the
+other senses would interact to establish a sense of
+place (Williams and Stewart 1998). Perceiving
+soundscapes requires what Schafer calls being an
+‘‘earwitness’’ or being aurally aware of the acoustic
+environment (1994). Though, as Schafer (1994)
+indicated, humans are increasingly disconnected with
+their soundscapes. Low-fidelity (lo-fi) soundscapes,
+often urban, are comprised of human-generated
+sounds that mask other sounds. Frequently the urban
+listener is unable to perceive low level sounds, distant
+sounds, and is surrounded by so many sounds that
+acoustic information is lost or ignored (Schafer 1994;
+Wrightson 2000). In contrast, soundscapes that can be
+clearly perceived and have low levels of noise are
+referred to as high-fidelity (hi-fi) soundscapes (Schafer 1994). Hi-fi soundscapes allow individual sound
+sources to be heard providing the listener with
+information about their surroundings, such as distance from the sound source and connection to the
+environment.
+Most natural soundscapes are quintessentially hi-fi
+in which humans can clearly perceive and connect
+with natural sounds (Fisher 1999). Natural and rural
+soundscapes are elicited often in writing to evoke a
+sense of place (Leopold 1989; Schafer 1994; Olson
+1997). Earwitness accounts in literature are evidence
+of a human connection to place through the audible.
+One earwitness example is from the narrative travels
+of Alexander von Humboldt writing about a tropical
+forest in Cuba:
+when we lend an attentive ear to the most feeble
+sounds transmitted through the air, we hear a
+dull vibration, a continual murmur, a hum of
+insects, filling, if we may use the expression, all
+the lower strata of the air…These are so many
+voices, proclaiming to us that all nature
+breathes
+(von Humboldt and Bonpland 1852, p. 199).
+Another famous naturalist, E.O. Wilson, has indicated that this attention to nature elucidates values in
+the natural world claiming that when we allow our
+senses to experience nature, ‘‘even the small details
+grow in significance’’ (Wilson 1984, p. 103).
+Cultural and historical soundscapes are also valued
+for creating a sense of place. Unique heritage sites
+
+123
+
+Landscape Ecol (2011) 26:1327–1344
+
+reflecting historical and cultural places are impacted
+by changes in the soundscape (O’Connor 2008).
+O’Connor (2008) recognizes that aesthetic values
+increasingly pressured and threatened by accelerated
+social and physical change, so too are unique
+soundscapes. Sounds and sound patterns define and
+distinguish places from one another. Soundscapes in
+Japan are viewed as a part of the country’s cultural
+heritage. Japanese Environmental Protection Agency
+developed a guidebook titled: 100 Soundscape of
+Japan: Preserving Our Heritage (Torigoe 2003).
+This effort was meant to raise awareness of and
+preserve Japan’s natural and cultural soundscape
+heritage. In terms of soundscape heritage and
+conservation, there is a need to consider sound as a
+positive or inherent factor of place-making.
+Soundscape and landscape interactions
+The associated connection between sense of place
+and acoustics has been explored in two other fields:
+landscape preference research and the emerging field
+of acoustic ecology. Landscape research on preferences, values and planning traditionally has emphasized visual aesthetics and quality (Zube 1987;
+Adams et al. 2006). As described earlier, soundscapes
+can be considered auditory landscapes, in which the
+listener evaluates and makes sense of the environment. As Farina and Belgrano (2006) indicate in their
+eco-field hypothesis, acoustic cues are another layer
+to understanding the landscape for auditory species.
+The early and innovative work of Southworth (1969)
+investigated the ‘‘sonic’’ environment of Boston. He
+claimed that the city’s character and individuals’
+perceived evaluation of the visual landscape could be
+improved through changes to the soundscape.
+Research on landscape perception and evaluation
+has found that sounds influence the landscape values
+(Mace et al. 1999). In fact, humans seem to have a
+preference for the sounds of nature (Fisher 1999).
+Several studies have compared urban and natural
+settings and found that the preferred sounds in both of
+these environments were natural sounds of birds and
+water (Carles et al. 1999; Zhang and Kang 2007;
+Irvine et al. 2009; Pilcher et al. 2009).
+Initial valuation studies emphasized the sound
+characteristics (e.g., decibel level, frequency, and
+percent time audible) (Miller 2008). While it is
+important to understand these components, studies
+
+Landscape Ecol (2011) 26:1327–1344
+
+have not been able to consistently correlate quality of
+experience or annoyance with sound pressure level in
+field studies (Kariel 1990; Tarrant 1995). The impact
+of noise sources on visitors in natural settings has
+found that loudness alone does not predict annoyance
+(Kariel 1990). In fact, Kariel (1990) found that
+mechanical or motorized noises at low decibel levels
+could still be annoying and intrusive to people’s
+experiences. Other factors might be better determinants for sound and landscape evaluations, such as
+the appropriateness of the sound within the landscape
+and individuals’ expectations and recreational goals
+(Kariel 1990).
+Recreation studies have documented that people
+who seek out areas for natural quiet and solitude have
+more negative experiences or increased annoyance
+due to noise (Gramann 1999). For instance, wilderness recreationists have been found to be more
+sensitive to aircraft noise than other types of recreationists (Tarrant 1995; Fidell et al. 1996). Overall,
+mechanized or other noises that do not naturally
+occur in a landscape can affect people’s experiences
+and evaluations. The aesthetic appreciation of natural
+sounds has implications for biodiversity and protected area conservation.
+Soundscapes and ecological integrity
+Acoustic monitoring has been used for identifying the
+occurrence of individual species with better results
+than other sampling methods (Acevedo and Villanueva-Rivera 2006; Celis-Murillo et al. 2009). Using
+soundscape recordings to monitor biodiversity or
+individual species, especially in the tropics, has
+potential to improve efficiency and understanding of
+wildlife. Some researchers have used the acoustic
+signals from biophony to serve as a proxy for
+biodiversity estimates (Reide 1993; Sueur et al.
+2008; Pijanowski et al. 2011a). Assessing acoustic
+diversity spatially and temporally can aid in conservation efforts for landscapes and biodiversity. Additionally, Pijanowski et al. (2011a) demonstrated that
+acoustic diversity and temporal acoustic patterns of
+soundscapes can be compared across multiple land use
+types. The expectation that soundscapes acoustically
+represent landscapes has led to the hypothesis that
+soundscapes can offer insights into ecological quality
+or integrity of an area (Krause 2002; Krause and Gage
+2003; Pijanowski et al. 2011a). Soundscapes as
+
+1333
+
+indicators of environmental integrity can be applied
+at a variety of spatial and temporal scales.
+Our research on Tippecanoe Soundscapes (Pijanowski et al. 2011a; Villanueva-Rivera et al. 2011) has
+focused on frequency band analysis of spectrograms.
+Figure 3 demonstrates the use of acoustic gap analysis
+based on the research in Tippecanoe County agricultural landscapes. Using this analysis, we found that
+sounds in the 6–9 kHz range were absent in agricultural landscapes, representing a possible gap in
+soundscapes that are normally occupied by certain
+kinds of insects (e.g., cicadas, katydids). Using this or
+other analyses, soundscape monitoring can serve as a
+rapid bioassessment tool employed to detect shifts in
+ecosystem function (Sueur et al. 2008; Pijanowski et al.
+2011a).
+Soundscape research is early in its development
+and may have great potential for understanding the
+world beyond just the visual interactions. While
+valuing soundscapes for their research and monitoring benefits can promote soundscape conservation,
+we hope that soundscape research and its clear links
+to biodiversity and landscapes will be able to further
+those conservation efforts, as well. In order to
+advance soundscape conservation and soundscape
+research, we propose the use of traditional conservation planning principles grounded in biodiversity
+conservation and landscape ecology disciplines.
+
+A soundscape conservation framework
+for public lands
+Traditional conservation planning principles
+We argue that the conservation of soundscapes can
+benefit by following basic principles being applied to
+the conservation of biodiversity (e.g., Noss and
+Cooperrider 1994; Soulé and Sanjayan 1998; van
+Jaarsveld et al. 1998; Margules and Pressey 2000;
+Groves et al. 2002; Brooks et al. 2006; Groom et al.
+2006; Lindenmayer and Hunter 2010). Additionally,
+we propose the following principles: consider managing soundscapes at landscape (e.g., Wiens 2009), and
+potentially, at global scales (e.g., Whittaker et al.
+2005; Turner et al. 2007), consider various ecological
+and social values associated with different kinds of
+soundscapes as discussed here (Gobster et al. 2007),
+and be consistent with public area soundscape resource
+
+123
+
+1334
+
+Landscape Ecol (2011) 26:1327–1344
+
+Fig. 3 Assessment of frequency gaps at a location. Each
+vertical bar represents the amount of sound occurring in a
+15-min recording started at the beginning of each hour.
+Approximately 3 days of recordings are represented here for an
+
+agricultural landscape in Tippecanoe County, Indiana USA.
+Note that gaps may occur at specific times of the day indicating
+that an organism is missing. Gaps in the dawn or dusk chorus
+may be especially important
+
+management goals that are being proposed by natural
+resource agencies, such as the NPS (NPS 2006).
+Many conservation biologists recognize that several key elements are needed to protect and preserve
+biodiversity. A first common step is to identify the
+target for conservation (Groves et al. 2002). In
+general, historically, this has included the need to
+target certain ecosystems (e.g., tropics, savannas),
+specific taxonomic groups, or species of a particular
+status (e.g., endangered). Many conservation biologists recognize that surrogates (e.g., particular habitats) for these targets need to be assessed across large
+regions, perhaps even globally. Soulé and Sanjayan
+(1998), Margules and Pressey (2000), Groves et al.
+(2002), among others, recognize establishing management goals or objectives for conservation as a key
+element in any conservation planning process. Goals
+need to be established so that they are measurable and
+are responsive to policy actions. Assessment of
+current areas for their ability to maintain targets,
+especially those features which are being managed, is
+also important (Groves et al. 2002). Assessment
+needs to be long term and be constantly reviewed.
+Pressey et al. (2003) argue that the ability to maintain
+targets requires the identification of threats to the
+persistence of targets long term and to develop
+mitigating polices that reduce these threats. Finally,
+monitoring programs are needed (Noss 1990; Margules and Pressey 2000) that ensure that goals are
+being met and that adjustments in the management of
+threats to targets are not needed. The basic conservation planning activities of defining targets, setting
+
+goals, identifying and managing threats, and conducting continuous monitoring and assessment can be
+applied to soundscape conservation as well.
+
+123
+
+Soundscapes worthy of protection
+Specific management actions we are proposing depend
+on the type of soundscape that needs to be protected.
+Although more research is needed to create a comprehensive classification of soundscapes worthy of protection, eight different kinds of soundscapes are
+presented here that we believe represent a breadth of
+soundscapes that hold ecological and/or social value
+(Table 2). The typology was derived using conservation biology concepts reflective of this ‘‘value-laden’’
+science where soundscape types that have significant
+value are identified (Groom et al. 2006). Some of the
+types of soundscapes identified may need to be
+protected from future threats or need to be restored
+due to current impacts and degradation (Groom et al.
+2006). Soundscape type values and additional reasons
+for inclusion in this typology are provided in the
+descriptions below and in Table 2. The soundscape
+types and reasons for inclusion are not mutually
+exclusive. In some cases the soundscape types could
+be interrelated reflecting a mosaic of different landscapes and values. As soundscapes are linked to
+landscapes, these soundscape types could be associated with public and/or private lands. Potential
+conservation planning activities for each type of
+soundscape and their associated landscape is provided
+in Table 2.
+
+Landscape Ecol (2011) 26:1327–1344
+
+1335
+
+Table 2 Soundscape types and conservation planning principles
+Soundscape
+type
+
+Example(s)
+
+Value(s)
+
+Threat(s)
+
+Management goals
+
+Monitoring
+
+Natural quiet
+soundscapes
+
+Remote areas in
+parks, wilderness
+areas, volcano
+craters
+
+Landscape
+interactions,
+experiencing
+solitude, sense of
+place, wildlife
+wellbeing
+
+Anthrophony and
+biophonic invasive
+species that are
+loud
+
+Monitor for changes
+in ambient sound
+levels
+
+Sensitive
+soundscapes
+
+Bird breeding
+habitats
+
+Wildlife wellbeing,
+ecological
+integrity
+
+Anthrophony and
+biophonic invasive
+species that mask
+native sounds
+
+Protect area from
+human generated
+noise, especially
+low frequency
+sounds that can
+travel far or
+dispersed
+recreational noise
+Protect area from
+human generated
+noise
+
+Threatened
+soundscapes
+
+Predominately high
+fidelity
+soundscapes that
+undergo increases
+in anthrophony,
+airport
+development,
+deforestation for
+agriculture
+
+Ecological integrity,
+wildlife wellbeing,
+human wellbeing
+
+Excessive noise,
+land use change
+
+Mitigate excessive
+noise, improve
+technologies of
+sound producing
+object(s), limit
+additional noise
+intrusions
+
+Monitor for
+anthrophony and
+biophony levels
+
+Unique
+soundscapes
+
+Forest elephants in
+Congo salt wetland
+
+Wildlife wellbeing,
+sense of place, loss
+of these would be
+irreplaceable,
+global heritage
+value
+
+Loss of appropriate
+habitat to generate
+unique
+characteristics of
+soundscape,
+human generated
+noise, biophonic
+invasive species
+
+Identify unique
+areas and establish
+strict guidelines to
+protect both
+landscape and
+soundscape from
+alteration
+
+Monitor for the
+presence of the
+unique sounds
+
+Recreational
+soundscapes
+
+Northern Minnesota
+lakes, off-road
+vehicle use areas in
+western rangelands
+
+Landscape
+interactions, sense
+of place,
+connecting
+humans with
+nature
+
+Human generated
+noise, loss of
+landscapes that
+create natural
+sounds
+
+Protect area from
+activities that are
+incompatible with
+sounds created by
+certain types
+recreation
+
+Monitor for specific
+types of sounds
+that are
+recreational in
+nature; protect
+those landscapes
+that support
+organisms that
+produce
+soundmarks of
+high recreational
+value
+
+Representative
+soundscapes
+
+Desert soundscape,
+taiga soundscape,
+grassland
+soundscape, coral
+reef soundscapes
+
+Ecological integrity
+and research,
+global heritage—
+preserve natural
+soundscapes in
+ecosystems around
+the world, sense of
+place
+
+Loss of habitats/
+ecosystems,
+climate change
+
+Protect soundscapes
+from threats from
+anthrophony and
+biophonic
+invasions, protect
+landscapes from
+land use changes
+
+Monitor for selected
+representative
+soundscapes,
+determine natural
+ambient
+composition of
+these soundscapes
+(frequency,
+temporal patterns,
+etc.)
+
+Monitor for presence
+of keynote sounds
+that are critical to
+ecosystem function
+
+123
+
+1336
+
+Landscape Ecol (2011) 26:1327–1344
+
+Table 2 continued
+Soundscape
+type
+
+Example(s)
+
+Value(s)
+
+Threat(s)
+
+Management goals
+
+Monitoring
+
+Cultural
+soundscapes
+
+City markets, church
+bells in small town,
+coastal areas with
+foghorns
+
+Sense of place,
+cultural and
+historic values
+related to sounds
+
+Loss of the sound
+generating objects
+(foghorns, church
+bells), increase in
+anthrophony
+
+Recognize
+culturally
+identifying
+sounds, identify
+targets, maintain
+high fidelity
+soundscapes
+
+Monitor culturally
+significant
+soundmarks and
+associated
+soundscapes
+
+Everyday
+soundscapes
+
+Rural soundscapes
+that contain typical
+vocalizing
+organisms such as
+birds, amphibians
+and insects
+
+Human wellbeing,
+sense of place
+
+Low frequency
+anthrophony, long
+term increases in
+the level and
+occurrence of
+anthrophony
+
+Reduce identified
+noise sources and
+conduct acoustic
+mapping and
+qualitative
+research to
+identify issues and
+targets
+
+Monitor for
+excessive sound
+levels across
+communities and
+assess the presence
+of biophony
+
+City soundscapes
+
+Natural quiet soundscapes
+Natural quiet soundscapes are already recognized by
+the NPS (1995) as soundscapes that need to be
+protected. The NPS defines natural quiet as the
+natural ambient sounds heard within a park unit (NPS
+1995). These sound conditions are typically at very
+low A-weighted decibel sound levels (dBA). For
+instance, reported natural quiet conditions at parks
+ranged from 40 to 10 dBA compared to suburban and
+urban settings that can range from 40 to 80 dBA
+respectively (NPS 1995). In some significant
+instances the soundscape could have an absence of
+human perceptible sounds, such as within a volcano
+crater (NPS 1995). Natural quiet soundscapes can be
+contrasted with naturally loud soundscapes, where
+the ambient sound levels are higher due to increased
+geophony or biophony. Unlike naturally loud soundscapes, natural quiet soundscapes are more sensitive
+to impacts. Recognizing the impacts of anthrophony,
+the European Union (2002) considers quiet soundscapes as those lacking noise from traffic, industry,
+and recreational activities. Termed biophonic invasions by Pijanowski et al. (2011b), invasive or nonnative vocalizing wildlife species also can impact
+soundscapes by masking native vocalizations or, as in
+the case of the coqui frog (Eleutherodactylus coqui)
+invasion in Hawaii, generate sound when there was
+quiet (Raloff 2003).
+As indicated previously, natural sounds are valued
+by people and are important aspects of natural area
+
+123
+
+and wilderness experiences (Gramann 1999). Natural
+quiet soundscapes are especially important for wildlife species that have evolved to communicate in
+these acoustic environments. Monitoring for anthrophony and any increases in ambient sound levels
+would be necessary. Given the continuous expansion
+of roads into rural areas and the increase in number
+and spatial extent overflights, these types of soundscapes are a conservation priority.
+Sensitive soundscapes
+Sensitive soundscapes are part of landscapes that
+provide ecological or biological functions that could
+be impacted due to anthrophony. A key example of
+this is landscapes that provide habitat for threatened
+or endangered species that rely on acoustic communication and cues. In these soundscapes any introduction of noise into the landscapes could negatively
+impact the occurrence of natural sounds that are
+important to the survival of the species. Depending
+on the types of biodiversity supported in the area, the
+overall ecosystem functioning could be impacted by
+an increase in noise. Breeding habitats for endangered bird species that rely on acoustic communication would be an example of sensitive soundscapes.
+Threatened soundscapes
+Threatened soundscapes would be those that were
+predominantly naturally quiet or high fidelity, but
+
+Landscape Ecol (2011) 26:1327–1344
+
+have undergone land use changes or have increased
+anthrophony resulting in lower fidelity soundscapes.
+These landscapes would be increasingly exposed to
+high levels of sound that could negatively impact
+ecological integrity. Land use and transportation
+system changes can have a number of different
+impacts on wildlife species and humans, as well. The
+level of impairment for the threatened soundscapes
+needs to be monitored for long-term temporal and
+spatial impacts, as well as cumulative effects due to
+habitat loss. For example, a new airport located near a
+wildlife area could introduce noise levels that mask
+animal communication necessary for breeding, while
+also reducing available habitat that decreases biodiversity and biophony. Threatened soundscapes differ
+from sensitive soundscapes in that the species
+impacted by the acoustic changes are not necessarily
+endangered; rather noise levels and soundscape
+composition is such that natural sounds are interfered
+with and natural biological activities could be
+impacted. Research on threatened soundscapes can
+provide additional insight into how ecological integrity is reflected in the soundscape for both wildlife
+and humans.
+Unique place-specific soundscapes
+Every soundscape is indeed unique in that it is likely
+that at any given location in the world, the composition and volume of sounds will differ from all
+others. However, there are some soundscapes,
+because of the unique composition of sounds or
+volume (loud or almost silent), that should be
+protected. The sounds of elephants bellowing in the
+tropical rainforests surrounded by rock outcrops in
+the Congo are unique; the reverberations created by
+the surrounding landscape produce a soundscape that
+is not likely to be found anywhere else. The sounds of
+geysers erupting at Yellowstone National Park are
+another example of a unique soundscape worthy of
+protecting from noise intrusions. Unique place-specific soundscapes, if lost, could be irreplaceable.
+Recreational soundscapes
+Due to high recreational demand, some soundscapes
+require special management consideration for conservation. Recreational soundscapes may include
+areas that have natural ambient sounds reflective of
+
+1337
+
+the landscapes, such as waterfalls, wind through
+grasslands, or unique animal calls (e.g., loons), but
+also have moderate to high levels of recreational
+activity. These soundscapes host sounds from human
+motorized recreation activities, such as motorboats,
+off-road vehicles, air tour overflights, or associated
+recreation sounds, such as camp generators, vehicle
+traffic, chainsaws, or music. While these areas might
+currently be managed for multiple-uses, the loss of
+natural sounds requires careful monitoring of these
+soundscapes. Natural landscapes that become dominated by anthrophony should consider a revision of
+management goals to incorporate soundscape targets.
+Representative soundscapes
+These are soundscapes that reflect or represent a suite
+of landscape or ecosystem types. Representative
+soundscapes can serve as indicators for ecosystem
+and landscapes health, similar to indicator species
+used for conservation efforts (Groom et al. 2006).
+The biophony, geophony, and anthrophony of representative soundscapes can be researched and monitored for long-term temporal changes, such as
+impacts due to climate change. Spatial variations
+between landscape types and their soundscapes can
+be compared to provide information on sensitivity
+and resilience. Identifying areas with high ecological
+integrity to serve as representative soundscapes will
+be the most challenging, but landscape ecologists and
+conservation biologists can provide candidate locations for acoustic recording. The additional benefit of
+representative soundscape monitoring is that the
+soundscapes of a suite of ecosystems will be recorded
+for our global acoustic heritage.
+Cultural soundscapes
+Cultural soundscapes are socially defined soundscapes that have cultural, historical, spiritual, or
+aesthetic values associated with them. These can be
+natural or human dominated soundscapes. Generally,
+cultural soundscapes are those that tie people strongly
+to a place and that possess unique soundmarks. It has
+been argued that identifying soundmarks can help
+build community and preserve the natural and cultural
+heritage that makes locations unique (Schafer 1994;
+Torigoe 2003). Sounds of wind through unique
+landscape features, the sounds emanating from
+
+123
+
+1338
+
+historical battlefields during a reenactment, church
+bells that sound across a valley, fog horns produced
+along coastal areas, the sounds of a market in an urban
+area all represent soundscapes that may hold special
+cultural values for people (Schafer 1994). The greatest
+threats to cultural soundscapes are their homogenization due to anthrophony and the loss of unique
+soundmarks (Schafer 1994; Wrightson 2000).
+Everyday soundscapes
+Everyday soundscapes are those where we live, work,
+and visit frequently. These soundscapes provide our
+auditory link to the environment daily. For instance,
+rural soundscapes that contain typical vocalizing
+organisms such as birds, amphibians and insects at
+audible levels provide the keynotes and rhythms that
+residents have become customized to hearing (Schafer 1994). Special composition of dawn or dusk
+chorus or nighttime sounds may be very important.
+These soundscapes create a sense of place for people
+that may not even be noticed consciously. The
+management goal for everyday soundscapes is that
+areas were humans spend most of their time need to
+provide suitable acoustic conditions. A variety of
+auditory and non-auditory health impacts result from
+being exposed to certain sound levels (Staples 1996).
+Perceived environmental quality and environmental
+justice issues need to be taken into account for
+managing everyday soundscapes. Threats to these
+soundscapes include increasing amounts of noise and
+the loss of specific habitats that might contribution to
+the presence of biophony.
+Soundscape-landscape conservation principles
+The soundscape typology presented here is meant to
+be a first attempt at classifying different soundscapes
+to prioritize conservation and management. We fully
+anticipate the typology will change as more research
+linking soundscapes to social-ecological systems
+emerges. The current version utilizes conservation
+principles to identify potential goals. The conservation goals for most of the classified soundscape types
+emphasize maintaining the natural composition of
+sounds, both biophony and geophony. In some cases,
+managing and protecting anthrophony is an important
+goal, such as in some cultural and everyday soundscapes. Soundscape conservation has to be tied
+
+123
+
+Landscape Ecol (2011) 26:1327–1344
+
+closely to the management of landscape as the
+structure of habitats influence the presence and
+abundance of vocal and stridulating organisms as
+well as affect the propagation of sounds across the
+soundscape (Pijanowski et al. 2011b, this issue).
+Management of soundscapes might occur within
+current protected areas, such as national parks and
+reserves, but also in areas with private ownership of
+land (e.g., everyday soundscapes). Regardless of
+ownership, one challenge that soundscape conservation needs to address is the management of soundscapes at landscape or larger scales.
+Whittaker et al. (2005), Turner et al. (2007),
+Lindenmayer et al. (2008) and Wiens (2009) recognize the importance of considering ecosystem processes and human activities that occur at different
+spatial scales that impact management outcomes
+related to conservation. For example, Lindenmayer
+et al. (2008) and Wiens (2009) argue that areas that
+are under conservation management need not be
+managed as ‘‘stand alone’’ spatial units as surrounding areas contribute to the flux of individuals or
+species into and out of the conservation area. The
+surrounding areas may also be a source of many
+threats to the conservation area; these threats emerge
+as a result of various human activities in these
+surrounding areas. For instance, threats to park
+soundscapes can include sound produced by humans
+and the modification of the natural environment that
+impacts sound production, transmission, and composition. Work by Lynch et al. (2011) has shown that
+National Park soundscapes are under many threats
+either through activities within parks (e.g., visitor
+traffic and park infrastructure) or from sound production outside parks (e.g., overflights and road noise
+from areas surrounding the park).
+Soundscape conservation elucidates the importance of considering spatial scale by integrating
+surrounding area planning as part of protected area
+management, since the soundscape and its impacts
+do not recognize boundaries. The landscape management approach, derived from landscape ecology
+principles outlined by Wiens (2009) can be applied
+to soundscapes. Figure 4 demonstrates that vocal
+and stridulating organisms are likely to move in and
+out of surrounding areas where there is likely to be
+much greater human activities that threaten their
+survival. Activities outside the conservation area that
+may detrimentally impact biophony in the
+
+Landscape Ecol (2011) 26:1327–1344
+
+1339
+
+Fig. 4 Landscape
+perspectives of soundscape
+conservation (after Wiens
+2009) showing
+a configuration of area of
+conservation, sound
+producing objects (e.g.,
+roads, overflights),
+surrounding areas,
+importance of movement of
+animals into and out of the
+conservation area; b a road
+noise profile that contains
+the dB levels and associated
+travel distances of road
+noise for two hypothetical
+critical thresholds and c the
+road noise profile
+superimposed on the map of
+highway and conservation
+area
+
+conservation area include road noise from surrounding areas and noise from overflights (Fig. 4a). Many
+activities occur in conservation areas, especially
+national parks like those in the U.S. National Park
+System (Miller 2008). Park visitor activities can
+include motorized recreation vehicles or visitor
+traffic on park roads. Factors that affect soundscapes
+are likely to occur at multiple scales, frequently at
+spatial extents larger than the conservation management unit.
+In addition to spatial scales, temporal scales need
+to be considered in the management goals of
+soundscapes. Some soundscapes may need to be
+protected on the basis of their time-sensitive nature.
+
+Sensitive soundscapes are a key example of the need
+for temporal considerations. Endangered wildlife
+species that need to communicate at a particular
+time of year or day would need to have soundscape
+conservation measures in place to protect them.
+Temporal soundscape conservation can take into
+account rhythms that are important components of
+soundscapes, such as the dawn and dusk periods for
+birds to vocalize and announce territorial boundaries.
+Soundscapes in the high-latitudes occur only over a
+short period of time in the year. Still others might
+need to be protected at night as opposed to during the
+day as some nocturnal species might be sensitive to
+noise. Many soundscapes types would benefit from
+
+123
+
+1340
+
+management that considers time-critical periods
+where threats might have the greatest impact.
+Monitoring at various temporal and spatial scales
+is a fundamental element of soundscape conservation.
+As indicated in Table 2, monitoring could focus on
+composition and/or sound levels depending upon the
+type of soundscape. Composition could examine the
+presence or absence of keynotes or soundmarks, the
+complexity or diversity of sounds, or whether gaps
+might exist (Fig. 3). Finally, research is needed that
+attempts to identify unaltered soundscape composition and representative soundscapes. A theoretical
+composition could be based on the knowledge of
+species that are likely to occur in an area and their
+acoustic niches (in sensu Krause 1987; Pijanowski
+et al. 2011b, this issue). Representative soundscapes
+used in long-term monitoring could also allow
+conservationists to determine how relatively slow
+long-term changes (e.g., climate change) might
+impact species composition. Sound recordings may
+also serve to preserve a record of biophony at a
+location—an acoustic fossil if the soundscape is lost.
+Soundscape values and land use planning
+We identified many different values associated with
+soundscapes and proposed a classification of soundscape types that highlight different values connected
+with them. As we demonstrate in Fig. 2, soundscapes
+are part of the perceived characteristics of the
+environment that affect experience, form values,
+and can lead to behavior change. Landscape ecologists have argued that the visual qualities of a
+landscape are important and that perceptions can
+relate to landscape values in the context of natural
+resource management (Zube 1987; Nassauer 1992,
+1995; Gobster 1999; Gobster et al. 2007; Ode et al.
+2008, 2010). Nassauer (1992) and Nassauer and
+Opdam (2008), among others, also have argued that
+policy should consider landscape appearance because
+people relate ecological quality to certain visual
+characteristics of the land. Ode et al. (2008, 2010)
+elaborated that visually complex landscapes are
+perceived more positively than homogenous landscapes; complexity is an integration of several
+landscape features including coherence, disturbance,
+naturalness and ephemera. We have presented a case
+that soundscapes, too, affect perceived environmental
+
+123
+
+Landscape Ecol (2011) 26:1327–1344
+
+quality for humans and argue that they should be
+considered in policies and management, as well.
+Landscape design research, in particular urban
+landscapes, has begun to address soundscapes as
+elements of the perceived environment to manage.
+Natural sounds, such as birds and running water, are
+often evaluated as the most pleasant sounds in urban
+areas (Zhang and Kang 2007; Irvine et al. 2009).
+Incorporating additional green space to provide areas
+for natural sounds in urban settings is a design
+recommendation that links landscape features and the
+soundscape (Irvine et al. 2009). In contrast to
+regulating noise in terms of a strict reduction of
+sound levels, soundscape conservation policy would
+seek to protect unique, cultural, everyday, or
+threatened soundscapes. Soundscape conservation
+design and policy would manage those soundscapes
+highlighting positive values and emphasizing high
+fidelity soundscape quality. The perceived and valued
+sounds of a city can be identified to enhance
+landscape planning and soundscape conservation
+efforts (Hedford and Berg 2003; Adams et al. 2006).
+The values associated with natural sounds can
+promote the conservation of many of the other
+classified soundscapes types, such as natural quiet,
+sensitive, unique, and recreational soundscapes.
+Often the landscapes that are associated with these
+soundscapes would be predominantly natural. Planning and conservation efforts could focus on maintaining soundscapes that reflect the landscape. Some
+of these areas may already be protected as public
+parks or other designations. As we mentioned previously, another important management principle is the
+need to collaborate with natural resource agencies,
+planning commissions, and other entities that are
+interested in addressing soundscape conservation.
+Researchers can advance soundscape conservation by
+being consistent with soundscape conservation measures, classifications, and priority threats investigated
+that align with the goals of planning or management
+agencies working on soundscape issues. In the United
+States, the NPS Natural Sounds Program has been
+working on soundscape issues since 2000 with the
+passage of the National Parks Air Tour Management
+Act. Research projects and conservation goals for
+areas surrounding NPS units could be designed in
+consultation with the NPS to enhance soundscape
+conservation efforts within and around the parks.
+
+Landscape Ecol (2011) 26:1327–1344
+
+Connecting humans with nature: an epilogue
+Humans do not often see or realize the ecosystem
+processes and functions that are occurring around
+them. However, humans can hear natural sounds or
+see landscapes as a way of experiencing nature.
+Natural and unique soundscapes have a variety of
+different values associated with them, but natural
+systems need to be intact to have natural soundscapes.
+More research is needed on the impacts to humans
+and wildlife from homogenized and simplified
+soundscapes. As Louv (2008) indicates, children
+today are less exposed to nature and therefore
+creating fewer connections with the natural world.
+Yet, there is an innate attraction of humans to natural
+sounds as evidenced in the multitude of values. Using
+this perceptible link of humans to nature could add
+value to conservation efforts, such as biodiversity
+protection and protected area establishment.
+Sounds engage one of the human senses that help
+us experience the natural world. The recognized
+values of natural soundscapes discussed in this paper
+highlight a few motivations for their conservation.
+Values surrounding soundscapes still need to be
+better understood in order to develop appropriate
+management actions.
+Acknowledgments We
+thank
+Purdue
+University’s
+Department of Forestry and Natural Resources and the
+Environmental Protection Agency’s Science to Achieve
+Results Fellowship (STAR Fellowship #FP-91723901) for
+their parts in funding this research. This publication has not
+been formally reviewed by the EPA and the views reflected in
+this paper are solely those of the authors.
+
+References
+Acevedo MA, Villanueva-Rivera LJ (2006) Using automated
+digital recording systems as effective tools for the monitoring of birds and amphibians. Wildl Soc Bull
+34:211–214
+Adams M, Cox T, Moore G, Croxford B, Refaee M, Sharples S
+(2006) Sustainable soundscapes: noise policy and urban
+experience. Urban Stud 43:2385–2398
+Ajzen I (1991) The theory of planned behavior. Organ Behav
+Hum Decis Process 50:179–211
+Barber JR, Crooks KR, Fristrup KM (2010) The costs of
+chronic noise exposure for terrestrial organisms. Trends
+Ecol Evol 25:180–189
+Berglund B, Lindvall T, Schwela DH (1999) Guidelines for
+community noise. World Health Organization, Geneva,
+p 20
+
+1341
+Bowles A, Schulte-Fortkamp B (2008) Noise as an indicator of
+quality of life: advances in measurement of noise and
+noise effects on humans and animals in the environment.
+Acoustics Today 4:35–39
+Brainard J, Jones AP, Bateman IJ, Lovett AA (2004) Exposure
+to environmental urban noise pollution in Birmingham,
+UK. Urban Stud 41:2581–2600
+Bronzaft AL, Ahern K, McGinn R, O’Connor J, Savino B
+(1998) Aircraft noise: a potential hazard. Environ Behav
+30:101–113
+Brooks TM, Mittermeier RA, da Fonseca GAB, Gerlach J,
+Hoffmann M, Maoreux JF, Mittermeier CG, Pilgrim JD,
+Rodrigues ASL (2006) Global biodiversity conservation
+priorities. Science 313:58–61
+Carles JL, Barrio IL, deLucio JV (1999) Sound influence on
+landscape values. Lands Urban Plan 43:191–200
+Celis-Murillo A, Deppe JL, Allen MF (2009) Using soundscape recordings to estimate bird species abundance,
+richness, and composition. J Field Ornithol 80:64–78
+Chapin FS III, Wlaker BH, Hobbs RJ, Hooper DU, Lawton JH,
+Sala OE, Tilman D (1997) Biotic control over the functioning of ecosystems. Science 277:500–504
+Chapin FS III, Zavaleta ES, Eviner TV, Naylor RL, Vitousek
+PM, Reynolds HL, Hooper DU, Lavorel S, Sala OE,
+Hobbie SE, Mack MC, Diaz S (2000) Consequences of
+changing biodiversity. Nature 405:234–242
+European Union (2002) Directive 2002/49/EC of the European
+Parliament and of the Council: relating to the assessment
+and management of environmental noise. Off J Eur
+Commun 189:12–25
+Evans GW, Maxwell L (1997) Chronic noise exposure and
+reading deficits: the mediating effect of language acquisition. Environ Behav 29:638–656
+Evans GW, Hygge S, Bullinger M (1995) Chronic noise
+exposure and psychological stress. Psychol Sci 6:333–338
+Farina A, Belgrano A (2006) The eco-field hypothesis: toward
+a cognitive landscape. Landscape Ecol 21:5–17
+Fidell S, Silvati L, Howe R, Pearsons KS, Tabachnick B,
+Knopf RC, Gramann J, Buchanan T (1996) Effects of
+aircraft overflights on wilderness recreationists. J Acoust
+Soc Am 100(5):2909–2918
+Fisher JA (1998) What the hills are alive with: in defense of the
+sounds of nature. J Aesthet Art Critic 56:167–179
+Fisher JA (1999) The value of natural sounds. J Aesthetic Educ
+33:26–42
+Francis CD, Paritsis J, Ortega CP, Cruz A (2011) Landscape
+patterns of avian habitat use and nest success are affected
+by chronic gas well compressor noise. Landscape Ecol.
+doi:10.1007/s10980-011-9609-z
+Fuller RA, Warren PH, Gaston KJ (2007) Daytime noise predicts nocturnal singing in urban robins. Biol Lett
+3:368–370
+Gobster PH (1999) An ecological aesthetic for forest landscape
+management. Landscape J 18:54–64
+Gobster PH, Nassauer JI, Daniel TC, Fry G (2007) The shared
+landscape: what does aesthetics have to do with ecology?
+Landscape Ecol 22:959–972
+Gramann J (1999) The effect of mechanical noise and natural
+sound on visitor experiences in units of the national park
+system. Soc Sci Res Rev 1:1–16
+
+123
+
+1342
+Groom M, Meffe GK, Carroll CR (2006) Conservation biology. Sinauer Associates, Sunderland, MA
+Groves CG, Kensen DB, Valutis LL, Redford KH, Shaffer ML,
+Scott JM, Baumgartner JV, Higgins JV, Beck MW,
+Anderson MG (2002) Planning for biodiversity conservation: putting conservation science into practice. Bioscience 52:499–512
+Haines MM, Stansfeld SA, Head J, Job RFS (2002) Multilevel
+modeling of aircraft noise on performance tests in schools
+around Heathrow Airport London performance tests in
+schools around Heathrow Airport London. J Epidemiol
+Commun Health 56:139–144
+Harmon D (2003) The source and significance of values in
+protected areas. In: Harmon D, Putney AD (eds) The full
+value of parks: from economics to the intangible. Rowman & Littlefield Publishers, Inc., Oxford, UK, pp 13–25
+Harmon D, Putney AD (2003) The full value of parks: from
+economics to the intangible. Rowman & Littlefield Publishers, Inc., Oxford, UK
+Hedford P, Berg PG (2003) The soundscape of two landscape
+settings: auditory concepts for physical planning and
+design. Landscape Res 28:245–263
+Hooper DU, Chapin FS III, Ewel JJ, Hector A, Inchausti P,
+Lavorel S, Lawton JH, Lodge DM, Loreau M, Naeem S,
+Schmid B, Setala H, Symstad S, Vandermeer J, Wardle
+DA (2005) Effects of biodiversity on ecosystem functioning: a consensus of current knowledge. Ecol Monogr
+75:3–35
+Irvine KN, Devine-Wright P, Payne SR, Fuller RA, Painter B,
+Gaston KJ (2009) Green space, soundscape and urban
+sustainability: an interdisciplinary, empirical study. Local
+Environ 14:155–172
+Jensen M, Thompson H (2004) Natural sounds: an endangered
+species. George Wright Forum 21:10–13
+Kariel HG (1990) Factors affecting response to noise in outdoor recreational environments. Can Geographer
+34:142–149
+King EA, Murphy E, Rice HJ (2011) Implementation of the EU
+environmental noise directive: lessons from the first phase
+of strategic noise mapping and action planning in Ireland.
+J Environ Manage 92:756–764
+Kraft M (2007) Environmental policy and politics. Pearson
+Education, Inc., New York
+Krause B (1987) Bioacoustics, habitat ambiance in ecological
+balance. Whole Earth Rev 57:14–18
+Krause B (2002) Wild soundscapes: discovering the voice of
+our natural world. Wilderness Press, Berkeley, CA
+Krause B, Gage S (2003) Testing biophony as an indicator of
+habitat fitness and dynamics SEKI natural soundscape
+vital signs pilot program. Sequoia National Park, p 18
+Leopold A (1989) A sand county almanac, and sketches here
+and there. Oxford University Press, Inc., New York, NY
+Lindenmayer D, Hunter M (2010) Some guiding concepts for
+conservation biology. Conserv Biol 24:1459–1468
+Lindenmayer D, Hobbs RJ, Montague-Drake R, Alexandra J,
+Bennett A, Burgman M, Cale P, Cullen P, Driscoll D,
+Fahrig L, Fisher J, Franklin J, Haila Y, Hunter M, Gibbons
+P, Lake S, Luck G, MacGregor C, McIntyre S, MacNally
+R, Manning A, Miller J, Mooney H, Noss R, Possingham
+H, Saunders D, Schmiegelow F, Scott M, Simberloff D,
+Sisk T, Tabor G, Walker B, Wiens J, Woinarski J,
+
+123
+
+Landscape Ecol (2011) 26:1327–1344
+Zavaleta E (2008) A checklist for ecological management
+of landscapes for conservation. Ecol Lett 11:78–91
+Louv R (2008) Last child in the woods: saving our children
+from nature-deficit disorder. Algonquin Books of Chapel
+Hill, Chapel Hill, NC
+Lynch E, Joyce D, Fristrup K (2011) An assessment of noise
+audibility and sound levels in U.S. National Parks.
+Landscape Ecol (Submitted)
+Mace BL, Bell PA, Loomis RJ (1999) Aesthetic, affective, and
+cognitive effects of noise on natural landscape assessment. Soc Nat Resour 12:225–242
+Margules CR, Pressey RL (2000) Systemic conservation
+planning. Nature 405:243–253
+MEA (2005) (Millenium Ecosystem Assessment) Ecosystems
+and human well-being: synthesis. Island Press, Washington, DC
+Miller NP (2002) Transportation noise and recreational lands.
+International Congress and Exposition on Noise Control
+Engineering, Dearborn, MI, p 20
+Miller NP (2008) U.S. national parks and management of park
+soundscapes: a review. Appl Acoust 69:77–92
+Nassauer JI (1992) The appearance of ecological systems as a
+matter of policy. Landscape Ecol 6:239–250
+Nassauer JI (1995) Culture and changing landscape structure.
+Landscape Ecol 10:229–237
+Nassauer JI, Opdam P (2008) Design in science: extending the
+landscape ecology paradigm. Landscape Ecol 23:633–644
+National Park Service (1995) Report on effects of aircraft
+overflights on the National Park System. U.S. Department
+of Interior, National Park Service, Denver, CO
+National Park Service (2006) Management policies 2006. U.S.
+Department of Interior, National Park Service, Washington, DC
+Noss RF (1990) Indicators for monitoring biodiversity: a
+hierarchical approach. Conserv Biol 4(4):355–364
+Noss RF, Cooperrider A (1994) Saving nature’s legacy: protecting and restoring biodiversity. Island Press, Washington, DC
+O’Connor P (2008) The sound of silence: valuing acoustics in
+heritage conservation. Geogr Res 46:361–373
+Ode A, Tveit MS, Fry G (2008) Capturing landscape visual
+character using indicators: touching base with landscape
+aesthetic theory. Landscape Res 33:89–117
+Ode A, Hagerall CM, Sang N (2010) Analysing visual landscape complexity: theory and application. Landscape Res
+35:111–131
+Olson SF (1997) Listening point. University of Minnesota
+Press, Minneapolis, MN
+Passchier-Vermeer W, Passchier WF (2000) Noise exposure
+and public health. Environ Health Persp Suppl
+108(S1):123–131
+Patricelli GL, Blickley JL (2006) Avian communication in
+urban noise: causes and consequences of vocal adjustment. Auk 123:639–649
+Perrings C, Naeem S, Ahrestani F, Bunker DE, Burkill P,
+Caniani G, Elmqvist T, Ferrati R, Furhman J, Jaksic F,
+Kawabata Z, Kinzig A, Mace GM, Milano F, Mooney H,
+Prieur-Richard AH, Tschirhart J, Weisser W (2010)
+Ecosystem services for 2020. Science 330(6002):323–324
+Pheasant RJ, Fisher MN, Watts GR, Whitaker DJ, Horoshenkov KV (2010) The importance of auditory-visual
+
+Landscape Ecol (2011) 26:1327–1344
+interaction in the construction of ‘tranquil space’. J Environ Psychol 30:501–509
+Pijanowski BC, Villanueva-Rivera LJ, Dumyahn S, Farina A,
+Krause B, Napoletano BM, Gage SH, Pieretti N (2011a)
+Soundscape ecology: the science of sound in the landscape. Bioscience 61(3):203–216
+Pijanowski BC, Farina A, Krause B, Dumyuhn S, Gage SH
+(2011b) What is soundscape ecology? Landscape Ecol.
+doi:10.1007/s10980-011-9600-8
+Pilcher E, Newman P, Manning R (2009) Understanding and
+managing experiential aspects of soundscapes at Muir
+Woods National Monument. Environ Manage 43:425–435
+Pimm SL, Russell GJ, Gittleman JL, Brooks TM (1995) The
+future of biodiversity. Science 269:347–350
+Pressey RL, Cowling RM, Rouget M (2003) Formulating
+conservation targets for biodiversity pattern and process in
+the Cape Floristic Region, South Africa. Biol Conserv
+112:99–127
+Raloff J (2003) Hawaii’s hated frogs. Sci News 163:11–13
+Rands RW, Adams WM, Bennun L, Butchart SHM, Clements
+A, Coomes D, Entwistle A, Hidge I, Kapos V, Scharlemann JPW, Sutherland WJ, Bhaskar V (2010) Biodiversity conservation: challenges beyond 2010. Science
+329(5997):1298–1303
+Reide K (1993) Monitoring biodiversity: analysis of Amazonian rainforest sounds. Ambio 22:546–548
+Reinjen R, Foppen R, Veenbaas G (1997) Disturbance by
+traffic of breeding birds: evaluation of the effect and
+consideration in planning and managing road corridors.
+Biodivers Conserv 6:567–581
+Rogers EM (2003) Diffusion of innovations. Free Press, New
+York, NY
+Rolston H III (1988) Environmental ethics: duties to and values
+in the natural world. Temple University Press, Philadelphia, PA
+Sagoff M (2004) Price, principle, and the environment. Cambridge University Press, Cambridge, UK
+Schafer RM (1994) The soundscape: our sonic environment and
+the tuning of the world. Destiny Books, Rochester, VT
+Slabbekoorn H, Ripmeester EAP (2008) Birdsong and
+anthropogenic noise: implications and applications for
+conservation. Mol Ecol 17:72–83
+Sonyerd L (2004) Hearing as a way of dwelling: the active
+sense-making of environmental risk and nuisance. Environ Plann D: Soc Space 22:737–753
+Soulé ME (1985) What is conservation biology? Bioscience
+35:727–734
+Soulé ME, Sanjayan MA (1998) Conservation targets: do they
+help? Science 279:2060–2061
+Southworth M (1969) The sonic environment of cities. Environ
+Behav 1:49–70
+Stansfeld SA, Matheson MP (2003) Noise pollution: nonauditory effects on health. Br Med Bull 68:243–257
+Staples SL (1996) Human response to environmental noise.
+Am Psychol 51:143–150
+Stedman RC (2003) Is it really just a social construction?: the
+contribution of the physical environment to sense of place.
+Soc Nat Resour 16:671–685
+Steins NA, Edwards VM (1999) Platforms for collective action
+in multiple-use common-pool resources. Agric Hum
+Values 16:241–255
+
+1343
+Stone E (2000) Separating the noise from the noise: a finding in
+support of the ‘‘niche hypothesis,’’ that birds are influenced by human-induced noise in natural habitats. Anthrozoos 13:225–231
+Sueur J, Pavoine S, Hamerlynck O, Duvail S (2008) Rapid
+acoustic survey for biodiversity appraisal. PLoS ONE
+3:e4065
+Sutherland WL, Adams WM, Aronson RB, Avelin R, Blackburn
+TM, Broad S, Ceballos G, Côté IM, Cowling RM, da
+Fonseca GAB, Dinerstein E, Ferraro PJ, Fleishman E,
+Gascon C, Hunter M Jr, Hutton J, Kareiva P, Kuria A,
+MacDonald DW, MacKinnon K, Madgwick FJ, Mascia
+MB, McNeely J, Milner-Gulland EJ, Moon S, Morley CG,
+Nelson S, Osborn D, Pai M, Parsons ECM, Peck LS,
+Possingham H, Prior SV, Pullin AS, Rands MRW,
+Ranganathan J, Redford KH, Rodriguez JP, Seymour F,
+Sobel J, Sodhi NS, Stott A, Vance-Borland K, Watkinson
+AR (2009) One hundred questions of importance to the
+conservation of global biological diversity. Conserv Biol
+23:557–567
+Tarrant MA (1995) Factors affecting visitor evaluations of
+aircraft overflights of wilderness areas. Soc Nat Resour
+8:351–360
+Thompson EH (2002) The soundscape of modernity: architectural acoustics and the culture of listening in America,
+1900–1933. MIT Press, Cambridge, MA
+Torigoe K (2003) Insights taken from three visited soundscapes
+in Japan World Forum for Acoustic Ecology Symposium,
+Melbourne, Australia
+Truax B (1999) Handbook of acoustic ecology. Cambridge
+Street Publishers, British Columbia, Canada
+Turner WR, Brandon K, Brooks TM, Costanza R, da
+Fonseca GAB, Protela R (2007) Global conservation of
+biodiversity and ecosystem services. Bioscience 57:
+868–879
+UNEP, United Nations Environment Programme (1992) Convention on Biological Diversity. United Nations
+van Jaarsveld AS, Freitag S, Chown SL, Muller C, Koch S,
+Hull H, Bellamy C, Kruger M, Enrody-Tounga S, Mansell
+MW, Scholtz CH (1998) Biodiversity assessment and
+conservation strategies. Science 279:2106–2108
+Vitousek PM, Mooney HA, Lubchenco J, Melillo JM (1997)
+Human domination of Earth’s ecosystems. Science
+277:494–499
+Villanueva-Rivera LS, Pijanowski BC, Doucette JR (2011)
+Sound 101: an introduction to acoustics for landscape
+ecologists. Landscape Ecol. doi:10.1007/s10980-0119636-9
+von Humboldt A, Bonpland A (1852) Personal narrative of
+travels to the equinoctial regions of America, during the
+years of 1799–1804. Henry G. Bohn, London
+Westerkamp H (2002) Linking soundscape composition and
+acoustic ecology. Organised Sound 7:51–56
+Whittaker RJ, Araujo MB, Jepson P, Ladle RJ, Watson JEM,
+Willis K (2005) Conservation biogeography: assessment
+and prospect. Divers Distrib 11:3–23
+Wiens JA (2009) Landscape ecology as a foundation for sustainable conservation. Landscape Ecol 24:1053–1065
+Williams DR, Stewart SI (1998) Sense of place: an elusive
+concept that is finding a home in ecosystem management.
+J For 96:18–25
+
+123
+
+1344
+Wilson EO (1984) Biophilia: the human bond with other species. Harvard University Press, Cambridge, MA
+Wilson EO (1999) The diversity of life. W. W. Norton &
+Company, Inc., New York, NY
+Wrightson K (2000) An introduction to acoustic ecology.
+Soundscape: J Acoustic Ecol 1:10–13
+
+123
+
+Landscape Ecol (2011) 26:1327–1344
+Zhang M, Kang J (2007) Towards the evaluation, description,
+and creation of soundscapes in urban open spaces. Environ Plann B: Plann Design 34:68–86
+Zube EH (1987) Perceived land use patterns and landscape
+values. Landscape Ecol 1:37–45
+
+

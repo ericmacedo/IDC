@@ -1,0 +1,931 @@
+Enhancing an Evolving Tree-based Text Document
+Visualization Model with Fuzzy c-Means Clustering
+1
+
+Wui Lee Chang, 1*Kai Meng Tay, 2Chee Peng Lim
+
+1
+
+Faculty of Engineering, Universiti Malaysia Sarawak, Kota Samarahan, Sarawak, Malaysia.
+2
+Centre for Intelligent Systems Research, Deakin University, Australia
+E-mail: *kmtay@feng.unimas.my
+
+Abstract— An improved evolving model, i.e., Evolving Tree
+(ETree) with Fuzzy c-Means (FCM), is proposed for undertaking
+text document visualization problems in this study. ETree forms
+a hierarchical tree structure in which nodes (i.e., trunks) are
+allowed to grow and split into child nodes (i.e., leaves), and each
+node represents a cluster of documents. However, ETree adopts
+a relatively simple approach to split its nodes. Thus, FCM is
+adopted as an alternative to perform node splitting in ETree. An
+experimental study using articles from a flagship conference of
+Universiti Malaysia Sarawak (UNIMAS), i.e., Engineering
+Conference (ENCON), is conducted. The experimental results
+are analyzed and discussed, and the outcome shows that the
+proposed ETree-FCM model is effective for undertaking text
+document clustering and visualization problems.
+Keywords— Evolving tree; text document
+visualization; online learning; fuzzy c-means
+
+I.
+
+clustering;
+
+INTRODUCTION
+
+Clustering is a task of assigning data objects into a number
+of groups (or clusters) so that the objects in the same cluster
+share the same similarities, as compared with those in other
+clusters [1]. It converts a set of non-linear data into a human
+and/or machine understandable format, which can be very
+useful for unsupervised learning systems. Examples of some
+popular clustering methods are the Self-Organizing Map
+(SOM) [2, 3], k-mean clustering [4], and fuzzy c-mean
+clustering (FCM) [5, 6]. With respect to SOM, it is an artificial
+neural network that maps a set of high-dimensional data onto a
+predefined low-dimensional grid of nodes [2, 7], and retains
+the topological relationship of the data. From the literature,
+various applications of SOM, e.g., speech recognition [8, 9],
+feature extraction [10], robotic arm [11], noise reduction in
+telecommunication [12], and textual documents clustering [13],
+have been reported. Indeed, various extensions of SOM, e.g.,
+hierarchical search [14, 15], growing SOM [16, 17], growing
+hierarchical SOM [18], and evolving tree (ETree) [19], have
+been proposed over the years. Examples of applications of
+ETree to a variety of application domains can be found in [2022]. In general, these approaches increase the flexibility of
+SOM and improve the learning time for processing large data
+samples.
+Text document clustering (also known as text
+categorization) is a procedure to assemble similar text
+documents into groups based on their similarity [23]. Many
+text document clustering methods are available. Examples
+include the naive Bayes-based document clustering model [24],
+WEBSOM [25], and support vector machines-based model for
+imbalanced text document classification [26].
+These
+approaches allow a collection of documents to be clustered
+
+(and visualized). Regardless of the popularity of these
+approaches, it is not sure how these approaches can be
+extended to evolving or online learning. Thus, it is important
+to develop a text document clustering model with evolving
+capabilities for the following reasons: (1) new documents are
+generated or created everyday; and (2) it is not practical to
+perform re-training of a model whenever a new document
+appears. Thus, an evolving model is useful for tackling text
+document clustering problems.
+The focus of this paper is on an improved evolving model,
+i.e., ETree combined with FCM (denoted as ETree-FCM), as
+an alternative to SOM as well as other offline learning
+methods, for document clustering. Instead of SOM-based
+models (e.g. WEBSOM [25]), ETree-FCM allows the
+clustering method to have evolving features. Besides that, it
+serves as a solution to a few shortcomings of WEBSOM, i.e.,
+the learning time [19], and the difficulty in determining the
+map size before learning [19]. Even through ETree has been
+proposed as an alternative to SOM, its application is still
+limited. To the best of our knowledge, this study is a new
+attempt to use ETree-FCM in document clustering [27].
+It is worth mentioning that ETree adopts a relatively simple
+approach to allow a trunk node to be split into child nodes. We
+have previously developed an ETree-based text document
+clustering and visualization procedure [27]. In this paper, we
+further extend our previous work by adopting FCM to allow a
+trunk node to be split into child nodes. FCM is chosen because
+it is a reliable clustering method [28]. In our proposed ETreeFCM model, some salient features of WEBSOM, e.g., text preprocessing, are retained. A case study with information/data
+from a flagship conference of Universiti Malaysia Sarawak
+(UNIMAS), i.e., the Engineering Conference (ENCON), is
+conducted to evaluate the effectiveness of the proposed
+approach.
+This paper is organized as follows. The background of
+ETree and FCM are provided in Section II. In Section III, the
+use of ETree-FCM for text document clustering and
+visualization is described. An experimental study to evaluate
+the usefulness of ETree-FCM in text document clustering is
+presented in Section IV, with the results analyzed and
+discussed. A summary of conclusion is included in Section V.
+II.
+
+BACKGROUND
+
+A. Structure of ETree
+Fig. 1 depicts an example of the ETree structure. The tree
+nodes. Each node is denoted as
+structure consists of
+,
+where
+1,2,3,
+…
+is the identity of the node and
+,
+
+0,1,2, … is its parent node. As an exam
+mple, the parent
+node for , is , . In other words, , is a child node for
+, . There are three types of nodes, i.e., root node, trunk
+nodes, and leaf nodes. The root node is the ffirst created node
+(i.e., , ) located at the top layer of the tree. It has no parent
+node (i.e.,
+0). A trunk node is a parentt node, e.g., , .
+The leaf nodes, i.e.,
+, are located at thee bottom layer of
+the tree. They are nodes with no child nodes ee.g., , .
+
+The best matched leaf node is thee BMU, and is denoted as
+.
+,
+1,2,3, …
+T weight vectors for each
+b) Updating the leaf node. The
+leaf node are updated using the SOM
+M learning rule, as follows
+[2].
+1
+
+(2)
+
+_
+
+is a neighborhoo
+where
+od function between
+_
+and , . The neighborhood functio
+on is calculated using Eq. 3.
+,
+_
+
+,
+
+(3)
+
+is the Gaussian kernel
+where
+is the learning rate,
+width, and
+, , is the treee distance between
+and , . The learning rate and the Gaussian kernel width are
+calculated using Eq. 4 and Eq. 5, resspectively.
+1
+(4)
+Fig. 1. The structure of ETree.
+
+(5)
+
+The tree structure can be described by its ttree depth. As an
+example, the tree depth is 4 in Fig. 1. The ddistance between
+two leaf nodes is measured by the shortest patth connecting the
+number of trunks together. As an example, the tree distance
+between
+, and
+, is 3, i.e., d(
+, ,
+, )=3, and the
+connected trunks are , , , , and , . Evvery leaf node is
+associated with two attributes: a weight vectoor, i.e., , and a
+hit counter, i.e., . Note that
+is a n-dimennsion real-valued
+vector, i.e.,
+,
+,
+…
+,
+, while
+,
+,
+,
+0,1,2, … is a counter that records the numbeer of times , is
+selected as the Best Matching Unit (BMU).
+The
+
+degree
+of
+matching
+for
+a
+sample,
+corresponding to
+, ,…,
+which
+is
+,
+associated with a weight vector (i.e., ) is obtained by the
+Euclidian distance between
+and , as in Eq. (1). The
+lower the distance, the higher the degree of maatching.
+,
+
+(1)
+
+B. The Learning Algorithm of ETree
+Two pre-determined parameters, i.e., the splitting
+) and the number off split node (i.e.,
+threshold (i.e.,
+) are considered. Assuming a new sample,
+_
+i.e.
+, is provided to ETree. The learniing algorithm to
+update the tree comprises three steps, as follow
+ws:
+a) Determining the BMU from root too leaf. A BMU
+determination process is a top-down process, starting from the
+1st layer node (root node) downwards to tthe bottom layer
+nodes (leaf nodes). From the root node, thhe distance of its
+child nodes at the 2nd layer are computed witth
+, based on
+Eq. 1. The child node with the minimum disstance is the best
+matched child. Then, the distance of child nnodes of the best
+matched child at the next layer are compuuted in the same
+manner. This process is repeated until a leaf nnode is obtained.
+
+is the total number off
+.
+where
+c) Growing the tree. The hit
+h counter for BMU, i.e,
+, is updated using Eq. 6.
+1
+1
+(6)
+1
+If
+,
+is split into
+_
+child nodes.
+now becomes a trunk node. The weight
+1 .
+vectors for the child nodes are in
+nitialized as
+One of its child nodes is randomly
+y chosen as the BMU. The
+leaf node is further updated with the updating procedure in
+Step (b).
+C. The FCM Clustering Algorithm
+FCM [28] is an iterative clusteering method to produce a
+pre-determined number of clusters, . Assuming
+, , ,…,
+as the data samples to
+, ,…,
+t be clustered, and is the
+1, ∞ is a pre-defined
+total number of data samples,
+weighting exponent that determin
+nes the level of fuzziness,
+0,1 is the membership fu
+unction of
+in the -th
+,
+cluster, where
+1,2, … , .
+is the
+t prototype for the center
+of cluster , and ε is the pre-deterrmined threshold for FCM
+errors. The FCM algorithm is as follows [29]:
+a)
+b)
+c)
+d)
+
+Pre-determine , , and ;
+Initialize , with a set of random
+r
+values;
+Set the iteration counter,
+0;
+Calculate with Eq. (7);
+∑
+
+,
+
+∑
+e)
+
+Update
+
+,
+
+7
+,
+
+with E.q (8));
+1
+
+8
+
+,
+
+∑
+
+|
+
+|
+
+f)
+
+Check the stopping condition.
+, then stop. Otherwise, set
+repeat steps (d) and (e).
+III.
+
+If
+1 and
+
+1. A new article,
+
+TEXT DOCUMENT CLUSTERING AND VISUALIATION
+
+2. Processing text
+- Extract abstract of the article.
+- Remove stop words, symbols, and numerical characters.
+
+USING ETREE WITH FCM
+
+In this paper, ETree and FCM are combined as a text
+document clustering and visualization model. Fig. 2 depicts
+the proposed procedure to construct the ETree-FCM model for
+text document clustering and visualization. The proposed
+procedure is divided into two stages: updating the article terms
+(i.e., steps (1) to (4)) and performing tree learning or updating
+(i.e., steps (5) to (9)).
+
+Collection of
+documents, D
+
+1) A new article, i.e., | | , is provided.
+2) The article is pre-processed, and the abstract is
+extracted. Symbols and numerical characters are removed.
+and
+are determined.
+Less
+Then,
+| |
+| | , | |
+informative words (as defined in a list of stop words) are
+removed. Next, | | , | | , | | , | | , | | , | | , and
+are determined. If | | , | | is new (i.e., it
+| | , | |
+),
+is updated with a new , , and a
+does not exist in
+1 ) is
+new unique numerical representation (i.e.,
+assigned to , . After that, | | , | | is determined.
+3) The contexts are encoded, whereby | | , | | is
+obtained by numerical descriptions of terms before and after
+| | , | | , (as suggested in [13]), as follows. Note that
+or | | , | |
+is equal to zero, if the
+| | , | |
+respective term is in the list of stop word.
+| |
+
+, | |
+
+| |
+
+,
+
+| |
+
+| |
+
+,
+
+| |
+
+9
+
+4) Document | | is encoded. The vector space
+model [30] is used, whereby the encoded document, | | ,
+i.e., | | , is computed with Eq. 10. The term frequencyinverse document frequency function [13] is used to determine
+the importance of the terms in | | .
+| |
+
+| |
+
+| |
+
+Document
+on | | .
+
+| |
+
+| |
+
+,
+
+| |
+
+| |
+
+1
+,
+
+| |
+
+,
+
+| |
+
+10
+
+| |
+
+is then mapped onto a 2D data space based
+
+3. Encoding of Contexts, | |
+- WEBSOM’s contexts encoding is adopted.
+
+4. Encoding of a new article, | |
+- New article is encoded based on Vector Space Model.
+
+A corpus, i.e., , that consists of | | articles, has a list of
+terms, denoted as
+. Each term in
+is denoted as
+, ,
+1,2, … , . There are
+terms. A term (denoted
+where
+as
+, ) is assigned to an unique numerical representation,
+,
+1,2, … , | |) is
+i.e., . An article (i.e., , where
+represented as a document vector, i.e., . Each
+consists of
+terms, represented by , , where
+1,2, … , . The
+numerical description for
+, i.e., , is the unique
+,
+representation of , in
+. Note that , counts the
+occurrence of , in , while , counts the occurrence of
+in . Vector , is a numerical description of the
+,
+contexts in which term , has occurred.
+The updating and learning algorithm for the proposed
+ETree-FCM model is as follows.
+
+| |
+
+,
+
+5. Loading of the tree
+- Load former trained or empty model.
+- Load hit counter of each leaf node.
+
+6. Finding the BMU from the root
+- Match training vector with node weight.
+- Determine best matched children nodes with the
+Euclidean distance.
+- Repeat until the child node is a leaf node.
+- Hit counter,
+1
+1
+7. Updating the leaf nodes
+- Kohonen update rule is applied.
+8. Expanding the tree
+- Fuzzy c-means is used to split
+into
+_
+
+Yes
+,
+
+No
+
+9. Refining the former trained
+Fig. 2. A flowchart of the proposed ETree-FCM model for text document
+clustering and visualization.
+
+5)
+
+A (empty) tree with its predefined parameters (i.e.,
+,
+) is loaded. Each node, i.e., , , is
+_
+, and an
+attributed with , and a weight vector (i.e.,
+).
+BMU hit counter (i.e.,
+6) The BMU is determined, as explained in Section
+II(B). From the root node, the associated documents in its
+based on
+child nodes at the 2nd layer are matched with
+Eq. 1. The child node with the minimum distance is the best
+, repeat
+matched child. If the best matched child is not
+, whereby
+step (5). Otherwise, the best matched child is
+is merged into the node, and
+1.
+| |
+7) The leaf nodes are updated using the SOM learning
+rule (Eqs. 2 – 5).
+equals to
+,
+is split into
+8) If
+.
+FCM
+is
+used
+for
+tree
+splitting.
+Note
+that m and ε
+_
+is clustered (or split) to
+have to pre-defined. Articles in
+nodes (or clusters). The cluster centre, , is used
+_
+to initialize the weight vector of the child nodes.
+9) Finally, the trained tree is refined or updated.
+
+IV.
+
+A CASE STUDY
+
+A case study to evaluate the effectiveness of ETree-FCM
+for text document clustering and visualizationn was conducted
+using ENCON, a flagship conference organizzed by Faculty of
+Engineering, UNIMAS. In this study, the abstracts of 50
+randomly selected articles from ENCON 20008 were used for
+experimentation. A predefined list of stoop words, which
+consisted of 119 words, was used. The ETreee parameters used
+were:
+10,15 and 20 , and
+2 .
+_
+Parameters for FCM were: m=1.25 and ε=0.0001. A laptop
+with i7-3612QM quad core processer and W
+Windows7 (64-bit)
+was used.
+Matlab R2012A was usedd for software
+development. The experimental results in tterms of the tree
+structure and computational complexity arre analyzed and
+discussed, as follows.
+A. Growing (evolving) of ETree
+Fig. 3 shows the growing pattern of ETreee for
+10 . The document vectors, , are visuualized on a 2dimensional graph. The clusters are
+, annd indexed with a
+numerical index as the identity of the tree,
+, . When
+| | 13, 13 documents are clustered into two leaf nodes, i.e.,
+he cloud of the
+, and
+, , located at the center of th
+documents, as shown in Fig. 3(a). Wheen | | 20 , 20
+documents are clustered into four leaf nodes, i.e., , , , ,
+, and
+, , as shown in Fig. 3(b). Notice tthat
+, and
+,
+are the leaf nodes split from , or the dataa from , alone
+are further clustered into , and , . When | | 50, the
+50 articles are clustered into six clusters as shoown in Fig. 3 (c).
+The clusters contain details of the similarrity relationships
+of the articles. The evolving feature allow
+ws calibrations or
+corrections of the relationship between the clusters. Fig. 4
+depict the tree structures formed with
+10. As an
+example, cluster 4 ( , ) and cluster 3 ( , ), which are the
+nearest nodes in the tree are expected to hhave the closest
+relationship between each other at the first plaace. But, the use
+of FCM shows that , has the closest rrelationship with
+cluster 7 ( , ), as shown in Fig. 3 (c).
+
+Fig. 3. The growing/evolving patterns of the tree nodes for
+
+Fig. 4. The evolving tree structure with at
+
+10
+
+10.
+
+Figs. 5-6 depict the tree structures formed with
+15 and 20. As
+affects the growing rate
+of the tree, the higher
+, thee smaller the tree size (i.e.,
+smaller number of nodes).
+
+15.
+
+Fig. 5. The evolving tree structure with
+
+Fig. 7. Comparison of clustering results at
+
+15.
+
+Fig. 8 shows the clustering structure by using
+20. The number of cllusters formed is four, and
+the distributtions of the clusters are similar to those of
+15.
+
+20
+
+Fig. 6. The evolving tree structure with
+
+Table I summarizes the number of clustters created, tree
+size (i.e., total number of nodes), and tree depth for
+10,15, and 20. The results show
+w the number of
+clusters created, tree size, and tree deptth decreases as
+increases. This is because
+determines the
+maximum number of documents at each nodee. The higher the
+value of
+, the lower the tendency a nnode would split.
+As a result, the growing rate is reduced. At | | 50, the tree
+size is 11, 11, and 7 with
+1
+10,15 , and 20 ,
+respectively.
+TABLE I.
+
+TREE STRUCTURES WITH DIFFERENT SPLIITTING THRESHOLDS
+
+10
+15
+
+Number of
+Clusters
+6
+6
+
+20
+
+4
+
+Tree size
+
+Tree depth
+
+11
+11
+
+6
+5
+
+7
+
+3
+
+Fig. 7 shows the clustering structure uusing 50 similar
+articles with
+15. As compared with the results
+10, the articles are clusteredd into six clusters.
+with
+Each cluster represents a larger group, as compared with
+10.
+
+Fig. 8. Comparison of clustering results at
+
+20.
+
+B. Computational Complexity
+onal complexity of ETreeIn this section, the computatio
+FCM is analyzed in two scenarios: (1) analysis of
+10; (2) comparisons of
+10,15, and 20.
+Fig. 9 depicts the learning tiime (in second) for each
+document, with
+10. Ass can be seen in Fig. 9, the
+learning time increases in line with
+h | |. The increase in | |
+results an increase in the vocabularries in the corpus. The size
+of the tree structure also increases. This, in turn, leads to a
+higher degree of computational co
+omplexity for learning new
+articles.
+
+Fig. 9. Time consumptions of evolving learrning at
+
+10.
+
+Fig. 10 depicts the learning time for diffferent | |, with
+10,15 , and 20.
+With | | 50 , the time
+consumed is less than 12 seconds. From Fig. 10, we can
+observe that the learning time is less affectedd by the
+setting. The higher the
+, the higher thhe computational
+complexity when the splitting process is execcuted. However,
+a lower
+setting leads to a higher trree growing rate.
+The higher the tree size, the higher thee computational
+complexity.
+
+[7]
+
+[8]
+[9]
+[10]
+
+[11]
+
+[12]
+
+[13]
+
+[14]
+Fig. 10. Time consumptions of evolving learning at
+
+V.
+
+10,15,20
+
+[15]
+
+SUMMARY
+
+A new ETree-FCM model for text docuument clustering
+and visualization has been proposed in thiss paper. A case
+study using articles from ENCON 2008 has been conducted.
+CON 2008 could
+The results demonstrate that articles from ENC
+be clustered and visualized effectively as a treee structure. The
+ETree-FCM model is useful for assisting the conference
+organization committee in analyzing the manuuscripts received,
+e.g., detecting plagiarism and designing the coonference tracks.
+In short, the proposed model serves as a useful tool for
+conference organizers.
+For further work, the proposed model will be further
+evaluated using a larger number of articles. This would lead
+to an expected increase in the computatioonal complexity.
+Besides that, ETree-FCM with a dynamic
+setting
+_
+can be investigated.
+
+[16]
+[17]
+
+[18]
+
+[19]
+
+[20]
+
+[21]
+
+[22]
+
+ACKNOWLEDGEMENTS
+The financial support of the FRGS grantts (No. 6711195,
+No. 6711229, and FRGS/1/2013/ICT02/UN
+NIMAS/02/1) and
+ERGS grants (ERGS/02(01)/807/2011(02))) is gratefully
+acknowledged.
+
+[23]
+
+REFERENCES
+
+[25]
+
+[1]
+[2]
+[3]
+[4]
+
+[5]
+
+[6]
+
+X.Rui and C.W Donald, Clustering, IEEE Press/Wiiley, 2009.
+T. Kohonen, Self Organiizing Maps, 3rd ed., Springger, 2001.
+J. Vesanto and E. Alhoniemi, “Clustering of the sself-organizing map,”
+IEEE Trans. Neural Netw, vol.11, no.3, pp.586-6000, 2000.
+W. C. Chang, J. Luo, and K. J. Parker, “Imagge segmentation via
+adaptive K-Mean clustering and knowledge-bbased morphological
+operations with biomedical applications,” IEEE Trrans. Image Process.,
+vol.7, no.12, 1998.
+M. R. Rezaee, B.P.F. Leliveldt, and J. H. C. Reiiber, “A new cluster
+validity index for the fuzzy c-mean,” Pattern Recogn. Lett., vol.19,
+pp.237-246, 1998.
+C. B. James, E. Robert, and F. William, “FCM: the fuzzy c-means
+clustering algorithm,” Comput. Geosci., vol.10, no.2-3, pp.191-203,
+1984.
+
+[24]
+
+[26]
+[27]
+
+[28]
+[29]
+
+[30]
+
+T. Kohonen, S. Kaski, K. Lagus, J. Salojarvi,
+S
+J. Honkela, V. Paatero,
+and A. Saarela, “Self organization of a massive document collection,”
+IEEE Trans. Neural Netw., vol.11, no.3
+3, pp.574-595, 2000.
+T. Kohonen, O. Simula, and A. Visa, “Engineering applications of the
+self-organizing map,” Proc. IEEE, vol.8
+84, no.10, pp.1358-1384, 1996.
+T. Kohonen, and P. Somervuo, “S
+Self-organizing maps of symbol
+strings,” Neurocomputing, vol.21, pp.19-30, 1998.
+J. Mao, and A. K. Jain, “Artificial neurral networks for feature extraction
+and multivariate data projection,” IE
+EEE Trans. Neural Netw., vol.6,
+no.2, pp.296-317, 1995.
+hl, and J. P. Urban, “Multiple selfJ. L. Buessler, R. Kara, P. Wira, H. Kih
+organizing maps to facilitate the learn
+ning of visuo-motor correlations,”
+IEEE Int. Conf. Syst., Man, Cybern., Syst., vol,3, pp.470-475, 1999.
+H
+“Start-up behaviour of
+T. Kohonen, K. Raivio, O. Simula, J. Henriksson,
+a neural network assisted decision feedback
+fe
+equalizer in a two-path
+channel,” Proc.IEEE Conf. Communicaations, vol.3, pp.1523-1527, 1992.
+K. Lagus, S. Kaski, and T. Kohon
+nen, “Mining massive document
+collections by the WEBSOM method
+d,” Inf. Sci., vol.163, pp.135-156,
+2004.
+C. H. Chung, H. L. Shu, and S. T. Wei, “Apply extended self-organizing
+map to cluster and classify mixed-type data,” Neurocomputing, vol.74,
+pp.3832-3842, 2011.
+W. S. Tai, C. C. Hsu, and J. C. Chen
+n, “A mixed-type self-organizing
+map with a dynamic structure,” Intl. Joint
+J
+Conf. Neural Netw., pp.1-8,
+2010.
+pakse, and H. Pin, “Fast growing
+S. Matharage, D. Alahakoon, J. Rajap
+self organizing map for text clustering,” Springer, pp.406-415, 2011.
+hen, “Integration of growing selfR. J. Kuo, C. F. Wang, and Z. Y. Ch
+organizing map and continuous genettic algorithm for grading lithiumion battery cells,” Appl. Soft Comput., vol.12, pp.2012-2022, 2012.
+p
+approach with growing
+S. Y. Huang, and R. H. Tsaih, “The prediction
+hierarchical self-organizing map,” Inttl. Joint Conf. on Neural Netw.,
+pp.1-7, 2012.
+“
+evolving tree – analysis and
+J. Pakkanen, J. Iivarinen, and E. Oja, “The
+applications,” IEEE Trans. Neural Netw.,
+N
+vol.17, no.3, pp.591-603,
+2006.
+mann, and B, Hammer, “Evolving
+S. Simmuntiet, F. M. Schleif, T. Villm
+tree for the retrieval of mass spectrom
+metry-based bacteria fingerprints,”
+Knowl. Inf. Syst., vol.25, pp.327-343, 2010.
+2
+X. T. Li, Y. M. Ye, M. J. Li, and M. I. Ng, “On cluster tree for nested
+and multi-density data clustering,” Pattern Recogn., vol.43, pp.31303143, 2010.
+J. Pakkanen, J. Iivarinen, and E. Oja, “The evolving tree-a novel selforganizing network for data analysis,” Neural Process. Lett., vol.20,
+pp.199-211, 2004.
+n Alessandro Zanasi (ed.), Text
+S. Fabrizio, Text Categorization. In
+Mining and its Applications, WIT Presss, Southampton, UK, pp.109-129,
+2005.
+t
+independence assumption in
+D. Lewis, “Naïve bayes at forty: the
+information retrieval,” European Conf. Mach. Learn., 1998.
+d T. S. Chua, “Evaluating keyword
+A. P. Azcarraga, T. J. Yap, J. Tan, and
+selection methods for WEBSOM textt archives,” IEEE Trans. Knowl.
+Data Eng, vol.16, no.3, pp.380-383, 2004.
+T. Liu, H. T. Loh, and A. Sun, “Imbaalanced text classification: a term
+weighting approach,” Expert Syst. App
+pl., vol.36, pp.690-701, 2009.
+W. L. Chang, K. M. Tay, and C. P. Lim, “An evolving tree for text
+document clustering and visualization
+n,” The 17th Online World Conf.
+Soft Comput. Ind. Appl., 2012, Accepteed for publication.
+N. R. Pal, and J. C. Bezdek, “On clustter validity for the fuzzy c-means
+model,” IEEE Trans. Fuzzy Syst., vol.3
+3, no.3, pp.370-379, 1995.
+R. L. Connon, J. V. Dave, and J. C. Bezdek,
+B
+“Efficient implementation
+of the fuzzy c-means clustering algoritthms,” IEEE Trans. Pattern Anal.
+Mach. Intell., vol.PAMI-8, no.2, pp.248
+8-255, 1986.
+C. Pablo, F. Miriam, and V. David, “A
+An adaptation of the vector-space
+model for ontology-based information
+n retrieval,” IEEE Trans. Knowl.
+Data Eng., vol.19, no.2, pp.261-272, 20
+007.
+
+

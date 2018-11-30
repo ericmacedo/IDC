@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 
 # Author: Ehsan Sherkat - 2016
 

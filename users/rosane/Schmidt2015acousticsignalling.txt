@@ -1,0 +1,948 @@
+J Comp Physiol A (2015) 201:133–142
+DOI 10.1007/s00359-014-0955-6
+
+REVIEW
+
+Ecology of acoustic signalling and the problem of masking
+interference in insects
+Arne K. D. Schmidt · Rohini Balakrishnan 
+
+Received: 28 April 2014 / Revised: 1 October 2014 / Accepted: 11 October 2014 / Published online: 29 October 2014
+© Springer-Verlag Berlin Heidelberg 2014
+
+Abstract  The efficiency of long-distance acoustic signalling of insects in their natural habitat is constrained in
+several ways. Acoustic signals are not only subjected to
+changes imposed by the physical structure of the habitat
+such as attenuation and degradation but also to masking
+interference from co-occurring signals of other acoustically communicating species. Masking interference is
+likely to be a ubiquitous problem in multi-species assemblages, but successful communication in natural environments under noisy conditions suggests powerful strategies
+to deal with the detection and recognition of relevant signals. In this review we present recent work on the role of
+the habitat as a driving force in shaping insect signal structures. In the context of acoustic masking interference, we
+discuss the ecological niche concept and examine the role
+of acoustic resource partitioning in the temporal, spatial
+and spectral domains as sender strategies to counter masking. We then examine the efficacy of different receiver
+strategies: physiological mechanisms such as frequency
+tuning, spatial release from masking and gain control as
+useful strategies to counteract acoustic masking. We also
+review recent work on the effects of anthropogenic noise
+on insect acoustic communication and the importance of
+insect sounds as indicators of biodiversity and ecosystem
+health.
+
+A. K. D. Schmidt (*) 
+Department of Zoology, Karl-Franzens-University,
+Universitätsplatz 2, 8010 Graz, Austria
+e-mail: arne.schmidt@uni‑graz.at
+R. Balakrishnan 
+Centre for Ecological Sciences, Indian Institute of Science,
+Bangalore 560012, India
+e-mail: rohini@ces.iisc.ernet.in
+
+Keywords  Acoustic masking interference · Acoustic
+niche partitioning · Acoustic adaptation · Cricket and
+katydid assemblage · Insect acoustic communication
+
+Introduction
+Insects were probably the first terrestrial animals to use
+air-borne sound signals for long-distance communication
+(Senter 2008): fossils of crickets and katydids from as far
+back as the Triassic and Jurassic periods reveal sophisticated stridulatory structures for song production (Béthoux
+and Nel 2002; Gorochov and Rasnitsyn 2002). Song reconstruction of a 165 my. old Jurassic fossil, Arachoboilus
+musicus, (Gu et al. 2012) suggests that the ancestral condition for sound production in orthopteran insects was
+a resonant mechanism, similar to the one in true crickets
+(Gryllidae). Orthopterans have thus been producing sounds
+probably very similar to present-day signals for at least
+250 million years (Senter 2008). Much less is known about
+the evolutionary history of sound production in the other
+group of conspicuous sound-producing insects, the cicadas
+(Hemiptera: Cicadidae), but earliest fossil records are from
+the Upper Cretaceous (Senter 2008). By the end of the
+Cretaceous, the familiar soundscapes of chirping crickets
+and katydids, buzzing cicadas and calling frogs were well
+established (Senter 2008).
+Most insect groups that produce sound signals in a sustained fashion (crickets, katydids and grasshoppers in the
+Orthoptera, cicadas in the Hemiptera and arctiid moths
+among the Lepidoptera) do so in the context of mate attraction: typically males calling to attract females of their species (Gerhardt and Huber 2002; Greenfield 2014). The diversity of long-distance acoustic signals produced by modern
+insects, spanning a frequency range from as low as 600 Hz
+
+13
+
+	
+134
+
+(the Malaysian katydid, Tympanophyllum arcufolium: Heller
+1995) up to 130 kHz produced by some katydid and moth
+species (Montealegre et al. 2006; Greenfield 2014), is enormous. These signals have been shaped over evolutionary
+time by a combination of different selection pressures, physical and physiological constraints, phylogenetic history, costs
+imposed by eavesdropping predators and parasitoids, sexual
+selection and the biotic and abiotic environment in which
+signalling occurs (Endler 1993; Ryan 1990). Dissecting the
+effects of these different selective pressures is challenging
+but necessary to understand how and why signals, signallers
+and receivers are structured the way they are in the acoustic
+assemblages that we see around us today.
+Crickets, katydids and cicadas are the best-studied
+groups among acoustically signalling insects, wherein a
+number of species have been investigated for the physiology of sound production and reception, auditory processing and behaviour (Gerhardt and Huber 2002; Hedwig
+2014; Stumpner and Nowotny 2014; Fonseca 2014). The
+ecological context in which signalling occurs, however, has
+received relatively less attention and will be the focus of
+this article. We do not attempt a comprehensive review of
+all the factors that may affect signals and signalling, such
+as parasitoids and predation, which are covered in depth
+elsewhere (Lakes-Harlan and Lehmann this issue; Hedwig
+and Robert 2014; Conner 2014) or of all insect groups (lepidopteran communication is covered in depth in a recent
+review: Greenfield 2014) but focus on recent work on the
+role of habitat and co-existing signallers in shaping insect
+signal structures, signaller behaviour and receiver physiology (see Römer 2013, for a more comprehensive and general review of insect acoustic communication and noise).
+
+Insect acoustic signals and habitat
+The natural habitat in which insects call can have significant effects on their signals and communication systems.
+Acoustic signals are put out in the public medium of the
+habitat through which they have to traverse before reaching
+the ‘intended’ receivers (Wiley and Richards 1982; Bradbury and Vehrencamp 2011). The medium can affect acoustic signals in different ways. Signals are attenuated due to
+spreading loss whereas reflection and scattering of sound
+by the ground and vegetation can lead to temporal pattern
+distortion and frequency filtering of the signal (Römer and
+Lewald 1992; Römer 1998) thus compromising detection
+and recognition by receivers. Over evolutionary time, signal structures of different species may, therefore, evolve to
+be adaptive to the habitats in which they call, minimising
+the effects of attenuation and signal distortion and, therefore, maximising transmission (acoustic adaptation hypothesis: Morton 1975).
+
+13
+
+J Comp Physiol A (2015) 201:133–142
+
+Most studies examining acoustic adaptation of signals
+have been carried out on vertebrates (reviewed in Ey and
+Fischer 2009). There are very few studies that have examined acoustic adaptation in insects. A notable exception is
+the study by Couldridge and van Staaden (2004) on bladder
+grasshoppers (Orthoptera: Pneumoridae) in South Africa:
+the transmission of calls of seven pneumorid species were
+examined in four habitats (forests, savanna, fynbos and
+karoo). The results provided some support for acoustic
+adaptation at the macrohabitat level, since calls of forest
+and fynbos species tended to show less distortion and attenuation in their native habitats. This was not, however, the
+case for the calls of species in the other two biomes whose
+signals transmitted better in non-native habitats.
+The habitat may also affect caller behaviour: senders
+of long-distance signals may be expected to select calling sites that maximise high-fidelity transmission (Endler 1993). Since the typical broadcast areas of most insect
+sounds are in the range of tens of metres (Paul and Walker
+1979; Römer 1993; Jain and Balakrishnan 2012), calling
+site selection is perhaps more relevant to be examined at
+small spatial scales (i.e. microhabitats) rather than at macrohabitat or landscape levels (Jain and Balakrishnan 2011).
+Microhabitat selection in relation to calling sites was tested
+for two cicada species but this study did not find evidence
+that this was driven by call transmission (Sueur and Aubin
+2003).
+A number of studies have examined and found vertical
+stratification of species in different calling insect assemblages (Nischk and Otte 2000; Diwakar and Balakrishnan
+2007a, b; Sueur 2002; Schmidt et al. 2013). Whether such
+vertical stratification is driven by acoustic adaptation has
+been tested in the cricket and katydid assemblage in the
+rain forests of Kudremukh National Park (KNP) in the
+Western Ghats of Southern India (Jain and Balakrishnan
+2012). For a wide range of signal structures, the ground
+always emerged as the worst layer for acoustic signal
+propagation, illustrating that microhabitat selection by species calling from the ground is obviously driven by factors
+other than maximising signal transmission (Jain and Balakrishnan 2011, 2012). It is well known that calling from
+greater heights increases broadcast area and transmission
+distance (Marten and Marler 1977; Paul and Walker 1979;
+Römer 1993; Ellinger and Hödl 2003). The understorey
+(0.5–8 m) and canopy (>8 m) of tropical evergreen forests
+are (similar) microhabitats which differ largely in foliage density as a function of height (Jain et al. 2010; Jain
+and Balakrishnan 2011). In transmission experiments, the
+mid-understorey (2–4 m) of the forest emerges as the best
+layer for signal transmission for a variety of signal structures, with minimum attenuation and distortion of signals
+(Marten and Marler 1977; Ellinger and Hödl 2003; Jain
+and Balakrishnan 2012), probably because it offers the
+
+J Comp Physiol A (2015) 201:133–142	
+
+dual advantage of height above the ground and low foliage density. In spite of this advantage, only a fraction of
+species in an assemblage are found to call from the midunderstorey (Diwakar and Balakrishnan 2007a, b; Jain and
+Balakrishnan 2011) because it may offer less protection
+from predators. This could also explain why several species
+either call from within burrows or leaf litter on the ground
+or from the dense canopy even though sound propagation
+may be unfavourable. In summary, the only study testing
+acoustic adaptation as an explanation of vertical stratification of calling insect species in an assemblage did not
+find overall support for habitat acoustics as a major driver
+of calling assemblage structure. One should note, however, that there may be individual species for which maximising transmission range or signal fidelity may act as a
+major selection pressure: for example, Brochopeplus sp. (a
+false leaf katydid calling from the understorey) upheld all
+the predictions of the acoustic adaptation hypothesis in the
+KNP assemblage (Jain and Balakrishnan 2012).
+
+Acoustic masking interference
+Another important problem faced by acoustically communicating insects in natural environments is the possibility of
+acoustic masking interference. This is exemplified by the
+noisy dusk choruses consisting of several species of acoustically signalling insects, primarily crickets, katydids and
+cicadas calling at the same time and place. The fact that
+different species do manage to communicate successfully
+in these noisy conditions suggests that they have strategies
+to deal with the detection and recognition of relevant signals in the presence of high levels of masking noise (Römer
+2013). These strategies include changes in signal structure
+over evolutionary time, signaller behaviour and/or receiver
+physiology (Endler 1992; Römer 2013). A useful framework to examine strategies involving senders is the ecological niche concept.
+Sender strategies: the niche concept
+In community ecology, it is an unarguable fact that available resources such as space, food and time need to be used
+in different ways to allow coexistence of ecologically similar species (Pianka 1973; Schoener 1974). Resource partitioning is believed to play a key role in establishing and
+maintaining such coexistence (MacArthur 1958; Connell
+1961; Schoener 1968). For acoustically communicating
+species, the transmission channel for airborne sound signals can also be regarded as an ecological resource. With an
+increasing number of sound sources at the same time and
+place, the probability of interference and masking of overlapping sound signals is increased, impairing the detection
+
+135
+
+or discrimination of signals and resulting in acoustic competition (Bailey and Morris 1986). Acoustic competition
+due to masking interference is expected to promote partitioning of the transmission channel among species in multidimensional space, consisting of the acoustic space of a
+signal (its spectral and temporal features), as well as when
+(time) and where (place) to signal.
+Temporal partitioning
+Hypothetically, coexisting species can partition their calling in time to avoid overlap and thereby acoustic masking
+interference. Such temporal partitioning could occur at different scales: at the broadest scale, species with similar signals could breed in different seasons or several weeks apart.
+This has not been investigated in a rigorous and quantitative manner in signalling insect assemblages. However, of
+the 20 species constituting the acoustic insect assemblage
+of the evergreen rainforests of KNP, 14 were found to overlap in their breeding season (November to March) and
+could be found calling together in the same patch of forest (Diwakar and Balakrishnan 2007a). Temporal partitioning of calling species might instead be achieved on a diel
+(circadian) scale. The trend that emerges from community
+studies in rain forests in India (Diwakar and Balakrishnan
+2007a), Panama (Schmidt et al. 2013) and Borneo (Grant
+2014) does not support diel partitioning between calling
+species of crickets and katydids.
+In KNP, cicadas were found to be largely diurnal and
+were almost completely partitioned in their calling time
+from crickets and katydids, with little overlap even at dusk
+(Diwakar and Balakrishnan 2007a). Similarly, a semiquantitative study on a dusk chorus of frogs, crickets and
+cicadas in Malaysia indicates fairly tight calling windows,
+though with some overlap, among different species (Gogala
+and Riede 1995). Since these were not, however, analysed at species level, it is difficult to interpret the degree
+of temporal partitioning. On the other hand, studies on a
+cicada community in the neotropical rainforests of Mexico
+revealed that seven out of nine species showed extensive
+and overlapping calling activity at dawn and dusk (Sueur
+2002). This general lack of diel partitioning and extensive
+overlap in calling periods, especially at dusk, is interesting
+and begs the question why. It is possible that the benefits of
+signalling at dusk, which may include optimal atmospheric
+conditions for sound transmission (van Staaden and Römer
+1997), are high relative to the costs of signalling in other
+time windows.
+How then is intraspecific communication achieved in the
+noisy environment of a dusk chorus? Temporal partitioning may be occurring at finer temporal scales, over minutes
+or seconds, with one species calling in the silent inter-bout
+intervals of the other. In addition, the fact that the calls of
+
+13
+
+	
+136
+
+many species are often discontinuous chirps may mean that
+actual overlap between calls may be low even if two species are calling together. Both of these possibilities were
+investigated in the KNP assemblage of crickets and katydids (Jain et al. 2014) by examining overlaps in calling
+probabilities between pairs of species in 5-min windows
+during peak calling time (gross temporal overlap or GTO)
+as well as probability of overlap due to chance (in simultaneously calling heterospecific individuals) based on signal
+temporal structures alone (fine temporal overlap or FTO).
+There were significant negative correlations between the
+distributions of GTO and FTO of the assemblage, suggesting that species pairs that had high overlap due to signal
+temporal structure may avoid calling together (Jain et al.
+2014). This assemblage-level signature of fine temporal
+partitioning, however, needs to be validated by identifying
+and testing the relevant species pairs in behavioural experiments to check for active avoidance of overlap in time.
+Spatial partitioning
+One of the most straightforward ways for different species
+to avoid acoustic interference is to space themselves apart,
+making use of the fact that sounds attenuate as they move
+away from the source. Calling insect species could move
+apart in both horizontal and vertical space: whereas the
+former may offer more possibilities, being limited only by
+available habitat or microhabitat, the latter will of necessity be constrained by the canopy height. There have been
+very few studies relating calling activity to spatial distributions of callers of different species. In the cricket assemblage of Barro Colorado Island (BCI; Panama) horizontal
+spatial distribution of callers on a relatively large scale,
+where sampling sites examined were spaced 100 m apart,
+appeared to be randomly structured with no support for
+spatial partitioning at the community level (Schmidt et al.
+2013). In the KNP assemblage of crickets and katydids, the
+fine spatial structure of individual multispecies choruses in
+the understorey was examined, with no evidence for active
+spacing as a mechanism to reduce interspecific acoustic
+interference (Jain et al. 2014).
+On the other hand, vertical stratification of different
+calling insect species is well documented, particularly in
+rain forest communities of both the neotropics and paleotropics (Nischk and Otte 2000; Sueur 2002; Diwakar and
+Balakrishnan 2007b; Schmidt et al. 2013). Demonstrating
+vertical stratification is, however, only the first step, since
+species in different strata are not necessarily acoustically
+isolated from each other. Whether vertical stratification
+serves as a mechanism to reduce acoustic interference thus
+remains unclear. The use of space by signalling insects and
+the acoustic context and structuring of choruses in natural
+environments is clearly an underexplored area, with many
+
+13
+
+J Comp Physiol A (2015) 201:133–142
+
+implications for intraspecific communication, signal evolution and acoustic biodiversity monitoring (Balakrishnan
+et al. 2013, in press).
+Spectral partitioning
+The acoustic niche hypothesis indicates that different species in an assemblage should partition the available spectral space of sound signals among themselves (Krause
+1987; Pijanowski et al. 2011). By inspecting spectrograms
+of sound recordings, particularly those obtained in tropical
+rainforests with high acoustic diversity, this appears as an
+intriguing idea because distinct frequency bands can often
+easily be assigned to advertisement calls of frogs, crickets, cicadas and katydids (Krause 1987; Riede 1993; Sueur
+2002; Diwakar et al. 2007). However, the question arises
+how well separated the acoustic signals of an assemblage
+are in spectral space and whether these can be thought of
+as unique frequency niches. For insect taxa such as grasshoppers, many katydids and cicadas, with their broadband
+advertisement signals in the range of up to several kilohertz, frequency partitioning is not a reasonable solution
+(Römer 2013). Crickets, on the other hand, use almost
+pure-tone calling songs, usually in the range of 2–10 kHz
+(Elliott and Koch 1985; Riede 1993; Bennet-Clark 1998;
+Montealegre et al. 2011), of narrow spectral bandwidth
+which should allow them to separate their signals in the
+frequency domain. Riede (1993) provided support for this
+idea, showing that distinct spacing of carrier frequencies
+of different cricket species can be realized and suggested
+partitioning of the transmission channel due to acoustic
+competition.
+In a more quantitative approach, Schmidt et al. (2013)
+and Jain et al. (2014) determined the degree of acoustic
+competition and partitioning in an entire assemblage based
+on extensive acoustic monitoring in the tropical rainforests
+of Barro Colorado (Panama) and KNP (India), respectively.
+Both studies demonstrated that, on average, call frequency
+overlap within a cricket assemblage (Schmidt et al. 2013)
+and an assemblage consisting of crickets and katydids (Jain
+et al. 2013) is extremely low, with little or no spectral overlap for the majority of species pairs. One solution to the
+problem of interspecific interference may thus be for each
+species to have its own frequency channel (Riede 1997).
+To test whether this is so, however, one needs to establish
+that the observed spectral separation in the assemblage is
+unlikely to be an outcome of random chance over evolutionary time scales.
+In case of the cricket assemblage investigated by
+Schmidt et al. (2013), the spectral overlap of the observed
+community was significantly smaller than expected by
+chance when compared to a null model (Gotelli and
+Graves 1996). Moreover, species also tended to use a
+
+J Comp Physiol A (2015) 201:133–142	
+
+The receiver’s perspective: strategies for hearing in noise
+The niche concept discussed so far examines different axes
+of call structure or calling behaviour along which species
+may diverge and hence escape acoustic interference. From
+a physiological point of view masking interference is, however, ultimately a problem of the receiver and requires to be
+examined from a receiver’s perspective. Whereas examining the niche axes of time, space and frequency separately
+is convenient, the actual interference experienced by an
+individual receiver will depend not only on a combination
+of factors, which includes temporal and spectral overlap
+of signals, but also upon relative positions of callers and
+receivers, call intensities at source, call attenuation along
+the transmission path and hearing sensitivity and frequency
+response of the receivers (Jain et al. 2014). Estimating the
+amount of masking interference thus requires an integrated
+model that takes into account all the above factors. Such an
+integrated simulation model of 3-D acoustic active spaces
+was developed for a subset of cricket and katydid species
+of the KNP assemblage and used to estimate the probability
+of effective acoustic overlap (EAO) experienced by individual receivers of different species in multispecies choruses (Jain et al. 2014). Incredibly, the median and modal
+values of EAO were close to zero, suggesting that the levels
+of acoustic interference experienced by individuals in these
+apparently noisy environments are very low (Fig. 1; Jain
+et al. 2014).
+The simulation models also allowed dissection of the
+roles of different factors such as call intensity and frequency tuning in reducing acoustic interference (Jain et al.
+2014): it was found that calling louder was always a good
+strategy to reduce spatial masking interference, irrespective
+of the call structures of the interacting species. The most
+
+Mecopoda ‘2-part‘
+
+Z
+
+greater range of frequency channels for intraspecific communication if the frequency space was not constrained by
+the frequency range of other calling species, suggesting
+that frequency partitioning of calling songs might indeed
+be an evolutionary outcome of selection against interspecific frequency overlap. In the nocturnal signalling acoustic assemblage in Borneo examined by Grant (2014),
+consisting of cricket, katydid and frog species, the overall levels of spectral niche overlap were also low but not
+significantly lower than expected by chance when tested
+against a null model.
+In principle, the competition for signal space can exert
+selection pressure on both senders and receivers. Thus,
+selection should act on signals leading to displacement of
+mating traits and preferences for those signals resulting in
+behavioural isolation and consequently to the reduction of
+signal interference and reduced competition in signal space
+(Hoskin and Higgie 2010; Mendelson and Shaw 2012).
+
+137
+
+‘Whiner‘
+
+20
+10
+0
+-10
+-20
+
+P. rosetta
+Landreva sp.
+0
+
+Phaloria sp.
+
+20
+
+-40
+-20
+
+Y
+
+40
+0
+20
+
+X
+
+60
+
+Fig. 1  The figure shows the estimated 3-dimensional active spaces of
+individual males of five species of understorey crickets and katydids
+of KNP as heard by a receiver of the Phaloria sp. tuned to its conspecific male call. The large grey sphere represents the conspecific active
+space and the small black spheres are the active spaces of the heterospecific male callers, showing that only a small proportion of the
+conspecific active space is overlapped by heterospecific signals, given
+tuned receivers. Callers are at the centres of the spheres. Distances on
+the X, Y and Z axes are in metres and inter-male distances represent
+natural values
+
+powerful strategy to reduce masking interference, however,
+was tuning receivers to match sender call frequency range
+(Jain et al. 2014).
+Frequency tuning
+A fundamental solution to enhance the detection of conspecific signals under noisy conditions was proposed by
+Capranica and Moffat (1983), wherein there is a match
+between the frequency band containing maximum energy
+in the signal and the frequency of maximum auditory sensitivity of the receiver (i.e. matched filters), thus improving
+the signal-to-noise ratio (Wehner 1987; Simmons 2013).
+However, not only is the match between the signaller’s call
+and the receiver sensitivity important but also the sharpness of the receiver tuning is crucial, particularly in environments with high acoustic noise levels. In habitats with
+non-overlapping acoustic signals (i.e. a setting without
+acoustic competition) relatively broad frequency selectivity
+has been observed in European field crickets (e.g. Gryllus
+bimaculatus and Gryllus campestris), whereas a comparative study in the rainforest of BCI revealed sharply tuned
+frequency selectivity in cricket species living within a large
+assemblage of acoustically co-active species (Kostarakos
+et al. 2008, 2009; Schmidt et al. 2011, 2013; Schmidt and
+Römer 2011).
+To illustrate the advantage of enhanced frequency selectivity and to quantify its quality in noise reduction, the
+
+13
+
+	
+138
+
+a
+
+35
+
+Relative threshold (dB)
+
+Fig.  2  a Comparison of standardised frequency sensitivity of
+AN1 in a tropical cricket species Paroecanthus podagrosus
+(red) and two species of field
+crickets Gryllus bimaculatus
+(green) and Gryllus campestris
+(blue). b The species-specific
+tuning properties of AN1 were
+implemented in audio filters and
+used to digitally filter mixed
+recordings of a P. podagrosus
+calling song (I) embedded in
+natural background noise (II).
+The effect of the different filter
+functions on the amplitude
+modulation (III–V) and the
+corresponding correlation coefficient of these filtered signals
+with the P. podagrosus calling
+song (I) are shown. Modified
+from Schmidt et al. (2011)
+
+J Comp Physiol A (2015) 201:133–142
+
+30
+25
+20
+15
+10
+5
+0
+-1.5
+
+-1.0
+
+-0.5
+
+0.0
+
+0.5
+
+1.0
+
+1.5
+
+Standardized frequency (kHz)
+Correlation coefficient
+
+b
+
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1.0
+
+I
+
+No filter
+II
+
+G. campestris
+III
+
+G. bimaculatus
+IV
+
+P. podagrosus
+V
+120ms
+
+neuronal filters of the rainforest and the European species were implemented into audio software and applied on
+sound recordings of natural background noise (Fig. 2). The
+results clearly demonstrated strongly increased noise suppression for the filter of tropical species, leading to a significantly better extraction of the species-specific song pattern and its amplitude modulation when embedded in noise
+(Schmidt et al. 2011).
+In a continuative approach the insect was placed in the
+nocturnal rainforest to observe directly the narrow tuned
+filter properties by analysing the readout of an acoustic
+scene encoded in the action potential activity of an auditory
+interneuron (AN1) under natural conditions. The results
+revealed highly selective coding of conspecific songs in
+receivers, whereas irrelevant noise mainly within the higher
+frequency noise band was successfully filtered out (Schmidt
+and Römer 2011). In the rainforest of BCI similar sharp frequency filters have been found in different members of the
+subfamilies Oecanthinae and Podoscirtinae, suggesting an
+advantageous role to cope with the high level of background
+
+13
+
+noise of heterospecifics rather than being solely the outcome
+of phylogenetic constraint (Schmidt et al. 2011).
+Frequency selectivity in receivers, coupled with matched
+frequency partitioning in senders, thus represents a powerful strategy for noise reduction and signal detection, enabling intraspecific communication in habitats with high
+acoustic diversity.
+Spatial release from masking and gain control
+Interestingly, co-occurring species that have been detected
+simultaneously in sound recordings and thus temporally
+overlap are not necessarily doomed to fail to communicate
+successfully. Signal detection against heterospecific noise
+and also in dense populations of conspecific individuals
+can be substantially improved by mechanisms known as
+spatial release from masking and gain control (also referred
+to as selective attention: Pollack 1988). Although these
+mechanisms have been investigated in a neurophysiological rather than behavioural context in the afferent auditory
+
+J Comp Physiol A (2015) 201:133–142	
+
+pathway of crickets and katydids, they can provide important insights into how insects solve cocktail party-like problems of natural auditory scenes.
+The basic principle of spatial release from masking is
+that when two auditory objects (e.g. conspecific signal and
+masker) are spatially separated, the detection of a sound
+signal will be improved (Bee 2008, 2012). Owing to the
+directionality of the hearing system these auditory objects
+are selectively processed when arriving at the ear from different directions (Bradbury and Vehrencamp 2011). Such
+a situation will be most likely encountered in complex
+auditory scenes of natural environments such as nocturnal
+rainforests where multiple sound sources are distributed in
+space.
+In laboratory experiments, signal detection thresholds
+in the cricket Paroecanthus podagrosus were significantly
+improved by 6–9 dB when the signal (i.e. conspecific calling song) and masker (i.e. nocturnal background noise)
+were spatially separated by 180° (Schmidt and Römer
+2011). Similarly, in the katydid Tettigonia viridissima neuronal representation of auditory objects is strongly favoured
+on the ipsilateral side while strongly suppressed when coming from the contralateral side (Römer and Krusch 2000).
+Even a spatial separation of two concurrent sound signals
+of merely 15° in the frontal zone of the animal will result
+in a reliable representation of the ipsilateral signal in the
+omega neuron (an identified auditory interneuron in crickets and katydids: Römer and Krusch 2000).
+In addition to spatial release from masking, gain control
+is another neuronal mechanism allowing crickets and katydids to accomplish the task of sound source segregation in
+chorus situations. In engineering, gain control describes
+an electronic circuit where the dynamic range of an input
+signal is automatically controlled to produce a constant
+output signal. Such a mechanism was first reported for the
+omega neuron in crickets, which selectively encodes the
+more intense signal in the presence of a signal with lower
+intensity, based on combined synaptic activity of inhibitory-excitatory effects (Pollack 1986, 1988; Sobel and Tank
+1994; Baden and Hedwig 2007; Römer 2013). Moreover, in
+a neurophysiological approach mimicking a natural chorus
+situation, with competitive signals arriving from the same
+direction, an intensity difference in the range of 2–5 dB
+was sufficient to suppress the less intense of two signals
+(Römer and Krusch 2000). The authors also showed that,
+when presenting two stimuli from the same side, the louder
+signal (broadcast at 60 dB SPL) was almost exclusively
+represented in the omega neuron (i.e. a constant neuronal
+output) and the less intense signal was suppressed over a
+wide range of intensities (30–50 dB SPL; i.e. the dynamic
+range of an input signal). That such a gain control mechanism can be potentially relevant in natural auditory scenes
+has been shown by Schmidt and Römer (2011). In playback
+
+139
+
+experiments, the AN1 activity of irrelevant sound occurring in intervals of conspecific signals was considerably
+decreased, leading to an enhanced contrast between signal
+and natural background noise. However, an open question
+remains as to what extent both mechanisms improve the
+female’s discrimination ability under real-world listening
+conditions.
+Novelty detection
+It was recently demonstrated that a small change in the
+spectrum of a broadband signal can have a significant
+impact on efficient communication. This was shown in the
+case of two sympatric Malaysian katydid species of the
+Mecopoda complex (Siegert et al. 2013) where a chirping
+species is heavily masked by a loud trilling species. However, Mecopoda chirper males show an extreme behavioural
+robustness of chorus synchrony against the background
+noise of the trilling species owing to the higher amount of
+spectral energy at 2 kHz in their chirps when compared to
+the song of Mecopoda triller.
+The selective neuronal response of a local interneuron (TN1) to conspecific signals (“chirps”) under natural
+noisy conditions (“trill”) offers an elegant solution to the
+observed behavioural results, referred as to “novelty detection” (Schul and Sheridan 2006; Schul et al. 2012; Siegert
+et al. 2013). The stimulus-specific adaptation of this neuron towards the continuous trill leads to a fast and almost
+complete decrease in neuronal activity and enables the reliable coding of simultaneously presented Mecopoda chirps.
+Thus, such a neuronal novelty detector for conspecific signals can provide a useful receiver strategy under certain
+regimes of background noise (e.g. multi-species choruses).
+
+Anthropogenic noise
+Another form of environmental noise with impacts on
+acoustic communication systems is the one that emerges
+from human activities. Recent work has revealed the negative impact of traffic noise with its consequences on reproductive success and foraging efficiency in birds (Halfwerk
+et al. 2011) and bats (Siemers and Schaub 2011). In vertebrates one commonly observed effect in response to anthropogenic noise is an upward shift in call frequency (Slabbekoorn and Peet 2003; Slabbekoorn and den Boer-Visser
+2006; Bermúdez-Cuamatzin et al. 2011; Hage et al. 2013).
+Road traffic noise contains considerable amount of
+energy in the frequency range between 6 and 9 kHz and is
+able to mask the local frequency maximum of the courtship
+song of C. biguttulus males (Lampe et al. 2012), which is
+also highly attractive to females (von Helversen and von
+Helversen 1997). Males from roadside habitats call at
+
+13
+
+	
+140
+
+higher local frequency maxima of 300 Hz on average compared to males from quiet habitats (Lampe et al. 2012).
+Moreover, nymphs that were exposed to road noise during
+their development also produced signals with higher frequency components as adults compared with males reared
+under quiet conditions, suggesting developmental plasticity
+as a potential mechanism for this type of signal adjustment
+(Lampe et al. 2014). Similarly, Shieh et al. (2012) found for
+the cicada species Cryptotympana takasagona an increase
+of song frequency in areas along roads with vehicular traffic and parking lots.
+
+Acoustic monitoring
+Insect sounds provide an ideal opportunity for monitoring
+biodiversity because the heterogeneity of an acoustic environment is usually correlated with biodiversity (Sueur et al.
+2008). The major sound producing insect groups, namely
+crickets, katydids, grasshoppers and cicadas are found
+worldwide and over a range of different habitat and microhabitat types (Samways and Sergeev 1997). Being small
+and poikilothermic, they are sensitive to and thus act as
+good indicators of landscape and climate change (Samways
+and Sergeev 1997). Many of them produce species-specific
+songs and calls, allowing acoustic signatures to be used as
+a proxy for species identification (Riede 1993). Non-invasive acoustic monitoring of species diversity and activity
+is thus enabled, using either psychoacoustic sampling with
+trained listeners (Diwakar et al. 2007) or call recordings,
+wherein species with known acoustic signals may be identified from spectrograms (Diwakar et al. 2007; Schmidt
+et al. 2013). There are also currently attempts to automate
+species recognition based on acoustic signals using different computational algorithms and these new technologies
+should allow automated long-term recording and analysis,
+including in remote areas (Aide et al. 2013). Given the
+enormous diversity and the lack of detailed taxonomic and
+acoustic information for many species, especially in the
+tropics, another approach to acoustic profiling is to identify
+‘acoustic taxonomic units’ based on distinct temporal and
+spectral properties of calls revealed in spectrograms (Grant
+2014). Even though all the species may not be physically
+identified, this approach allows useful comparisons of species diversity between different habitats and land-use patterns (Grant 2014).
+A different approach, which does not employ species or
+signal pattern identification, is to use acoustic entropy or
+spectro-temporal heterogeneity as a measure of diversity
+(Sueur et al. 2008; Depratere et al. 2012; Gasc et al. 2013).
+This is a form of soundscape ecology (Pijanowski et al.
+2011), wherein recordings of the entire soundscape are analysed as units and compared across different habitats and
+
+13
+
+J Comp Physiol A (2015) 201:133–142
+
+vegetation types. Heterogeneity of soundscapes has been
+found to be correlated with different habitats and vegetation types (Bormpoudakis et al. 2013) and holds promise
+for rapid assessment and monitoring of biodiversity: detectable acoustic gaps could serve as a ‘warning system’ for a
+disturbed ecosystem (Riede 1993; Pijanowski et al. 2011).
+Acoustic monitoring of Tettigoniidae revealed large-scale
+effects of anthropogenic pressure due to urbanisation and
+agriculture, with negative impacts on species richness,
+diversity and abundance (Penone et al. 2013).
+Insect sounds contribute heavily to natural soundscapes,
+especially nocturnal ones and are thus important in the context of acoustic monitoring of biodiversity and ecosystems.
+Acoustic insects, with their fascinating and familiar diversity of sounds, have been an integral part of natural ecosystems and soundscapes for millions of years and deserve
+our respect and protection in the face of the current unprecedented rates of habitat destruction and climate change.
+Acknowledgments  The authors thank the Austrian Science Foundation (FWF; P20882-B09) and the Ministry of Environment and Forests, Government of India, for supporting research projects conducted
+in Panama and India, respectively. They thank Jerome Sueur for help
+with locating interesting publications on paleobioacoustics and Diptarup Nandi for drawing the illustration in Fig. 1.
+
+References
+Aide TM, Corrada-Bravo C, Campos-Cerqueira M, Milan C, Vega G,
+Alvarez R (2013) Real-time bioacoustics monitoring and automated species identification. PeerJ 1:e103
+Baden T, Hedwig B (2007) Neurite specific Ca2+-dynamics underlying sound processing in an auditory interneurone. J Neurobiol
+67:68–80
+Bailey WJ, Morris GK (1986) Confusion of phonotaxis by masking
+sounds in the bushcricket Conocephalus brevipennis (Tettigoniidae: conocephalinae). Ethology 73:19–28
+Balakrishnan R, Bahuleyan J, Nandi D, Jain M (2013) Modelling
+the effects of chorus species composition and caller density on
+acoustic masking interference in multispecies choruses of crickets and katydids. Ecol Inform. doi:10.1016/j.ecoinf.2013.11.006
+Bee MA (2008) Finding a mate at a cocktail party: spatial release
+from masking improves acoustic mate recognition in grey
+treefrogs. Anim Behav 75:1781–1791
+Bee MA (2012) Sound source perception in anuran amphibians. Curr
+Opin Neurobiol 22:301–310
+Bennet-Clark HC (1998) Size and scale effects as constraints in insect
+sound communication. Philos T Roy Soc B 353:407–419
+Bermúdez-Cuamatzin E, Ríos-Chelén AA, Gil D, Garcia CM (2011)
+Experimental evidence for real-time song frequency shift in
+response to urban noise in a passerine bird. Biol Lett 7:36–38
+Béthoux O, Nel A (2002) Venation pattern and revision of Orthoptera
+sensu nov. and sister groups. Phylogeny of palaeozoic and Mesozoic Orthoptera sensu nov. Zootaxa 96:1–88
+Bormpoudakis D, Sueur J, Pantis JD (2013) Spatial heterogeneity of
+ambient sound at the habitat type level: ecological implications
+and applications. Landsc Ecol 28:495–506
+Bradbury JW, Vehrencamp SL (2011) Principles of animal communication, 2nd edn. Sinauer Associates, Sunderland
+
+J Comp Physiol A (2015) 201:133–142	
+Capranica RR, Moffat AJM (1983) Neurobehavioral correlates of
+sound communication in anurans. In: Ewert J, Capranica R, Ingle
+D (eds) Advances in vertebrate neuroethology. Plenum, New
+York, pp 701–730
+Connell JH (1961) The influence of interspecific competition and
+other factors on the distribution of the barnacle Chthamalus stellatus. Ecology 42:710–723
+Conner WE (2014) Adaptive sounds and silences: acoustic anti-predator strategies in insects. In: Hedwig B (ed) Insect hearing and
+acoustic communication. Animal signals and communication, vol
+1. Springer, Berlin, Heidelberg, pp 65–79
+Couldridge VC, van Staaden MJ (2004) Habitat-dependent transmission of male advertisement calls in bladder grasshoppers (Orthoptera; Pneumoridae). J Exp Biol 207:2777–2786
+Diwakar S, Balakrishnan R (2007a) The assemblage of acoustically communicating crickets of a tropical evergreen forest in Southern India:
+call diversity and diel calling patterns. Bioacoustics 16:113–135
+Diwakar S, Balakrishnan R (2007b) Vertical stratification in an acoustically communicating ensiferan assemblage of a tropical evergreen forest in Southern India. J Trop Ecol 23:479–486
+Diwakar S, Jain M, Balakrishnan R (2007) Psychoacoustic sampling
+as a reliable, non—invasive method to monitor orthopteran species diversity in tropical forests. Biodiv Conserv 16:4081–4093
+Ellinger N, Hödl W (2003) Habitat acoustics of a neotropical lowland
+rainforest. Bioacoustics 13:297–321
+Elliott CJH, Koch UT (1985) The clockwork cricket. Naturwissenschaften 72:150–152
+Endler JA (1992) Signals, signal conditions, and the direction of evolution. Amer Nat 139:125–153
+Endler JA (1993) Some general comments on the evolution and
+design of animal communication systems. Phil Trans R Soc Lond
+B 340:215–225
+Ey E, Fischer J (2009) The ‘‘Acoustic Adaptation Hypothesis’’—a
+review of the evidence from birds, anurans and mammals. Bioacoustics 19:21–48
+Fonseca PJ (2014) Cicada acoustic communication. In: Hedwig B
+(ed) Insect hearing and acoustic communication. Animal signals and communication, vol 1. Springer, Berlin, Heidelberg, pp
+101–121
+Gasc A, Sueur J, Pavoine S, Pellens R, Grandcolas P (2013) Biodiversity sampling using a global acoustic approach: contrasting sites
+with microendemics in New Caledonia. PLoS One 8:e65311
+Gerhardt HC, Huber F (2002) Acoustic communication in insects and
+anurans: common problems and diverse solutions. University of
+Chicago Press, Chicago
+Gogala M, Riede K (1995) Time sharing of song activity by cicadas
+in Temengor Forest Reserve, Hulu Perak, and Sabah, Malaysia.
+Malay Nat J 48:297–305
+Gorochov AV, Rasnitsyn AP (2002) Superorder Gryllidea Laicharting, 1781. In: Rasnitsyn AP, Quicke DLJ (eds) History of insects.
+Kluwer Academic Publishers, Dordrecht, pp 293–303
+Gotelli NJ, Graves GR (1996) Null models in ecology. Smithsonian
+Institution Press, Washington, DC
+Grant PCB (2014) Acoustic profiling of the landscape. Ph. D thesis,
+Stellenbosch University, South Africa
+Greenfield MD (2014) Acoustic communication in the nocturnal
+Lepidoptera. In: Hedwig B (ed) Insect hearing and acoustic communication. Animal signals and communication, vol 1. Springer,
+Berlin, Heidelberg, pp 81–100
+Gu J-J, Montealegre ZF, Robert D, Engel MS, Xiao G-X, Ren D
+(2012) Wing stridulation in a Jurassic katydid (Insecta, Orthoptera) produced low-pitched musical calls to attract females. Proc
+Natl Acad Sci USA 109:3868–3873
+Halfwerk W, Holleman LJM, Lessells CM, Slabbekoorn H (2011)
+Negative impact of traffic noise on avian reproductive success. J
+Appl Ecol 48:210–219
+
+141
+Hedwig B (2014) Towards an understanding of the neural basis
+of acoustic communication in crickets. In Hedwig B (ed)
+Insect hearing and acoustic communication. Animal signals
+and communication, vol 1. Springer, Berlin, Heidelberg, pp
+123–141
+Hedwig B, Robert D (2014) Auditory parasitoid flies exploiting
+acoustic communication of insects. In: Hedwig B (ed) Insect
+hearing and acoustic communication. Animal signals and communication, vol 1. Springer, Berlin, Heidelberg, pp 45–63
+Heller KG (1995) Acoustic signalling in palaeotropical bushcrickets
+(Orthoptera: tettigonioidea: Pseudophyllidae): does predation
+pressure by eavesdropping enemies differ in the Palaeo-and Neotropics? J Zool 237:469–485
+Hoskin CJ, Higgie M (2010) Speciation via species interactions: the
+divergence of mating traits within species. Ecol Lett 13:409–420
+Jain M, Balakrishnan R (2011) Microhabitat selection in an assemblage of crickets (Orthoptera: ensifera) of a tropical evergreen
+forest in Southern India. Insect Conserv Div 4:152–158
+Jain M, Balakrishnan R (2012) Does acoustic adaptation drive vertical
+stratification? A test in a tropical cricket assemblage. Behav Ecol
+23:343–354
+Jain M, Kuriakose G, Balakrishnan R (2010) Evaluation of methods
+to estimate foliage density in the understorey of a tropical evergreen forest. Curr Sci 98:508–515
+Jain M, Diwakar S, Bahuleyan J, Deb R, Balakrishnan R (2014) A
+rain forest dusk chorus: cacophony or sounds of silence? Evol
+Ecol 28:1–22
+Kostarakos K, Hartbauer M, Römer H (2008) Matched filters, mate
+choice and the evolution of sexually selected traits. PLoS One
+3:e3005
+Kostarakos K, Hennig MR, Römer H (2009) Two matched filters and
+the evolution of mating signals in four species of cricket. Front
+Zool 6:22
+Krause BL (1987) Bioacoustics, habitat ambience in ecological balance. Whole Earth Rev 57:14–18
+Lampe U, Schmoll T, Franzke A, Reinhold K (2012) Staying tuned:
+grasshoppers from noisy roadside habitats produce courtship signals with elevated frequency components. Funct Ecol
+26:1348–1354
+Lampe U, Reinhold K, Schmoll T (2014) How grasshoppers
+respond to road noise: developmental plasticity and population differentiation in acoustic signaling. Funct Ecol.
+doi:10.1111/1365-2435.12215
+MacArthur RH (1958) Population ecology of some warblers of northeastern coniferous forests. Ecology 39:599–619
+Marten K, Marler P (1977) Sound transmission and its significance
+for animal vocalization. Behav Ecol Sociobiol 2:271–290
+Mendeson TC, Shaw KL (2012) The (mis)concept of species recognition. Trends Ecol Evol 27:421–427
+Montealegre-Z F, Morris GK, Mason AC (2006) Generation
+of extreme ultrasonics in rainforest katydids. J Exp Biol
+209:4923–4937
+Montealegre-Z F, Jonsson T, Robert D (2011) Sound radiation and
+wing mechanics in stridulating field crickets (Orthoptera: gryllidae). J Exp Biol 214:2105–2117
+Morton ES (1975) Ecological sources of selection on avian sounds.
+Am Nat 109:17–34
+Nischk F, Otte D (2000) Bioacoustics, ecology and systematics of
+Ecuadorian rainforest crickets (Orthoptera: gryllidae: Phalangopsinae), with a description of four new genera and ten new species. J Orthopt Res 9(229–2):54
+Paul RC, Walker TJ (1979) Arboreal singing in a burrowing cricket,
+Anurogryllusa arboreus. J Comp Physiol A 132:217–223
+Penone C, Le Viol I, Pellissier V, Julien J-F, Bas Y, Kerbiriou C (2013)
+Use of large-scale acoustic monitoring to assess anthropogenic
+pressures on Orthoptera communities. Conserv Biol 27:979–987
+
+13
+
+	
+142
+Pianka ER (1973) The structure of lizard communities. Annu Rev
+Ecol Syst 4:53–74
+Pijanowski BC, Gage SH, Dumyahn SL, Krause BL (2011) What is
+soundscape ecology? An introduction and overview of an emerging new science. Landsc Ecol 26:1213–1232
+Pollack GS (1986) Discrimination of calling song models by the
+cricket, Teleogryllus oceanicus: the influence of sound direction
+on neural coding of the stimulus temporal pattern and on phonotactic behaviour. J Comp Physiol A 158:549–561
+Pollack GS (1988) Selective attention in an insect auditory neuron. J
+Neurosci 8:2635–2639
+Riede K (1993) Monitoring biodiversity: analysis of Amazonian rainforest sounds. Ambio 22:546–548
+Riede K (1997) Bioacoustic diversity and resource partitioning in
+tropical calling communities. In: Tropical Biodiversity and Systematics, pp 275–280. Proceedings of the International Symposium on Biodiversity and Systematics in Tropical Ecosystems,
+Bonn
+Römer H (1993) Environmental and biological constraints for the
+evolution of long-range signalling and hearing in acoustic insects.
+Philos T Roy Soc B 340:179–185
+Römer H (1998) The sensory ecology of acoustic communication
+in insects. In: Hoy R, Popper A, Fay R (eds) Comparative hearing: insects. Handbook of auditory research. Springer, Berlin, pp
+63–96
+Römer H (2013) Masking by noise in acoustic insects: problems and
+solutions. In: Brumm H (ed) Animal communication and noise,
+vol 2. Springer, Berlin, Heidelberg, pp 33–63
+Römer H, Krusch M (2000) A gain-control mechanism for processing
+of chorus sounds in the afferent auditory pathway of the bushcricket Tettigonia viridissima (Orthoptera; Tettigoniidae). J Comp
+Physiol A 186:181–191
+Römer H, Lewald J (1992) High-frequency sound transmission in
+natural habitats: implications for the evolution of insect acoustic
+communication. Behav Ecol Sociobiol 29:437–444
+Ryan MJ (1990) Sexual selection, sensory systems and sensory
+exploitation. Oxf Surv Evolut Biol 5:157–195
+Samways MJ, Sergeev MG (1997) Orthoptera and landscape change.
+In: Gangwere SK, Muralirangan MC, Muralirangan M (eds) The
+bionomics of grasshoppers, katydids and their kin. CAB International, Oxon
+Schmidt AKD, Römer H (2011) Solutions to the cocktail party problem in insects: selective filters, spatial release from masking and
+gain control in tropical crickets. PLoS One 6:e28593
+Schmidt AKD, Riede K, Römer H (2011) High background noise
+shapes selective auditory filters in a tropical cricket. J Exp Biol
+214:1754–1762
+Schmidt AKD, Römer H, Riede K (2013) Spectral niche segregation
+and community organization in a tropical cricket assemblage.
+Behav Ecol 24:470–480
+Schoener TW (1968) The Anolis lizards of Bimini: resource partitioning in a complex fauna. Ecology 49:704–726
+Schoener TW (1974) Resource partitioning in ecological communities. Science 185:27–39
+
+13
+
+J Comp Physiol A (2015) 201:133–142
+Schul J, Sheridan RA (2006) Auditory stream segregation in an insect.
+J Neurosci 138:1–4
+Schul J, Mayo AM, Triblehorn JD (2012) Auditory change detection
+by a single neuron in an insect. J Comp Physiol A 198:695–704
+Senter P (2008) Voices of the past: a review of Paleozoic and Mesozoic animal sounds. Hist Biol 20:255–287
+Shieh BS, Liang SH, Chen CC, Loa HH, Liao CY (2012) Acoustic
+adaptations to anthropogenic noise in the cicada Cryptotympana
+takasagona Kato (Hemiptera: cicadidae). Acta Ethol 15:33–38
+Siegert ME, Römer H, Hartbauer M (2013) Maintaining acoustic
+communication at a cocktail party: heterospecific masking noise
+improves signal detection through frequency separation. J Exp
+Biol 216:4655–4665
+Siemers BM, Schaub A (2011) Hunting at the highway: traffic noise
+reduces foraging efficiency in acoustic predators. Proc R Soc
+Lond B 278:1646–1652
+Simmons AM (2013) “To ear is human, to forgive is divine”: bob
+Capranica`s legacy to auditory neuroethlogy. J Comp Physiol A
+199:169–182
+Slabbekoorn H, den Boer-Visser A (2006) Cities change the songs of
+birds. Curr Biol 16:2326–2331
+Slabbekoorn H, Peet M (2003) Birds sing at a higher pitch in urban
+noise—great tits hit the high notes to ensure that their mating
+calls are heard above the city’s din. Nature 424:267
+Sobel EC, Tank DW (1994) In vivo Ca2+ dynamics in a cricket auditory neuron: an example of chemical computation. Science
+263:823–826
+Stumpner A, Nowotny M (2014) Neural processing in the bushcricket auditory pathway. In: Hedwig B (ed) Insect hearing and
+acoustic communication. Animal signals and communication, vol
+1. Springer, Berlin, Heidelberg, pp 143–166
+Sueur J (2002) Cicada acoustic communication: potential sound partitioning in a multispecies community from Mexico (Hemiptera:
+cicadomorpha: Cicadidae). Biol J Linn Soc 75:379–394
+Sueur J, Aubin T (2003) Is microhabitat segregation between two
+cicada species (Tibicina haematodes and Cicada orni) due to
+calling song propagation constraints? Naturwissenschaften
+90:322–326
+Sueur J, Pavoine S, Hamerlynck O, Duvail S (2008) Rapid acoustic
+survey for biodiversity appraisal. PLoS One 3:e4065
+van Staaden MJ, Römer H (1997) Sexual signaling in bladder grasshoppers: tactical design for maximizing calling range. J Exp Biol
+200:2597–2608
+von Helversen D, von Helversen O (1997) Recognition of sex in the
+acoustic communication of the grasshopper Chorthippus biguttulus (Orthoptera, Acrididae). J Comp Physiol A 180:373–386
+Wehner R (1987) “Matched filters”-neural models of the external
+world. J Comp Physiol A 161:511–531
+Wiley RH, Richards DG (1982) Adaptation for acoustic communication in birds: sound transmission and signal detection. In:
+Kroodsma DE, Miller EH, Quellet H (eds) acoustic communication in birds. Academic, New York, pp 131–181
+
+

@@ -1,0 +1,975 @@
+Ecological Informatics 21 (2014) 100–109
+
+Contents lists available at ScienceDirect
+
+Ecological Informatics
+journal homepage: www.elsevier.com/locate/ecolinf
+
+Visualization of temporal change in soundscape power of a Michigan lake
+habitat over a 4-year period
+Stuart H. Gage a,⁎, Anne C. Axel b
+a
+b
+
+Remote Environmental Assessment Laboratory, Manly Miles Building, Room 217, Michigan State University, East Lansing, MI 48823, USA
+Department of Biological Sciences, One John Marshall Drive, Marshall University, Huntington, WV 25755 USA
+
+a r t i c l e
+
+i n f o
+
+Article history:
+Received 15 July 2013
+Received in revised form 26 October 2013
+Accepted 12 November 2013
+Available online 18 November 2013
+Keywords:
+Soundscape
+NDSI
+Biophony
+Soundscape power
+Ecosystem acoustics
+
+a b s t r a c t
+Soundscape Ecology is an emerging area of science that does not focus on the identiﬁcation of species in the
+soundscape but attempts to characterize sounds by organizing them into those produced by biological organisms
+such as birds, amphibians, insects or mammals; physical environmental factors such as thunder, rainfall or wind;
+and sounds produced by human entities such as airplanes, automobiles or air conditioners. The soundscape
+changes throughout the day and throughout the seasons. The soundscape components that create the sound
+occur at different frequencies. A set of metrics termed soundscape power was computed and visualized to examine the patterns of daily and seasonal change in the soundscape.
+Automated recorders were used to record soundscape samples every half hour for one minute duration from six
+sites on an uninhabited island in Twin Lakes located near Cheboygan in Michigan's northern Lower Peninsula. Each
+recording was divided into 1 kHz frequency intervals and visualization tools were used to examine the soundscape
+power in each interval during 48 half-hour time segments from April–October for four consecutive years. Daily patterns of soundscape power change were also examined during the seven month sample period. To synthesize the
+data set, three dimensional contour plots were used to visualize day of the year (x), time of day (y) and soundscape
+power (z) for several frequency intervals. A further synthesis was developed to visualize soundscape change using a
+Normalized Difference Soundscape Index (NDSI) which is a ratio of low to high frequencies.
+The visualization of the soundscape revealed discrete patterns in the soundscape including striking changes in
+the time of the occurrence of dawn and dusk choruses. The patterns in the soundscape were remarkably similar
+over the four-year investigation. Soundscape power in the lower frequency examined (1–2 kHz) was a dominant
+feature of the soundscape at Twin Lakes and the low frequency soundscape power was negatively correlated with
+higher frequency sounds.
+The soundscape power metrics and the visualizations of the soundscape produced in this study should provide a
+means of rapidly synthesizing large numbers of recordings into meaningful patterns to examine soundscape
+change. This is especially useful because of the need to develop indices of ecological metrics based on soundscape
+attributes to assist resource managers in making decisions about ecosystem integrity. Visualization can also be of
+immense beneﬁt to examine patterns in large soundscape time series data sets that can be produced by automated recording devices.
+© 2013 Elsevier B.V. All rights reserved.
+
+1. Introduction
+Ecosystem sounds create a soundscape comprised of acoustic
+periodicities and frequencies emitted from the ecosystem's biophysical entities (Qi et al., 2008; Schafer, 1977; Truax, 1978, 1999). These sounds are
+acoustic signals that reﬂect the dynamics of biological, social, and physical
+systems of a landscape. Soundscape ecology is “the study of systematic relationships between humans, organisms, and their sonic environment”
+(Pijanowski et al., 2011a, 2011b; Schafer, 1977, 1994) or “the study of the
+effects of the soundscape on the physical responses or behavioral characteristics of living organisms in the system” (Truax, 1999).
+⁎ Corresponding author. Tel.: +1 517 355 2135.
+E-mail addresses: gages@msu.edu, stuart.gage@gmail.com (S.H. Gage).
+1574-9541/$ – see front matter © 2013 Elsevier B.V. All rights reserved.
+http://dx.doi.org/10.1016/j.ecoinf.2013.11.004
+
+The types of sound emanating from a landscape depend on land cover
+type, time of day, and season of the year. Many animals produce sound
+and use acoustic signals to communicate information such as mating potential, territory size, and potential predation (Bradbury and Vehrencamp,
+2011). Increasingly, human activities are dominating our ecological
+soundscapes. Anthropogenic noise may ultimately disrupt ecosystem
+function by limiting distribution of some species, and negatively
+impacting breeding success of others (Krause, 2012; Warren et al.,
+2006). Vehicular trafﬁc alone is a large contribution to anthropogenic
+noise in ecosystems. Nearly a quarter of the total land area of the conterminous United States is located within 150 m of a road (Riitters and
+Wickham, 2003). This ﬁgure does not include lands impacted by other
+forms of transportation including railways, aircraft, and watercraft.
+Furthermore, the acoustic space of ecosystems is also signiﬁcantly
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+impacted by machinery related to energy extraction, industry, and residential upkeep (i.e., lawn mowers, snow blowers, leaf blowers).
+Acoustic information as an ecological attribute has the potential to
+increase our understanding of ecosystem change due to human disturbance, as well as provide a measure of biological diversity and its subsequent change over time (Joo et al., 2011; Sueur et al., 2008; Truax, 1984;
+Wrightson, 2000). Furthermore, the analysis of soundscapes may also
+produce valuable information on the dynamics of species interactions
+in heterogeneous landscapes (Carles et al., 1999; Joo et al., 2011;
+Pijanowski et al., 2011b). Examination of the temporal patterns of the
+soundscape can provide insight into the timing of the key acoustical
+events (dawn and dusk chorus), thus enabling assessment of shifts in chorus timing due to changes in climate or disturbance regimes; it may also inform decision makers about the frequency and intensity of soundscape
+power, thus providing quantitative information regarding noise abatement
+(Joo, 2008; Joo et al., 2011). Analyzing the patterns of acoustic signals can
+also provide an insight into phenological patterns, species diversity
+(Sueur et al., 2008), as well as ecosystem integrity (Qi et al., 2008).
+Advances in modern technology and high-powered computation
+instruments enable novel approaches for processing and quantifying
+environmental acoustic data (Gage, 2003; Gage et al., 2001; Joo, 2008;
+Kasten et al., 2007, 2010; Qi et al., 2008; Wimmer et al., 2011) and
+extracting a variety of ecological information such as species identiﬁcation (Acevedo et al., 2009; Chou et al., 2007; Kasten et al., 2010; Towsey
+et al., 2012), diversity metrics (Sueur et al., 2008), and the effects of
+human noise on natural and human systems (Hannah et al., 1994;
+Krausman et al., 1986; Neumann and Merriam, 1972; Romano et al.,
+2004). By advancing our capacity for collecting, organizing and
+searching large archives of acoustic data, we strive to enable the study
+of ecological objectives that fall under the soundscape research themes
+proposed by Pijanowski et al. (2011b). These research themes include
+questions related to: (1) improving the measurement and quantiﬁcation of sounds, (2) improving our understanding of spatial–temporal
+dynamics across different scales and how environmental covariates impact sound, (3) assessing the impact of the soundscape on humans and
+wildlife, and (4) assessing the impact of human activity on soundscapes.
+Automated technologies, such as those developed by Gage et al. (in
+press), Wildlife Acoustics (www.wildlifeacoustics.com), Procept (2012)
+(http://www.procept.com.au/customers/organisations/wireless-biophonysensors), Bedford Technical, 2012 (http://www.frogloggers.com/index.
+html), and the Bioacoustics Research Program (BRP), Cornell Lab of
+Ornithology (2012) (http://www.birds.cornell.edu/brp/hardware) enable
+us to record sounds autonomously by making simultaneous recordings at
+multiple places throughout the day and across seasons. This technology
+provides a window on the ecological space-time continuum, and thus provides a tool to obtain data that has long been needed to assess ecological integrity. The objective of this investigation is to visualize temporal patterns in
+acoustic signals of the landscape during the course of the day (diurnal
+change) and across seasons to examine changes in the soundscape over
+time.
+To examine this temporal change in soundscape power, we analyzed
+1 minute recordings collected at 30 minute intervals from April to October over a four-year period at six locations in a lacustrine forest habitat
+on an island within a relatively pristine lake. Recordings were not collected from November to March due to inaccessibility of recorder sites
+during winter conditions.
+2. Methods
+2.1. Study location
+The soundscape analyzed is at the water-vegetation edge of an uninhabited island located on Twin Lakes in Grant Township, in Michigan's
+northern Lower Peninsula, 20 km south east of the city of Cheboygan,
+Michigan. The geographic coordinates (latitude and longitude in decimal
+degrees) of the island center are 45.5401 and −84.2967 at an elevation
+
+101
+
+of 210 m. The island is located within a small residential community
+with both year-round and summer residents. The island location was
+selected in particular because there was minimal risk of human interference with acoustic recording devices. None of the recorders was disturbed during this four-year study.
+The island vegetation cover consists of a mixture of 50–60 year old
+deciduous and coniferous vegetations including white birch, trembling
+aspen, balsam ﬁr, white cedar, tamarack and a few white pines. Extensive
+wetlands line much of the island's shoreline, and the north-eastern tip of
+the island overlooks the largest and deepest (30 m) portion of the lakes
+(Fig. 1).
+2.2. Monitoring sites
+The soundscape was monitored at six sites on the island. Three sites
+were established in proximity to the larger wetland areas (Crane Nest
+Narrows (LA02), Tamarack Flats (LA04), and Cedar Point Bay (LA05))
+and three sites were established in proximity to the larger bays Big
+Lake Point (LA01), Page Bay (LA03) and Godin Circle Bay (LA06).
+2.3. Soundscape sampling and data acquisition
+Acoustic data was collected at each of the six sampling stations using
+the Song Meter autonomous recorders (Wildlife Acoustics, 2012). The
+units were scheduled to record for 1 minute duration every 30 min
+for a total of 48 samples per day. Recordings were made in monaural
+at 16 bits in Waveform Audio File Format (WAV) at a frequency of
+22,050 kHz, providing a usable frequency range up to 11 kHz. The
+Song Meters were deployed in April and removed from the sites in
+October when access to sites became limited by weather conditions.
+Each unit was secured to a tree with a bungee cord at 2 m height.
+A total of just over 202,000 recordings were archived in the Remote
+Environmental Assessment Laboratory (REAL) at Michigan State University from 2009–2012. A small subset of the recordings were removed
+from the analysis or were missing for the following reasons: 1) the sensor malfunctioned due to animal damage to the microphone and resulted in recordings of static; 2) the battery died and the recorder stopped
+recording; or 3) the recorded sounds were inaudible due to sensor malfunction. After ﬁltering unusable recordings, a total of 197,845 recordings, or 97.86% of the observations remained (Table 1).
+Recordings were uploaded and archived in the REAL digital library as
+described in Kasten et al. (2012). This digital library was used to store
+recordings, compute and display soundscape metrics, and to enable
+access to soundscape information for subsequent analysis and visualization. Details for uploading, processing, archiving and accessing the
+soundscape recording and deriving soundscape metrics are described
+and illustrated in Kasten et al. (2012).
+2.4. Soundscape power metrics
+Different entities in the soundscape (i.e., birds, amphibians, mammals, wind, and machinery) produce sounds at different frequencies.
+Therefore, each sound recording was partitioned into 1 kHz frequency
+intervals. We computed the energy in each frequency interval, termed
+Power Spectral Density (PSD), as developed by Welch (1967). This
+measure represents the amount of soundscape power expressed as
+watts/kHz. The processing module in the REAL web site computed and
+normalized the PSD value for each 1 kHz frequency interval for each
+recording, thus providing a soundscape power value ranging from 0 to
+1 for each of the 10 frequency intervals (1–11 kHz) (Kasten et al.,
+2012). We use the term soundscape power to characterize this metric.
+Vector normalization of PSD values provides a standardized PSD
+(nPSD) which facilitates comparison across recordings made at different
+locations. Matlab (2006) code was developed to compute nPSD values
+prior to translating to PHP scripting language for the web. Matlab code
+
+102
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+Fig. 1. Location of soundscape monitoring sites and an example site on an uninhabited island in Twin Lakes, Cheboygan, Michigan.
+
+that computes normalized and not normalized PSD values for each
+22,050 Hz recording can be obtained from gages@msu.edu.
+Sounds that emanate from ecosystems can be broadly classiﬁed as
+biological, anthropogenic, and geophysical. A taxonomy of sounds that
+occur within ecosystems includes: biophony–biological sounds produced by organisms, typically at mid- to high frequencies (2–11 kHz);
+anthrophony-sounds produced by human-made objects, typically at
+lower frequencies (1–2 kHz); and geophony-sounds created by geophysical processes such as wind and rainfall which may transcend the
+entire soundscape spectrum (1–11 kHz) (Pijanowski et al., 2011a,
+2011b; Qi et al., 2008). Indices were derived to correspond to these
+soundscape components and were used to examine changes in the
+soundscape over time. In addition to computing nPSD values for each
+1 kHz frequency interval, indices were also computed including total
+soundscape power (∑ 1–11 kHz), low frequency soundscape power
+(anthrophony) (1–2 kHz), and higher frequency soundscape power
+(biophony) (∑2–11 kHz).
+A Normalized Difference Soundscape Index (NDSI) and a ratio of
+biophony and anthrophony, were also computed (Joo, 2008; Kasten
+et al., 2012). NDSI is modeled after the normalized difference vegetation
+
+Table 1
+Site codes, site names, cover type, ground type and number of recordings per year.
+Site
+code
+
+Site name
+
+Distance Cover
+type
+to lake
+(m)
+
+Ground Number of recordings
+type
+(April–October)
+2009 2010 2011 2012
+
+LA01 Big Lake Point 3
+LA02 Crane Nest
+Narrows
+LA03 Page Bay
+
+30
+
+LA04 Tamarack
+Flat
+LA05 Cedar Point
+Bay
+LA06 Godin Circle
+Bay
+
+30
+
+3
+
+3
+3
+
+Mixed
+forest
+Mixed
+forest
+Mixed
+forest
+Mixed
+forest
+Mixed
+forest
+Mixed
+forest
+
+Dry
+
+6172 9371 9356 6549
+
+Dry
+
+6700 6932 9404 7762
+
+Dry
+
+6889 9849 9421 9528
+
+Wet
+
+5966 9852 9356 9527
+
+Wet
+
+5959 9820 9356 9526
+
+Dry
+
+5862 9851 8288 6549
+
+index (NDVI) used in the analysis of remotely sensed satellite imagery.
+NDVI is a ratio of spectral energy in the near infrared region to the
+amount in the visible red region (Rouse et al., 1974), and it is widely
+used as an indicator of ecosystem function (Kerr and Ostrovsky,
+2003). Healthy vegetation absorbs much of the visible light (e.g. small
+spectral value) while it reﬂects much of the near-infrared light
+(e.g., large spectral value) resulting in a high NDVI. On the other hand,
+unhealthy, extremely dry, or sparse vegetation reﬂects more visible
+light and less near-infrared light resulting in a low NDVI value. Just as
+NDVI is a measure of vegetation health, we consider NDSI to be a measure of ecological health.
+Like the NDVI, NDSI uses a simple algorithm to compress a large
+amount of information into an ecological index. The NDSI is calculated
+as follows:
+ðb−aÞ=ðb þ aÞ;
+where b is biophony (2–11 kHz) and a is anthrophony (1–2 kHz) (see
+Kasten et al. (2012)). NDSI ranges from − 1 to + 1 where low values
+of the index indicate dominance of lower frequencies (anthrophony)
+and higher values of the index show dominance of higher frequencies
+(biophony). We use the NDSI to determine the dominance of sound
+types in ecosystems and this simple index may provide a rapid tool for
+ecosystem assessment since it does not require species identiﬁcation.
+2.5. Soundscape analysis
+Soundscape power metrics, derived from 197,845 recordings at the
+six sites were summarized, analyzed and, graphed using Minitab v 16
+(Minitab 16 Statistical Software, 2010) and R 3.0.0 (R Development
+Core Team, 2012). Since there was very little variation between soundscape metrics obtained from the six recorders they were treated as replicates and each of the six twice-hourly observations was averaged over
+all recording sites prior to additional analyses performed. Then sound
+was partitioned into 1 kHz frequency intervals, beginning at 1 kHz
+and ending at 11 kHz, and soundscape power was computed for each
+frequency interval. Data in the lowest interval, 0–1 kHz, was excluded
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+103
+
+as this can be largely attributed to wind (Bradbury and Vehrencamp,
+2011).
+To examine the contribution of each frequency to total soundscape
+power, soundscape power of each frequency interval as a proportion
+of the total power was visualized. Then, daily and season variations in
+soundscape power by frequency intervals were examined. Next, patterns of biophony and NDSI were examined through visualization of
+daily and seasonal trends averaged over the 4-year period. The dawn
+chorus, a peak in singing activity of birds, was deﬁned as the period
+beginning two hours before sunrise and ending 3 h afterwards.
+3. Results and discussion
+3.1. Soundscape power by frequency
+The average soundscape power was highest (0.48 W/kHz) at the
+lowest frequency interval (1–2 kHz), and gradually decreased as
+sound frequency increased. This pattern remained consistent for each
+year of the study (Fig. 2). The 1–2 kHz frequency interval represented
+about 20% of total soundscape power (Fig. 3), with the remaining 80%
+attributed to biological sounds (biophony). Despite the study area's
+relatively rural location, sounds associated with human disturbance
+(1–2 kHz) were a recognizable component of the soundscape and this
+was especially true during the daylight hours. However, Canada geese
+(Branta canadensis maxima), common loons (Gavia immer) and green
+frogs (Rana clamitans) in the landscape were also responsible for high
+soundscape power in low frequencies, especially in the evening hours.
+Mid-frequency sounds (3–6 kHz) can generally be attributed to bird
+calls by many species ranging from larger birds like the American robin
+(Turdus migratorius) to smaller species like the common yellowthroat
+(Geothlypis trichas). There is a large array of species that fall into this
+category, and some speciﬁcs of bird call frequency can be found in
+Napoletano (2004).
+At the other end of the frequency spectrum, power within individual
+high frequency intervals was quite low, but when all combined, the ﬁve
+highest frequency intervals approached the magnitude of power in the
+lowest. Summed together, the highest 4 frequency intervals accounted
+for 19% of the total soundscape power, a value that rivals the amount
+of soundscape power emitted at 1–2 kHz. At 6–11 kHz, sound power
+is highest between about midnight and 4 am when insects and migrating birds are vocalizing. Based on this observation, we can detect the
+presence of aerial biota such as migrating birds (Isard and Gage, 2000)
+which may allow tracking of migratory bird movements along the
+upper Great Lakes by documenting bursts of high frequency vocalizations of migratory birds in recordings.
+
+Fig. 2. Soundscape power (watts/kHz) for each of 10 frequency intervals (1–11 kHz) computed from sound recordings made at six locations in Twin Lakes, Cheboygan, MI from
+April–October, 2009–1012.
+
+Fig. 3. Percent of total soundscape power (watts/kHz) for each of 10 frequency intervals
+(1–11 kHz) computed from sound recordings for the entire 24 hour period and for the
+dawn chorus (from 2 h before sunrise until 3 h after sunrise).
+
+3.2. Daily variation in soundscape power
+Daily patterns of soundscape power by frequency interval reveal
+differences that correspond to ecological activities (Fig. 4). The lowest
+frequency power values (1–2 kHz) rose steadily after sunrise and then
+peaked in late afternoon. Sounds in this range are tied to anthropogenic
+activities of lake shore residents, as a very similar soundscape power signature was received by a single acoustic recording device located in a
+nearby lake shore residential area. The second peak in power at this frequency occurred at night and appears to be related to low-frequency
+vocalizations of amphibians (especially green frogs) and common loons.
+The peak soundscape power at about 6AM in the 2–3 kHz interval is
+due to the dawn chorus and this peak also represented the highest proportion soundscape power (over 40%) at that time of day. Soundscape
+power in this range drops off quickly shortly after sunrise. Very similar
+patterns were seen in both the 4–5 kHz and the 5–6 kHz intervals,
+although soundscape power for these declined slowly throughout the
+day to a low around dusk when, in both cases, soundscape power
+began to rise again. In all three cases, however, power increased at
+dusk to a second maxima at about 20:00.
+Dawn soundscape power of biological sounds in frequency intervals
+between 2 and 6 kHz (the range of many songbirds) was higher than
+(or equal to) that of the 24 hour period and less than that of the
+24 hour period at frequency intervals above 7 kHz (Fig. 3). There was
+also less power in the anthrophic range (1–2 kHz) at dawn than across
+the entire 24 hour period.
+The major contributor to the 2–3 kHz frequency range and the
+3–4 kHz frequency range (they overlap) during the hours of darkness
+is the small but vocal frog, the northern spring peeper (Pseudacris
+crucifer). Beginning at about 0600 h, birdsong replaces the calls of
+peepers. In the spring (April–May) birds continue to signal to mates
+throughout the day, but they sing most vociferously at dawn and to a
+lesser extent at dusk. The American robin, a species that begins calling
+before day break, is also the last species to sing in the evening. This
+species sings in the range of 3–4 kHz see Twin Lakes Soundscape
+project and to Access Data (tab) Search (tab) and select LA01-LA06,
+2009–2012, June 15 at 0500 h to hear the American robin (http://
+www.real.msu.edu/projects/one_proj.php?proj=la). The soundscape
+power in the 4–5 kHz interval is dominated by many species of song
+birds that migrate to and inhabit northern Michigan.
+Peak soundscape power for 3–4 kHz and 6–7 kHz both occurred in
+the morning, but after sunrise. It then declined steadily over the
+day until about 20:00 at which time, soundscape power dropped
+
+104
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+Fig. 4. Soundscape power (watts/kHz) of all 10 frequency intervals at hourly intervals beginning at midnight.
+
+precipitously. Birds such as robins and wood warblers are responsible
+for power in these frequency ranges.
+At 6–11 kHz, sound power is highest between about midnight and
+4 am when insects and birds are vocalizing. Soundscape power among
+the 5 highest frequency intervals was remarkably similar (Fig. 5). Individually, their power contribution appears nearly inconsequential;
+however, the temporal pattern of soundscape power is nearly identical
+for each, suggesting that the sum of these frequencies represent animal
+signals with harmonic structure.
+Birds dominate frequencies between 2 and 6 kHz during the dawn
+chorus, while low frequency sounds related to human disturbance are
+dominant between sunrise and sunset. The high soundscape power
+signal at low frequency during the day is an example of anthrophony
+(see Pijanowski et al., 2011a) which consists of technical sounds made
+by humans (motors), dogs, and human vocalizations. However, our observations show that animals such as the green frog, common loon,
+Canada geese, sand hill crane (Grus canadensis), and coyote (Canis
+latrans) also signal at low frequencies in this landscape and thus can
+
+contribute to power in the low frequency signal range. Based on listening to the recordings during this time period, the low frequency night
+time sounds in this study are most commonly attributed to green
+frogs, common loons, Canada geese and dogs.
+3.3. Seasonal variation in soundscape power
+Visualizations of soundscape power summarized by month illustrate
+seasonal patterns in soundscape power by frequency interval (Fig. 6).
+The minimum value for the 1–2 kHz frequency interval occurred in May
+and the maximum mean value occurred in October. The minimum values
+for the higher frequency intervals occurred in August (2–3, 3–4 kHz) and
+April (4–5, 5–6, 6–7 kHz). The maximum values for the frequency intervals above 1–2 kHz (2–7 kHz) occurred in April, June, September, August
+and July (Table 2).
+A time series of soundscape power by frequency interval across the
+four year period reveals much more variation in power between frequency intervals at both the beginning and end of the season. This
+
+Fig. 5. Soundscape power (watts/kHz) for six-1 kHz frequency intervals (1–7 kHz) at half hour intervals beginning at midnight.
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+105
+
+Fig. 6. Monthly soundscape power for each of six frequency intervals (1–7) kHz.
+
+pattern coincides with day length as illustrated in Fig. 7. There is less
+variation in power between frequency intervals with long days than
+with short days. Furthermore, sound power at 1–2 kHz in the fall is
+much greater than any of the other frequency bands.
+Seasonal soundscape power patterns depend on the frequency in the
+soundscape. For example, the 1–2 kHz interval had high power early in
+the monitoring period (early spring), then decreased slightly to a relatively stable period during summer, and then increased to a maximum
+in late fall. While this may be attributed largely to changes in anthropogenic activities across the period, we know that some prominent seasonal organisms, such as green frogs, vocalize in this range as well.
+On the other hand, the soundscape power pattern of 2–3 kHz was at
+its highest level in early spring when spring peepers dominate the
+soundscape, then dropped steadily until early fall (0.3 W/kHz) until
+late fall when it began increasing again due to singing insects such as
+crickets. Soundscape power at 3–4 kHz was low in early spring then
+rose to a high soundscape power in spring (dawn chorus), dropped in
+summer, then rose again in fall. The soundscape power in the 4–5 kHz
+interval had a similar pattern to that of 3–4 kHz where power had
+a low value in early spring, increased in spring (due to breeding
+birds), dropped in summer and then increased in late summer and
+early fall (due to insects) and then subsequently dropped again in late
+fall. Soundscape power in the 5–6 kHz began very low in early spring,
+rose during spring, and had a sharp increase in late summer (with
+a very consistent peak in August that may be due to crickets) and
+then declined in fall. Soundscape power at 6–7 kHz is low in early
+
+spring, peaked in summer, then declined in August, and rose slightly
+in late fall.
+Fig. 8 illustrates the position of soundscape power (z) for each of the
+ﬁrst six frequency intervals with respect to day of year (x) and time of
+day (y) and highlights the degree of frequency overlap, or lack thereof,
+of the soundscape power from April–October. The 1–2 kHz interval is
+dominant (N 0.5 W/kHz) from May (JD 91–120) during 0800 to 2000.
+Soundscape power at 1–2 kHz increases at night (2100–0400) and remains high (N0.5 W/kHz) until mid-July (JD 200). Soundscape power
+at 1–2 kHz is also present during daytime from mid-July onward and
+extending to both day and night by 1 September (JD 244). There is a
+strong soundscape power signal at 1–2 kHz from late-May to late-July
+(140–200 JD) at (2000–0800) night time. A strong soundscape power
+signal in the 2–3 kHz frequency range occurs at night time (2000 and
+0700) during late spring (JD 91–140). This signal disappears from
+the soundscape in late June (JD 180). A soundscape power signal at
+3–4 kHz is evident from late-May to late-July (140–200 JD) during
+daytime hours (0800–2000). A soundscape power signal at 4–5 kHz is
+evident from mid-August to mid-September (JD 230–260) at night
+time (2000–0500). An additional 4–5 kHz soundscape power signal is
+evident from late-May until August (JD 140–220) during daytime
+hours (0800–1600). A soundscape power signal at 5–6 kHz from lateJuly until September (JD 201–250) during night time overlaps
+with the 4–5 kHz night time signal. The soundscape power signal
+at 6–7 kHz signal is weak but evident from late-May to late-July
+(JD 140–220) during daylight hours (0600–1100).
+
+Table 2
+The mean (mean ± SD) monthly soundscape power frequency interval for six intervals (1–7 kHz). The maximum values are shown in bold.
+Soundscape power frequency interval
+Month
+
+Julian Day
+
+1–2 kHz
+
+April
+May
+June
+July
+August
+September
+October
+
+91–120
+121–151
+152–181
+182–212
+213–233
+244–273
+274–298
+
+0.528
+0.406
+0.420
+0.454
+0.438
+0.560
+0.641
+
+±
+±
+±
+±
+±
+±
+±
+
+2–3 kHz
+0.32
+0.31
+0.29
+0.25
+0.27
+0.23
+0.17
+
+0.521
+0.445
+0.377
+0.337
+0.274
+0.334
+0.363
+
+±
+±
+±
+±
+±
+±
+±
+
+3–4 kHz
+0.27
+0.25
+0.20
+0.16
+0.16
+0.13
+0.09
+
+0.294
+0.398
+0.396
+0.361
+0.258
+0.320
+0.336
+
+±
+±
+±
+±
+±
+±
+±
+
+4–5 kHz
+0.17
+0.23
+0.19
+0.17
+0.16
+0.15
+0.12
+
+0.157
+0.217
+0.319
+0.288
+0.294
+0.315
+0.254
+
+±
+±
+±
+±
+±
+±
+±
+
+5–6 kHz
+0.13
+0.18
+0.19
+0.17
+0.20
+0.19
+0.10
+
+0.121
+0.196
+0.258
+0.283
+0.426
+0.271
+0.210
+
+±
+±
+±
+±
+±
+±
+±
+
+6–7 kHz
+0.10
+0.18
+0.18
+0.19
+0.30
+0.20
+0.08
+
+0.101
+0.157
+0.186
+0.205
+0.158
+0.157
+0.177
+
+±
+±
+±
+±
+±
+±
+±
+
+0.08
+0.16
+0.15
+0.14
+0.12
+0.08
+0.08
+
+106
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+Fig. 7. Daily average of soundscape power for each of frequency intervals (1–6 kHz). Dashed line is day length plotted over the same time period.
+
+3.4. Normalized Difference Soundscape Index (NDSI)
+Average NDSI over all days varies throughout the 24 hour period,
+but it is highest (representing the greatest biological sound) at dawn
+
+and in the couple hours before midnight (Fig. 9). The daily NDSI pattern (Fig. 10) reveals a strong biological signal during nighttime that
+tapers off until about noon. There is a small exception in early April
+(JD 100) and a larger exception between early June through mid-July
+
+Fig. 8. Distribution of soundscape power for each frequency interval (1–7 kHz) by Julian Day (day of the year) (x) and Time 24 h (time of day) (y).
+
+107
+
+NDSI
+
+0.0
+
+0.2
+
+0.4
+
+0.6
+
+0.8
+
+1.0
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+Fig. 9. Normalized Difference Soundscape Index (NDSI) by month averaged over the period 2009–2012. Error bars are SE.
+
+2009
+
+2010
+
+2011
+
+2012
+
+Year
+
+(JD 150–190) and again mid-September through early October
+(JD 260–280) where the NDSI signal is lower but still in the biophony
+range (0–1). The low index value during early summer (JD 150–190)
+is due to the dominance of green frog (R. clamitans) low-frequency
+vocalizations during this time period; the green frog's calls register at
+frequencies that are presumed in the anthrophonic frequency range
+and thereby reduce the NDSI. An examination of the NDSI during daylight hours (0500–2000) shows that the NDSI signal is most intense in
+June (JD 140–180) and extends well into the day before declining in
+intensity and then again increasing at dusk.
+NDSI is a ratio of high frequency sound power to low frequency
+sound power. High frequency sounds are mostly biological while low
+frequency sounds are considered primarily anthropogenic in nature.
+Just as NDVI is a measure of vegetation health, we consider NDSI to be
+a measure of ecological health.
+In this relatively undisturbed habitat we expect NDSI to be high and
+stable across the time period, and the data support this hypothesis with
+NDSI values each year at about 0.6 (Fig. 11). In addition, we show that
+high NDSI values align very well with dawn chorus and low NDSI aligns
+well with day time anthropogenic activities (Fig. 10). However, organisms with low frequency calls sometime dominate this particular
+soundscape. This is not typical of all soundscapes, so it is not necessarily
+a shortcoming of the index. It is important, though, to account for dominant biologic and anthropogenic sources of sound that fall outside their
+typical ranges within individual soundscapes. In our case, we are working on algorithms (especially pattern recognition) to separate common
+loon and green frog vocalizations from anthrophic components of the
+1–2 kHz range.
+
+Fig. 10. NDSI (Normalized Difference Soundscape Index) by hour over the season by day
+(Julian Day).
+
+Fig. 11. Boxplots of NDSI over each year illustrating the stability of the soundscape. Lower
+whisker is ﬁrst quartile – (1.5 * IQR) and upper whisker is third quartile + (1.5 * IQR).
+
+4. Conclusions and future work
+Patterns in soundscape power by frequency observed over a daily
+24 hour-cycle may reﬂect temporal partitioning of acoustic space by
+taxa. Vocalizing animals are believed to ﬁnd and utilize acoustic spaces
+(“niches”) that are not ﬁlled by other sounds (either biological or
+anthropogenic), a theory known as the “acoustic niche hypothesis”
+(Krause, 1987). This results in both spatial and temporal separation of
+calls that might otherwise fall within the same frequency range. In our
+Michigan lake soundscape, animals with low frequency vocalizations
+called during the evenings when human-induced low frequency sounds
+were much reduced.
+Despite the presence of anthropogenic activities on the soundscape, it
+appears that this landscape does not suffer the detrimental effects of vehicular noise from urban morning rush hour. Consequently, birds singing
+during the dawn chorus appear to be relatively unaffected by humangenerated sounds. In particularly noisy environments such as cities, it
+has been shown that animals may alter the frequency at which they
+call (Francis et al., 2011; Slabbekoorn and den Boer-Visser, 2006). By
+examining the spectral components of an entire soundscape over time,
+it is possible to document niche partitioning and spectral shifts over time.
+The ultimate goal of soundscape analysis is to utilize tools such as the
+NDSI to track changes in the ecological health of soundscapes over time
+and to also compare health among different soundscapes. We have
+shown here that NDSI is directly related to biological activity and in
+the future, we plan to explore differences in NDSI by soundscape
+using ﬁeld data for assessment.
+A soundscape embodies the sounds of all aspects of an ecosystem,
+both biotic and abiotic, yet it is the biotic portion that remains of most interest to ecologists because this relates most directly to ecosystem process and function. As we strive to better understand how ecosystems
+will respond to changes in climate and human disturbance, monitoring
+acoustic phenology of terrestrial landscapes over time can give us an insight into the presence and timing of important phenological events such
+as migration, mating, and reproduction. Indeed, this is the basis of acoustic monitoring programs such as the United States National Park Service
+Inventory and Monitoring, Australian Centre for Ecological Analysis and
+Synthesis, as well as the Remote Environmental Assessment Laboratory.
+By recording soundscape power over entire seasons and multiple
+years we have illustrated changes in the diel cycle of dawn and dusk
+chorus, an important ecosystem attribute tied to abiotic factors. This is
+especially useful for examination of the timing of the chorus related to
+changes in climate. For instance, at this location, acoustic data help us
+
+108
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+
+to identify timing of the following bird phenology: major migrant arrival
+(April–May), territory establishment (May–June), breeding (June–July),
+ﬂedging (July), migration preparation (August–September) and migration south (September–October).
+Migratory routes along the Great Lake shorelines are being observed
+by radar to better understand the distribution of birds along their fall
+migratory routes (Bonter and Donovan, 2009; Diehl et al., 2003; Ewert
+et al., 2011). However, radar data don't provide an indication of the species make-up of groups detected by radar signals. Acoustic recorders
+have been used to identify species of birds passing over a particular
+site (Bastas, 2011). While radar remote sensing provides important
+data on bird migration patterns at large spatial scales, acoustic remote
+sensing has the potential to provide an insight into species makeup of
+migratory groups at long temporal scales (Farnsworth and Russell,
+2007: Evans and O'Brian, 2002). Our data suggests that birds are indeed
+moving along this migratory route and we recommend investigators
+who are interested primarily in nocturnal migratory bird vocalizations
+consider acquiring a microphone designed speciﬁcally for night ﬂight
+calls.
+The goal of this study has been to examine the dynamics of soundscape power in a minimally-disturbed soundscape over a period of
+four years to reveal general patterns in this soundscape. In the future
+we will compare these patterns to the soundscape power patterns in
+other soundscapes around the world to examine the commonality of
+our ﬁndings as we hypothesize that similar patterns in soundscape
+power exist during comparable times of the year (dawn chorus, etc.).
+We discovered that acoustic signals of this particular soundscape repeat
+from year to year indicating a phenological signature for the site. Variations at some frequencies indicate responses that are tied more closely
+to climate and suggest the next step for analysis. Our work will begin
+to examine the soundscape patterns of those species that are relatively
+easy to identify and progress to examining those species with more
+complex signals. For instance, since we have archived all the recordings
+and their metrics from this study, we will identify the speciﬁc entities
+that produce the soundscape power. For example, we will focus on a
+species like the spring peeper (P. crucifer) which is a harbinger of spring
+in the northern latitudes and determine its ﬁrst call occurrence, within
+the ½ h, over multiple years and then relate it to differences in meteorological conditions. We will also examine the call of the common
+loon to determine the variation in time and location of call in this six
+site landscape since we have developed an algorithm to automatically
+detect the calls of this species. In addition, we will isolate the loon
+acoustic signal from the anthrophony signal using pattern recognition
+so that we can include the low frequency calls of the loon with the
+higher frequency biophony in the soundscape.
+As acoustic data is collected and cataloged on additional
+soundscapes, we will be better able to assess the value, and role of,
+soundscape attributes in understanding landscape patterns and processes (Pijanowski et al., 2011b). The value of a data set such as the
+one we used to examine soundscape power provides the opportunity
+to identify temporal patterns within acoustic data which then lead to
+further investigations into understanding the effects of environmental
+change and human impacts on soundscapes. Furthermore, with a
+baseline understanding of multiple soundscapes, the opportunity to
+begin delving into spatio-temporal dynamics across space becomes
+possible.
+
+References
+Acevedo, M.A., Corrada-Bravo, C.J., Corrada-Bravo, H., Villanueva-Rivera, L.J., Aide, T.M.,
+2009. Automated classiﬁcation of bird and amphibian calls using machine learning:
+a comparison of methods. Ecol. Inform. 4, 206–214.
+Bastas, S.A., 2011. Nocturnal Bird Call Recognition System for Wind Farm Applications.
+The University of Toledo.
+Bedford Technical, 2012. http://www.frogloggers.com/index.html.
+Bioacoustics Research Program (BRP), Cornell Lab of Ornithology, 2012. http://www.
+birds.cornell.edu/brp/hardware.
+
+Bonter, D.N., Donovan, T.M., 2009. Characteristics of important stopover locations for
+migrating birds: remote sensing with radar in the Great Lakes basin. Conserv. Biol.
+23, 440–448.
+Bradbury, J.W., Vehrencamp, S.L., 2011. Principles of Animal Communication. Sinauer
+Associates, Inc., Sunderland, MA.
+Carles, J.L., Barrio, I.L., de Lucio, J.V., 1999. Sound inﬂuence on landscape values. Landsc.
+Urban Plan. 43, 191–200.
+Chou, C.-H., Lee, C.-H., Ni, H.-W., 2007. Bird species recognition by comparing the HMMs
+of the syllables. Second International Conference on Innovative Computing, Information
+and Control.
+Diehl, R.H., Larkin, R.P., Black, J.E., Moore, F., 2003. Radar observations of bird migration
+over the Great Lakes. Auk 120, 278–290.
+Ewert, D.N., Hamas, M.J., Smith, R.J., Dallman, M.E., Jorgensen, S.W., 2011. Distribution of
+migratory landbirds along the northern Lake Huron shoreline. Wilson J. Ornithol.
+123, 536–547.
+Farnsworth, A., Russell, R.W., 2007. Monitoring ﬂight calls of migrating birds from an oil
+platform in the northern Gulf of Mexico. J. Field Ornithol. 78, 279–289.
+Francis, C.D., Ortega, C.P., Cruz, A., 2011. Vocal frequency change reﬂects different
+responses to anthropogenic noise in two suboscine tyrant ﬂycatchers. Proc. R. Soc.
+B 278, 2025–2031.
+Gage, S.H., 2003. Observing the acoustic landscape. In: Estrin, D., Michener, W.,
+Bonito, G. (Eds.), Environmental Cyberinfrastructure Needs for Distributed
+Sensor Networks. NSF Sponsored Workshop. Scripps Institute of Oceanography (64 pp.).
+Gage, S.H., Napoletano, B.M., Cooper, M.C., 2001. Assessment of ecosystem biodiversity by
+acoustic diversity indices. J. Acoust. Soc. Am. 109, 2430.
+Gage, S.H., Joo, W., Kasten, E.P., Fox, J., Biswas, S., 2013. Acoustic observations in agricultral
+landscapes. In: Hamilton, S.K., Doll, J.E., Robertson, G.P. (Eds.), The Ecology of
+Agricultural Ecosystems: Research on the Path to Sustainability. Oxford Univ. Press
+(in press).
+Hannah, L., Lohse, D., Hutchinson, C., Carr, J.L., Lankerani, A., 1994. A preliminary inventory
+of human disturbance of world ecosystems. Ambio 246–250.
+Isard, S., Gage, S., 2000. Flow of Life in the Atmosphere: An Airscape Approach to
+Understanding Invasive Organisms. Michigan State University Press, East
+Lansing.
+Joo, W., 2008. Environmental Sounds as an Ecological Variable to Understand Dynamics of
+Ecosystems, Department of Zoology. Michigan State University, East Lansing,
+Michigan.
+Joo, W., Gage, S.H., Kasten, E.P., 2011. Analysis and interpretation of variability in
+soundscapes along an urban–rural gradient. Landsc. Urban Plan. 103,
+259–276.
+Kasten, E.P., McKinley, P.K., Gage, S.H., 2007. Automated ensemble extraction and analysis
+of acoustic data streams. Proceedings of the 1st International Workshop on Distributed
+Event Processing, Systems and Applications (DEPSA), Held in Conjunction with the
+27th IEEE International Conference on Distributed Computing Systems (ICDCS), Toronto,
+Ontario, Canada.
+Kasten, E.P., McKinley, P.K., Gage, S.H., 2010. Ensemble extraction for classiﬁcation and
+detection of bird species. Ecol. Inform. 5, 153–166.
+Kasten, E.P., Gage, S.H., Fox, J., Joo, W., 2012. The remote environmental assessment
+laboratory's acoustic library: an archive for studying soundscape ecology. Ecol.
+Inform. 12, 50–67.
+Kerr, J., Ostrovsky, M., 2003. From space to species: ecological applications for remote
+sensing. Trends Ecol. Evol. 18, 299–305.
+Krause, B., 1987. Bioacoustics, habitat ambience in ecological balance. Whole Earth Rev.
+57, 14–18.
+Krause, B., 2012. The Great Animal Orchestra: Finding the Origins of Music in the World's
+Wild Places. Little, Brown and Company, New York, NY.
+Krausman, P.R., Leopold, B.D., Scarbrough, D.L., 1986. Desert mule deer response to
+aircraft. Wildl. Soc. Bull. 14, 68–70.
+MATLAB v. 6, 2006. The language of technical computing. The MathWorks Inc. Natick, MA.
+Minitab v. 16, 2010. Statistical Software. Minitab, Inc., State College, PA.
+Napoletano, B.M., 2004. Measurement, Quantiﬁcation and Interpretation of Acoustic
+Signals within an Ecological Context. MS Thesis Michigan State University, East
+Lansing, Michigan, USA.
+Neumann, P.W., Merriam, H.G., 1972. Ecological effects of snowmobiles. Can. Field-Nat.
+86, 207–212.
+Pijanowski, B.C., Farina, A., Gage, S.H., Dumyahn, S.L., Krause, B.L., 2011a. What is soundscape
+ecology? An introduction and overview of an emerging new science. Landscape Ecol. 26,
+1213–1232.
+Pijanowski, B.C., Villanueva-Rivera, L.J., Dumyahn, S.L., Farina, A., Krause, B.L., Napoletano,
+B.M., Gage, S.H., Pieretti, N., 2011b. Soundscape ecology: the science of sound in the
+landscape. Bioscience 61, 203–216.
+Procept, Department of Primary Industries, 2012. http://www.procept.com.au/customers/
+organisations/wireless-biophony-sensors.
+Qi, J., Gage, S., Joo, W., Napoletano, B., Biswas, S., 2008. Soundscape characteristics of an
+environment: a new ecological indicator of ecosystem health. In: Ji, W., Ji, W.S.
+(Eds.), Wetland and Water Resource Modeling and Assessment. CRC Press, New
+York, New York, USA, pp. 201–211.
+R Development Core Team, 2012. R: A Language and Environment for Statistical Computing.
+Foundation for Statistical Computing, Vienna, Austria.
+Riitters, K.H., Wickham, J.D., 2003. How far to the nearest road? Front. Ecol. Environ. 1,
+125–129.
+Romano, T., Keogh, M., Kelly, C., Feng, P., Berk, L., Schlundt, C., Carder, D., Finneran, J., 2004.
+Anthropogenic sound and marine mammal health: measures of the nervous and
+immune systems before and after intense sound exposure. Can. J. Fish. Aquat. Sci.
+61, 1124–1134.
+
+S.H. Gage, A.C. Axel / Ecological Informatics 21 (2014) 100–109
+Rouse, J.W., Haas, R.H., Schell, J.A., Deering, D.W., 1974. Monitoring vegetation systems in
+the Great Plains with ERTS. Proc Third Earth Resources Technology Satellite-1 Symp,
+December 10–15 1974, Greenbelt, MD, 3. NASA, Washington, D.C., pp. 301–317.
+Schafer, R.M., 1977. The Tuning of the World. Knopf, New York.
+Schafer, R.M., 1994. The Soundscape: Our Sonic Environment and the Soundscape and the
+Tuning Of the World. Destiny Books, Rochester, Vermont.
+Slabbekoorn, Hans, den Boer-Visser, Ardie, 2006. Cities change the songs of birds. Curr.
+Biol. 16, 2326–2331.
+Sueur, J., Pavoine, S., Hamerlynck, O., Duvail, S., 2008. Rapid acoustic survey for biodiversity
+appraisal. PLoS One 3, e4065.
+Towsey, M., Planitz, B., Nantes, A., Wimmer, J., Roe, P., 2012. A toolbox for animal call
+recognition. Bioacoustics 21, 107–125.
+Truax, B., 1978. Handbook for Acoustic Ecology. ARC Publications, Vancouver, BC.
+
+109
+
+Truax, B., 1984. Acoustic Communication. Ablex Publishing, Norwood, NJ.
+Truax, B., 1999. Handbook of Acoustic Ecology. (CD-ROM version) 2nd edition. Cambridge
+Street Publishing, Vancouver, B.C.
+Warren, P.S., Katti, M., Ermann, M., Brazel, A., 2006. Urban bioacoustics: it's not just noise.
+Anim. Behav. 71, 491–502.
+Welch, P., 1967. The use of fast Fourier transform for the estimation of power spectra: a
+method based on time averaging over short, modiﬁed periodograms. IEEE Trans.
+Audio Electroacoust. 15, 70–73.
+Wildlife Acoustics, 2012. www.wildlifeacoustics.com.
+Wimmer, J., Towsey, M.W., Planitz, B., Roe, P., Williamson, I., 2011. Scaling acoustic data
+analysis through collaboration and automation. Proceedings of IEEE Sixth International
+Conference on e-Science, IEEE, 7–10 Dec. 2010, Brisbane, Qld, pp. 308–315.
+Wrightson, K., 2000. An introduction to acoustic ecology. Soundscape 1, 10–13.
+
+

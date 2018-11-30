@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/home/ericmacedo/python/bin/python
 # Author: Ehsan Sherkat
 import sys
-import cgi, cgitb
+import cgi, cgitb 
 import json
 import os.path
 
@@ -11,16 +11,16 @@ form = cgi.FieldStorage()
 
 userDirectory = eval(form.getvalue('userDirectory'))
 fileName = eval(form.getvalue('fileName'))
-
-try:
+  
+try:	
 	if(os.path.isfile(userDirectory + fileName + ".zip")):
 		print "Content-type:application/json\r\n\r\n"
-		print json.dumps({'status':'yes'})
-
+		print json.dumps({'status':'yes'})	
+	
 	else:
 		print "Content-type:application/json\r\n\r\n"
-		print json.dumps({'status':'no'})
-
+		print json.dumps({'status':'no'})		
+	
 except:
 	print "Content-type:application/json\r\n\r\n"
 	print json.dumps({'status':'no'})
