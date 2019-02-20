@@ -131,6 +131,17 @@ try:
                         "rightOffset": 0
                     })
 
+        fractions_offset = dict()
+        for i in fraction_dict.keys():
+            fractions_offset[i] = dict({"left":0,"right":0})
+
+        for transition in transition_dict.keys():
+            fractions = transition.split(" ")
+
+            transition_dict[transition]["leftOffset"] = fractions_offset[fractions[0]]["right"]
+            transition_dict[transition]["rightOffset"] = fractions_offset[fractions[1]]["left"]
+            fractions_offset[fractions[0]]["right"] += int(transition_dict[transition]["number"])
+            fractions_offset[fractions[1]]["left"] += int(transition_dict[transition]["number"])
 
     response = dict({
         "status":"yes",

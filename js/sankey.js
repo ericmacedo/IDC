@@ -93,6 +93,8 @@ $.ajax({
     data: { userDirectory:JSON.stringify(userDirectory)},
     async: true,
     success: function(data) {
+
+        console.log(data);
         // SESSIONS
         d_sessions = data.sessions;
         a_sessions = Object.keys(d_sessions).map(function(a) {
@@ -623,4 +625,3 @@ function draw() {
         setTitle();
     });
 }
-
