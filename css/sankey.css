@@ -1,0 +1,310 @@
+body {
+    margin: 0;
+#    background: #171717;
+	background: #fff;
+    color: #9a9a9a;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+#wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    min-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+}
+
+#sankey {
+    position: fixed;
+    top: 84px;
+    bottom: 0;
+}
+
+h1 {
+    position: fixed;
+    display: block;
+    top: 0;
+    margin: 20px 0 40px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    color: #eee;
+}
+
+svg {
+    position: relative;
+    margin-top: 0px;
+    width: 1000px;
+    height: 570px;
+}
+
+svg .session line {
+    stroke: #000;
+}
+
+svg .sessionLabel {
+    cursor: pointer;
+}
+
+svg .sessionName {
+    text-anchor: middle;
+    fill: #9a9a9a;
+    font-size: 12px;
+}
+
+svg .fraction {
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+svg .transition {
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+svg .sessionNumber {
+    text-anchor: middle;
+    fill: #eee;
+    font-size: 14px;
+}
+
+svg .fraction rect {
+    stroke: none;
+    cursor: pointer;
+}
+
+svg .fraction .fractionLabel {
+    opacity: 0;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s;
+}
+
+svg .fraction.active .fractionLabel {
+    opacity: 1;
+}
+
+svg .fraction.selected .fractionLabel {
+    opacity: 1;
+}
+
+svg .fraction.selected.faded .fractionLabel {
+    opacity: 0;
+}
+
+svg .fractionLabel rect {
+    fill: rgba(23, 23, 23, .7);
+    stroke: none;
+}
+
+svg .fractionLabel text {
+    fill: #eee;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+svg .transition {
+    opacity: .7;
+    cursor: pointer;
+}
+
+svg .transitions .jump .transition {
+    opacity: .6;
+}
+
+svg .faded:not(.active) {
+    opacity: .15 !important;
+}
+
+#rightPanel {
+    position: absolute;
+    right: 10px;
+    top: 134px;
+    width: 210px;
+    background: rgb(23, 23, 23);
+    box-shadow: 0 0 50px #171717;
+}
+
+#listHeader {
+    position: fixed;
+    top: 0;
+    width: 210px;
+    height: 51px;
+    padding-top: 84px;
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    color: #eee;
+    background: rgba(23, 23, 23, .85);
+    z-index: 1;
+
+    border-bottom: 1px solid #171717;
+    box-shadow: 0 0 0px #171717;
+
+    -webkit-transition: border-bottom .3s, box-shadow .3s;
+    transition: border-bottom .3s, box-shadow .3s;
+}
+
+#listHeader.scroll {
+    border-bottom: 1px solid #999;
+    box-shadow: 0 0 50px #171717;
+}
+
+#listHeader #title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 32px;
+    padding: 0 10px;
+}
+
+#listHeader #clear {
+    position: absolute;
+    right: 0;
+    bottom: 31px;
+    opacity: .3;
+}
+
+#listHeader #clear svg {
+    width: 10px;
+    height: 10px;
+}
+
+#listHeader #clear line {
+    stroke: #eee;
+}
+
+#listHeader #clear:hover {
+    opacity: 1;
+}
+
+#listHeader #supp {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 17px;
+    font-size: 12px;
+    color: #9a9a9a;
+}
+
+#listHeader #counter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    font-size: 12px;
+    color: #9a9a9a;
+}
+
+#clear {
+    cursor: pointer;
+}
+
+#clear.hidden {
+    display: none;
+}
+
+.docs {
+    box-sizing: border-box;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: -5px;
+}
+
+.docs .doc {
+    position: relative;
+    padding: 3px 0;
+    cursor: default;
+}
+
+.docs .doc.hidden {
+    display: none;
+}
+
+.docs .doc .docName {
+    color: #9a9a9a;
+    position: relative;
+    margin-left: 65px;
+    font-size: 12px;
+}
+
+.docs .doc:hover .docName {
+    color: #eee;
+}
+
+.depSessions {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 70px;
+}
+
+.depSession {
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 2px;
+}
+
+.depSession.empty {
+    border: 1px solid #333;
+}
+
+#footer {
+    position: fixed;
+    font-size: 10px;
+    bottom: 7px;
+    margin-left: 45px;
+    opacity: .3;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+}
+
+#footer:hover {
+    opacity: 1;
+}
+
+#footer a {
+    position: relative;
+    color: #eee;
+    text-decoration: none;
+}
+
+#footer a:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    height: 1px;
+    background: #9a9a9a;
+    opacity: 0;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+}
+
+#footer a:hover:after {
+    opacity: 1;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Vis KT</title>
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" /> <!-- favicon -->
+
+
+        <meta charset="UTF-8">
+        <meta charset="UTF-8">
+        <meta name="author" content="Eric Cabral">
+        <meta name="email" content="ericmacedo@gmail.com">
+        <!--
+            This page is highly based on:
+            https://github.com/petr-devaikin/petr-devaikin.github.io/tree/master/duma
+            Credits to: Petr Devaikin (http://petrdevaikin.com/)
+        -->
+
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="css/sankey.css">
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.6.0/d3.min.js"
+            integrity="sha256-Vj/f0rZRRrjJ+EaLb5UXBx3m1ujMtddMWPTMW5kL+iA="
+            crossorigin="anonymous"></script>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script
+            src="js/sankey.js"></script>
+    </head>
+    <body>
+        <div id="wrap">
+            <h1>Document Clustering Versions</h1>
+            <div id="sankey">
+                <svg>
+                    <defs>
+                    </defs>
+                    <g class="drawings">
+                        <g class="sessions"></g>
+                        <g class="transitions">
+                            <!-- <g class="jump"></g> -->
+                            <g class="direct"></g>
+                        </g>
+                        <g class="fractions"></g>
+                    </g>
+                    <g class="hovers">
+                        <g class="hoverTransitions"></g>
+                        <g class="hoverFractions"></g>
+                    </g>
+                </svg>
+            </div>
+
+            <div id="rightPanel">
+                <div id="listHeader">
+                    <span id="supp"></span>
+                    <span id="title"></span>
+                    <span id="counter"></span>
+                    <span id="clear">
+                        <svg>
+                            <line x1="0" x2="100%" y1="0" y2="100%" />
+                            <line x1="100%" x2="0%" y1="0" y2="100%" />
+                        </svg>
+                    </span>
+                </div>
+                <div class="docs">
+                </div>
+            </div>
+        </div>
+</html>
