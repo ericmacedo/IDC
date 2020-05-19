@@ -5348,6 +5348,8 @@ function getGeneralViewGraph(similarityThreshold) {
   time = (n3-n2)/1000;
   console.log("Time to create graph: " + time);
 
+  console.log(generalViewGraph2);
+
   return JSON.parse(tempGeneralViewGraph);  
 }
 

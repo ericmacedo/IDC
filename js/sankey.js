@@ -22,6 +22,13 @@ if (!String.prototype.format) {
   };
 }
 
+var tooltip = d3.select("body")
+	.append("div")
+	.style("position", "absolute")
+	.style("z-index", "10")
+	.style("visibility", "hidden")
+	.text("a simple tooltip");
+
 /*
 *   START VIS KT
 */
@@ -81,6 +88,22 @@ function zoomed() {
   dom.svg.attr("transform", d3.event.transform);
 }
 
+
+var LEFT_MARGIN = 50,
+    TOP_MARGIN = 50,
+    SESSION_OFFSET = 150,
+
+    FRACTION_WIDTH = 10,
+
+    SHADOW_K = .1,
+
+    SCALE_Y = 1,
+
+    L_ALL_SES = 'All Documents',
+    L_SES = 'Session',
+    L_CLUS_SES = 'Sessions {0}',
+    L_DPS = '{0} Document{1}'
+
 var d_sessions, a_sessions,
     a_documents,
     d_fractions, a_fractions,
@@ -120,21 +143,6 @@ $.ajax({
         draw();
     }
 });
-
-var LEFT_MARGIN = 50,
-    TOP_MARGIN = 50,
-    SESSION_OFFSET = 150,
-
-    FRACTION_WIDTH = 10,
-
-    SHADOW_K = .1,
-
-    SCALE_Y = 1,
-
-    L_ALL_SES = 'All Documents',
-    L_SES = 'Session',
-    L_CLUS_SES = 'Sessions {0}',
-    L_DPS = '{0} Document{1}'
 
 var dom = {
     svg: undefined,
@@ -354,7 +362,7 @@ function drawSessions() {
     labels.append('text')
         .classed('sessionNumber', true)
         .attr('y', -15)
-        .text(function(d) { return d.number; });
+        .text(function(d) { return d.number + " Docs"; });
 }
 
 function drawTransitions() {
@@ -462,7 +470,13 @@ function drawFractions() {
         .attr('transform', function(d) {
             d._position = fractionPosition(d);
             d._color = d_clusters[d.clusterId].color;
+            // d._name = d_clusters[d.clusterId].name;
+
             d._name = d_clusters[d.clusterId].name;
+            d._terms = new Array();
+            for(var i = 0; i < d_clusters[d.clusterId].words.length; i++) {
+                d._terms.push(d_clusters[d.clusterId].words[i].trim());
+            }
             d._sessionName = d_sessions[d.sessionId].number;
             return 'translate({0},{1})'.format(d._position[0], d._position[1]);
         });
@@ -472,12 +486,25 @@ function drawFractions() {
         .attr('transform', function(d) {
             return 'translate({0},{1})'.format(d._position[0], d._position[1]);
         })
-        .on('mouseover', hoverFraction)
-        .on('mouseout', function() { hoverFraction(); })
+        // .on('mouseover', hoverFraction)
+        // .on('mouseout', function() { hoverFraction(); })
         .on('click', function() {
             event.stopPropagation();
             selectFraction(d3.select(this));
         });
+
+    // create a tooltip
+    var Tooltip = d3.select("body")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("z-index", 10)
+        .style("background-color", "white")
+        .style("border", "solid")
+        .style("height", "95px")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px");
 
     groups.append('rect')
         .attr('x', -FRACTION_WIDTH / 2)
@@ -501,48 +528,83 @@ function drawFractions() {
             else
                 return d.size * SCALE_Y;
         })
-        .attr('fill', 'rgba(0, 0, 0, 0)');
-
-
-    var labels = groups.append('g')
-        .classed('fractionLabel', true)
-        .attr('transform', function(d) {
-            var y = 0;
-            var x = d.sessionId == 7 ? -13 : 7;
-            var toShift = {
-                5713: 10,
-                5714: 10,
-                5707: 10,
-                5729: 10,
-                5739: 10,
-                7000: 20,
-                5726: 15,
-                5733: 15,
-                7004: -12
-            }
-
-            if (toShift[d.id] !== undefined) y = toShift[d.id]
-
-            return 'translate({0}, {1})'.format(x, y + 2);
+        .attr('fill', 'rgba(0, 0, 0, 0)')
+        .on("mouseover", function(d) {
+            Tooltip
+                .style("opacity", 0.8)
+                .style("transform", "translate({0}px, {1}px)".format(
+                    event.clientX, event.clientY - 70
+                ));
+            d3.select(this)
+                .style("stroke", "black")
+                .style("opacity", 0.8);
         })
-        .attr('text-anchor', function(d) {
-            return d.sessionId == 7 ? 'end' : 'start';
+        .on("mousemove", function(d) {
+            Tooltip
+                .html(function() {
+                    var s = "<strong>{0}</strong><br/><br/>".format(d._name);
+                    for (var i = 0; i < d._terms.length; i++) {
+                        if(i > 4) break;
+                        s += "{0}{1}".format(
+                            d._terms[i],
+                            (i == d._terms.length - 1) ? "" : "<br/>"
+                        )
+                    }
+                    return s;
+                })
+                .style("transform", "translate({0}px, {1}px)".format(
+                    event.clientX, event.clientY - 70
+                ));
+        })
+        .on("mouseout", function(d) {
+            Tooltip
+                .style("opacity", 0);
+            d3.select(this)
+                .style("stroke", "none")
+                .style("opacity", 0.8);
         });
 
-    labels.append('rect')
-        .attr('y', 0)
-        .attr('height', 16);
 
-    labels.append('text')
-        .text(function(d) { return d._name; })
-        .attr('x', 3)
-        .attr('y', 12);
+    // var labels = groups.append('g')
+    //     .classed('fractionLabel', true)
+    //     .attr('transform', function(d) {
+    //         var y = 0;
+    //         var x = d.sessionId == 7 ? -13 : 7;
+    //         var toShift = {
+    //             5713: 10,
+    //             5714: 10,
+    //             5707: 10,
+    //             5729: 10,
+    //             5739: 10,
+    //             7000: 20,
+    //             5726: 15,
+    //             5733: 15,
+    //             7004: -12
+    //         }
 
-    labels.each(function(d) {
-        var bbox = d3.select(this).select('text').node().getBBox();
-        d3.select(this).select('rect').attr('x', bbox.x -3 );
-        d3.select(this).select('rect').attr('width', bbox.width + 6);
-    })
+    //         if (toShift[d.id] !== undefined) y = toShift[d.id]
+
+    //         return 'translate({0}, {1})'.format(x, y + 2);
+    //     })
+    //     .attr('text-anchor', function(d) {
+    //         return d.sessionId == 7 ? 'end' : 'start';
+    //     });
+
+    // labels.append('rect')
+    //     .attr('y', 0)
+    //     .attr('height', 16);
+
+    // labels.append('text')
+    //     .html(function (d) { return d._name })
+    //     // .text(function(d) { return d._name; })
+    //     .attr('x', 3)
+    //     .attr('y', 10);
+
+    // labels.each(function(d) {
+    //     var bbox = d3.select(this).select('text').node().getBBox();
+    //     d3.select(this).select('rect').attr('x', bbox.x -3 );
+    //     d3.select(this).select('rect').attr('width', bbox.width + 6);
+    // })
 
     s.fractions = dom.fractions.selectAll('.fraction');
 }
