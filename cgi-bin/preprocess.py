@@ -1,4 +1,4 @@
-#!/home/eric/python3/bin/python
+#!/home/vagrant/python3/bin/python
 # Author: Ehsan Sherkat - 2016
 # Edited: Eric Cabral - 2019
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
