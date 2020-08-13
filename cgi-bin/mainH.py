@@ -1,4 +1,4 @@
-#!/home/eric/python/bin/python
+#!/home/vagrant/python2/bin/python
 #author: Hamid
 import cgi, cgitb 
 import numpy

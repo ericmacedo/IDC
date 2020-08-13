@@ -1,4 +1,4 @@
-#!/home/eric/python/bin/python
+#!/home/vagrant/python2/bin/python
 #Author: Eric Cabral - 2019
 import cgi, cgitb
 import sys, os

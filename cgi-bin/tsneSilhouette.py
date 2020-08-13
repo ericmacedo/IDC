@@ -1,4 +1,4 @@
-#!/home/eric/python/bin/python
+#!/home/vagrant/python2/bin/python
 # Author: Ehsan Sherkat
 from sklearn.metrics import silhouette_score
 import cgi, cgitb

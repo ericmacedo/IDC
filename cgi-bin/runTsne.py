@@ -1,4 +1,4 @@
-#!/home/eric/python3/bin/python
+#!/home/vagrant/python3/bin/python
 # Author: Ehsan Sherkat
 from sklearn.manifold import TSNE
 import cgi, cgitb 

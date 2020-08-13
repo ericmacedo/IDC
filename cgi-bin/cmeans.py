@@ -1,4 +1,4 @@
-#!/home/eric/python/bin/python
+#!/home/vagrant/python2/bin/python
 ################################################################################
 # Peach - Computational Intelligence for Python
 # Jose Alexandre Nalon

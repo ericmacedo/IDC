@@ -1,4 +1,4 @@
-#!/home/eric/python3/bin/python
+#!/home/vagrant/python3/bin/python
 #Author: Eric Cabral - 2019
 from scipy.spatial.distance import pdist, squareform
 from WordEmbeddings import (
