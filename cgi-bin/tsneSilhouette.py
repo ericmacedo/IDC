@@ -1,4 +1,5 @@
-#!/home/eric/python/bin/python
+#!/home/vagrant/python2/bin/python
+
 # Author: Ehsan Sherkat
 import sys
 import numpy
